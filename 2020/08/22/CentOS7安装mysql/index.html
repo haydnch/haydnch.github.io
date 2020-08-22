@@ -5,7 +5,7 @@
   
 
   
-  <title>Haydn&#39;s Blog</title>
+  <title>CentOS7安装mysql | Haydn&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -14,7 +14,7 @@
   
   <meta name="description" content="记录在阿里云ECS实例CentOS7.6 中安装Mysql数据库的步骤。 1 删除MariaDBCent OS 7 的 yum 源中已经不再包含在 MySQL，而改用了 MariaDB。 1 .1 查询Maria DB是否已经安装1rpm -qa | grep maria*  1.2 删除MariaDB1yum -y remove maria*  2 下载mysql yum包进入 mysql 官方">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Haydn&#39;s Blog">
+<meta property="og:title" content="CentOS7安装mysql">
 <meta property="og:url" content="http://yoursite.com/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/index.html">
 <meta property="og:site_name" content="Haydn&#39;s Blog">
 <meta property="og:description" content="记录在阿里云ECS实例CentOS7.6 中安装Mysql数据库的步骤。 1 删除MariaDBCent OS 7 的 yum 源中已经不再包含在 MySQL，而改用了 MariaDB。 1 .1 查询Maria DB是否已经安装1rpm -qa | grep maria*  1.2 删除MariaDB1yum -y remove maria*  2 下载mysql yum包进入 mysql 官方">
@@ -31,10 +31,11 @@
 <meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801191820053.png">
 <meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801192323522.png">
 <meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200802095405773.png">
-<meta property="article:published_time" content="2020-08-22T03:10:42.813Z">
-<meta property="article:modified_time" content="2020-08-13T04:30:08.832Z">
+<meta property="article:published_time" content="2020-08-22T03:10:42.000Z">
+<meta property="article:modified_time" content="2020-08-22T10:40:43.994Z">
 <meta property="article:author" content="Haydn Ch">
-<meta property="article:tag" content="Blog">
+<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="ECS">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/yum.PNG">
   
@@ -79,12 +80,28 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main"><article id="post-CentOS7安装mysql" class="article global-container article-type-post" itemscope itemprop="blogPost">
   
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      CentOS7安装mysql
+    </h1>
+  
+
+    </header>
+  
   <div class="article-meta">
     <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/" class="article-date">
-  <time datetime="2020-08-22T03:10:42.813Z" itemprop="datePublished">2020-08-22</time>
+  <time datetime="2020-08-22T03:10:42.000Z" itemprop="datePublished">2020-08-22</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tutorial/">Tutorial</a>
+  </div>
+
     
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECS/" rel="tag">ECS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
+
   </div>
   
     <span id="busuanzi_container_page_pv">
@@ -175,6 +192,15 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
+      <a href="/2020/08/22/docker/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            docker
+          
+        </div>
+      </a>
+    
   </div>
   <div class="article-nav-block">
     
@@ -226,18 +252,30 @@ gitment.render('gitmentContainer')
 
   
     
+  <div class="widget-box">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorial/">Tutorial</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-box">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECS/" rel="tag">ECS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li></ul>
+    </div>
+  </div>
 
-  
-    
+
   
     
   <div class="widget-box">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li></ul>
     </div>
   </div>
 
@@ -249,7 +287,11 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
-            <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/">(no title)</a>
+            <a href="/2020/08/22/docker/">docker</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/">CentOS7安装mysql</a>
           </li>
         
           <li>
