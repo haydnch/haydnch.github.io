@@ -337,11 +337,17 @@ html, body, #fullpage{
   border-radius: 100%;
 }
 .avatar-name {
-  writing-mode: vertical-lr
+  writing-mode: vertical-lr;
+  font-family: Sans-serif;
+  font-weight: bold;
 }
 .avatar-slogan {
   writing-mode: vertical-lr;
-  max-height: 200px;
+  max-height: 140px;
+  color: #7D6F91;
+  font-family: fantasy;
+  font-weight: bold;
+  font-style: italic;
 }
 .global-container {
   box-shadow: 1px 2px 3px #ddd;
@@ -353,7 +359,9 @@ html, body, #fullpage{
   margin-bottom: 50px;
 }
 .article-title {
-  font-size: 1.7em;
+  font-size: 2.5em;
+  font-family: sans-serif;
+  font-weight:bold;
 }
 .article-meta {
   display: flex;
