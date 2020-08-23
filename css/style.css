@@ -264,6 +264,9 @@ html, body, #fullpage{
 .mobile-nav-bottom {
   transform: scaleY(-1)
 }
+#busuanzi_container_page_pv{
+	color: #E65D5D;
+}
 #middlecontent {
   display: flex;
   padding-top: 30px;
@@ -617,6 +620,8 @@ html, body, #fullpage{
   color: #be7e4a;
 }
 .article-footer{
+  font-weight: bold;
+  font-size: 20px;
   text-align: center;
   background-image: url('../images/icons/css_pattern_bottom.png');
   background-repeat: no-repeat;
@@ -705,8 +710,9 @@ html, body, #fullpage{
   color: #de1c31;
 }
 #footer {
+  font-weight: bold;
   box-shadow: 0 -1px 6px rgba(0, 0, 0, .3);
-  padding: 4px;
+  padding: 8px;
 }
 @media screen and (max-width: 1200px){
   .global-width {
