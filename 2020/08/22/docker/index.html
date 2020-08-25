@@ -39,6 +39,16 @@
 
 
   
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxxx-x"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxxx-x');
+    </script>
+  
 
 <meta name="generator" content="Hexo 5.0.2"></head>
 
@@ -49,7 +59,7 @@
 <!--
 
 -->
-  <div class = "music">
+  <div class = "music" >
   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=350 height=86 
 	src="//music.163.com/outchain/player?type=2&id=316938&auto=1&height=66">
   </iframe>
@@ -122,6 +132,7 @@
           <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
           2020-08-22
         </span>
+		
         
               <span class="post-categories">
                 <i class="iconfont icon-bookmark" title="类别 | categories"></i>
@@ -151,6 +162,12 @@
                 
               </span>
           
+		
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style="display:inline" class="post-readNum">
+              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"></span>
+        </span>
+
       </div>
       <div class="markdown-body">
         <h1 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h1><blockquote>
@@ -205,11 +222,11 @@
       </div>
       
         <div class="prev-or-next">
-          <div class="post-foot-next">
+          <div class="post-foot-prev">
             
-              <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/" target="_self">
+              <a href="/2020/08/22/cheatsheet/" target="_self">
                 <i class="iconfont icon-chevronleft"></i>
-                <span>PREV</span>
+                <span>PREV: cheatsheet</span>
               </a>
             
           </div>
@@ -252,8 +269,8 @@
 		  -->
           <div class="post-foot-prev">
             
-              <a href="/2020/08/22/cheatsheet/" target="_self">
-                <span>NEXT</span>
+              <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/" target="_self">
+                <span>NEXT: CentOS7安装mysql</span>
                 <i class="iconfont icon-chevronright"></i>
               </a>
             
@@ -349,6 +366,20 @@
     </div>
   
  
+ 
+	 <div class="visit">
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv" style="display:inline;">
+                本站总访问量<span id="busuanzi_value_site_pv"></span>次
+        </span>
+        <span class="post-meta-divider">|</span>
+        <span id="busuanzi_container_site_uv" style="display:inline">
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+	</div>
+     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+  
 </div>
 
       </div>
@@ -417,5 +448,5 @@
 
     </div>
 	
-  </body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

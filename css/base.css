@@ -272,11 +272,13 @@ a:hover {
   padding: 0 5px;
 }
 
-.footer-more {
+.footer-more, .visit {
   padding-bottom: 5px;
   text-align: center;
 }
-
+.visit {
+	color: #666;
+}
 
 .tag-list li {
   font-size: 1.4rem;
@@ -367,6 +369,7 @@ a:hover {
   padding: 1rem 0;
   margin: 3rem 0;
   border-top: 1px solid rgba(88,88,88,0.1);
+  font-weight: bold;
 }
 
 .prev-or-next .post-foot-next, .prev-or-next .post-foot-prev {
@@ -379,7 +382,7 @@ a:hover {
   padding: 0 30px;
 }
 
-.post-attach .post-pubtime, .post-attach .post-tags, .post-attach .post-categories {
+.post-attach .post-pubtime, .post-attach .post-tags, .post-attach .post-categories, .post-attach .post-readNum{
   padding: 0 10px;
 }
 
