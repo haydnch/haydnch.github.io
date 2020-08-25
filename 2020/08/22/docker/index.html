@@ -1,113 +1,158 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<html lang="zh-CN">
 
+  <head>
+  
+<script src="/js/clicklove.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="haydn" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
   
   <title>docker | Haydn&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  
-  <meta name="keywords" content="Blog" />
-  
-  <meta name="description" content="什么是docker Docker 是一个开放源代码软件，是一个开放平台，用于开发应用、交付（shipping）应用、运行应用。 Docker允许用户将基础设施（Infrastructure）中的应用单独分割出来，形成更小的颗粒（容器），从而提高交付软件的速度。 Docker容器与虚拟机类似，但二者在原理上不同。容器是将操作系统层虚拟化，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="docker">
-<meta property="og:url" content="http://yoursite.com/2020/08/22/docker/index.html">
-<meta property="og:site_name" content="Haydn&#39;s Blog">
-<meta property="og:description" content="什么是docker Docker 是一个开放源代码软件，是一个开放平台，用于开发应用、交付（shipping）应用、运行应用。 Docker允许用户将基础设施（Infrastructure）中的应用单独分割出来，形成更小的颗粒（容器），从而提高交付软件的速度。 Docker容器与虚拟机类似，但二者在原理上不同。容器是将操作系统层虚拟化，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819095745723.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819101823721.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819180555138.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819102409989.png">
-<meta property="article:published_time" content="2020-08-22T03:51:12.000Z">
-<meta property="article:modified_time" content="2020-08-22T04:05:16.410Z">
-<meta property="article:author" content="Haydn Ch">
-<meta property="article:tag" content="运维">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819095745723.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Haydn&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/images/favicon.jpg">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
   
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.jpg">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
 <link rel="stylesheet" href="/css/highlight.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
 
 <meta name="generator" content="Hexo 5.0.2"></head>
 
-<body>
-  <div id="fullpage" class="mobile-nav-right">
-    
-      <div id="wrapper" style="background-image: url(/images/mybg.jpg)" title="">
-    
-    
-      <header id="header">
-  <div id="nav-toggle" class="nav-toggle"></div>
-  <div class="head-box global-width">
-    <nav class="nav-box nav-right">
-      
-        <a class="nav-item" href="/" title
-        
-        >首页</a>
-      
-        <a class="nav-item" href="/archives" title
-        
-        >归档</a>
-      
-        <a class="nav-item" href="/about" title
-        
-        >关于</a>
-      
-    </nav>
+
+  <body>
+    <div id="app">
+      <div class="header">
+<!--
+
+-->
+  <div class = "music">
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=350 height=86 
+	src="//music.163.com/outchain/player?type=2&id=316938&auto=1&height=66">
+  </iframe>
   </div>
-</header>
-      <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-docker" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 class="article-title" itemprop="name">
-      docker
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2020/08/22/docker/" class="article-date">
-  <time datetime="2020-08-22T03:51:12.000Z" itemprop="datePublished">2020-08-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tutorial/">Tutorial</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BF%90%E7%BB%B4/" rel="tag">运维</a></li></ul>
-
+  <div class="avatar">
+    <a href="/"><img src="/images/bear.jpg" alt=""></a>
+    <div class="nickname"><a href="/">Haydn CH</a></div>
+	
   </div>
   
-    <span id="busuanzi_container_page_pv">
-      本文总阅读量：<span id="busuanzi_value_page_pv"></span>次
-    </span>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">友链</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
+        </li>
+      
+    </ul>
+	
+  </div>
+ 
+
+
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+	
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+
   
 
-  <div class="article-inner">
-    
-    <div class="article-content article-content-mac" itemprop="articleBody">
-      
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">docker</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
+          2020-08-22
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/Tutorial/" title="查看 Tutorial 分类">
+                    <b>#</b> Tutorial
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                
+                <span class="span--tag">
+                  <a href="/tags/DevOps/" title="查看 运维 标签">
+                    <b>#</b> 运维
+                  </a>
+                </span>
+                
+                <span class="span--tag">
+                  <a href="/tags/container/" title="查看 容器 标签">
+                    <b>#</b> 容器
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
         <h1 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h1><blockquote>
 <p><strong>Docker</strong> 是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%8E%9F%E5%A7%8B%E7%A2%BC">开放源代码</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94">软件</a>，是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%B9%B3%E8%87%BA">开放平台</a>，用于开发应用、交付（shipping）应用、运行应用。 Docker允许用户将基础设施（Infrastructure）中的应用单独分割出来，形成更小的颗粒（容器），从而提高交付软件的速度。</p>
 <p><strong>Docker容器</strong>与虚拟机类似，但二者在原理上不同。容器是将<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">操作系统层虚拟化</a>，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。 容器更多的用于表示 软件的一个标准化单元。由于容器的标准化，因此它可以无视基础设施（Infrastructure）的差异，部署到任何一个地方。另外，Docker也为容器提供更强的业界的隔离兼容。</p>
@@ -139,216 +184,238 @@
 <p>上面这条命令是查看运行着的容器，若想查看所有容器，可使用<code>docker ps -a </code>命令。</p>
 <h2 id="创建并启动容器"><a href="#创建并启动容器" class="headerlink" title="创建并启动容器"></a>创建并启动容器</h2><ul>
 <li><p>nginx容器</p>
-<p><code>docker run --name nginx -d -p 8080:80 nginx</code></p>
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name nginx -d -p 8080:80 nginx</span><br></pre></td></tr></table></figure></li>
 <li><p>redis容器</p>
-<p><code>docker run -itd --name redis -p 6379:6379 redis</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name redis -p 6379:6379 redis</span><br></pre></td></tr></table></figure>
+
 <p>-d参数表示容器后台运行；-it参数：i表示开发容器的标准输入（STDIN），t表示告诉dcker为容器创建一个命令行终端。</p>
 </li>
 </ul>
 <h2 id="容器内执行命令"><a href="#容器内执行命令" class="headerlink" title="容器内执行命令"></a>容器内执行命令</h2><p>如果容器在后台启动，可以使用<code>docker exec</code>在容器内执行命令。</p>
-<p><code>docker exec -it redis /bin/bash</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it redis /bin/bash</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819101823721.png" alt="image-20200819101823721"></p>
 <p>或者</p>
-<p><code>docker exec -it redis redis-cli -h localhost -p 6379</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it redis redis-cli -h localhost -p 6379</span><br></pre></td></tr></table></figure>
+
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819180555138.png" alt="image-20200819180555138"></p>
 <h2 id="查看容器进程"><a href="#查看容器进程" class="headerlink" title="查看容器进程"></a>查看容器进程</h2><p>使用<code>docker top</code>命令可以查看容器中正在运行的进程，首先确保容器已经启动。</p>
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819102409989.png" alt="image-20200819102409989"></p>
 
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>PREV</span>
+              </a>
+            
+          </div>
+		  <!--
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
+              2020-08-22
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/Tutorial/" title="查看 Tutorial 分类">
+                        <b>#</b> Tutorial
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags" title="标签 | tags"></i>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/DevOps/" title="查看 运维 标签">
+                        <b>#</b> 运维
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/container/" title="查看 容器 标签">
+                        <b>#</b> 容器
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+		  -->
+          <div class="post-foot-prev">
+            
+              <a href="/2020/08/22/cheatsheet/" target="_self">
+                <span>NEXT</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
       
     </div>
-	<br>
     
-      <footer class="article-footer">
-        -完-
-      </footer>
+  <div class="post-catalog" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFdocker"><span class="toc-text">什么是docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">docker应用场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6"><span class="toc-text">docker核心组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker%E5%91%BD%E4%BB%A4"><span class="toc-text">docker命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8"><span class="toc-text">查看容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B9%B6%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8"><span class="toc-text">创建并启动容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E5%86%85%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-text">容器内执行命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E7%A8%8B"><span class="toc-text">查看容器进程</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+  
+   
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  
+<link rel="stylesheet" href="/css/gitalk.css">
+
+  
+  <div id="gitalk-container"></div>
+
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      id: location.pathname,
+      distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')
+  </script>
+
+
+      </div>
     
   </div>
-  
-    
-<nav id="article-nav">
-  <div class="article-nav-block">
-    
-      <a href="/2020/08/22/cheatsheet/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            cheatsheet
-          
-        </div>
-      </a>
-    
-  </div>
-  <div class="article-nav-block">
-    
-      <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">CentOS7安装mysql</div>
-        <strong class="article-nav-caption"></strong>
-      </a>
-    
-  </div>
-</nav>
-
-    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script>
 
 
-<div id="gitmentContainer"></div>
-
-<script>
-var gitment = new Gitment({
-  owner: 'haydnch',
-  repo: 'haydnch.github.io',
-  oauth: {
-    client_id: 'f8628dd5b2d8edbf9029',
-    client_secret: 'f2d2849a458805a31421ef0c98ddfc9b9993a078',
-  },
-})
-gitment.render('gitmentContainer')
-</script>
-
-  
-  
-</article>
-</section>
-        <aside id="sidebar">
-  
-    <div class="widget-box">
-  <div class="avatar-box">
-    <img class="avatar" src="/images/avatar.png" title=""></img>
-    <h3 class="avatar-name">
+        <div class="footer">
+  <div class="social">
+    <ul>
       
-        目黑择明
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/haydnch/haydnch.github.io">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
       
-    </h3>
-    <p class="avatar-slogan">
-      敢于向黑暗宣战的人 心里必须充满光明
-    </p>
+        <li>
+          <a title="twitter" href="">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微信" href="/about/">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微博" target="_blank" rel="noopener" href="https://weibo.com/574422066/">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+    </ul>
   </div>
+  
+  
+    <div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020 | Powered by Hexo</a>
+    </div>
+  
+ 
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
 </div>
 
 
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/08/23/Rocket/">面试问题整理</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/cheatsheet/">cheatsheet</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/docker/">docker</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/">CentOS7安装mysql</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/21/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Note/">Note</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorial/">Tutorial</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
-    </div>
-  </div>
+<script src="/js/backtotop.js"></script>
 
 
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/ECS/" style="font-size: 10px;">ECS</a> <a href="/tags/Java%E5%90%8E%E7%AB%AF/" style="font-size: 10px;">Java后端</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 10px;">运维</a>
-    </div>
-  </div>
 
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li></ul>
-    </div>
-  </div>
-
-  
-      <div class="widget-box">
-    <h3 class="widget-title">友链</h3>
-    <div class="widget">
       
-        <a style="display: block;" href="https://github.com/haydnch/haydnch.github.io" title target='_blank'
-        >目黑择明</a>
-      
-    </div>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
   </div>
 
-  
-</aside>
+  <div class="search-overlay hidden">
+    <div class="search-content">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        <input type="text" class="search-input" id="search-input" placeholder="搜索你想查找的文章...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
       </div>
-      <footer id="footer">
-  <div class="foot-box global-width">
-    &copy; 2020 Haydn Ch &nbsp;&nbsp;
-    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
-    &nbsp;|&nbsp;主题 <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
-    <br>
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	<!--
-    
-    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
-	-->
+      <div class="search-result" id="search-result"></div>
+    </div>
   </div>
-</footer>
-      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
-<script>
-if (!window.jQuery) {
-var script = document.createElement('script');
-script.src = "/js/jquery-2.0.3.min.js";
-document.body.write(script);
-}
-</script>
 
+  <script type="text/javascript">
+    let inputArea = document.querySelector("#search-input");
+    inputArea.onclick = function(){ getSearchFile(); this.onclick = null }
+    inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
   
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
+    function openOrHideSearchContent() {
+      let searchContent = document.querySelector(".search-overlay")
+      let isHidden = searchContent.classList.contains('hidden')
+      if (isHidden) {
+        searchContent.classList.remove('hidden')
+      } else {
+        searchContent.classList.add('hidden')
+      }
+    }
   
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false);
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false);
+  </script>
+  
+  
+<script src="/js/search.js"></script>
 
 
 
 
     </div>
-    <nav id="mobile-nav" class="mobile-nav-box">
-  <div class="mobile-nav-img mobile-nav-top"></div>
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-    <a href="/about" class="mobile-nav-link">关于</a>
-  
-  <div class="mobile-nav-img  mobile-nav-bottom"></div>
-</nav>    
-  </div>
-</body>
+	
+  </body>
 </html>

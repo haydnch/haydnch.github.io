@@ -1,143 +1,179 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<html lang="zh-CN">
 
+  <head>
+  
+<script src="/js/clicklove.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="haydn" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
   
   <title>CentOS7安装mysql | Haydn&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  
-  <meta name="keywords" content="Blog" />
-  
-  <meta name="description" content="记录在阿里云ECS实例CentOS7.6 中安装Mysql数据库的步骤。 1 删除MariaDBCent OS 7 的 yum 源中已经不再包含在 MySQL，而改用了 MariaDB。 1 .1 查询Maria DB是否已经安装1rpm -qa | grep maria*  1.2 删除MariaDB1yum -y remove maria*  2 下载mysql yum包进入 mysql 官方">
-<meta property="og:type" content="article">
-<meta property="og:title" content="CentOS7安装mysql">
-<meta property="og:url" content="http://yoursite.com/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/index.html">
-<meta property="og:site_name" content="Haydn&#39;s Blog">
-<meta property="og:description" content="记录在阿里云ECS实例CentOS7.6 中安装Mysql数据库的步骤。 1 删除MariaDBCent OS 7 的 yum 源中已经不再包含在 MySQL，而改用了 MariaDB。 1 .1 查询Maria DB是否已经安装1rpm -qa | grep maria*  1.2 删除MariaDB1yum -y remove maria*  2 下载mysql yum包进入 mysql 官方">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/yum.PNG">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801183444424.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801184705295.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801185011118.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200806141901184.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801185740361.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801185933120.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/group.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/deny.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801191820053.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801192323522.png">
-<meta property="og:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200802095405773.png">
-<meta property="article:published_time" content="2020-08-22T03:10:42.000Z">
-<meta property="article:modified_time" content="2020-08-22T10:40:43.994Z">
-<meta property="article:author" content="Haydn Ch">
-<meta property="article:tag" content="mysql">
-<meta property="article:tag" content="ECS">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/haydnch/myImage/raw/master/imgs/yum.PNG">
-  
-    <link rel="alternate" href="/atom.xml" title="Haydn&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/images/favicon.jpg">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
   
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.jpg">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
 <link rel="stylesheet" href="/css/highlight.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
 
 <meta name="generator" content="Hexo 5.0.2"></head>
 
-<body>
-  <div id="fullpage" class="mobile-nav-right">
-    
-      <div id="wrapper" style="background-image: url(/images/mybg.jpg)" title="">
-    
-    
-      <header id="header">
-  <div id="nav-toggle" class="nav-toggle"></div>
-  <div class="head-box global-width">
-    <nav class="nav-box nav-right">
-      
-        <a class="nav-item" href="/" title
-        
-        >首页</a>
-      
-        <a class="nav-item" href="/archives" title
-        
-        >归档</a>
-      
-        <a class="nav-item" href="/about" title
-        
-        >关于</a>
-      
-    </nav>
+
+  <body>
+    <div id="app">
+      <div class="header">
+<!--
+
+-->
+  <div class = "music">
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=350 height=86 
+	src="//music.163.com/outchain/player?type=2&id=316938&auto=1&height=66">
+  </iframe>
   </div>
-</header>
-      <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-CentOS7安装mysql" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 class="article-title" itemprop="name">
-      CentOS7安装mysql
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/" class="article-date">
-  <time datetime="2020-08-22T03:10:42.000Z" itemprop="datePublished">2020-08-22</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tutorial/">Tutorial</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ECS/" rel="tag">ECS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li></ul>
-
+  <div class="avatar">
+    <a href="/"><img src="/images/bear.jpg" alt=""></a>
+    <div class="nickname"><a href="/">Haydn CH</a></div>
+	
   </div>
   
-    <span id="busuanzi_container_page_pv">
-      本文总阅读量：<span id="busuanzi_value_page_pv"></span>次
-    </span>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">友链</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
+        </li>
+      
+    </ul>
+	
+  </div>
+ 
+
+
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+	
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+
   
 
-  <div class="article-inner">
-    
-    <div class="article-content article-content-mac" itemprop="articleBody">
-      
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">CentOS7安装mysql</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
+          2020-08-22
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/Tutorial/" title="查看 Tutorial 分类">
+                    <b>#</b> Tutorial
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                
+                <span class="span--tag">
+                  <a href="/tags/mysql/" title="查看 mysql 标签">
+                    <b>#</b> mysql
+                  </a>
+                </span>
+                
+                <span class="span--tag">
+                  <a href="/tags/ECS/" title="查看 ECS 标签">
+                    <b>#</b> ECS
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
         <p><strong><u>记录在阿里云ECS实例CentOS7.6 中安装Mysql数据库的步骤。</u></strong></p>
 <h1 id="1-删除MariaDB"><a href="#1-删除MariaDB" class="headerlink" title="1 删除MariaDB"></a>1 删除MariaDB</h1><p>Cent OS 7 的 yum 源中已经不再包含在 MySQL，而改用了 MariaDB。</p>
-<h2 id="1-1-查询Maria-DB是否已经安装"><a href="#1-1-查询Maria-DB是否已经安装" class="headerlink" title="1 .1 查询Maria DB是否已经安装"></a>1 .1 查询Maria DB是否已经安装</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep maria*</span><br></pre></td></tr></table></figure></div>
+<h2 id="1-1-查询Maria-DB是否已经安装"><a href="#1-1-查询Maria-DB是否已经安装" class="headerlink" title="1 .1 查询Maria DB是否已经安装"></a>1 .1 查询Maria DB是否已经安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep maria*</span><br></pre></td></tr></table></figure>
 
-<h2 id="1-2-删除MariaDB"><a href="#1-2-删除MariaDB" class="headerlink" title="1.2 删除MariaDB"></a>1.2 删除MariaDB</h2><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y remove maria*</span><br></pre></td></tr></table></figure></div>
+<h2 id="1-2-删除MariaDB"><a href="#1-2-删除MariaDB" class="headerlink" title="1.2 删除MariaDB"></a>1.2 删除MariaDB</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y remove maria*</span><br></pre></td></tr></table></figure>
 
 <h1 id="2-下载mysql-yum包"><a href="#2-下载mysql-yum包" class="headerlink" title="2 下载mysql yum包"></a>2 下载mysql yum包</h1><p>进入 mysql 官方提供的 yum 包下载页面，地址为：**<a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/repo/yum/"></a>** ，页面如下，选择适合自己系统的 yum 包。</p>
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/yum.PNG" alt="yum"></p>
 <p>这里下载的是==mysql80-community-release-el7-3.noarch.rpm==</p>
-<h1 id="3-安装mysql-yum包"><a href="#3-安装mysql-yum包" class="headerlink" title="3 安装mysql yum包"></a>3 安装mysql yum包</h1><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure></div>
+<h1 id="3-安装mysql-yum包"><a href="#3-安装mysql-yum包" class="headerlink" title="3 安装mysql yum包"></a>3 安装mysql yum包</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh mysql80-community-release-el7-3.noarch.rpm</span><br></pre></td></tr></table></figure>
 
-<h1 id="4-安装mysql"><a href="#4-安装mysql" class="headerlink" title="4 安装mysql"></a>4 安装mysql</h1><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y mysql-community-server</span><br></pre></td></tr></table></figure></div>
+<h1 id="4-安装mysql"><a href="#4-安装mysql" class="headerlink" title="4 安装mysql"></a>4 安装mysql</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y mysql-community-server</span><br></pre></td></tr></table></figure>
 
-<h1 id="5-启动mysql"><a href="#5-启动mysql" class="headerlink" title="5 启动mysql"></a>5 启动mysql</h1><div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 启动mysql </span><br><span class="line">systemctl start mysqld.service</span><br><span class="line"></span><br><span class="line"># 查询mysql状态</span><br><span class="line">systemctl status mysqld.service</span><br><span class="line"></span><br><span class="line">#查看mysql安装路径</span><br><span class="line">whereis mysql</span><br></pre></td></tr></table></figure></div>
+<h1 id="5-启动mysql"><a href="#5-启动mysql" class="headerlink" title="5 启动mysql"></a>5 启动mysql</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动mysql </span></span><br><span class="line">systemctl start mysqld.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查询mysql状态</span></span><br><span class="line">systemctl status mysqld.service</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看mysql安装路径</span></span><br><span class="line">whereis mysql</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801183444424.png" alt="image-20200801183444424"></p>
 <h1 id="6-更改默认密码"><a href="#6-更改默认密码" class="headerlink" title="6 更改默认密码"></a>6 更改默认密码</h1><p>安装后默认会生成一个复杂临时密码，保存在<code>/var/log/mysqld.log </code>这个文件中，可以输入以下命令通过查找文件得到密码。</p>
 <ul>
 <li><strong>查找默认密码</strong></li>
 </ul>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &#39;temporary password&#39; &#x2F;var&#x2F;log&#x2F;mysqld.log</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep <span class="string">&#x27;temporary password&#x27;</span> /var/<span class="built_in">log</span>/mysqld.log</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801184705295.png" alt="image-20200801184705295"></p>
 <p>然后我们根据这个密码进入数据库。</p>
@@ -146,7 +182,7 @@
 <ul>
 <li><strong>通过以下命令更改密码</strong></li>
 </ul>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter user &#39;root&#39;@&#39;localhost&#39; identified by &#39;your_password&#39;;</span><br><span class="line">或者</span><br><span class="line">mysqladmin -u root -p password</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter user <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> identified by <span class="string">&#x27;your_password&#x27;</span>;</span><br><span class="line">或者</span><br><span class="line">mysqladmin -u root -p password</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200806141901184.png" alt="image-20200806141901184"></p>
 <p>在这里我们不能设置像1234、root这种简单密码，因为数据库设置了密码强度规则。因此先设置一个包含大小写字母、数字等的复杂密码，能通过强度验证。</p>
@@ -157,7 +193,7 @@
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801185933120.png" alt="image-20200801185933120"></p>
 <ul>
 <li><p><strong>修改密码强度设置</strong></p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; set global validate_password.length &#x3D; 1;</span><br><span class="line">Query OK, 0 rows affected (0.01 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; set global validate_password.policy &#x3D; 0;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; <span class="built_in">set</span> global validate_password.length = 1;</span><br><span class="line">Query OK, 0 rows affected (0.01 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt; <span class="built_in">set</span> global validate_password.policy = 0;</span><br><span class="line">Query OK, 0 rows affected (0.00 sec)</span><br></pre></td></tr></table></figure>
 
 <p>设置以后就可以将数据库密码修改成简单密码了。</p>
 <p>当然，这个修改只建议在开发测试环境下使用，如果在生产环境使用简单密码，会导致数据库密码极易被破解，使得数据库中的数据有泄露的风险。</p>
@@ -171,7 +207,7 @@
 <p>  回到服务器，查看用户表：</p>
 <p>  <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801191820053.png" alt="image-20200801191820053"></p>
 <p>  用户root对应的host为localhost，只允许本地访问。因此执行以下命令：</p>
-  <div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update user set host&#x3D;&#39;%&#39; where user&#x3D;&#39;root&#39;;</span><br><span class="line">alter user &#39;root&#39;@&#39;%&#39; identified with mysql_native_password by &#39;your_password&#39;;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></div>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update user <span class="built_in">set</span> host=<span class="string">&#x27;%&#x27;</span> <span class="built_in">where</span> user=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line">alter user <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span> identified with mysql_native_password by <span class="string">&#x27;your_password&#x27;</span>;</span><br><span class="line">flush privileges;</span><br></pre></td></tr></table></figure>
 
 <p>  此时再在本地连接数据库，就可以连接成功。</p>
 <p>  <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200801192323522.png" alt="image-20200801192323522"></p>
@@ -183,200 +219,220 @@
 <p><code>driver = com.mysql.cj.jdbc.Driver</code><br><code>url = jdbc:mysql://localhost:3306/yourdb?useSSL=false&amp;serverTimezone=UTC</code></p>
 <p>新版本的driverClass必须要加上 <strong>cj</strong>，url中<strong>useSSL</strong>和<strong>serverTimezone</strong>也必须有，否则会报错。</p>
 
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2020/08/21/hello-world/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>PREV</span>
+              </a>
+            
+          </div>
+		  <!--
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
+              2020-08-22
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/Tutorial/" title="查看 Tutorial 分类">
+                        <b>#</b> Tutorial
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags" title="标签 | tags"></i>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/mysql/" title="查看 mysql 标签">
+                        <b>#</b> mysql
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/ECS/" title="查看 ECS 标签">
+                        <b>#</b> ECS
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+		  -->
+          <div class="post-foot-prev">
+            
+              <a href="/2020/08/22/docker/" target="_self">
+                <span>NEXT</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
       
     </div>
-	<br>
     
-      <footer class="article-footer">
-        -完-
-      </footer>
+  <div class="post-catalog" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%88%A0%E9%99%A4MariaDB"><span class="toc-text">1 删除MariaDB</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E6%9F%A5%E8%AF%A2Maria-DB%E6%98%AF%E5%90%A6%E5%B7%B2%E7%BB%8F%E5%AE%89%E8%A3%85"><span class="toc-text">1 .1 查询Maria DB是否已经安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E5%88%A0%E9%99%A4MariaDB"><span class="toc-text">1.2 删除MariaDB</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E4%B8%8B%E8%BD%BDmysql-yum%E5%8C%85"><span class="toc-text">2 下载mysql yum包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E5%AE%89%E8%A3%85mysql-yum%E5%8C%85"><span class="toc-text">3 安装mysql yum包</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85mysql"><span class="toc-text">4 安装mysql</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%90%AF%E5%8A%A8mysql"><span class="toc-text">5 启动mysql</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E6%9B%B4%E6%94%B9%E9%BB%98%E8%AE%A4%E5%AF%86%E7%A0%81"><span class="toc-text">6 更改默认密码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E8%AE%BE%E7%BD%AE%E5%85%81%E8%AE%B8%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5"><span class="toc-text">7 设置允许远程连接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-%E9%83%A8%E7%BD%B2web%E9%A1%B9%E7%9B%AE%E5%88%B0%E9%98%BF%E9%87%8C%E4%BA%91ECS"><span class="toc-text">8 部署web项目到阿里云ECS</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+  
+   
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  
+<link rel="stylesheet" href="/css/gitalk.css">
+
+  
+  <div id="gitalk-container"></div>
+
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      id: location.pathname,
+      distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')
+  </script>
+
+
+      </div>
     
   </div>
-  
-    
-<nav id="article-nav">
-  <div class="article-nav-block">
-    
-      <a href="/2020/08/22/docker/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            docker
-          
-        </div>
-      </a>
-    
-  </div>
-  <div class="article-nav-block">
-    
-      <a href="/2020/08/21/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">Hello World</div>
-        <strong class="article-nav-caption"></strong>
-      </a>
-    
-  </div>
-</nav>
-
-    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script>
 
 
-<div id="gitmentContainer"></div>
-
-<script>
-var gitment = new Gitment({
-  owner: 'haydnch',
-  repo: 'haydnch.github.io',
-  oauth: {
-    client_id: 'f8628dd5b2d8edbf9029',
-    client_secret: 'f2d2849a458805a31421ef0c98ddfc9b9993a078',
-  },
-})
-gitment.render('gitmentContainer')
-</script>
-
-  
-  
-</article>
-</section>
-        <aside id="sidebar">
-  
-    <div class="widget-box">
-  <div class="avatar-box">
-    <img class="avatar" src="/images/avatar.png" title=""></img>
-    <h3 class="avatar-name">
+        <div class="footer">
+  <div class="social">
+    <ul>
       
-        目黑择明
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/haydnch/haydnch.github.io">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
       
-    </h3>
-    <p class="avatar-slogan">
-      敢于向黑暗宣战的人 心里必须充满光明
-    </p>
+        <li>
+          <a title="twitter" href="">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微信" href="/about/">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微博" target="_blank" rel="noopener" href="https://weibo.com/574422066/">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+    </ul>
   </div>
+  
+  
+    <div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020 | Powered by Hexo</a>
+    </div>
+  
+ 
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
 </div>
 
 
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/08/23/Rocket/">面试问题整理</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/cheatsheet/">cheatsheet</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/docker/">docker</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/">CentOS7安装mysql</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/21/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Note/">Note</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorial/">Tutorial</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
-    </div>
-  </div>
+<script src="/js/backtotop.js"></script>
 
 
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/ECS/" style="font-size: 10px;">ECS</a> <a href="/tags/Java%E5%90%8E%E7%AB%AF/" style="font-size: 10px;">Java后端</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 10px;">运维</a>
-    </div>
-  </div>
 
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li></ul>
-    </div>
-  </div>
-
-  
-      <div class="widget-box">
-    <h3 class="widget-title">友链</h3>
-    <div class="widget">
       
-        <a style="display: block;" href="https://github.com/haydnch/haydnch.github.io" title target='_blank'
-        >目黑择明</a>
-      
-    </div>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
   </div>
 
-  
-</aside>
+  <div class="search-overlay hidden">
+    <div class="search-content">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        <input type="text" class="search-input" id="search-input" placeholder="搜索你想查找的文章...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
       </div>
-      <footer id="footer">
-  <div class="foot-box global-width">
-    &copy; 2020 Haydn Ch &nbsp;&nbsp;
-    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
-    &nbsp;|&nbsp;主题 <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
-    <br>
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	<!--
-    
-    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
-	-->
+      <div class="search-result" id="search-result"></div>
+    </div>
   </div>
-</footer>
-      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
-<script>
-if (!window.jQuery) {
-var script = document.createElement('script');
-script.src = "/js/jquery-2.0.3.min.js";
-document.body.write(script);
-}
-</script>
 
+  <script type="text/javascript">
+    let inputArea = document.querySelector("#search-input");
+    inputArea.onclick = function(){ getSearchFile(); this.onclick = null }
+    inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
   
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
+    function openOrHideSearchContent() {
+      let searchContent = document.querySelector(".search-overlay")
+      let isHidden = searchContent.classList.contains('hidden')
+      if (isHidden) {
+        searchContent.classList.remove('hidden')
+      } else {
+        searchContent.classList.add('hidden')
+      }
+    }
   
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false);
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false);
+  </script>
+  
+  
+<script src="/js/search.js"></script>
 
 
 
 
     </div>
-    <nav id="mobile-nav" class="mobile-nav-box">
-  <div class="mobile-nav-img mobile-nav-top"></div>
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-    <a href="/about" class="mobile-nav-link">关于</a>
-  
-  <div class="mobile-nav-img  mobile-nav-bottom"></div>
-</nav>    
-  </div>
-</body>
+	
+  </body>
 </html>

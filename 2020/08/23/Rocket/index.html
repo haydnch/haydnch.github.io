@@ -1,110 +1,159 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<html lang="zh-CN">
 
+  <head>
+  
+<script src="/js/clicklove.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="haydn" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
   
   <title>面试问题整理 | Haydn&#39;s Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  
-  <meta name="keywords" content="Blog" />
-  
-  <meta name="description" content="面试问题整理ZooKeeperCAP定理：一个分布式系统不可能在满足分区容错性（P）的情况下同时满足一致性（C）和可用性（A）。在此ZooKeeper保证的是CP，ZooKeeper不能保证每次服务请求的可用性，在极端环境下，ZooKeeper可能会丢弃一些请求，消费者程序需要重新请求才能获得结果。另外在进行leader选举时集群都是不可用，所以说，ZooKeeper不能保证服务可用性。 BASE">
-<meta property="og:type" content="article">
-<meta property="og:title" content="面试问题整理">
-<meta property="og:url" content="http://yoursite.com/2020/08/23/Rocket/index.html">
-<meta property="og:site_name" content="Haydn&#39;s Blog">
-<meta property="og:description" content="面试问题整理ZooKeeperCAP定理：一个分布式系统不可能在满足分区容错性（P）的情况下同时满足一致性（C）和可用性（A）。在此ZooKeeper保证的是CP，ZooKeeper不能保证每次服务请求的可用性，在极端环境下，ZooKeeper可能会丢弃一些请求，消费者程序需要重新请求才能获得结果。另外在进行leader选举时集群都是不可用，所以说，ZooKeeper不能保证服务可用性。 BASE">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-23T05:34:11.633Z">
-<meta property="article:modified_time" content="2020-08-23T05:38:11.751Z">
-<meta property="article:author" content="Haydn Ch">
-<meta property="article:tag" content="Java后端">
-<meta property="article:tag" content="Spring">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Haydn&#39;s Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/images/favicon.jpg">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
   
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.jpg">
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
 <link rel="stylesheet" href="/css/highlight.css">
+
+
+  <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
 
 <meta name="generator" content="Hexo 5.0.2"></head>
 
-<body>
-  <div id="fullpage" class="mobile-nav-right">
-    
-      <div id="wrapper" style="background-image: url(/images/mybg.jpg)" title="">
-    
-    
-      <header id="header">
-  <div id="nav-toggle" class="nav-toggle"></div>
-  <div class="head-box global-width">
-    <nav class="nav-box nav-right">
-      
-        <a class="nav-item" href="/" title
-        
-        >首页</a>
-      
-        <a class="nav-item" href="/archives" title
-        
-        >归档</a>
-      
-        <a class="nav-item" href="/about" title
-        
-        >关于</a>
-      
-    </nav>
+
+  <body>
+    <div id="app">
+      <div class="header">
+<!--
+
+-->
+  <div class = "music">
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=350 height=86 
+	src="//music.163.com/outchain/player?type=2&id=316938&auto=1&height=66">
+  </iframe>
   </div>
-</header>
-      <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-Rocket" class="article global-container article-type-post" itemscope itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 class="article-title" itemprop="name">
-      面试问题整理
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2020/08/23/Rocket/" class="article-date">
-  <time datetime="2020-08-23T05:34:11.633Z" itemprop="datePublished">2020-08-23</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a>
-  </div>
-
-    
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java%E5%90%8E%E7%AB%AF/" rel="tag">Java后端</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/" rel="tag">Spring</a></li></ul>
-
+  <div class="avatar">
+    <a href="/"><img src="/images/bear.jpg" alt=""></a>
+    <div class="nickname"><a href="/">Haydn CH</a></div>
+	
   </div>
   
-    <span id="busuanzi_container_page_pv">
-      本文总阅读量：<span id="busuanzi_value_page_pv"></span>次
-    </span>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">友链</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
+        </li>
+      
+    </ul>
+	
+  </div>
+ 
+
+
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+	
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+
   
 
-  <div class="article-inner">
-    
-    <div class="article-content article-content-mac" itemprop="articleBody">
-      
-        <h1 id="面试问题整理"><a href="#面试问题整理" class="headerlink" title="面试问题整理"></a>面试问题整理</h1><h2 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h2><h3 id="CAP定理："><a href="#CAP定理：" class="headerlink" title="CAP定理："></a>CAP定理：</h3><p>一个分布式系统不可能在满足分区容错性（P）的情况下同时满足一致性（C）和可用性（A）。在此ZooKeeper保证的是CP，ZooKeeper不能保证每次服务请求的可用性，在极端环境下，ZooKeeper可能会丢弃一些请求，消费者程序需要重新请求才能获得结果。另外在进行leader选举时集群都是不可用，所以说，ZooKeeper不能保证服务可用性。</p>
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">面试问题整理</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
+          2020-08-23
+        </span>
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/interview/" title="查看 面试 分类">
+                    <b>#</b> 面试
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                
+                <span class="span--tag">
+                  <a href="/tags/javaBackEnd/" title="查看 Java后端 标签">
+                    <b>#</b> Java后端
+                  </a>
+                </span>
+                
+                <span class="span--tag">
+                  <a href="/tags/Spring/" title="查看 Spring 标签">
+                    <b>#</b> Spring
+                  </a>
+                </span>
+                
+              </span>
+          
+      </div>
+      <div class="markdown-body">
+        <h2 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h2><h3 id="CAP定理："><a href="#CAP定理：" class="headerlink" title="CAP定理："></a>CAP定理：</h3><p>一个分布式系统不可能在满足分区容错性（P）的情况下同时满足一致性（C）和可用性（A）。在此ZooKeeper保证的是CP，ZooKeeper不能保证每次服务请求的可用性，在极端环境下，ZooKeeper可能会丢弃一些请求，消费者程序需要重新请求才能获得结果。另外在进行leader选举时集群都是不可用，所以说，ZooKeeper不能保证服务可用性。</p>
 <h3 id="BASE理论"><a href="#BASE理论" class="headerlink" title="BASE理论"></a>BASE理论</h3><p>BASE理论是基本可用，软状态，最终一致性三个短语的缩写。BASE理论是对CAP中一致性和可用性（CA）权衡的结果，其来源于对大规模互联网系统分布式实践的总结，是基于CAP定理逐步演化而来的，它大大降低了我们对系统的要求。</p>
 <ol>
 <li>基本可用：基本可用是指分布式系统在出现不可预知故障的时候，允许损失部分可用性。但是，这绝不等价于系统不可用。比如正常情况下，一个在线搜索引擎需要在0.5秒之内返回给用户相应的查询结果，但由于出现故障，查询结果的响应时间增加了1~2秒。</li>
@@ -780,10 +829,10 @@
 <li><p>插入排序：将一个记录插入到已排序的有序表中，从而得到一个新的，记录数增1的有序表</p>
 </li>
 <li><p>快速排序：通过一趟排序将序列分成左右两部分，其中左半部分的的值均比右半部分的值小，然后再分别对左右部分的记录进行排序，直到整个序列有序。</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">int partition(int a[], int low, int high)&#123;</span><br><span class="line">    int key &#x3D; a[low];</span><br><span class="line">    while( low &lt; high )&#123;</span><br><span class="line">        while(low &lt; high &amp;&amp; a[high] &gt;&#x3D; key) high--;</span><br><span class="line">        a[low] &#x3D; a[high];</span><br><span class="line">        while(low &lt; high &amp;&amp; a[low] &lt;&#x3D; key) low++;</span><br><span class="line">        a[high] &#x3D; a[low];</span><br><span class="line">    &#125;</span><br><span class="line">    a[low] &#x3D; key;</span><br><span class="line">    return low;</span><br><span class="line">&#125;</span><br><span class="line">void quick_sort(int a[], int low, int high)&#123;</span><br><span class="line">    if(low &gt;&#x3D; high) return;</span><br><span class="line">    int keypos &#x3D; partition(a, low, high);</span><br><span class="line">    quick_sort(a, low, keypos-1);</span><br><span class="line">    quick_sort(a, keypos+1, high);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">int partition(int a[], int low, int high)&#123;</span><br><span class="line">    int key &#x3D; a[low];</span><br><span class="line">    while( low &lt; high )&#123;</span><br><span class="line">        while(low &lt; high &amp;&amp; a[high] &gt;&#x3D; key) high--;</span><br><span class="line">        a[low] &#x3D; a[high];</span><br><span class="line">        while(low &lt; high &amp;&amp; a[low] &lt;&#x3D; key) low++;</span><br><span class="line">        a[high] &#x3D; a[low];</span><br><span class="line">    &#125;</span><br><span class="line">    a[low] &#x3D; key;</span><br><span class="line">    return low;</span><br><span class="line">&#125;</span><br><span class="line">void quick_sort(int a[], int low, int high)&#123;</span><br><span class="line">    if(low &gt;&#x3D; high) return;</span><br><span class="line">    int keypos &#x3D; partition(a, low, high);</span><br><span class="line">    quick_sort(a, low, keypos-1);</span><br><span class="line">    quick_sort(a, keypos+1, high);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>堆排序：将待排序序列构造成一个大顶堆，此时，整个序列的最大值就是堆顶的根节点。将其与末尾元素进行交换，此时末尾就为最大值。然后将剩余n-1个元素重新构造成一个堆，这样会得到n个元素的次小值。如此反复执行，便能得到一个有序序列了。</p>
-<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line"></span><br><span class="line">    public void sort(int[] arr) &#123;</span><br><span class="line">        for (int i &#x3D; arr.length &#x2F; 2 - 1; i &gt;&#x3D; 0; i--) &#123;</span><br><span class="line">            adjustHeap(arr, i, arr.length);</span><br><span class="line">        &#125;</span><br><span class="line">        for (int j &#x3D; arr.length - 1; j &gt; 0; j--) &#123;</span><br><span class="line">            swap(arr, 0, j);</span><br><span class="line">            adjustHeap(arr, 0, j);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void adjustHeap(int[] arr, int i, int length) &#123;</span><br><span class="line">        int temp &#x3D; arr[i];</span><br><span class="line">        for (int k &#x3D; i * 2 + 1; k &lt; length; k &#x3D; k * 2 + 1) &#123;</span><br><span class="line">            if (k + 1 &lt; length &amp;&amp; arr[k] &lt; arr[k + 1]) &#123;</span><br><span class="line">                k++;</span><br><span class="line">            &#125;</span><br><span class="line">            if (arr[k] &gt; temp) &#123;</span><br><span class="line">                arr[i] &#x3D; arr[k];</span><br><span class="line">                i &#x3D; k;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[i] &#x3D; temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void swap(int[] arr, int a, int b) &#123;</span><br><span class="line">        int temp &#x3D; arr[a];</span><br><span class="line">        arr[a] &#x3D; arr[b];</span><br><span class="line">        arr[b] &#x3D; temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[] arr &#x3D; &#123;9, 8, 7, 6, 5, 4, 3, 2, 1&#125;;</span><br><span class="line">        new Test().sort(arr);</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">public class Test &#123;</span><br><span class="line"></span><br><span class="line">    public void sort(int[] arr) &#123;</span><br><span class="line">        for (int i &#x3D; arr.length &#x2F; 2 - 1; i &gt;&#x3D; 0; i--) &#123;</span><br><span class="line">            adjustHeap(arr, i, arr.length);</span><br><span class="line">        &#125;</span><br><span class="line">        for (int j &#x3D; arr.length - 1; j &gt; 0; j--) &#123;</span><br><span class="line">            swap(arr, 0, j);</span><br><span class="line">            adjustHeap(arr, 0, j);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void adjustHeap(int[] arr, int i, int length) &#123;</span><br><span class="line">        int temp &#x3D; arr[i];</span><br><span class="line">        for (int k &#x3D; i * 2 + 1; k &lt; length; k &#x3D; k * 2 + 1) &#123;</span><br><span class="line">            if (k + 1 &lt; length &amp;&amp; arr[k] &lt; arr[k + 1]) &#123;</span><br><span class="line">                k++;</span><br><span class="line">            &#125;</span><br><span class="line">            if (arr[k] &gt; temp) &#123;</span><br><span class="line">                arr[i] &#x3D; arr[k];</span><br><span class="line">                i &#x3D; k;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        arr[i] &#x3D; temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void swap(int[] arr, int a, int b) &#123;</span><br><span class="line">        int temp &#x3D; arr[a];</span><br><span class="line">        arr[a] &#x3D; arr[b];</span><br><span class="line">        arr[b] &#x3D; temp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        int[] arr &#x3D; &#123;9, 8, 7, 6, 5, 4, 3, 2, 1&#125;;</span><br><span class="line">        new Test().sort(arr);</span><br><span class="line">        System.out.println(Arrays.toString(arr));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li><p>希尔排序：先将整个待排记录序列分割成为若干子序列分别进行直接插入排序，待整个序列中的记录基本有序时再对全体记录进行一次直接插入排序。</p>
 </li>
 <li><p>归并排序：把有序表划分成元素个数尽量相等的两半，把两半元素分别排序，两个有序表合并成一个</p>
@@ -804,195 +853,219 @@
 <h3 id="常见的限流算法："><a href="#常见的限流算法：" class="headerlink" title="常见的限流算法："></a>常见的限流算法：</h3><p>常见的限流算法有计数器、漏桶和令牌桶算法。漏桶算法在分布式环境中消息中间件或者Redis都是可选的方案。发放令牌的频率增加可以提升整体数据处理的速度，而通过每次获取令牌的个数增加或者放慢令牌的发放速度和降低整体数据处理速度。而漏桶不行，因为它的流出速率是固定的，程序处理速度也是固定的。</p>
 <h3 id="秒杀并发情况下库存为负数问题"><a href="#秒杀并发情况下库存为负数问题" class="headerlink" title="秒杀并发情况下库存为负数问题"></a>秒杀并发情况下库存为负数问题</h3><ol>
 <li>for update显示加锁</li>
-<li>把update语句写在前边，先把数量-1，之后select出库存如果&gt;-1就commit,否则rollback。<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update products set quantity &#x3D; quantity-1 WHERE id&#x3D;3;</span><br><span class="line">select quantity from products WHERE id&#x3D;3 for update;</span><br></pre></td></tr></table></figure></div></li>
-<li>update语句在更新的同时加上一个条件<div class="highlight-box"autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true"data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">quantity &#x3D; select quantity from products WHERE id&#x3D;3;</span><br><span class="line">update products set quantity &#x3D; ($quantity-1) WHERE id&#x3D;3 and queantity &#x3D; $quantity;</span><br></pre></td></tr></table></figure></div></li>
+<li>把update语句写在前边，先把数量-1，之后select出库存如果&gt;-1就commit,否则rollback。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">update products set quantity &#x3D; quantity-1 WHERE id&#x3D;3;</span><br><span class="line">select quantity from products WHERE id&#x3D;3 for update;</span><br></pre></td></tr></table></figure></li>
+<li>update语句在更新的同时加上一个条件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">quantity &#x3D; select quantity from products WHERE id&#x3D;3;</span><br><span class="line">update products set quantity &#x3D; ($quantity-1) WHERE id&#x3D;3 and queantity &#x3D; $quantity;</span><br></pre></td></tr></table></figure></li>
 </ol>
 
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-next">
+            
+              <a href="/2020/08/22/cheatsheet/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>PREV</span>
+              </a>
+            
+          </div>
+		  <!--
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
+              2020-08-23
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/interview/" title="查看 面试 分类">
+                        <b>#</b> 面试
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags" title="标签 | tags"></i>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/javaBackEnd/" title="查看 Java后端 标签">
+                        <b>#</b> Java后端
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/Spring/" title="查看 Spring 标签">
+                        <b>#</b> Spring
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+		  -->
+          <div class="post-foot-prev">
+            
+          </div>
+        </div>
       
     </div>
-	<br>
     
-      <footer class="article-footer">
-        -完-
-      </footer>
+  <div class="post-catalog" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ZooKeeper"><span class="toc-text">ZooKeeper</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CAP%E5%AE%9A%E7%90%86%EF%BC%9A"><span class="toc-text">CAP定理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BASE%E7%90%86%E8%AE%BA"><span class="toc-text">BASE理论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZooKeeper%E7%89%B9%E7%82%B9"><span class="toc-text">ZooKeeper特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ZAB%E5%8D%8F%E8%AE%AE%EF%BC%9A"><span class="toc-text">ZAB协议：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%89%E4%B8%BE%E7%AE%97%E6%B3%95%E5%92%8C%E6%B5%81%E7%A8%8B%EF%BC%9AFastLeaderElection-%E9%BB%98%E8%AE%A4%E6%8F%90%E4%BE%9B%E7%9A%84%E9%80%89%E4%B8%BE%E7%AE%97%E6%B3%95"><span class="toc-text">选举算法和流程：FastLeaderElection(默认提供的选举算法)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zk%E4%B8%AD%E7%9A%84%E7%9B%91%E6%8E%A7%E5%8E%9F%E7%90%86"><span class="toc-text">zk中的监控原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redis"><span class="toc-text">Redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%BA%BF%E7%A8%8B%E7%9A%84Redis%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BF%AB"><span class="toc-text">单线程的Redis为什么快</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis-%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%8F%8A%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">Redis 的数据结构及使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis-%E7%9A%84%E6%95%B0%E6%8D%AE%E8%BF%87%E6%9C%9F%E7%AD%96%E7%95%A5"><span class="toc-text">Redis 的数据过期策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E7%9A%84set%E5%92%8Csetnx"><span class="toc-text">Redis的set和setnx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E7%9A%84LRU%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0%EF%BC%9A"><span class="toc-text">Redis的LRU具体实现：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E5%A6%82%E4%BD%95%E5%8F%91%E7%8E%B0%E7%83%AD%E7%82%B9key"><span class="toc-text">Redis如何发现热点key</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E7%9A%84%E7%83%AD%E7%82%B9key%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">Redis的热点key解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3-Redis-%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E9%97%AE%E9%A2%98"><span class="toc-text">如何解决 Redis 缓存雪崩问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3-Redis-%E7%BC%93%E5%AD%98%E7%A9%BF%E9%80%8F%E9%97%AE%E9%A2%98"><span class="toc-text">如何解决 Redis 缓存穿透问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E7%9A%84%E6%8C%81%E4%B9%85%E5%8C%96%E6%9C%BA%E5%88%B6"><span class="toc-text">Redis的持久化机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E5%92%8Cmemcached%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">Redis和memcached的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E5%B9%B6%E5%8F%91%E7%AB%9E%E4%BA%89key%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">Redis并发竞争key的解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E4%B8%8EMysql%E5%8F%8C%E5%86%99%E4%B8%80%E8%87%B4%E6%80%A7%E6%96%B9%E6%A1%88"><span class="toc-text">Redis与Mysql双写一致性方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Redis%E7%9A%84%E7%AE%A1%E9%81%93pipeline"><span class="toc-text">Redis的管道pipeline</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mysql"><span class="toc-text">Mysql</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A6%81%E7%B4%A0"><span class="toc-text">事务的基本要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mysql%E7%9A%84%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="toc-text">Mysql的存储引擎</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%B9%B6%E5%8F%91%E9%97%AE%E9%A2%98"><span class="toc-text">事务的并发问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MySQL%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="toc-text">MySQL事务隔离级别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mysql%E7%9A%84%E9%80%BB%E8%BE%91%E7%BB%93%E6%9E%84"><span class="toc-text">Mysql的逻辑结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="toc-text">SQL执行顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVCC-redolog-undolog-binlog"><span class="toc-text">MVCC,redolog,undolog,binlog</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#binlog%E5%92%8Credolog%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">binlog和redolog的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mysql%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB%E4%BB%A5%E5%8F%8A%E4%B8%BB%E4%BB%8E%E5%90%8C%E6%AD%A5"><span class="toc-text">Mysql读写分离以及主从同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Next-Key-Lock"><span class="toc-text">Next-Key Lock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#InnoDB%E7%9A%84%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7"><span class="toc-text">InnoDB的关键特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mysql%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E4%B8%80%E8%87%B4%E6%80%A7%E5%92%8C%E6%8C%81%E4%B9%85%E6%80%A7"><span class="toc-text">Mysql如何保证一致性和持久性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#InnoDB%E7%9A%84%E8%A1%8C%E9%94%81%E6%A8%A1%E5%BC%8F"><span class="toc-text">InnoDB的行锁模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9B-%E6%A0%91%E4%BD%9C%E4%B8%BA%E7%B4%A2%E5%BC%95%E7%BB%93%E6%9E%84"><span class="toc-text">为什么选择B+树作为索引结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B-%E6%A0%91%E7%9A%84%E5%8F%B6%E5%AD%90%E8%8A%82%E7%82%B9%E9%83%BD%E5%8F%AF%E4%BB%A5%E5%AD%98%E5%93%AA%E4%BA%9B%E4%B8%9C%E8%A5%BF"><span class="toc-text">B+树的叶子节点都可以存哪些东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95"><span class="toc-text">覆盖索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%9C%A8%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%B8%8D%E8%B5%B0%EF%BC%88%E9%A2%84%E6%9C%9F%E4%B8%AD%E7%9A%84%EF%BC%89%E7%B4%A2%E5%BC%95"><span class="toc-text">查询在什么时候不走（预期中的）索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BC%98%E5%8C%96%E6%8C%87%E5%8D%97"><span class="toc-text">数据库优化指南</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JVM"><span class="toc-text">JVM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F"><span class="toc-text">运行时数据区域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E4%BB%A3%E5%9B%9E%E6%94%B6"><span class="toc-text">分代回收</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%B9%B4%E9%BE%84%E8%AE%A1%E7%AE%97"><span class="toc-text">动态年龄计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6"><span class="toc-text">常见的垃圾回收机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CMS%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">CMS的执行过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#G1%E7%9A%84%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">G1的执行过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#G1%E5%92%8CCMS%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-text">G1和CMS的比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E4%BA%9B%E5%AF%B9%E8%B1%A1%E5%8F%AF%E4%BB%A5%E4%BD%9C%E4%B8%BAGC-Roots"><span class="toc-text">哪些对象可以作为GC Roots</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GC%E4%B8%ADStop-the-world%EF%BC%88STW%EF%BC%89"><span class="toc-text">GC中Stop the world（STW）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E7%AE%97%E6%B3%95"><span class="toc-text">垃圾回收算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Minor-GC%E5%92%8CFull-GC%E8%A7%A6%E5%8F%91%E6%9D%A1%E4%BB%B6"><span class="toc-text">Minor GC和Full GC触发条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TLAB"><span class="toc-text">TLAB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java%E5%AF%B9%E8%B1%A1%E5%88%86%E9%85%8D%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-text">Java对象分配的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95"><span class="toc-text">对象内存分配的两种方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="toc-text">JVM类加载过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B"><span class="toc-text">双亲委派模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%A8%A1%E5%9E%8B%E7%9A%84%E2%80%9D%E7%A0%B4%E5%9D%8F%E2%80%9D"><span class="toc-text">双亲委派模型的”破坏”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM%E9%94%81%E4%BC%98%E5%8C%96%E5%92%8C%E8%86%A8%E8%83%80%E8%BF%87%E7%A8%8B"><span class="toc-text">JVM锁优化和膨胀过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%83%85%E5%86%B5%E4%B8%8B%E9%9C%80%E8%A6%81%E5%BC%80%E5%A7%8B%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E9%98%B6%E6%AE%B5%E5%8A%A0%E8%BD%BD"><span class="toc-text">什么情况下需要开始类加载过程的第一个阶段加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#i-%E6%93%8D%E4%BD%9C%E7%9A%84%E5%AD%97%E8%8A%82%E7%A0%81%E6%8C%87%E4%BB%A4"><span class="toc-text">i++操作的字节码指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM%E6%80%A7%E8%83%BD%E7%9B%91%E6%8E%A7"><span class="toc-text">JVM性能监控</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM%E5%B8%B8%E8%A7%81%E5%8F%82%E6%95%B0"><span class="toc-text">JVM常见参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM%E8%B0%83%E4%BC%98%E7%9B%AE%E6%A0%87-%E4%BD%95%E6%97%B6%E9%9C%80%E8%A6%81%E5%81%9Ajvm%E8%B0%83%E4%BC%98"><span class="toc-text">JVM调优目标-何时需要做jvm调优</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JVM%E8%B0%83%E4%BC%98%E5%AE%9E%E6%88%98"><span class="toc-text">JVM调优实战</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Java%E5%9F%BA%E7%A1%80"><span class="toc-text">Java基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap%E5%92%8CConcurrentHashMap"><span class="toc-text">HashMap和ConcurrentHashMap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HashMap%E5%A6%82%E6%9E%9C%E6%88%91%E6%83%B3%E8%A6%81%E8%AE%A9%E8%87%AA%E5%B7%B1%E7%9A%84Object%E4%BD%9C%E4%B8%BAK%E5%BA%94%E8%AF%A5%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">HashMap如果我想要让自己的Object作为K应该怎么办</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#volatile"><span class="toc-text">volatile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Atomic%E7%B1%BB%E7%9A%84CAS%E6%93%8D%E4%BD%9C"><span class="toc-text">Atomic类的CAS操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CAS%E6%93%8D%E4%BD%9CABA%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-text">CAS操作ABA问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Synchronized%E5%92%8CLock%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">Synchronized和Lock的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AQS%E7%90%86%E8%AE%BA%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">AQS理论的数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8C%87%E5%AE%9A%E5%A4%9A%E4%B8%AA%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="toc-text">如何指定多个线程的执行顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-text">为什么要使用线程池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E7%BA%BF%E7%A8%8B%E6%B1%A0ThreadPoolExecutor%E5%86%85%E9%83%A8%E5%8F%82%E6%95%B0"><span class="toc-text">核心线程池ThreadPoolExecutor内部参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0%E9%83%BD%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%E5%B7%A5%E4%BD%9C%E9%98%9F%E5%88%97"><span class="toc-text">线程池都有哪几种工作队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E6%8B%92%E7%BB%9D%E7%AD%96%E7%95%A5"><span class="toc-text">线程池的拒绝策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%B1%A0%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%95%B0%E9%87%8F%E6%80%8E%E4%B9%88%E7%A1%AE%E5%AE%9A"><span class="toc-text">线程池的线程数量怎么确定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%B8%A6%E4%BC%98%E5%85%88%E7%BA%A7%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-text">如何实现一个带优先级的线程池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ThreadLocal%E7%9A%84%E5%8E%9F%E7%90%86%E5%92%8C%E5%AE%9E%E7%8E%B0"><span class="toc-text">ThreadLocal的原理和实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ThreadLocal%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E5%BC%B1%E5%BC%95%E7%94%A8%E5%92%8C%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E9%97%AE%E9%A2%98"><span class="toc-text">ThreadLocal为什么要使用弱引用和内存泄露问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HashSet%E5%92%8CHashMap"><span class="toc-text">HashSet和HashMap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Boolean%E5%8D%A0%E5%87%A0%E4%B8%AA%E5%AD%97%E8%8A%82"><span class="toc-text">Boolean占几个字节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%BB%E5%A1%9E%E9%9D%9E%E9%98%BB%E5%A1%9E%E4%B8%8E%E5%90%8C%E6%AD%A5%E5%BC%82%E6%AD%A5%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">阻塞非阻塞与同步异步的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Java-SPI"><span class="toc-text">Java SPI</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring"><span class="toc-text">Spring</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%89%E7%BA%A7%E7%BC%93%E5%AD%98"><span class="toc-text">什么是三级缓存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96%E9%97%AE%E9%A2%98"><span class="toc-text">Spring如何解决循环依赖问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BeanFactory%E5%92%8CApplicationContext%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">BeanFactory和ApplicationContext的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%EF%BC%8CAOP%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="toc-text">动态代理的实现方式，AOP的实现方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Transactional%E9%94%99%E8%AF%AF%E4%BD%BF%E7%94%A8%E5%A4%B1%E6%95%88%E5%9C%BA%E6%99%AF"><span class="toc-text">@Transactional错误使用失效场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring%E7%9A%84%E7%9A%84%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E6%9C%BA%E5%88%B6"><span class="toc-text">Spring的的事务传播机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring%E4%B8%ADBean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">Spring中Bean的生命周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring%E7%9A%84%E5%90%8E%E7%BD%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-text">Spring的后置处理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-MVC%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%88%E6%BA%90%E7%A0%81%E5%B1%82%E9%9D%A2%EF%BC%89"><span class="toc-text">Spring MVC的工作流程（源码层面）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="toc-text">消息队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97"><span class="toc-text">为什么需要消息队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka%E7%9A%84%E6%96%87%E4%BB%B6%E5%AD%98%E5%82%A8%E6%9C%BA%E5%88%B6"><span class="toc-text">Kafka的文件存储机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka-%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E5%8F%AF%E9%9D%A0%E6%80%A7"><span class="toc-text">Kafka 如何保证可靠性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka%E6%B6%88%E6%81%AF%E6%98%AF%E9%87%87%E7%94%A8Pull%E6%A8%A1%E5%BC%8F%EF%BC%8C%E8%BF%98%E6%98%AFPush%E6%A8%A1%E5%BC%8F"><span class="toc-text">Kafka消息是采用Pull模式，还是Push模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E9%AB%98%E5%90%9E%E5%90%90%E7%8E%87%E7%9A%84"><span class="toc-text">Kafka是如何实现高吞吐率的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kafka%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E8%8A%82%E7%82%B9%E8%BF%98%E6%B4%BB%E7%9D%80%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%9D%A1%E4%BB%B6"><span class="toc-text">Kafka判断一个节点还活着的两个条件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dubbo"><span class="toc-text">Dubbo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dubbo%E7%9A%84%E5%AE%B9%E9%94%99%E6%9C%BA%E5%88%B6"><span class="toc-text">Dubbo的容错机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dubbo%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%E6%8C%82%E4%BA%86%E8%BF%98%E5%8F%AF%E4%BB%A5%E7%BB%A7%E7%BB%AD%E9%80%9A%E4%BF%A1%E4%B9%88"><span class="toc-text">Dubbo注册中心挂了还可以继续通信么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dubbo%E6%8F%90%E4%BE%9B%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0"><span class="toc-text">Dubbo提供的线程池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Dubbo%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1%E7%BB%93%E6%9E%84"><span class="toc-text">Dubbo框架设计结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">操作系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B"><span class="toc-text">进程和线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%92%8C%E5%8D%95%E7%BA%BF%E7%A8%8B"><span class="toc-text">多线程和单线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="toc-text">进程的组成部分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F"><span class="toc-text">进程的通信方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E7%A8%8B%E9%97%B4%E4%BA%94%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%96%B9%E5%BC%8F%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-text">进程间五种通信方式的比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-text">内存管理有哪几种方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E7%BD%AE%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-text">页面置换算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%AD%E8%BF%9B%E7%A8%8B%E8%B0%83%E5%BA%A6%E7%AD%96%E7%95%A5%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D"><span class="toc-text">操作系统中进程调度策略有哪几种</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%BB%E9%94%81%E7%9A%844%E4%B8%AA%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">死锁的4个必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%EF%BC%88%E9%A2%84%E9%98%B2%EF%BC%89%E6%AD%BB%E9%94%81"><span class="toc-text">如何避免（预防）死锁</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E8%B7%AF"><span class="toc-text">计算机网路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Get%E5%92%8CPost%E5%8C%BA%E5%88%AB"><span class="toc-text">Get和Post区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Http%E8%AF%B7%E6%B1%82%E7%9A%84%E5%AE%8C%E5%85%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">Http请求的完全过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BA%94%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="toc-text">计算机网络的五层模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tcp%E5%92%8Cudp%E5%8C%BA%E5%88%AB"><span class="toc-text">tcp和udp区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tcp%E5%92%8Cudp%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-text">tcp和udp的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-text">三次握手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E8%83%BD%E4%B8%A4%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-text">为什么不能两次握手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="toc-text">四次挥手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%97%B6%E5%80%99%E6%98%AF%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B%EF%BC%8C%E5%85%B3%E9%97%AD%E7%9A%84%E6%97%B6%E5%80%99%E5%8D%B4%E6%98%AF%E5%9B%9B%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="toc-text">为什么连接的时候是三次握手，关闭的时候却是四次握手</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95"><span class="toc-text">数据结构与算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="toc-text">排序算法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E4%BB%96"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E5%B9%B6%E5%8F%91%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%AE%9E%E7%8E%B0"><span class="toc-text">高并发系统的设计与实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AE%97%E6%B3%95%EF%BC%9A"><span class="toc-text">负载均衡算法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E9%99%90%E6%B5%81%E7%AE%97%E6%B3%95%EF%BC%9A"><span class="toc-text">常见的限流算法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%92%E6%9D%80%E5%B9%B6%E5%8F%91%E6%83%85%E5%86%B5%E4%B8%8B%E5%BA%93%E5%AD%98%E4%B8%BA%E8%B4%9F%E6%95%B0%E9%97%AE%E9%A2%98"><span class="toc-text">秒杀并发情况下库存为负数问题</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+  
+   
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  
+<link rel="stylesheet" href="/css/gitalk.css">
+
+  
+  <div id="gitalk-container"></div>
+
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: [''],
+      id: location.pathname,
+      distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')
+  </script>
+
+
+      </div>
     
   </div>
-  
-    
-<nav id="article-nav">
-  <div class="article-nav-block">
-    
-  </div>
-  <div class="article-nav-block">
-    
-      <a href="/2020/08/22/cheatsheet/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">cheatsheet</div>
-        <strong class="article-nav-caption"></strong>
-      </a>
-    
-  </div>
-</nav>
-
-    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-<script src="https://billts.site/js/gitment.js"></script>
 
 
-<div id="gitmentContainer"></div>
-
-<script>
-var gitment = new Gitment({
-  owner: 'haydnch',
-  repo: 'haydnch.github.io',
-  oauth: {
-    client_id: 'f8628dd5b2d8edbf9029',
-    client_secret: 'f2d2849a458805a31421ef0c98ddfc9b9993a078',
-  },
-})
-gitment.render('gitmentContainer')
-</script>
-
-  
-  
-</article>
-</section>
-        <aside id="sidebar">
-  
-    <div class="widget-box">
-  <div class="avatar-box">
-    <img class="avatar" src="/images/avatar.png" title=""></img>
-    <h3 class="avatar-name">
+        <div class="footer">
+  <div class="social">
+    <ul>
       
-        目黑择明
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/haydnch/haydnch.github.io">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
       
-    </h3>
-    <p class="avatar-slogan">
-      敢于向黑暗宣战的人 心里必须充满光明
-    </p>
+        <li>
+          <a title="twitter" href="">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微信" href="/about/">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微博" target="_blank" rel="noopener" href="https://weibo.com/574422066/">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+    </ul>
   </div>
+  
+  
+    <div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020 | Powered by Hexo</a>
+    </div>
+  
+ 
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
 </div>
 
 
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/08/23/Rocket/">面试问题整理</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/cheatsheet/">cheatsheet</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/docker/">docker</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/">CentOS7安装mysql</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/21/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Note/">Note</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorial/">Tutorial</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%9D%A2%E8%AF%95/">面试</a></li></ul>
-    </div>
-  </div>
+<script src="/js/backtotop.js"></script>
 
 
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/ECS/" style="font-size: 10px;">ECS</a> <a href="/tags/Java%E5%90%8E%E7%AB%AF/" style="font-size: 10px;">Java后端</a> <a href="/tags/Spring/" style="font-size: 10px;">Spring</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/%E8%BF%90%E7%BB%B4/" style="font-size: 10px;">运维</a>
-    </div>
-  </div>
 
-  
-    
-  <div class="widget-box">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a></li></ul>
-    </div>
-  </div>
-
-  
-      <div class="widget-box">
-    <h3 class="widget-title">友链</h3>
-    <div class="widget">
       
-        <a style="display: block;" href="https://github.com/haydnch/haydnch.github.io" title target='_blank'
-        >目黑择明</a>
-      
-    </div>
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
   </div>
 
-  
-</aside>
+  <div class="search-overlay hidden">
+    <div class="search-content">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        <input type="text" class="search-input" id="search-input" placeholder="搜索你想查找的文章...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
       </div>
-      <footer id="footer">
-  <div class="foot-box global-width">
-    &copy; 2020 Haydn Ch &nbsp;&nbsp;
-    驱动于 <a href="http://hexo.io/" target="_blank">Hexo</a>
-    &nbsp;|&nbsp;主题 <a target="_blank" rel="noopener" href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
-    <br>
-	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-	<!--
-    
-    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
-	-->
+      <div class="search-result" id="search-result"></div>
+    </div>
   </div>
-</footer>
-      <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
-<script>
-if (!window.jQuery) {
-var script = document.createElement('script');
-script.src = "/js/jquery-2.0.3.min.js";
-document.body.write(script);
-}
-</script>
 
+  <script type="text/javascript">
+    let inputArea = document.querySelector("#search-input");
+    inputArea.onclick = function(){ getSearchFile(); this.onclick = null }
+    inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
   
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
+    function openOrHideSearchContent() {
+      let searchContent = document.querySelector(".search-overlay")
+      let isHidden = searchContent.classList.contains('hidden')
+      if (isHidden) {
+        searchContent.classList.remove('hidden')
+      } else {
+        searchContent.classList.add('hidden')
+      }
+    }
   
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false);
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false);
+  </script>
+  
+  
+<script src="/js/search.js"></script>
 
 
 
 
     </div>
-    <nav id="mobile-nav" class="mobile-nav-box">
-  <div class="mobile-nav-img mobile-nav-top"></div>
-  
-    <a href="/" class="mobile-nav-link">首页</a>
-  
-    <a href="/archives" class="mobile-nav-link">归档</a>
-  
-    <a href="/about" class="mobile-nav-link">关于</a>
-  
-  <div class="mobile-nav-img  mobile-nav-bottom"></div>
-</nav>    
-  </div>
-</body>
+	
+  </body>
 </html>
