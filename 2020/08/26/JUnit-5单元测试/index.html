@@ -20,6 +20,18 @@
     <link rel="apple-touch-icon" href="/images/favicon.jpg">
     <link rel="icon" href="/images/favicon.jpg">
   
+  
+  
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+	 <script type="text/javascript">
+	jinrishici.load(function(result) {
+	var sentence = document.querySelector("#poem_sentence");
+	var info = document.querySelector("#poem_info");
+	sentence.innerHTML = result.data.content;
+	info.innerHTML = '【'+result.data.origin.dynasty+'】'+result.data.origin.author+'《'+result.data.origin.title+'》“
+	});
+  </script>
+  
 
   <!-- Raleway-Font -->
   <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
@@ -63,9 +75,7 @@
   <body>
     <div id="app">
       <div class="header">
-<!--
 
--->
   <div class = "music" >
   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=350 height=86 
 	src="//music.163.com/outchain/player?type=2&id=316938&auto=1&height=66">
@@ -76,7 +86,13 @@
     <div class="nickname"><a href="/">Haydn CH</a></div>
 	
   </div>
-  
+  <div class="poem">
+   <span id="jinrishici-sentence">正在加载今日诗词...</span> 
+    <!--
+	<div id="poem_sentence"></div>
+	<div id="poem_info"></div>
+	-->
+  </div>
   <div class="navbar">
     <ul>
       
@@ -388,7 +404,7 @@
   </div>
 
   <div class="search-overlay hidden">
-    <div class="search-content">
+    <div class="search-content" tabindex="0">
       <div class="search-title">
         <span class="search-icon-input">
           <a href="javascript: void(0)">
@@ -407,22 +423,41 @@
   </div>
 
   <script type="text/javascript">
-    let inputArea = document.querySelector("#search-input");
-    inputArea.onclick = function(){ getSearchFile(); this.onclick = null }
-    inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+    var inputArea = document.querySelector("#search-input")
+	var searchOverlayArea = document.querySelector(".search-overlay")
+	
+    inputArea.onclick = function(){ 
+	  getSearchFile(); 
+	  this.onclick = null 
+	}		    
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
   
     function openOrHideSearchContent() {
-      let searchContent = document.querySelector(".search-overlay")
-      let isHidden = searchContent.classList.contains('hidden')
+      let isHidden = searchOverlayArea.classList.contains('hidden')
       if (isHidden) {
-        searchContent.classList.remove('hidden')
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        inputArea.focus()
       } else {
-        searchContent.classList.add('hidden')
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
       }
     }
   
-    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false);
-    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false);
+    function blurSearchContent(e) {
+	  if (e.target === searchOverlayArea) {
+    	      
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
   </script>
   
   
@@ -433,5 +468,5 @@
 
     </div>
 	
-  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":200,"height":350,"hOffset":10,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"dialog":{"enable":true,"hitokoto":true,"scale":0.7},"log":false});</script></body>
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":200,"height":350,"hOffset":10,"vOffset":-50},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"dialog":{"enable":true,"hitokoto":true,"scale":0.68},"log":false});</script></body>
 </html>
