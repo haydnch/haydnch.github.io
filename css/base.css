@@ -663,10 +663,11 @@ a:hover {
   left: 1rem;
   top: 1.5rem;
 }
+
 .poem {
 	position: absolute;
 	right: 1rem;
-	top: 4.5rem;
+	top: 5rem;
 	color: #C43C3C;
 	font-size: 1.5rem;
 	font-weight: 550;
