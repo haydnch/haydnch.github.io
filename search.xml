@@ -304,6 +304,11 @@
 ]]></content>
   </entry>
   <entry>
+    <title>简易css动画设计</title>
+    <url>/2020/08/26/%E7%AE%80%E6%98%93css%E5%8A%A8%E7%94%BB%E8%AE%BE%E8%AE%A1/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>面试问题整理</title>
     <url>/2020/08/23/Rocket/</url>
     <content><![CDATA[<h2 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h2><h3 id="CAP定理："><a href="#CAP定理：" class="headerlink" title="CAP定理："></a>CAP定理：</h3><p>一个分布式系统不可能在满足分区容错性（P）的情况下同时满足一致性（C）和可用性（A）。在此ZooKeeper保证的是CP，ZooKeeper不能保证每次服务请求的可用性，在极端环境下，ZooKeeper可能会丢弃一些请求，消费者程序需要重新请求才能获得结果。另外在进行leader选举时集群都是不可用，所以说，ZooKeeper不能保证服务可用性。</p>
@@ -1017,10 +1022,5 @@
         <tag>Java后端</tag>
         <tag>Spring</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>简易css动画设计</title>
-    <url>/2020/08/26/%E7%AE%80%E6%98%93css%E5%8A%A8%E7%94%BB%E8%AE%BE%E8%AE%A1/</url>
-    <content><![CDATA[]]></content>
   </entry>
 </search>
