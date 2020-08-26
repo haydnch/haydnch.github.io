@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  
+<script src="/js/clicklove.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="haydn" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  <title>JUnit 5单元测试 | Haydn&#39;s Blog</title>
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	 
+  
+  
+   <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  
+  
+<script src="/js/yinghua.js"></script>
+
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.jpg">
+  
+  
+  
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  
+  <!-- 引入font-awesome字体 -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+ 
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxxx-x"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxxx-x');
+    </script>
+  
+
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+
+  <div class = "music" >
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=350 height=86 
+	src="//music.163.com/outchain/player?type=2&id=316938&auto=0&height=66">
+  </iframe>
+  </div>
+  <div class="avatar">
+    <a href="/"><img src="/images/bear.jpg" alt=""></a>
+    <div class="nickname">️🐬Haydn CH</div>
+	
+  </div>
+  <div class="poem">
+   <span id="jinrishici-sentence">正在加载今日诗词...</span> 
+    <!--
+	<div id="poem_sentence"></div>
+	<div id="poem_info"></div>
+	-->
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">友链</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
+        </li>
+      
+    </ul>
+	
+  </div>
+ 
+
+
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+	
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">JUnit 5单元测试</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
+          2020-08-26
+        </span>
+		
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/Note/" title="查看 Note 分类">
+                    <b>#</b> Note
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                
+                <span class="span--tag">
+                  <a href="/tags/Junit5/" title="查看 Junit5 标签">
+                    <b>#</b> Junit5
+                  </a>
+                </span>
+                
+                <span class="span--tag">
+                  <a href="/tags/Spring-Boot/" title="查看 Spring Boot 标签">
+                    <b>#</b> Spring Boot
+                  </a>
+                </span>
+                
+              </span>
+          
+		
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv"  class="post-readNum">
+              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+        </span>
+
+      </div>
+      <div class="markdown-body">
+        <h1 id="认识Junit-5"><a href="#认识Junit-5" class="headerlink" title="认识Junit 5"></a>认识Junit 5</h1><p>JUnit 5 与以前版本的 JUnit 不同，拆分成由三个不同子项目的几个不同模块组成。<br><strong>JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage</strong></p>
+<ul>
+<li><strong><em>Junit Platform</em></strong>: 用于JVM上启动测试框架的基础服务，提供命令行，IDE和构建工具等方式执行测试的支持。</li>
+<li><strong><em>JUnit Jupiter</em></strong>: 包含 JUnit 5 新的编程模型和扩展模型，主要就是用于编写测试代码和扩展代码。</li>
+<li><strong><em>Junit Vintage</em></strong>: 用于在JUnit 5 中兼容运行 JUnit3.x 和 JUnit4.x 的测试用例<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/junit5.jpg" alt="junit5" style="zoom:50%;" />
+
+</li>
+</ul>
+<p>自从有了类似 JUnit 之类的测试框架，Java 单元测试领域逐渐成熟，开发人员对单元测试框架也有了更高的要求：更多的测试方式，更少的其他库的依赖。因此，大家期待着一个更强大的测试框架诞生，JUnit 作为Java测试领域的领头羊，推出了 JUnit 5 这个版本，主要特性：</p>
+<ul>
+<li>提供全新的断言和测试注解，支持测试类内嵌</li>
+<li>更丰富的测试方式：支持动态测试，重复测试，参数化测试等</li>
+<li>实现了模块化，让测试执行和测试发现等不同模块解耦，减少依赖</li>
+<li>提供对 Java 8 的支持，如 Lambda 表达式，Sream API等。</li>
+</ul>
+<h1 id="Junit-5常用用法"><a href="#Junit-5常用用法" class="headerlink" title="Junit 5常用用法"></a>Junit 5常用用法</h1><h2 id="引入依赖"><a href="#引入依赖" class="headerlink" title="引入依赖"></a>引入依赖</h2><p>在SpringBoot2.3.1 release，包含在==org.springframework.boot:spring-boot-starter-test==中。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.junit.vintage<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit-vintage-engine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在这里，去除了Juni4 API。<br><img src="https://img-blog.csdnimg.cn/20200730112450247.png"></p>
+<h2 id="注解"><a href="#注解" class="headerlink" title="注解"></a>注解</h2><p>除非另有说明，所有核心注解都位于<strong>junit-jupiter-api</strong>模块中的<strong>org.junit.jupiter.api</strong> 包。</p>
+<ul>
+<li><strong>@Test：</strong>  表示方法是测试方法。与JUnit 4的@Test注解不同，这个注解不声明任何属性，因为JUnit Jupiter中的测试扩展是基于它们自己专用的注解操作的。除非被重写，否则这些方法将被继承。</li>
+<li><strong>@ParameterizedTest：</strong>  一个参数化的测试方法。除非被重写，否则这些方法将被继承。 </li>
+<li><strong>@RepeatedTest：</strong>  Junit Jupiter通过用@RepeatedTest注释方法并指定所需的总重复次数，提供了将测试重复指定次数的能力。每次调用重复测试的行为都类似于执行常规的@Test方法，完全支持相同的生命周期回调和扩展。  </li>
+<li><strong>@DisplayName：</strong>  测试类和测试方法可以通过@DisplayName - - 声明自定义显示名称，其中包括空格、特殊字符，甚至表情符号（emojis）将显示在测试报告中以及测试运行程序和IDE中。</li>
+<li><strong>@BeforeEach：</strong>  指示应在当前类中的<strong>每个</strong>@Test、@RepeatedTest、@ParameterizedTest或@TestFactory方法之前执行的方法</li>
+<li><strong>@AfterEach：</strong>  指示应在当前类中的<strong>每个</strong>@Test、@RepeatedTest、@ParameterizedTest或@TestFactory方法之后执行的方法</li>
+<li><strong>@BeforeAll：</strong>  指示应在当前类中的<strong>所有</strong>@Test、@RepeatedTest、@ParameterizedTest和@TestFactory方法之前执行的方法</li>
+<li><strong>@AfterAll：</strong>  指示应在当前类中的<strong>所有</strong>@Test、@RepeatedTest、@ParameterizedTest和@TestFactory方法之后执行的方法</li>
+</ul>
+<h2 id="与-Junit-4的一些区别"><a href="#与-Junit-4的一些区别" class="headerlink" title="与 Junit 4的一些区别"></a>与 Junit 4的一些区别</h2><p><img src="https://img-blog.csdnimg.cn/20200730113212933.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTQ0Mjc4NTk=,size_16,color_FFFFFF,t_70"></p>
+<h2 id="断言"><a href="#断言" class="headerlink" title="断言"></a>断言</h2><p>Junit Jupiter附带了Junit 4拥有的许多断言方法，并添加了一些适合与Java 8 lambdas一起使用的断言方法。所有Junit Jupiter断言都是 <a target="_blank" rel="noopener" href="https://junit.org/junit5/docs/current/api/org.junit.jupiter.api/org/junit/jupiter/api/Assertions.html"><strong>org.junit.jupiter.api.Assertions</strong></a>类下的静态方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.time.Duration.ofMillis;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.time.Duration.ofMinutes;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertAll;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertNotNull;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertThrows;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertTimeout;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertTrue;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.concurrent.CountDownLatch;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> example.domain.Person;</span><br><span class="line"><span class="keyword">import</span> example.util.Calculator;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AssertionsDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Calculator calculator = <span class="keyword">new</span> Calculator();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Person person = <span class="keyword">new</span> Person(<span class="string">&quot;Jane&quot;</span>, <span class="string">&quot;Doe&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">standardAssertions</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        assertEquals(<span class="number">2</span>, calculator.add(<span class="number">1</span>, <span class="number">1</span>));</span><br><span class="line">        assertEquals(<span class="number">4</span>, calculator.multiply(<span class="number">2</span>, <span class="number">2</span>),</span><br><span class="line">                <span class="string">&quot;The optional failure message is now the last parameter&quot;</span>);</span><br><span class="line">        assertTrue(<span class="string">&#x27;a&#x27;</span> &lt; <span class="string">&#x27;b&#x27;</span>, () -&gt; <span class="string">&quot;Assertion messages can be lazily evaluated -- &quot;</span></span><br><span class="line">                + <span class="string">&quot;to avoid constructing complex messages unnecessarily.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">groupedAssertions</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// In a grouped assertion all assertions are executed, and all</span></span><br><span class="line">        <span class="comment">// failures will be reported together.</span></span><br><span class="line">        assertAll(<span class="string">&quot;person&quot;</span>,</span><br><span class="line">            () -&gt; assertEquals(<span class="string">&quot;Jane&quot;</span>, person.getFirstName()),</span><br><span class="line">            () -&gt; assertEquals(<span class="string">&quot;Doe&quot;</span>, person.getLastName())</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dependentAssertions</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Within a code block, if an assertion fails the</span></span><br><span class="line">        <span class="comment">// subsequent code in the same block will be skipped.</span></span><br><span class="line">        assertAll(<span class="string">&quot;properties&quot;</span>,</span><br><span class="line">            () -&gt; &#123;</span><br><span class="line">                String firstName = person.getFirstName();</span><br><span class="line">                assertNotNull(firstName);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// Executed only if the previous assertion is valid.</span></span><br><span class="line">                assertAll(<span class="string">&quot;first name&quot;</span>,</span><br><span class="line">                    () -&gt; assertTrue(firstName.startsWith(<span class="string">&quot;J&quot;</span>)),</span><br><span class="line">                    () -&gt; assertTrue(firstName.endsWith(<span class="string">&quot;e&quot;</span>))</span><br><span class="line">                );</span><br><span class="line">            &#125;,</span><br><span class="line">            () -&gt; &#123;</span><br><span class="line">                <span class="comment">// Grouped assertion, so processed independently</span></span><br><span class="line">                <span class="comment">// of results of first name assertions.</span></span><br><span class="line">                String lastName = person.getLastName();</span><br><span class="line">                assertNotNull(lastName);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// Executed only if the previous assertion is valid.</span></span><br><span class="line">                assertAll(<span class="string">&quot;last name&quot;</span>,</span><br><span class="line">                    () -&gt; assertTrue(lastName.startsWith(<span class="string">&quot;D&quot;</span>)),</span><br><span class="line">                    () -&gt; assertTrue(lastName.endsWith(<span class="string">&quot;e&quot;</span>))</span><br><span class="line">                );</span><br><span class="line">            &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">exceptionTesting</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Exception exception = assertThrows(ArithmeticException.class, () -&gt;</span><br><span class="line">            calculator.divide(<span class="number">1</span>, <span class="number">0</span>));</span><br><span class="line">        assertEquals(<span class="string">&quot;/ by zero&quot;</span>, exception.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">timeoutNotExceeded</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// The following assertion succeeds.</span></span><br><span class="line">        assertTimeout(ofMinutes(<span class="number">2</span>), () -&gt; &#123;</span><br><span class="line">            <span class="comment">// Perform task that takes less than 2 minutes.</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">timeoutNotExceededWithResult</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// The following assertion succeeds, and returns the supplied object.</span></span><br><span class="line">        String actualResult = assertTimeout(ofMinutes(<span class="number">2</span>), () -&gt; &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;a result&quot;</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">        assertEquals(<span class="string">&quot;a result&quot;</span>, actualResult);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">timeoutNotExceededWithMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// The following assertion invokes a method reference and returns an object.</span></span><br><span class="line">        String actualGreeting = assertTimeout(ofMinutes(<span class="number">2</span>), AssertionsDemo::greeting);</span><br><span class="line">        assertEquals(<span class="string">&quot;Hello, World!&quot;</span>, actualGreeting);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">timeoutExceeded</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// The following assertion fails with an error message similar to:</span></span><br><span class="line">        <span class="comment">// execution exceeded timeout of 10 ms by 91 ms</span></span><br><span class="line">        assertTimeout(ofMillis(<span class="number">10</span>), () -&gt; &#123;</span><br><span class="line">            <span class="comment">// Simulate task that takes more than 10 ms.</span></span><br><span class="line">            Thread.sleep(<span class="number">100</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">timeoutExceededWithPreemptiveTermination</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// The following assertion fails with an error message similar to:</span></span><br><span class="line">        <span class="comment">// execution timed out after 10 ms</span></span><br><span class="line">        assertTimeoutPreemptively(ofMillis(<span class="number">10</span>), () -&gt; &#123;</span><br><span class="line">            <span class="comment">// Simulate task that takes more than 10 ms.</span></span><br><span class="line">            <span class="keyword">new</span> CountDownLatch(<span class="number">1</span>).await();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">greeting</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Hello, World!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+            
+              <a href="/2020/08/26/%E7%AE%80%E6%98%93css%E5%8A%A8%E7%94%BB%E8%AE%BE%E8%AE%A1/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>PREV: 简易css动画设计</span>
+              </a>
+            
+          </div>
+		  <!--
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
+              2020-08-26
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/Note/" title="查看 Note 分类">
+                        <b>#</b> Note
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags" title="标签 | tags"></i>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/Junit5/" title="查看 Junit5 标签">
+                        <b>#</b> Junit5
+                      </a>
+                    </span>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/Spring-Boot/" title="查看 Spring Boot 标签">
+                        <b>#</b> Spring Boot
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+		  -->
+          <div class="post-foot-prev">
+            
+              <a href="/2020/08/23/Rocket/" target="_self">
+                <span>NEXT: 面试问题整理</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div class="post-catalog" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86Junit-5"><span class="toc-text">认识Junit 5</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Junit-5%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95"><span class="toc-text">Junit 5常用用法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E5%85%A5%E4%BE%9D%E8%B5%96"><span class="toc-text">引入依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E8%A7%A3"><span class="toc-text">注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8E-Junit-4%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8C%BA%E5%88%AB"><span class="toc-text">与 Junit 4的一些区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%AD%E8%A8%80"><span class="toc-text">断言</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+  
+   
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  
+<link rel="stylesheet" href="/css/gitalk.css">
+
+  
+<script src="/js/md5.js"></script>
+
+  <div id="gitalk-container"></div>
+
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '3dc2460c4142aef1640d',
+      clientSecret: 'cc570c6f9e10c1d086a8b1ba81332843825d00f4',
+      repo: 'haydnch.github.io',
+      owner: 'haydnch',
+      admin: ['haydnch'],
+      id: md5(location.pathname),
+      distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')
+  </script>
+
+
+      </div>
+    
+  </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/haydnch/haydnch.github.io">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="twitter" href="">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微信" href="/about/">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微博" target="_blank" rel="noopener" href="https://weibo.com/574422066/">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+  
+    <div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020 | Powered by Hexo</a>
+    </div>
+  
+ 
+ 
+	 <div class="visit">
+        <!-- 不蒜子统计 -->
+		<span id="busuanzi_container_site_uv">
+                💚共有<span id="busuanzi_value_site_uv"></span>位访客
+        </span>
+        <span id="busuanzi_container_site_pv">
+                访问了<span id="busuanzi_value_site_pv"></span>次💙
+        
+        
+	</div>
+     
+	 
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        <input type="text" class="search-input" id="search-input" placeholder="搜索你想查找的文章...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+	var searchOverlayArea = document.querySelector(".search-overlay")
+	
+    inputArea.onclick = function(){ 
+	  getSearchFile(); 
+	  this.onclick = null 
+	}		    
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+  
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+  
+    function blurSearchContent(e) {
+	  if (e.target === searchOverlayArea) {
+    	      
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+  </script>
+  
+  
+<script src="/js/search.js"></script>
+
+
+
+
+    </div>
+	
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":200,"height":350,"hOffset":40,"vOffset":-65},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"dialog":{"enable":true,"hitokoto":true},"log":false});</script></body>
+</html>

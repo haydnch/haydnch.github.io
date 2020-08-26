@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  
+<script src="/js/clicklove.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="haydn" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  <title>cheatsheet（持续更新⏳） | Haydn&#39;s Blog</title>
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	 
+  
+  
+   <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  
+  
+<script src="/js/yinghua.js"></script>
+
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.jpg">
+  
+  
+  
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  
+  <!-- 引入font-awesome字体 -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+ 
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxxx-x"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxxx-x');
+    </script>
+  
+
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+
+  <div class = "music" >
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=350 height=86 
+	src="//music.163.com/outchain/player?type=2&id=316938&auto=0&height=66">
+  </iframe>
+  </div>
+  <div class="avatar">
+    <a href="/"><img src="/images/bear.jpg" alt=""></a>
+    <div class="nickname">️🐬Haydn CH</div>
+	
+  </div>
+  <div class="poem">
+   <span id="jinrishici-sentence">正在加载今日诗词...</span> 
+    <!--
+	<div id="poem_sentence"></div>
+	<div id="poem_info"></div>
+	-->
+  </div>
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">友链</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
+        </li>
+      
+    </ul>
+	
+  </div>
+ 
+
+
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+	
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">cheatsheet（持续更新⏳）</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
+          2020-08-22
+        </span>
+		
+        
+              <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                
+                <span class="span--category">
+                  <a href="/categories/Note/" title="查看 Note 分类">
+                    <b>#</b> Note
+                  </a>
+                </span>
+                
+              </span>
+          
+              <span class="post-tags">
+                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                
+                <span class="span--tag">
+                  <a href="/tags/git/" title="查看 git 标签">
+                    <b>#</b> git
+                  </a>
+                </span>
+                
+              </span>
+          
+		
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv"  class="post-readNum">
+              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+        </span>
+
+      </div>
+      <div class="markdown-body">
+        <h2 id="python3-7创建虚拟环境"><a href="#python3-7创建虚拟环境" class="headerlink" title="python3.7创建虚拟环境"></a>python3.7创建虚拟环境</h2><blockquote>
+<p> 用于创建和管理虚拟环境的模块称为 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3.7/library/venv.html#module-venv"><code>venv</code></a>。<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3.7/library/venv.html#module-venv"><code>venv</code></a> 通常会安装你可用的最新版本的 Python。如果您的系统上有多个版本的Python，您可以通过运行 <code>python3</code> (python)或您想要的任何版本来选择特定的Python版本。</p>
+<p>要创建虚拟环境，请确定要放置它的目录，并将 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3.7/library/venv.html#module-venv"><code>venv</code></a> 模块作为脚本运行目录路径: </p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m venv tutorial-venv</span><br></pre></td></tr></table></figure>
+
+<p>如果它不存在，这将创建 <code>tutorial-env</code> 目录，并在其中创建包含Python解释器，标准库和各种支持文件的副本的目录。</p>
+<p>创建虚拟环境后，您可以激活它。</p>
+<p>在<strong>Windows</strong>上，运行:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tutorial-env\venv\Scripts\activate.bat</span><br></pre></td></tr></table></figure>
+
+<p>在这里，自己创建了FlaskProject目录下的虚拟环境，如下图所示。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/enter.png"></p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/venv.png"></p>
+<h2 id="比较工作区与暂存区"><a href="#比较工作区与暂存区" class="headerlink" title="比较工作区与暂存区"></a>比较工作区与暂存区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff 不加参数即默认比较工作区与暂存区</span><br></pre></td></tr></table></figure>
+
+<h2 id="比较暂存区与最新本地版本库（本地库中最近一次commit的内容）"><a href="#比较暂存区与最新本地版本库（本地库中最近一次commit的内容）" class="headerlink" title="比较暂存区与最新本地版本库（本地库中最近一次commit的内容）"></a>比较暂存区与最新本地版本库（本地库中最近一次commit的内容）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff --cached [&lt;path&gt;...]</span><br></pre></td></tr></table></figure>
+
+<h2 id="比较工作区与指定commit-id的差异"><a href="#比较工作区与指定commit-id的差异" class="headerlink" title="比较工作区与指定commit-id的差异"></a>比较工作区与指定commit-id的差异</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff commit-id  [&lt;path&gt;...]</span><br></pre></td></tr></table></figure>
+
+<h2 id="比较暂存区与指定commit-id的差异"><a href="#比较暂存区与指定commit-id的差异" class="headerlink" title="比较暂存区与指定commit-id的差异"></a>比较暂存区与指定commit-id的差异</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff --cached [&lt;commit-id&gt;] [&lt;path&gt;...]</span><br></pre></td></tr></table></figure>
+
+<h2 id="比较两个commit-id之间的差异"><a href="#比较两个commit-id之间的差异" class="headerlink" title="比较两个commit-id之间的差异"></a>比较两个commit-id之间的差异</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff [&lt;commit-id&gt;] [&lt;commit-id&gt;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="第一次推送到远程仓库"><a href="#第一次推送到远程仓库" class="headerlink" title="第一次推送到远程仓库"></a>第一次推送到远程仓库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p>上面命令将本地的master分支推送到origin远程仓库，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。</p>
+<h2 id="推送一个本地标签到远程仓库"><a href="#推送一个本地标签到远程仓库" class="headerlink" title="推送一个本地标签到远程仓库"></a>推送一个本地标签到远程仓库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin &lt;tagname&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="推送全部未推送标签"><a href="#推送全部未推送标签" class="headerlink" title="推送全部未推送标签"></a>推送全部未推送标签</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除一个本地标签"><a href="#删除一个本地标签" class="headerlink" title="删除一个本地标签"></a>删除一个本地标签</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag -d &lt;tagname&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="删除一个远程标签"><a href="#删除一个远程标签" class="headerlink" title="删除一个远程标签"></a>删除一个远程标签</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin :refs/tags/&lt;tagname&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="丢弃工作区修改"><a href="#丢弃工作区修改" class="headerlink" title="丢弃工作区修改"></a>丢弃工作区修改</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- file</span><br></pre></td></tr></table></figure>
+
+<h2 id="撤销暂存区修改"><a href="#撤销暂存区修改" class="headerlink" title="撤销暂存区修改"></a>撤销暂存区修改</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="从版本库删除文件"><a href="#从版本库删除文件" class="headerlink" title="从版本库删除文件"></a>从版本库删除文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm file</span><br><span class="line">git commit -m <span class="string">&quot;remove&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h2><ul>
+<li>HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令<code>git reset --hard commit_id</code></li>
+</ul>
+<ul>
+<li>穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本</li>
+<li>要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本</li>
+</ul>
+<h2 id="创建-切换分支"><a href="#创建-切换分支" class="headerlink" title="创建+切换分支"></a>创建+切换分支</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b &lt;name&gt;或者git switch -c &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="合并某分支到当前分支"><a href="#合并某分支到当前分支" class="headerlink" title="合并某分支到当前分支"></a>合并某分支到当前分支</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置别名"><a href="#配置别名" class="headerlink" title="配置别名"></a>配置别名</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.co checkout</span><br><span class="line">git config --global alias.ci commit</span><br><span class="line">git config --global alias.br branch</span><br><span class="line">git config --global alias.unstage <span class="string">&#x27;reset HEAD&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="启动redis"><a href="#启动redis" class="headerlink" title="启动redis"></a>启动redis</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server redis.windows.conf</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-start</span><br></pre></td></tr></table></figure>
+
+<h3 id="关闭服务"><a href="#关闭服务" class="headerlink" title="关闭服务"></a>关闭服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server --service-stop</span><br></pre></td></tr></table></figure>
+
+<h2 id="redis数据类型"><a href="#redis数据类型" class="headerlink" title="redis数据类型"></a>redis数据类型</h2><blockquote>
+<p>Redis支持五种数据类型：==string==（字符串），==hash==（哈希），==list==（列表），==set==（集合）及==zset==(sorted set：有序集合)。</p>
+</blockquote>
+<h2 id="IDEA设置注释模版"><a href="#IDEA设置注释模版" class="headerlink" title="IDEA设置注释模版"></a>IDEA设置注释模版</h2><p>默认methodReturnType()方法会返回全名。</p>
+<p>例如：<code>@return java.util.List&lt;java.util.Map&lt;java.lang.String,java.lang.String&gt;&gt;</code></p>
+<p>如果@return 后面不想要返回类型的全名，可以在**<em>return**</em>参数的expression内填入：</p>
+<blockquote>
+<p>groovyScript(“def result=’’; def params=&quot;${_1}&quot;.replaceAll(‘[\\[|\\]|\\s]’, ‘’).split(‘&lt;’).toList(); for(i = 0; i &lt; params.size(); i++) {if(i!=0){result+=’&lt;’;};  def p1=params[i].split(‘,’).toList();  for(i2 = 0; i2 &lt; p1.size(); i2++) { def p2=p1[i2].split(‘\\.’).toList();  result+=p2[p2.size()-1]; if(i2!=p1.size()-1){result+=’,’}  } ;  };  return result”, methodReturnType())</p>
+</blockquote>
+<p>就会变成<code>@return List&lt;Map&lt;String,String&gt;&gt;</code></p>
+<h2 id="关于-Builder注解"><a href="#关于-Builder注解" class="headerlink" title="关于@Builder注解"></a>关于@Builder注解</h2><p>有时为了在构造po类时，代码更优雅，会在po类加入@Builder注解，但因为@Builder和@Data一起使用时会将类的无参构造方法覆盖掉，会导致使用一些框架操作数据库时不能成功地将数据赋值给po类，例如myBatis。</p>
+<p>在类中重写无参构造方法，防止与lombok的注解冲突，在无参构造方法上面加入**@Tolerate**注解。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Builder</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataBuilder</span> <span class="keyword">implements</span> <span class="title">Serializable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Tolerate</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">DataBuilder</span> <span class="params">()</span></span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="vue无法加载"><a href="#vue无法加载" class="headerlink" title="vue无法加载"></a>vue无法加载</h2><p>若要在本地计算机上运行您编写的未签名脚本和来自其他用户的签名脚本，请使用以下命令将计算机上的 执行策略更改为 RemoteSigned。</p>
+<p>执行：<code>set-ExecutionPolicy RemoteSigned</code></p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200731085530171.png"></p>
+<h2 id="npm设置淘宝镜像"><a href="#npm设置淘宝镜像" class="headerlink" title="npm设置淘宝镜像"></a>npm设置淘宝镜像</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<h2 id="一些默认端口号"><a href="#一些默认端口号" class="headerlink" title="一些默认端口号"></a>一些默认端口号</h2><ul>
+<li><p><strong>Tomcat</strong>: 8080</p>
+</li>
+<li><p><strong>nginx</strong>: 80</p>
+</li>
+<li><p><strong>mysql</strong>: 3306</p>
+</li>
+<li><p><strong>redis</strong>: 6379</p>
+</li>
+<li><p><strong>rabbitmq</strong>: 1567</p>
+</li>
+<li><p><strong>发送邮件smtp</strong>: 587</p>
+</li>
+<li><p><strong>Fastdfs</strong>: 22122</p>
+</li>
+</ul>
+
+      </div>
+      
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+            
+              <a href="/2020/08/23/Rocket/" target="_self">
+                <i class="iconfont icon-chevronleft"></i>
+                <span>PREV: 面试问题整理</span>
+              </a>
+            
+          </div>
+		  <!--
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
+              2020-08-22
+            </span>
+            
+                  <span class="post-categories">
+                    <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                    
+                    <span class="span--category">
+                      <a href="/categories/Note/" title="查看 Note 分类">
+                        <b>#</b> Note
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+                  <span class="post-tags">
+                    <i class="iconfont icon-tags" title="标签 | tags"></i>
+                    
+                    <span class="span--tag">
+                      <a href="/tags/git/" title="查看 git 标签">
+                        <b>#</b> git
+                      </a>
+                    </span>
+                    
+                  </span>
+              
+          </div>
+		  -->
+          <div class="post-foot-prev">
+            
+              <a href="/2020/08/22/docker/" target="_self">
+                <span>NEXT: docker</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+    </div>
+    
+  <div class="post-catalog" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#python3-7%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-text">python3.7创建虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%8E%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="toc-text">比较工作区与暂存区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%9A%82%E5%AD%98%E5%8C%BA%E4%B8%8E%E6%9C%80%E6%96%B0%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E5%BA%93%EF%BC%88%E6%9C%AC%E5%9C%B0%E5%BA%93%E4%B8%AD%E6%9C%80%E8%BF%91%E4%B8%80%E6%AC%A1commit%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%89"><span class="toc-text">比较暂存区与最新本地版本库（本地库中最近一次commit的内容）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%8E%E6%8C%87%E5%AE%9Acommit-id%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-text">比较工作区与指定commit-id的差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%9A%82%E5%AD%98%E5%8C%BA%E4%B8%8E%E6%8C%87%E5%AE%9Acommit-id%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-text">比较暂存区与指定commit-id的差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AAcommit-id%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-text">比较两个commit-id之间的差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">第一次推送到远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E6%A0%87%E7%AD%BE%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">推送一个本地标签到远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E5%85%A8%E9%83%A8%E6%9C%AA%E6%8E%A8%E9%80%81%E6%A0%87%E7%AD%BE"><span class="toc-text">推送全部未推送标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E6%A0%87%E7%AD%BE"><span class="toc-text">删除一个本地标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E8%BF%9C%E7%A8%8B%E6%A0%87%E7%AD%BE"><span class="toc-text">删除一个远程标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A2%E5%BC%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%BF%AE%E6%94%B9"><span class="toc-text">丢弃工作区修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E6%9A%82%E5%AD%98%E5%8C%BA%E4%BF%AE%E6%94%B9"><span class="toc-text">撤销暂存区修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E7%89%88%E6%9C%AC%E5%BA%93%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-text">从版本库删除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="toc-text">版本回退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="toc-text">创建+切换分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E6%9F%90%E5%88%86%E6%94%AF%E5%88%B0%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF"><span class="toc-text">合并某分支到当前分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%88%AB%E5%90%8D"><span class="toc-text">配置别名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8redis"><span class="toc-text">启动redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">启动服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%97%AD%E6%9C%8D%E5%8A%A1"><span class="toc-text">关闭服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">redis数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E8%AE%BE%E7%BD%AE%E6%B3%A8%E9%87%8A%E6%A8%A1%E7%89%88"><span class="toc-text">IDEA设置注释模版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-Builder%E6%B3%A8%E8%A7%A3"><span class="toc-text">关于@Builder注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD"><span class="toc-text">vue无法加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm%E8%AE%BE%E7%BD%AE%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F"><span class="toc-text">npm设置淘宝镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="toc-text">一些默认端口号</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+    
+      <div class="comments-container">
+        
+
+
+
+
+  
+  
+   
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  
+<link rel="stylesheet" href="/css/gitalk.css">
+
+  
+<script src="/js/md5.js"></script>
+
+  <div id="gitalk-container"></div>
+
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '3dc2460c4142aef1640d',
+      clientSecret: 'cc570c6f9e10c1d086a8b1ba81332843825d00f4',
+      repo: 'haydnch.github.io',
+      owner: 'haydnch',
+      admin: ['haydnch'],
+      id: md5(location.pathname),
+      distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')
+  </script>
+
+
+      </div>
+    
+  </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/haydnch/haydnch.github.io">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="twitter" href="">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微信" href="/about/">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微博" target="_blank" rel="noopener" href="https://weibo.com/574422066/">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+  
+    <div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020 | Powered by Hexo</a>
+    </div>
+  
+ 
+ 
+	 <div class="visit">
+        <!-- 不蒜子统计 -->
+		<span id="busuanzi_container_site_uv">
+                💚共有<span id="busuanzi_value_site_uv"></span>位访客
+        </span>
+        <span id="busuanzi_container_site_pv">
+                访问了<span id="busuanzi_value_site_pv"></span>次💙
+        
+        
+	</div>
+     
+	 
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        <input type="text" class="search-input" id="search-input" placeholder="搜索你想查找的文章...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+	var searchOverlayArea = document.querySelector(".search-overlay")
+	
+    inputArea.onclick = function(){ 
+	  getSearchFile(); 
+	  this.onclick = null 
+	}		    
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+  
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+  
+    function blurSearchContent(e) {
+	  if (e.target === searchOverlayArea) {
+    	      
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+  </script>
+  
+  
+<script src="/js/search.js"></script>
+
+
+
+
+    </div>
+	
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":200,"height":350,"hOffset":40,"vOffset":-65},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"dialog":{"enable":true,"hitokoto":true},"log":false});</script></body>
+</html>
