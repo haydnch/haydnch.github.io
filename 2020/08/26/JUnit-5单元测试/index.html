@@ -300,6 +300,8 @@
 <link rel="stylesheet" href="/css/gitalk.css">
 
   
+<script src="/js/md5.js"></script>
+
   <div id="gitalk-container"></div>
 
   <script>
@@ -309,7 +311,7 @@
       repo: 'haydnch.github.io',
       owner: 'haydnch',
       admin: ['haydnch'],
-      id: location.pathname,
+      id: md5(location.pathname),
       distractionFreeMode: false
     })
 
