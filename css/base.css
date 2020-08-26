@@ -12,6 +12,10 @@ body.hidden {
   padding-right: 6px;
 }
 
+#busuanzi_container_value_uv, #busuanzi_value_site_pv, #busuanzi_value_page_pv {
+	display: inline;
+}
+
 #app {
   position: relative;
   margin: 0 auto;

@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   
-  <title>归档: 2020 | Haydn&#39;s Blog</title>
+  <title>简易css动画设计 | Haydn&#39;s Blog</title>
   
   
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -127,94 +127,104 @@
 
 	
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年份降序归类，url形式：https://yoursite/archives/ -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<!-- last: 按年份把文章分组，当前遍历到的年份 -->
-<!-- now: 当前遍历到的文章的发布年份 -->
 
-<div class="container archives">
-  <div class="post-list">
-    
-    
-      
-        <!-- 第一篇文章的发布年份呈现 -->
-        <div class="content-title">
-          <h2>
-            <span>2020</span>
-          </h2>
-        </div>
-      
-      <div class="post-item" title="简易css动画设计">
-        <div class="time-m-d">08-26</div>
-        <div class="title">
-          <a href="/2020/08/26/%E7%AE%80%E6%98%93css%E5%8A%A8%E7%94%BB%E8%AE%BE%E8%AE%A1/">
-            <span>简易css动画设计</span>
-          </a>
-        </div>
+
+  
+
+  
+
+  
+
+  
+  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+  <div class="container post-details" id="post-details">
+    <div class="post-content">
+      <div class="post-title">简易css动画设计</div>
+      <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
+          2020-08-26
+        </span>
+		
+        
+		
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv"  class="post-readNum">
+              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+        </span>
+
       </div>
-    
-      
-      <div class="post-item" title="JUnit 5单元测试">
-        <div class="time-m-d">08-26</div>
-        <div class="title">
-          <a href="/2020/08/26/JUnit-5%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/">
-            <span>JUnit 5单元测试</span>
-          </a>
-        </div>
+      <div class="markdown-body">
+        
       </div>
-    
       
-      <div class="post-item" title="面试问题整理">
-        <div class="time-m-d">08-23</div>
-        <div class="title">
-          <a href="/2020/08/23/Rocket/">
-            <span>面试问题整理</span>
-          </a>
+        <div class="prev-or-next">
+          <div class="post-foot-prev">
+            
+          </div>
+		  <!--
+          <div class="post-attach">
+            <span class="post-pubtime">
+              <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
+              2020-08-26
+            </span>
+            
+          </div>
+		  -->
+          <div class="post-foot-prev">
+            
+              <a href="/2020/08/26/JUnit-5%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" target="_self">
+                <span>NEXT: JUnit 5单元测试</span>
+                <i class="iconfont icon-chevronright"></i>
+              </a>
+            
+          </div>
         </div>
-      </div>
-    
       
-      <div class="post-item" title="cheatsheet（持续更新⏳）">
-        <div class="time-m-d">08-22</div>
-        <div class="title">
-          <a href="/2020/08/22/cheatsheet/">
-            <span>cheatsheet（持续更新⏳）</span>
-          </a>
-        </div>
-      </div>
+    </div>
     
-      
-      <div class="post-item" title="docker">
-        <div class="time-m-d">08-22</div>
-        <div class="title">
-          <a href="/2020/08/22/docker/">
-            <span>docker</span>
-          </a>
-        </div>
-      </div>
+
     
-      
-      <div class="post-item" title="CentOS7安装mysql">
-        <div class="time-m-d">08-22</div>
-        <div class="title">
-          <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/">
-            <span>CentOS7安装mysql</span>
-          </a>
-        </div>
-      </div>
-    
-      
-      <div class="post-item" title="Hello World">
-        <div class="time-m-d">08-21</div>
-        <div class="title">
-          <a href="/2020/08/21/hello-world/">
-            <span>Hello World</span>
-          </a>
-        </div>
+      <div class="comments-container">
+        
+
+
+
+
+  
+  
+   
+  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+  
+<link rel="stylesheet" href="/css/gitalk.css">
+
+  
+<script src="/js/md5.js"></script>
+
+  <div id="gitalk-container"></div>
+
+  <script>
+    const gitalk = new Gitalk({
+      clientID: '3dc2460c4142aef1640d',
+      clientSecret: 'cc570c6f9e10c1d086a8b1ba81332843825d00f4',
+      repo: 'haydnch.github.io',
+      owner: 'haydnch',
+      admin: ['haydnch'],
+      id: md5(location.pathname),
+      distractionFreeMode: false
+    })
+
+    gitalk.render('gitalk-container')
+  </script>
+
+
       </div>
     
   </div>
-</div>
+
 
         <div class="footer">
   <div class="social">
