@@ -279,7 +279,7 @@ a:hover {
 
 .post-item {
   display: flex;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 20px;
   align-items: center;
@@ -287,10 +287,12 @@ a:hover {
 
 .post-item .time-m-d {
   flex-shrink: 0;
-  margin-right: 30px;
+  margin-right: 40px;
   color: #774133;
-  font-family: sans-serif, 'Raleway', 'Helvetica Neue', 'Arial', s;
-  font-weight: bold;
+  font-family: SimSun;
+  #font-family:  'Raleway', 'Helvetica Neue', sans-serif,'Arial', s;
+  font-weight: 600;
+  font-style: italic;
 }
 
 .post-item .title {
@@ -300,7 +302,8 @@ a:hover {
   word-wrap: break-word;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-weight: bolder;
+  
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }
 
 .tag-details .time-m-d, .archives .time-m-d, .category-details .time-m-d {
@@ -320,10 +323,11 @@ a:hover {
 }
 
 .avatar .nickname {
-  font-size: 2rem;
-  font-weight: 550;
-  color: #E89B29;
+  font-size: 2.2rem;
+  font-weight: 520;
+  color: #4E9ED3;
   padding-top: 15px;
+  font-family: SimHei;
 }
 
 .content {
