@@ -165,61 +165,68 @@ WIDGET = {
 
 
 
-  
 
-  
 
-  
 
-  
-  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
-  <div class="container post-details" id="post-details">
-    <div class="post-content">
-      <div class="post-title">面试问题整理</div>
-      <div class="post-attach">
+
+
+
+
+    <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+    <div class="container post-details" id="post-details">
+        <div class="post-content">
+            <div class="post-title">面试问题整理</div>
+            <div class="post-attach">
         <span class="post-pubtime">
-          <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
-          2020-08-23
+          <i class="iconfont icon-updatetime" title="更新日期 | updatetime"></i>
+          2020-08-23 13:34
         </span>
-		
-        
-              <span class="post-categories">
-                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+		<span class="post-pubtime">
+          <i class="iconfont icon-edit" title="文章字数 | word_count"></i>字数：
+             <span class="post-count">33k</span>
+        </span>
+
                 
-                <span class="span--category">
+                    <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                        
+                            <span class="span--category">
                   <a href="/categories/interview/" title="查看 面试 分类">
                     <b>#</b> 面试
                   </a>
                 </span>
+                        
+                    </span>
                 
-              </span>
-          
-              <span class="post-tags">
+                    <span class="post-tags">
                 <i class="iconfont icon-tags" title="标签 | tags"></i>
-                
-                <span class="span--tag">
+                        
+                            <span class="span--tag">
                   <a href="/tags/javaBackEnd/" title="查看 Java后端 标签">
                     <b>#</b> Java后端
                   </a>
                 </span>
-                
-                <span class="span--tag">
+                        
+                            <span class="span--tag">
                   <a href="/tags/Spring/" title="查看 Spring 标签">
                     <b>#</b> Spring
                   </a>
                 </span>
+                        
+                    </span>
                 
-              </span>
-          
-		
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv"  class="post-readNum">
-              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+                
+                    <!-- 不蒜子统计 -->
+                    <span id="busuanzi_container_page_pv" class="post-readNum">
+              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"><i
+                                    class="fa fa-spinner fa-spin"></i></span>
         </span>
-
-      </div>
-      <div class="markdown-body">
-        <h2 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h2><h3 id="CAP定理："><a href="#CAP定理：" class="headerlink" title="CAP定理："></a>CAP定理：</h3><p>一个分布式系统不可能在满足分区容错性（P）的情况下同时满足一致性（C）和可用性（A）。在此ZooKeeper保证的是CP，ZooKeeper不能保证每次服务请求的可用性，在极端环境下，ZooKeeper可能会丢弃一些请求，消费者程序需要重新请求才能获得结果。另外在进行leader选举时集群都是不可用，所以说，ZooKeeper不能保证服务可用性。</p>
+                
+            </div>
+	
+			
+            <div class="markdown-body">
+                <h2 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h2><h3 id="CAP定理："><a href="#CAP定理：" class="headerlink" title="CAP定理："></a>CAP定理：</h3><p>一个分布式系统不可能在满足分区容错性（P）的情况下同时满足一致性（C）和可用性（A）。在此ZooKeeper保证的是CP，ZooKeeper不能保证每次服务请求的可用性，在极端环境下，ZooKeeper可能会丢弃一些请求，消费者程序需要重新请求才能获得结果。另外在进行leader选举时集群都是不可用，所以说，ZooKeeper不能保证服务可用性。</p>
 <h3 id="BASE理论"><a href="#BASE理论" class="headerlink" title="BASE理论"></a>BASE理论</h3><p>BASE理论是基本可用，软状态，最终一致性三个短语的缩写。BASE理论是对CAP中一致性和可用性（CA）权衡的结果，其来源于对大规模互联网系统分布式实践的总结，是基于CAP定理逐步演化而来的，它大大降低了我们对系统的要求。</p>
 <ol>
 <li>基本可用：基本可用是指分布式系统在出现不可预知故障的时候，允许损失部分可用性。但是，这绝不等价于系统不可用。比如正常情况下，一个在线搜索引擎需要在0.5秒之内返回给用户相应的查询结果，但由于出现故障，查询结果的响应时间增加了1~2秒。</li>
@@ -923,18 +930,18 @@ WIDGET = {
 <li>update语句在更新的同时加上一个条件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">quantity &#x3D; select quantity from products WHERE id&#x3D;3;</span><br><span class="line">update products set quantity &#x3D; ($quantity-1) WHERE id&#x3D;3 and queantity &#x3D; $quantity;</span><br></pre></td></tr></table></figure></li>
 </ol>
 
-      </div>
-      
-        <div class="prev-or-next">
-          <div class="post-foot-prev">
+            </div>
             
-              <a href="/2020/08/26/JUnit-5%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" target="_self">
-                <i class="iconfont icon-chevronleft"></i>
-                <span>PREV: JUnit 5单元测试</span>
-              </a>
-            
-          </div>
-		  <!--
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                            <a href="/2020/08/26/JUnit-5%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" target="_self">
+                                <i class="iconfont icon-chevronleft"></i>
+                                <span>PREV: JUnit 5单元测试</span>
+                            </a>
+                        
+                    </div>
+                    <!--
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
@@ -971,18 +978,18 @@ WIDGET = {
               
           </div>
 		  -->
-          <div class="post-foot-prev">
+                    <div class="post-foot-prev">
+                        
+                            <a href="/2020/08/22/cheatsheet/" target="_self">
+                                <span>NEXT: cheatsheet（持续更新⏳）</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
             
-              <a href="/2020/08/22/cheatsheet/" target="_self">
-                <span>NEXT: cheatsheet（持续更新⏳）</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
-            
-          </div>
         </div>
-      
-    </div>
-    
+        
   <div class="post-catalog" id="catalog">
     <div class="title">目录</div>
     <div class="catalog-content">
@@ -996,12 +1003,12 @@ WIDGET = {
 
 
 
-	<!--
+        <!--
     
 	-->
-	
-      <div class="comments-container">
         
+            <div class="comments-container">
+                
   <div id="giteement-ctn"></div>
   
     <!-- <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/wd-discuss.css"> -->
@@ -1024,9 +1031,9 @@ WIDGET = {
   giteement.render('giteement-ctn')
   </script>
 
-      </div>
-   
-  </div>
+            </div>
+        
+    </div>
 
 
         <div class="footer">

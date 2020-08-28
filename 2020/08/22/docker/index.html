@@ -165,61 +165,68 @@ WIDGET = {
 
 
 
-  
 
-  
 
-  
 
-  
-  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
-  <div class="container post-details" id="post-details">
-    <div class="post-content">
-      <div class="post-title">docker</div>
-      <div class="post-attach">
+
+
+
+
+    <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+    <div class="container post-details" id="post-details">
+        <div class="post-content">
+            <div class="post-title">docker</div>
+            <div class="post-attach">
         <span class="post-pubtime">
-          <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
-          2020-08-22
+          <i class="iconfont icon-updatetime" title="更新日期 | updatetime"></i>
+          2020-08-22 11:51
         </span>
-		
-        
-              <span class="post-categories">
-                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+		<span class="post-pubtime">
+          <i class="iconfont icon-edit" title="文章字数 | word_count"></i>字数：
+             <span class="post-count">853</span>
+        </span>
+
                 
-                <span class="span--category">
+                    <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                        
+                            <span class="span--category">
                   <a href="/categories/Tutorial/" title="查看 Tutorial 分类">
                     <b>#</b> Tutorial
                   </a>
                 </span>
+                        
+                    </span>
                 
-              </span>
-          
-              <span class="post-tags">
+                    <span class="post-tags">
                 <i class="iconfont icon-tags" title="标签 | tags"></i>
-                
-                <span class="span--tag">
+                        
+                            <span class="span--tag">
                   <a href="/tags/DevOps/" title="查看 运维 标签">
                     <b>#</b> 运维
                   </a>
                 </span>
-                
-                <span class="span--tag">
+                        
+                            <span class="span--tag">
                   <a href="/tags/container/" title="查看 容器 标签">
                     <b>#</b> 容器
                   </a>
                 </span>
+                        
+                    </span>
                 
-              </span>
-          
-		
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv"  class="post-readNum">
-              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+                
+                    <!-- 不蒜子统计 -->
+                    <span id="busuanzi_container_page_pv" class="post-readNum">
+              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"><i
+                                    class="fa fa-spinner fa-spin"></i></span>
         </span>
-
-      </div>
-      <div class="markdown-body">
-        <h1 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h1><blockquote>
+                
+            </div>
+	
+			
+            <div class="markdown-body">
+                <h1 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h1><blockquote>
 <p><strong>Docker</strong> 是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%8E%9F%E5%A7%8B%E7%A2%BC">开放源代码</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94">软件</a>，是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%B9%B3%E8%87%BA">开放平台</a>，用于开发应用、交付（shipping）应用、运行应用。 Docker允许用户将基础设施（Infrastructure）中的应用单独分割出来，形成更小的颗粒（容器），从而提高交付软件的速度。</p>
 <p><strong>Docker容器</strong>与虚拟机类似，但二者在原理上不同。容器是将<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">操作系统层虚拟化</a>，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。 容器更多的用于表示 软件的一个标准化单元。由于容器的标准化，因此它可以无视基础设施（Infrastructure）的差异，部署到任何一个地方。另外，Docker也为容器提供更强的业界的隔离兼容。</p>
 <p><strong>Docker</strong> 利用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Linux%E6%A0%B8%E5%BF%83">Linux核心</a>中的资源分离机制，例如<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Cgroups">cgroups</a>，以及Linux核心<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=Linux%E5%91%BD%E5%90%8D%E7%A9%BA%E9%96%93&action=edit&redlink=1">名字空间</a>（namespaces），来创建独立的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">容器</a>（containers）。这可以在单一Linux实体下运作，避免引导一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E6%A9%9F%E5%99%A8">虚拟机</a>造成的额外负担。Linux核心对名字空间的支持完全隔离了工作环境中应用程序的视野，包括行程树、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">网络</a>、用户ID与挂载文件系统，而核心的cgroup提供资源隔离，包括<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CPU">CPU</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E8%85%A6%E8%A8%98%E6%86%B6%E9%AB%94">存储器</a>、block I/O与网络。从0.9版本起，Dockers在使用抽象虚拟是经由<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Libvirt">libvirt</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/LXC">LXC</a>与systemd - nspawn提供界面的基础上，开始包括libcontainer库做为以自己的方式开始直接使用由Linux核心提供的虚拟化的设施，</p>
@@ -268,18 +275,18 @@ WIDGET = {
 <h2 id="查看容器进程"><a href="#查看容器进程" class="headerlink" title="查看容器进程"></a>查看容器进程</h2><p>使用<code>docker top</code>命令可以查看容器中正在运行的进程，首先确保容器已经启动。</p>
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819102409989.png" alt="image-20200819102409989"></p>
 
-      </div>
-      
-        <div class="prev-or-next">
-          <div class="post-foot-prev">
+            </div>
             
-              <a href="/2020/08/22/cheatsheet/" target="_self">
-                <i class="iconfont icon-chevronleft"></i>
-                <span>PREV: cheatsheet（持续更新⏳）</span>
-              </a>
-            
-          </div>
-		  <!--
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                            <a href="/2020/08/22/cheatsheet/" target="_self">
+                                <i class="iconfont icon-chevronleft"></i>
+                                <span>PREV: cheatsheet（持续更新⏳）</span>
+                            </a>
+                        
+                    </div>
+                    <!--
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
@@ -316,18 +323,18 @@ WIDGET = {
               
           </div>
 		  -->
-          <div class="post-foot-prev">
+                    <div class="post-foot-prev">
+                        
+                            <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/" target="_self">
+                                <span>NEXT: CentOS7安装mysql</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
             
-              <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/" target="_self">
-                <span>NEXT: CentOS7安装mysql</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
-            
-          </div>
         </div>
-      
-    </div>
-    
+        
   <div class="post-catalog" id="catalog">
     <div class="title">目录</div>
     <div class="catalog-content">
@@ -341,12 +348,12 @@ WIDGET = {
 
 
 
-	<!--
+        <!--
     
 	-->
-	
-      <div class="comments-container">
         
+            <div class="comments-container">
+                
   <div id="giteement-ctn"></div>
   
     <!-- <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/wd-discuss.css"> -->
@@ -369,9 +376,9 @@ WIDGET = {
   giteement.render('giteement-ctn')
   </script>
 
-      </div>
-   
-  </div>
+            </div>
+        
+    </div>
 
 
         <div class="footer">

@@ -616,6 +616,7 @@
   display: block;
   width: 100%;
   overflow: auto;
+  background-color: #2d2d2d;
 }
 
 .markdown-body table th {

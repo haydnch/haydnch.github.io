@@ -165,55 +165,62 @@ WIDGET = {
 
 
 
-  
 
-  
 
-  
 
-  
-  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
-  <div class="container post-details" id="post-details">
-    <div class="post-content">
-      <div class="post-title">cheatsheet（持续更新⏳）</div>
-      <div class="post-attach">
+
+
+
+
+    <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+    <div class="container post-details" id="post-details">
+        <div class="post-content">
+            <div class="post-title">cheatsheet（持续更新⏳）</div>
+            <div class="post-attach">
         <span class="post-pubtime">
-          <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
-          2020-08-22
+          <i class="iconfont icon-updatetime" title="更新日期 | updatetime"></i>
+          2020-08-22 20:19
         </span>
-		
-        
-              <span class="post-categories">
-                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+		<span class="post-pubtime">
+          <i class="iconfont icon-edit" title="文章字数 | word_count"></i>字数：
+             <span class="post-count">1.2k</span>
+        </span>
+
                 
-                <span class="span--category">
+                    <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                        
+                            <span class="span--category">
                   <a href="/categories/Note/" title="查看 Note 分类">
                     <b>#</b> Note
                   </a>
                 </span>
+                        
+                    </span>
                 
-              </span>
-          
-              <span class="post-tags">
+                    <span class="post-tags">
                 <i class="iconfont icon-tags" title="标签 | tags"></i>
-                
-                <span class="span--tag">
+                        
+                            <span class="span--tag">
                   <a href="/tags/git/" title="查看 git 标签">
                     <b>#</b> git
                   </a>
                 </span>
+                        
+                    </span>
                 
-              </span>
-          
-		
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv"  class="post-readNum">
-              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+                
+                    <!-- 不蒜子统计 -->
+                    <span id="busuanzi_container_page_pv" class="post-readNum">
+              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"><i
+                                    class="fa fa-spinner fa-spin"></i></span>
         </span>
-
-      </div>
-      <div class="markdown-body">
-        <h2 id="python3-7创建虚拟环境"><a href="#python3-7创建虚拟环境" class="headerlink" title="python3.7创建虚拟环境"></a>python3.7创建虚拟环境</h2><blockquote>
+                
+            </div>
+	
+			
+            <div class="markdown-body">
+                <h2 id="python3-7创建虚拟环境"><a href="#python3-7创建虚拟环境" class="headerlink" title="python3.7创建虚拟环境"></a>python3.7创建虚拟环境</h2><blockquote>
 <p> 用于创建和管理虚拟环境的模块称为 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3.7/library/venv.html#module-venv"><code>venv</code></a>。<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3.7/library/venv.html#module-venv"><code>venv</code></a> 通常会安装你可用的最新版本的 Python。如果您的系统上有多个版本的Python，您可以通过运行 <code>python3</code> (python)或您想要的任何版本来选择特定的Python版本。</p>
 <p>要创建虚拟环境，请确定要放置它的目录，并将 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3.7/library/venv.html#module-venv"><code>venv</code></a> 模块作为脚本运行目录路径: </p>
 </blockquote>
@@ -227,6 +234,13 @@ WIDGET = {
 <p>在这里，自己创建了FlaskProject目录下的虚拟环境，如下图所示。</p>
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/enter.png"></p>
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/venv.png"></p>
+<h2 id="内置的图形化git"><a href="#内置的图形化git" class="headerlink" title="内置的图形化git"></a>内置的图形化git</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitk</span><br></pre></td></tr></table></figure>
+
+<h2 id="交互式添加"><a href="#交互式添加" class="headerlink" title="交互式添加"></a>交互式添加</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add -i</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200828110857886.png" alt="image-20200828110857886"></p>
+<h2 id="添加文件到缓存区（staged）"><a href="#添加文件到缓存区（staged）" class="headerlink" title="添加文件到缓存区（staged）"></a>添加文件到缓存区（staged）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add *</span><br></pre></td></tr></table></figure>
+
 <h2 id="比较工作区与暂存区"><a href="#比较工作区与暂存区" class="headerlink" title="比较工作区与暂存区"></a>比较工作区与暂存区</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff 不加参数即默认比较工作区与暂存区</span><br></pre></td></tr></table></figure>
 
 <h2 id="比较暂存区与最新本地版本库（本地库中最近一次commit的内容）"><a href="#比较暂存区与最新本地版本库（本地库中最近一次commit的内容）" class="headerlink" title="比较暂存区与最新本地版本库（本地库中最近一次commit的内容）"></a>比较暂存区与最新本地版本库（本地库中最近一次commit的内容）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git diff --cached [&lt;path&gt;...]</span><br></pre></td></tr></table></figure>
@@ -240,6 +254,8 @@ WIDGET = {
 <h2 id="第一次推送到远程仓库"><a href="#第一次推送到远程仓库" class="headerlink" title="第一次推送到远程仓库"></a>第一次推送到远程仓库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
 <p>上面命令将本地的master分支推送到origin远程仓库，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。</p>
+<h2 id="给某个提交打标签"><a href="#给某个提交打标签" class="headerlink" title="给某个提交打标签"></a>给某个提交打标签</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git tag v1.0 <span class="string">&#x27;commit id&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="推送一个本地标签到远程仓库"><a href="#推送一个本地标签到远程仓库" class="headerlink" title="推送一个本地标签到远程仓库"></a>推送一个本地标签到远程仓库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin &lt;tagname&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="推送全部未推送标签"><a href="#推送全部未推送标签" class="headerlink" title="推送全部未推送标签"></a>推送全部未推送标签</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
@@ -308,18 +324,18 @@ WIDGET = {
 </li>
 </ul>
 
-      </div>
-      
-        <div class="prev-or-next">
-          <div class="post-foot-prev">
+            </div>
             
-              <a href="/2020/08/23/Rocket/" target="_self">
-                <i class="iconfont icon-chevronleft"></i>
-                <span>PREV: 面试问题整理</span>
-              </a>
-            
-          </div>
-		  <!--
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                            <a href="/2020/08/23/Rocket/" target="_self">
+                                <i class="iconfont icon-chevronleft"></i>
+                                <span>PREV: 面试问题整理</span>
+                            </a>
+                        
+                    </div>
+                    <!--
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
@@ -350,22 +366,22 @@ WIDGET = {
               
           </div>
 		  -->
-          <div class="post-foot-prev">
+                    <div class="post-foot-prev">
+                        
+                            <a href="/2020/08/22/docker/" target="_self">
+                                <span>NEXT: docker</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
             
-              <a href="/2020/08/22/docker/" target="_self">
-                <span>NEXT: docker</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
-            
-          </div>
         </div>
-      
-    </div>
-    
+        
   <div class="post-catalog" id="catalog">
     <div class="title">目录</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#python3-7%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-text">python3.7创建虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%8E%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="toc-text">比较工作区与暂存区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%9A%82%E5%AD%98%E5%8C%BA%E4%B8%8E%E6%9C%80%E6%96%B0%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E5%BA%93%EF%BC%88%E6%9C%AC%E5%9C%B0%E5%BA%93%E4%B8%AD%E6%9C%80%E8%BF%91%E4%B8%80%E6%AC%A1commit%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%89"><span class="toc-text">比较暂存区与最新本地版本库（本地库中最近一次commit的内容）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%8E%E6%8C%87%E5%AE%9Acommit-id%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-text">比较工作区与指定commit-id的差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%9A%82%E5%AD%98%E5%8C%BA%E4%B8%8E%E6%8C%87%E5%AE%9Acommit-id%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-text">比较暂存区与指定commit-id的差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AAcommit-id%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-text">比较两个commit-id之间的差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">第一次推送到远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E6%A0%87%E7%AD%BE%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">推送一个本地标签到远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E5%85%A8%E9%83%A8%E6%9C%AA%E6%8E%A8%E9%80%81%E6%A0%87%E7%AD%BE"><span class="toc-text">推送全部未推送标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E6%A0%87%E7%AD%BE"><span class="toc-text">删除一个本地标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E8%BF%9C%E7%A8%8B%E6%A0%87%E7%AD%BE"><span class="toc-text">删除一个远程标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A2%E5%BC%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%BF%AE%E6%94%B9"><span class="toc-text">丢弃工作区修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E6%9A%82%E5%AD%98%E5%8C%BA%E4%BF%AE%E6%94%B9"><span class="toc-text">撤销暂存区修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E7%89%88%E6%9C%AC%E5%BA%93%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-text">从版本库删除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="toc-text">版本回退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="toc-text">创建+切换分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E6%9F%90%E5%88%86%E6%94%AF%E5%88%B0%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF"><span class="toc-text">合并某分支到当前分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%88%AB%E5%90%8D"><span class="toc-text">配置别名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8redis"><span class="toc-text">启动redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">启动服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%97%AD%E6%9C%8D%E5%8A%A1"><span class="toc-text">关闭服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">redis数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E8%AE%BE%E7%BD%AE%E6%B3%A8%E9%87%8A%E6%A8%A1%E7%89%88"><span class="toc-text">IDEA设置注释模版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-Builder%E6%B3%A8%E8%A7%A3"><span class="toc-text">关于@Builder注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD"><span class="toc-text">vue无法加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm%E8%AE%BE%E7%BD%AE%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F"><span class="toc-text">npm设置淘宝镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="toc-text">一些默认端口号</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#python3-7%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="toc-text">python3.7创建虚拟环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E7%BD%AE%E7%9A%84%E5%9B%BE%E5%BD%A2%E5%8C%96git"><span class="toc-text">内置的图形化git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%A4%E4%BA%92%E5%BC%8F%E6%B7%BB%E5%8A%A0"><span class="toc-text">交互式添加</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6%E5%88%B0%E7%BC%93%E5%AD%98%E5%8C%BA%EF%BC%88staged%EF%BC%89"><span class="toc-text">添加文件到缓存区（staged）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%8E%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="toc-text">比较工作区与暂存区</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%9A%82%E5%AD%98%E5%8C%BA%E4%B8%8E%E6%9C%80%E6%96%B0%E6%9C%AC%E5%9C%B0%E7%89%88%E6%9C%AC%E5%BA%93%EF%BC%88%E6%9C%AC%E5%9C%B0%E5%BA%93%E4%B8%AD%E6%9C%80%E8%BF%91%E4%B8%80%E6%AC%A1commit%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%89"><span class="toc-text">比较暂存区与最新本地版本库（本地库中最近一次commit的内容）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%8E%E6%8C%87%E5%AE%9Acommit-id%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-text">比较工作区与指定commit-id的差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E6%9A%82%E5%AD%98%E5%8C%BA%E4%B8%8E%E6%8C%87%E5%AE%9Acommit-id%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-text">比较暂存区与指定commit-id的差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E4%B8%A4%E4%B8%AAcommit-id%E4%B9%8B%E9%97%B4%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="toc-text">比较两个commit-id之间的差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">第一次推送到远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%99%E6%9F%90%E4%B8%AA%E6%8F%90%E4%BA%A4%E6%89%93%E6%A0%87%E7%AD%BE"><span class="toc-text">给某个提交打标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E6%A0%87%E7%AD%BE%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-text">推送一个本地标签到远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E9%80%81%E5%85%A8%E9%83%A8%E6%9C%AA%E6%8E%A8%E9%80%81%E6%A0%87%E7%AD%BE"><span class="toc-text">推送全部未推送标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E6%9C%AC%E5%9C%B0%E6%A0%87%E7%AD%BE"><span class="toc-text">删除一个本地标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%80%E4%B8%AA%E8%BF%9C%E7%A8%8B%E6%A0%87%E7%AD%BE"><span class="toc-text">删除一个远程标签</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A2%E5%BC%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%BF%AE%E6%94%B9"><span class="toc-text">丢弃工作区修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E6%9A%82%E5%AD%98%E5%8C%BA%E4%BF%AE%E6%94%B9"><span class="toc-text">撤销暂存区修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E7%89%88%E6%9C%AC%E5%BA%93%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="toc-text">从版本库删除文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="toc-text">版本回退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="toc-text">创建+切换分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%88%E5%B9%B6%E6%9F%90%E5%88%86%E6%94%AF%E5%88%B0%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF"><span class="toc-text">合并某分支到当前分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%88%AB%E5%90%8D"><span class="toc-text">配置别名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8redis"><span class="toc-text">启动redis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="toc-text">启动服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%97%AD%E6%9C%8D%E5%8A%A1"><span class="toc-text">关闭服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">redis数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDEA%E8%AE%BE%E7%BD%AE%E6%B3%A8%E9%87%8A%E6%A8%A1%E7%89%88"><span class="toc-text">IDEA设置注释模版</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B3%E4%BA%8E-Builder%E6%B3%A8%E8%A7%A3"><span class="toc-text">关于@Builder注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue%E6%97%A0%E6%B3%95%E5%8A%A0%E8%BD%BD"><span class="toc-text">vue无法加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#npm%E8%AE%BE%E7%BD%AE%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F"><span class="toc-text">npm设置淘宝镜像</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E9%BB%98%E8%AE%A4%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="toc-text">一些默认端口号</span></a></li></ol>
     </div>
   </div>
 
@@ -375,12 +391,12 @@ WIDGET = {
 
 
 
-	<!--
+        <!--
     
 	-->
-	
-      <div class="comments-container">
         
+            <div class="comments-container">
+                
   <div id="giteement-ctn"></div>
   
     <!-- <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/wd-discuss.css"> -->
@@ -403,9 +419,9 @@ WIDGET = {
   giteement.render('giteement-ctn')
   </script>
 
-      </div>
-   
-  </div>
+            </div>
+        
+    </div>
 
 
         <div class="footer">

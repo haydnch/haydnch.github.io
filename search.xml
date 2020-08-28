@@ -137,6 +137,13 @@
 <p>在这里，自己创建了FlaskProject目录下的虚拟环境，如下图所示。</p>
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/enter.png"></p>
 <p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/venv.png"></p>
+<h2 id="内置的图形化git"><a href="#内置的图形化git" class="headerlink" title="内置的图形化git"></a>内置的图形化git</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gitk</span><br></pre></td></tr></table></figure>
+
+<h2 id="交互式添加"><a href="#交互式添加" class="headerlink" title="交互式添加"></a>交互式添加</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add -i</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200828110857886.png" alt="image-20200828110857886"></p>
+<h2 id="添加文件到缓存区（staged）"><a href="#添加文件到缓存区（staged）" class="headerlink" title="添加文件到缓存区（staged）"></a>添加文件到缓存区（staged）</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add *</span><br></pre></td></tr></table></figure>
+
 <h2 id="比较工作区与暂存区"><a href="#比较工作区与暂存区" class="headerlink" title="比较工作区与暂存区"></a>比较工作区与暂存区</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git diff 不加参数即默认比较工作区与暂存区</span><br></pre></td></tr></table></figure>
 
 <h2 id="比较暂存区与最新本地版本库（本地库中最近一次commit的内容）"><a href="#比较暂存区与最新本地版本库（本地库中最近一次commit的内容）" class="headerlink" title="比较暂存区与最新本地版本库（本地库中最近一次commit的内容）"></a>比较暂存区与最新本地版本库（本地库中最近一次commit的内容）</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git diff --cached [&lt;path&gt;...]</span><br></pre></td></tr></table></figure>
@@ -150,6 +157,8 @@
 <h2 id="第一次推送到远程仓库"><a href="#第一次推送到远程仓库" class="headerlink" title="第一次推送到远程仓库"></a>第一次推送到远程仓库</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
 <p>上面命令将本地的master分支推送到origin远程仓库，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。</p>
+<h2 id="给某个提交打标签"><a href="#给某个提交打标签" class="headerlink" title="给某个提交打标签"></a>给某个提交打标签</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag v1.0 <span class="string">&#x27;commit id&#x27;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="推送一个本地标签到远程仓库"><a href="#推送一个本地标签到远程仓库" class="headerlink" title="推送一个本地标签到远程仓库"></a>推送一个本地标签到远程仓库</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin &lt;tagname&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="推送全部未推送标签"><a href="#推送全部未推送标签" class="headerlink" title="推送全部未推送标签"></a>推送全部未推送标签</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>

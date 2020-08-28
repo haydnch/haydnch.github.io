@@ -165,61 +165,68 @@ WIDGET = {
 
 
 
-  
 
-  
 
-  
 
-  
-  <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
-  <div class="container post-details" id="post-details">
-    <div class="post-content">
-      <div class="post-title">CentOS7安装mysql</div>
-      <div class="post-attach">
+
+
+
+
+    <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+    <div class="container post-details" id="post-details">
+        <div class="post-content">
+            <div class="post-title">CentOS7安装mysql</div>
+            <div class="post-attach">
         <span class="post-pubtime">
-          <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
-          2020-08-22
+          <i class="iconfont icon-updatetime" title="更新日期 | updatetime"></i>
+          2020-08-22 11:10
         </span>
-		
-        
-              <span class="post-categories">
-                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+		<span class="post-pubtime">
+          <i class="iconfont icon-edit" title="文章字数 | word_count"></i>字数：
+             <span class="post-count">873</span>
+        </span>
+
                 
-                <span class="span--category">
+                    <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                        
+                            <span class="span--category">
                   <a href="/categories/Tutorial/" title="查看 Tutorial 分类">
                     <b>#</b> Tutorial
                   </a>
                 </span>
+                        
+                    </span>
                 
-              </span>
-          
-              <span class="post-tags">
+                    <span class="post-tags">
                 <i class="iconfont icon-tags" title="标签 | tags"></i>
-                
-                <span class="span--tag">
+                        
+                            <span class="span--tag">
                   <a href="/tags/mysql/" title="查看 mysql 标签">
                     <b>#</b> mysql
                   </a>
                 </span>
-                
-                <span class="span--tag">
+                        
+                            <span class="span--tag">
                   <a href="/tags/ECS/" title="查看 ECS 标签">
                     <b>#</b> ECS
                   </a>
                 </span>
+                        
+                    </span>
                 
-              </span>
-          
-		
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv"  class="post-readNum">
-              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+                
+                    <!-- 不蒜子统计 -->
+                    <span id="busuanzi_container_page_pv" class="post-readNum">
+              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"><i
+                                    class="fa fa-spinner fa-spin"></i></span>
         </span>
-
-      </div>
-      <div class="markdown-body">
-        <p><strong><u>记录在阿里云ECS实例CentOS7.6 中安装Mysql数据库的步骤。</u></strong></p>
+                
+            </div>
+	
+			
+            <div class="markdown-body">
+                <p><strong><u>记录在阿里云ECS实例CentOS7.6 中安装Mysql数据库的步骤。</u></strong></p>
 <h1 id="1-删除MariaDB"><a href="#1-删除MariaDB" class="headerlink" title="1 删除MariaDB"></a>1 删除MariaDB</h1><p>Cent OS 7 的 yum 源中已经不再包含在 MySQL，而改用了 MariaDB。</p>
 <h2 id="1-1-查询Maria-DB是否已经安装"><a href="#1-1-查询Maria-DB是否已经安装" class="headerlink" title="1 .1 查询Maria DB是否已经安装"></a>1 .1 查询Maria DB是否已经安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep maria*</span><br></pre></td></tr></table></figure>
 
@@ -285,18 +292,18 @@ WIDGET = {
 <p><code>driver = com.mysql.cj.jdbc.Driver</code><br><code>url = jdbc:mysql://localhost:3306/yourdb?useSSL=false&amp;serverTimezone=UTC</code></p>
 <p>新版本的driverClass必须要加上 <strong>cj</strong>，url中<strong>useSSL</strong>和<strong>serverTimezone</strong>也必须有，否则会报错。</p>
 
-      </div>
-      
-        <div class="prev-or-next">
-          <div class="post-foot-prev">
+            </div>
             
-              <a href="/2020/08/22/docker/" target="_self">
-                <i class="iconfont icon-chevronleft"></i>
-                <span>PREV: docker</span>
-              </a>
-            
-          </div>
-		  <!--
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                            <a href="/2020/08/22/docker/" target="_self">
+                                <i class="iconfont icon-chevronleft"></i>
+                                <span>PREV: docker</span>
+                            </a>
+                        
+                    </div>
+                    <!--
           <div class="post-attach">
             <span class="post-pubtime">
               <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
@@ -333,18 +340,18 @@ WIDGET = {
               
           </div>
 		  -->
-          <div class="post-foot-prev">
+                    <div class="post-foot-prev">
+                        
+                            <a href="/2020/08/21/hello-world/" target="_self">
+                                <span>NEXT: Hello World</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
             
-              <a href="/2020/08/21/hello-world/" target="_self">
-                <span>NEXT: Hello World</span>
-                <i class="iconfont icon-chevronright"></i>
-              </a>
-            
-          </div>
         </div>
-      
-    </div>
-    
+        
   <div class="post-catalog" id="catalog">
     <div class="title">目录</div>
     <div class="catalog-content">
@@ -358,12 +365,12 @@ WIDGET = {
 
 
 
-	<!--
+        <!--
     
 	-->
-	
-      <div class="comments-container">
         
+            <div class="comments-container">
+                
   <div id="giteement-ctn"></div>
   
     <!-- <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/wd-discuss.css"> -->
@@ -386,9 +393,9 @@ WIDGET = {
   giteement.render('giteement-ctn')
   </script>
 
-      </div>
-   
-  </div>
+            </div>
+        
+    </div>
 
 
         <div class="footer">
