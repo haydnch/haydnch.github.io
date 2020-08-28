@@ -178,12 +178,12 @@ WIDGET = {
             <div class="post-title">面试问题整理</div>
             <div class="post-attach">
         <span class="post-pubtime">
-          <i class="iconfont icon-updatetime" title="更新日期 | updatetime"></i>
+          <i class="iconfont icon-updatetime" title="创建日期 | post_time"></i>
           2020-08-23 13:34
         </span>
 		<span class="post-pubtime">
-          <i class="iconfont icon-edit" title="文章字数 | word_count"></i>字数：
-             <span class="post-count">33k</span>
+          <i class="iconfont icon-edit" title="文章字数 | word_count"></i>
+             <span class="post-count">33k</span>字
         </span>
 
                 
@@ -218,12 +218,33 @@ WIDGET = {
                 
                     <!-- 不蒜子统计 -->
                     <span id="busuanzi_container_page_pv" class="post-readNum">
-              <i class="iconfont icon-eye"></i> 阅读量：<span id="busuanzi_value_page_pv"><i
-                                    class="fa fa-spinner fa-spin"></i></span>
+              <i class="iconfont icon-eye"></i>
+			    阅读量：<span id="busuanzi_value_page_pv">
+			  <i class="fa fa-spinner fa-spin"></i></span>
         </span>
                 
             </div>
-	
+	         
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                            <a href="/2020/08/26/JUnit-5%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" target="_self">
+                                <i class="iconfont icon-chevronleft"></i>
+                                <span>PREV: JUnit 5单元测试</span>
+                            </a>
+                        
+                    </div>
+             
+                    <div class="post-foot-prev">
+                        
+                            <a href="/2020/08/22/cheatsheet/" target="_self">
+                                <span>NEXT: cheatsheet（持续更新⏳）</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
 			
             <div class="markdown-body">
                 <h2 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h2><h3 id="CAP定理："><a href="#CAP定理：" class="headerlink" title="CAP定理："></a>CAP定理：</h3><p>一个分布式系统不可能在满足分区容错性（P）的情况下同时满足一致性（C）和可用性（A）。在此ZooKeeper保证的是CP，ZooKeeper不能保证每次服务请求的可用性，在极端环境下，ZooKeeper可能会丢弃一些请求，消费者程序需要重新请求才能获得结果。另外在进行leader选举时集群都是不可用，所以说，ZooKeeper不能保证服务可用性。</p>
@@ -941,43 +962,7 @@ WIDGET = {
                             </a>
                         
                     </div>
-                    <!--
-          <div class="post-attach">
-            <span class="post-pubtime">
-              <i class="iconfont icon-updatetime" title="更新时间 | updatetime"></i>
-              2020-08-23
-            </span>
-            
-                  <span class="post-categories">
-                    <i class="iconfont icon-bookmark" title="类别 | categories"></i>
-                    
-                    <span class="span--category">
-                      <a href="/categories/interview/" title="查看 面试 分类">
-                        <b>#</b> 面试
-                      </a>
-                    </span>
-                    
-                  </span>
-              
-                  <span class="post-tags">
-                    <i class="iconfont icon-tags" title="标签 | tags"></i>
-                    
-                    <span class="span--tag">
-                      <a href="/tags/javaBackEnd/" title="查看 Java后端 标签">
-                        <b>#</b> Java后端
-                      </a>
-                    </span>
-                    
-                    <span class="span--tag">
-                      <a href="/tags/Spring/" title="查看 Spring 标签">
-                        <b>#</b> Spring
-                      </a>
-                    </span>
-                    
-                  </span>
-              
-          </div>
-		  -->
+                   
                     <div class="post-foot-prev">
                         
                             <a href="/2020/08/22/cheatsheet/" target="_self">
