@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  
+<script src="/js/clicklove.js"></script>
+
+  
+  <meta charset="utf-8">
+  <meta name="haydn" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  <title>跳表（SkipList） | Haydn&#39;s Blog</title>
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	 
+  
+  
+   <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  
+  
+<script src="/js/yinghua.js"></script>
+
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.jpg">
+  
+  
+  
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  
+  <!-- 引入font-awesome字体 -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+ 
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176391873-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-176391873-1');
+    </script>
+  
+
+<meta name="generator" content="Hexo 5.0.2"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+
+  <div class = "music" >
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=350 height=86 
+	src="//music.163.com/outchain/player?type=2&id=316938&auto=0&height=66">
+  </iframe>
+  </div>
+  <div class="avatar">
+    <a href=""><img src="/images/bear.jpg" alt=""></a>
+    <div class="nickname">️🐬Haydn CH</div>
+	
+  </div>
+  <div class="poem">
+   <span id="jinrishici-sentence">正在加载今日诗词...</span> 
+    <!--
+	<div id="poem_sentence"></div>
+	<div id="poem_info"></div>
+	-->
+  </div>
+  <div id="he-plugin-simple"></div>
+<script>
+WIDGET = {
+  CONFIG: {
+    "modules": "01234",
+    "background": 5,
+    "tmpColor": "4A4A4A",
+    "tmpSize": 16,
+    "cityColor": "4A4A4A",
+    "citySize": 16,
+    "aqiSize": 16,
+    "weatherIconSize": 24,
+    "alertIconSize": 18,
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "fixed": "true",
+    "vertical": "middle",
+    "horizontal": "center",
+    "right": 10,
+    "top": "5",
+    "key": "1fd384bb1a5d4bb7922b269608451085"
+  }
+}
+</script>
+<script src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
+
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">友链</a>
+        </li>
+      
+        <li class="nav-item" data-path="/about/">
+          <a href="/about/">关于</a>
+        </li>
+      
+    </ul>
+	
+  </div>
+ 
+
+
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+	
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+
+
+
+
+
+
+
+
+    <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+    <div class="container post-details" id="post-details">
+        <div class="post-content">
+            <div class="post-title">跳表（SkipList）</div>
+            <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="创建日期 | post_time"></i>
+          2020-08-28 17:12
+        </span>
+		<span class="post-pubtime">
+          <i class="iconfont icon-edit" title="文章字数 | word_count"></i>
+             <span class="post-count">2k</span>字
+        </span>
+
+                
+                    <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                        
+                            <span class="span--category">
+                  <a href="/categories/Data-Structure/" title="查看 数据结构 分类">
+                    <b>#</b> 数据结构
+                  </a>
+                </span>
+                        
+                    </span>
+                
+                    <span class="post-tags">
+                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                        
+                            <span class="span--tag">
+                  <a href="/tags/%E8%B7%B3%E8%A1%A8/" title="查看 跳表 标签">
+                    <b>#</b> 跳表
+                  </a>
+                </span>
+                        
+                            <span class="span--tag">
+                  <a href="/tags/Java/" title="查看 Java 标签">
+                    <b>#</b> Java
+                  </a>
+                </span>
+                        
+                    </span>
+                
+                
+                    <!-- 不蒜子统计 -->
+                    <span id="busuanzi_container_page_pv" class="post-readNum">
+              <i class="iconfont icon-eye"></i>
+			    阅读量：<span id="busuanzi_value_page_pv">
+			  <i class="fa fa-spinner fa-spin"></i></span>
+        </span>
+                
+            </div>
+	         
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                    </div>
+             
+                    <div class="post-foot-prev">
+                        
+                            <a href="/2020/08/26/JUnit-5%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" target="_self">
+                                <span>NEXT: JUnit 5单元测试</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
+			
+            <div class="markdown-body">
+                <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><u>给定一个有序链表，如何根据元素的值进行高效率查找？</u></p>
+<p>如果是数组的话，可以用二分查找，因为数组可以直接用下标快速定位，而链表只能从头节点一个一个元素向后找。因此链表这种数据结构不适用于二分查找。</p>
+<p>但我们可以在链表的基础上做一个小小的升级。</p>
+<h2 id="带有索引的链表"><a href="#带有索引的链表" class="headerlink" title="带有索引的链表"></a>带有索引的链表</h2><h3 id="一层索引"><a href="#一层索引" class="headerlink" title="一层索引"></a>一层索引</h3><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0784(20200828-163749).PNG" alt="IMG_0784(20200828-163749)" style="zoom: 50%;" />
+
+<p>如图所示，在原始链表的基础上，我们增加了一个索引链表。原始链表的每两个结点，有一个结点也在索引链表当中。当我们想定位到结点20，不需要在长长的原始链表中一个一个的访问，而是首先访问索引链表：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0785(20200828-163752).PNG" alt="IMG_0785(20200828-163752)" style="zoom:50%;" />
+
+<p>在索引链表找到结点20之后，我们顺着索引链表的结点向下，找到原始链表的结点20：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0786(20200828-163755).PNG" alt="IMG_0786(20200828-163755)" style="zoom:50%;" />
+
+<p>由于索引链表的结点个数是原始链表的一半，查到结点所需的访问次数也相应少了一半。</p>
+<h3 id="两层索引"><a href="#两层索引" class="headerlink" title="两层索引"></a>两层索引</h3><p>链表的索引可以分成多个层次， 从而大大提升查找效率。</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0787.PNG" alt="IMG_0787" style="zoom:50%;" />
+
+<p>如图所示，基于原始链表的第一层索引，抽出了第二层更为稀疏的索引。结点数量是第一层索引的一半。这样的多层索引可以进一步提升查询效率。假如查找结点20， 我们演示一下查找过程：</p>
+<ul>
+<li><p>首先，从最上层的索引开始查找，找到该层中仅小于结点20的前置索引结点12：</p>
+<pre><code>          &lt;img src=&quot;https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0788.PNG&quot; alt=&quot;IMG_0788&quot; style=&quot;zoom:50%;&quot;/&gt;</code></pre>
+</li>
+<li><p>接下来，顺着结点12访问下一层索引，在该层中找到索引结点20：</p>
+</li>
+</ul>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0789.PNG" alt="IMG_0789" style="zoom:50%;" />
+
+<ul>
+<li><p>最后，再顺着第一层索引的结点20向下，就找到了原始链表的结点20：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0790.PNG" alt="IMG_0790" style="zoom:50%;" />
+
+</li>
+</ul>
+<p>在这个例子中，由于原始链表的结点数量较少，仅仅需要两层索引。如果链表的结点数量非常多，就可以建立更多的索引层，每一层索引的结点数量都是其下层索引结点数目的一半。</p>
+<blockquote>
+<p>假设原始链表有n个结点，那么索引的层级就是<strong>log<del>2</del>(n)-1</strong>，在每层的访问次数是常量，因此查找结点的平均时间复杂度是**O(logn)**。这比起线性依次访问结点的方式，效率明显提高。但相应地，这种基于链表的优化增加了额外的空间开销。假设原始链表有n个结点，那么各层索引的结点总数是：$n/2 + n/4 + n/8 + n/16 +…+ 2 = n$<br>即，优化之后的数据结构所占空间是原始链表的两倍。这是典型的以空间换时间的做法。</p>
+</blockquote>
+<h2 id="跳表"><a href="#跳表" class="headerlink" title="跳表"></a>跳表</h2><p>像这种基于链表改造的带有多层索引的数据结构，就叫做<code>跳表（SkipList）</code>。</p>
+<h3 id="插入结点"><a href="#插入结点" class="headerlink" title="插入结点"></a>插入结点</h3><p>假设我们要插入的结点是10，首先我们按照跳表查找结点的方法，找到待插入结点的前置结点（<strong>仅小于待插入结点</strong>）：<br>                    <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0791.PNG" alt="IMG_0791" style="zoom:50%;" /></p>
+<p>然后按照一般链表的插入方式，将结点10插入到结点9的下一个位置：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0792.PNG" alt="IMG_0792" style="zoom:50%;" />
+
+<p>随着原始链表的新结点越来越多，索引会渐渐变得不够用，因此索引结点也需要相应作出调整。</p>
+<p>让新插入的结点随机“晋升”成为索引结点。新结点晋升成功的几率是50%。</p>
+<p>假设我们插入的这个结点10晋升成功，那么将其作为索引结点，插入到第一层索引的对应位置，并且向下指向原始链表的结点10：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0793.PNG" alt="IMG_0793" style="zoom:50%;" />
+
+<p>新插入的结点在成功晋升后，仍然有机会继续向上一层晋升。再进行一次随机，若随机的结果是晋升失败，那么插入操作完成。若该节点连续晋升成功，到达最高层的话，如下图所示：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0794.PNG" alt="IMG_0794" style="zoom:50%;" />
+
+<p>这时候，我们直接让索引增加一层：<br>                    <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0795.PNG" alt="IMG_0795" style="zoom:50%;" />  </p>
+<h3 id="删除结点"><a href="#删除结点" class="headerlink" title="删除结点"></a>删除结点</h3><p>跳表删除结点的过程与插入相反。假设我们要从条表中删除结点10。</p>
+<p>首先按照查找结点的方法，找到待删除的结点：<br>                     <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0796.PNG" alt="IMG_0796" style="zoom:50%;" /></p>
+<p>然后按照一般链表的删除方式，把结点10 从原始链表删除：          </p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0797.PNG" alt="IMG_0797" style="zoom:50%;" />
+
+<p>显然不能仅仅删除这一层的结点，还需要顺藤摸瓜，把索引当中的对应结点也一一删除：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0798.PNG" alt="IMG_0798" style="zoom:50%;" />
+
+<p>从上面可以看出最上一层的结点被删完了，所以就把这一层删去：<br>                    <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0801.PNG" alt="IMG_0801" style="zoom:50%;" /></p>
+<p>最终的删除结果如下：<br>                      <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0799.PNG" alt="IMG_0799" style="zoom:50%;" /></p>
+<h2 id="程序中的跳表"><a href="#程序中的跳表" class="headerlink" title="程序中的跳表"></a>程序中的跳表</h2><p>以上为了方便展示思路，所画的跳表是简化了的跳表，和实际的代码实现有些出入，具体差别如下：</p>
+<ul>
+<li><p>程序中的跳表采用的是双向链表，无论前后结点还是上下结点，都各有两个指针相互指向彼此。</p>
+</li>
+<li><p>程序中跳表的每一层两个端点各有一个空结点，左侧的空结点是负无穷，右侧的空结点是正无穷。之所以这样设计，是为了方便代码实现。代码中的跳表如下图所示：</p>
+</li>
+</ul>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0800.PNG" alt="IMG_0800" style="zoom:50%;" />
+
+<details>
+    <summary>具体的代码实现</summary>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SkipList</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//链表结点类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> data;</span><br><span class="line">        <span class="comment">//跳表结点的前后和上下都有指针</span></span><br><span class="line">        <span class="keyword">public</span> Node up, down, left, right;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.data = data;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//结点“晋升”的概率</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> PROMOTE_RATE = <span class="number">0.5</span>;</span><br><span class="line">    <span class="keyword">private</span> Node head,tail;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> maxLevel;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SkipList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        head = <span class="keyword">new</span> Node(Integer.MIN_VALUE);</span><br><span class="line">        tail = <span class="keyword">new</span> Node(Integer.MAX_VALUE);</span><br><span class="line">        head.right = tail;</span><br><span class="line">        tail.left = head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//查找结点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">search</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        Node p= findNode(data);</span><br><span class="line">        <span class="keyword">if</span>(p.data == data)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;找到结点：&quot;</span> + data);</span><br><span class="line">            <span class="keyword">return</span> p;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;未找到结点：&quot;</span> + data);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//找到值对应的前置结点</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">findNode</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        Node node = head;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="keyword">while</span> (node.right.data!=Integer.MAX_VALUE &amp;&amp; node.right.data&lt;=data) &#123;</span><br><span class="line">                node = node.right;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (node.down == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            node = node.down;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//插入结点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        Node preNode= findNode(data);</span><br><span class="line">        <span class="comment">//如果data相同，直接返回</span></span><br><span class="line">        <span class="keyword">if</span> (preNode.data == data) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Node node=<span class="keyword">new</span> Node(data);</span><br><span class="line">        appendNode(preNode, node);</span><br><span class="line">        <span class="keyword">int</span> currentLevel=<span class="number">0</span>;</span><br><span class="line">        <span class="comment">//随机决定结点是否“晋升”</span></span><br><span class="line">        Random random = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">while</span> (random.nextDouble() &lt; PROMOTE_RATE) &#123;</span><br><span class="line">            <span class="comment">//如果当前层已经是最高层，需要增加一层</span></span><br><span class="line">            <span class="keyword">if</span> (currentLevel == maxLevel) &#123;</span><br><span class="line">                addLevel();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//找到上一层的前置节点</span></span><br><span class="line">            <span class="keyword">while</span> (preNode.up==<span class="keyword">null</span>) &#123;</span><br><span class="line">                preNode=preNode.left;</span><br><span class="line">            &#125;</span><br><span class="line">            preNode=preNode.up;</span><br><span class="line">            <span class="comment">//把“晋升”的新结点插入到上一层</span></span><br><span class="line">            Node upperNode = <span class="keyword">new</span> Node(data);</span><br><span class="line">            appendNode(preNode, upperNode);</span><br><span class="line">            upperNode.down = node;</span><br><span class="line">            node.up = upperNode;</span><br><span class="line">            node = upperNode;</span><br><span class="line">            currentLevel++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//在前置结点后面添加新结点</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">appendNode</span><span class="params">(Node preNode, Node newNode)</span></span>&#123;</span><br><span class="line">        newNode.left=preNode;</span><br><span class="line">        newNode.right=preNode.right;</span><br><span class="line">        preNode.right.left=newNode;</span><br><span class="line">        preNode.right=newNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//增加一层</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addLevel</span><span class="params">()</span></span>&#123;</span><br><span class="line">        maxLevel++;</span><br><span class="line">        Node p1=<span class="keyword">new</span> Node(Integer.MIN_VALUE);</span><br><span class="line">        Node p2=<span class="keyword">new</span> Node(Integer.MAX_VALUE);</span><br><span class="line">        p1.right=p2;</span><br><span class="line">        p2.left=p1;</span><br><span class="line">        p1.down=head;</span><br><span class="line">        head.up=p1;</span><br><span class="line">        p2.down=tail;</span><br><span class="line">        tail.up=p2;</span><br><span class="line">        head=p1;</span><br><span class="line">        tail=p2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除结点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        Node removedNode = search(data);</span><br><span class="line">        <span class="keyword">if</span>(removedNode == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> currentLevel=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (removedNode != <span class="keyword">null</span>)&#123;</span><br><span class="line">            removedNode.right.left = removedNode.left;</span><br><span class="line">            removedNode.left.right = removedNode.right;</span><br><span class="line">            <span class="comment">//如果不是最底层，且只有无穷小和无穷大结点，删除该层</span></span><br><span class="line">            <span class="keyword">if</span>(currentLevel != <span class="number">0</span> &amp;&amp; removedNode.left.data == Integer.MIN_VALUE &amp;&amp; removedNode.right.data == Integer.MAX_VALUE)&#123;</span><br><span class="line">                removeLevel(removedNode.left);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                currentLevel ++;</span><br><span class="line">            &#125;</span><br><span class="line">            removedNode = removedNode.up;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除一层</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">removeLevel</span><span class="params">(Node leftNode)</span></span>&#123;</span><br><span class="line">        Node rightNode = leftNode.right;</span><br><span class="line">        <span class="comment">//如果删除层是最高层</span></span><br><span class="line">        <span class="keyword">if</span>(leftNode.up == <span class="keyword">null</span>)&#123;</span><br><span class="line">            leftNode.down.up = <span class="keyword">null</span>;</span><br><span class="line">            rightNode.down.up = <span class="keyword">null</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            leftNode.up.down = leftNode.down;</span><br><span class="line">            leftNode.down.up = leftNode.up;</span><br><span class="line">            rightNode.up.down = rightNode.down;</span><br><span class="line">            rightNode.down.up = rightNode.up;</span><br><span class="line">        &#125;</span><br><span class="line">        maxLevel --;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//输出底层链表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Node node=head;</span><br><span class="line">        <span class="keyword">while</span> (node.down != <span class="keyword">null</span>) &#123;</span><br><span class="line">            node = node.down;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (node.right.data != Integer.MAX_VALUE) &#123;</span><br><span class="line">            System.out.print(node.right.data + <span class="string">&quot; &quot;</span>);</span><br><span class="line">            node = node.right;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SkipList list = <span class="keyword">new</span> SkipList();</span><br><span class="line">        list.insert(<span class="number">50</span>);</span><br><span class="line">        list.insert(<span class="number">15</span>);</span><br><span class="line">        list.insert(<span class="number">13</span>);</span><br><span class="line">        list.insert(<span class="number">20</span>);</span><br><span class="line">        list.insert(<span class="number">100</span>);</span><br><span class="line">        list.insert(<span class="number">75</span>);</span><br><span class="line">        list.insert(<span class="number">99</span>);</span><br><span class="line">        list.insert(<span class="number">76</span>);</span><br><span class="line">        list.insert(<span class="number">83</span>);</span><br><span class="line">        list.insert(<span class="number">65</span>);</span><br><span class="line">        list.printList();</span><br><span class="line">        list.search(<span class="number">50</span>);</span><br><span class="line">        list.remove(<span class="number">50</span>);</span><br><span class="line">        list.search(<span class="number">50</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+
+
+            </div>
+            
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                    </div>
+                   
+                    <div class="post-foot-prev">
+                        
+                            <a href="/2020/08/26/JUnit-5%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/" target="_self">
+                                <span>NEXT: JUnit 5单元测试</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
+        </div>
+        
+  <div class="post-catalog" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%A6%E6%9C%89%E7%B4%A2%E5%BC%95%E7%9A%84%E9%93%BE%E8%A1%A8"><span class="toc-text">带有索引的链表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%B1%82%E7%B4%A2%E5%BC%95"><span class="toc-text">一层索引</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E5%B1%82%E7%B4%A2%E5%BC%95"><span class="toc-text">两层索引</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B7%B3%E8%A1%A8"><span class="toc-text">跳表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E7%BB%93%E7%82%B9"><span class="toc-text">插入结点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%BB%93%E7%82%B9"><span class="toc-text">删除结点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E4%B8%AD%E7%9A%84%E8%B7%B3%E8%A1%A8"><span class="toc-text">程序中的跳表</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+        <!--
+    
+	-->
+        
+            <div class="comments-container">
+                
+  <div id="giteement-ctn"></div>
+  
+    <!-- <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/wd-discuss.css"> -->
+    <!-- <script src="https://giteement.oss-cn-beijing.aliyuncs.com/discuss_hexo.js"></script> -->
+    <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/default.css">
+    <script src="https://giteement.oss-cn-beijing.aliyuncs.com/giteement.browser.js"></script>
+  
+  <script>
+  var giteement = new Giteement({
+    id: '20200828171222',
+    owner: 'haydnch',
+    repo: 'haydnch',
+    backcall_uri: 'https://haydnch.gitee.io/',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: 'd926679348e52f04cd3ed750aeb5c551e2160731e8824fc9575edfe29928f837',
+      client_secret: '67d0c535f28f2fadd81c2cfdde6019c7a0320fac174290b42e9209a94a256860'
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
+
+            </div>
+        
+    </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" target="_blank" rel="noopener" href="https://github.com/haydnch/haydnch.github.io">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="twitter" href="">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微信" href="/about/">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微博" target="_blank" rel="noopener" href="https://weibo.com/574422066/">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+  
+    <div class="footer-more">
+      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020 | Powered by Hexo</a>
+    </div>
+  
+ 
+ 
+	 <div class="visit">
+        <!-- 不蒜子统计 -->
+		<span id="busuanzi_container_site_uv">
+                💚共有<span id="busuanzi_value_site_uv"></span>位访客
+        </span>
+        <span id="busuanzi_container_site_pv">
+                访问了<span id="busuanzi_value_site_pv"></span>次💙
+        
+        
+	</div>
+     
+	 
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        <input type="text" class="search-input" id="search-input" placeholder="搜索你想查找的文章...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+	var searchOverlayArea = document.querySelector(".search-overlay")
+	
+    inputArea.onclick = function(){ 
+	  getSearchFile(); 
+	  this.onclick = null 
+	}		    
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+  
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+  
+    function blurSearchContent(e) {
+	  if (e.target === searchOverlayArea) {
+    	      
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+  </script>
+  
+  
+<script src="/js/search.js"></script>
+
+
+
+
+    </div>
+	
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":200,"height":350,"hOffset":40,"vOffset":-65},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"dialog":{"enable":true,"hitokoto":true},"log":false});</script></body>
+</html>
