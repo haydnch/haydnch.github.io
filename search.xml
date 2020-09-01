@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>IDEA注释模板</title>
+    <url>/2020/09/01/IDEA%E6%B3%A8%E9%87%8A%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<h2 id="类（接口）注释"><a href="#类（接口）注释" class="headerlink" title="类（接口）注释"></a>类（接口）注释</h2><p><strong>新建类或者接口的时候会初始化注释模板。</strong></p>
+<p>设置路径：<code>IntelliJ IDEA -&gt; Preferences -&gt; 编辑器 -&gt; File and code Templates -&gt; Class/Interface</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">  *@ClassName $&#123;NAME&#125;</span><br><span class="line">  *@Author $&#123;USER&#125;</span><br><span class="line">  *@Description TODO </span><br><span class="line">  *@Date $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">  **&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-01%E4%B8%8B%E5%8D%887.44.35.png" alt="截屏2020-09-01下午7.44.35"></p>
+<h2 id="方法注释"><a href="#方法注释" class="headerlink" title="方法注释"></a>方法注释</h2><p><strong>新建一个方法的时候，在方法名上方按 <u>/ * + 回车</u> 生成这个方法的注释。</strong></p>
+<p>设置路径：<code>Preferences -&gt; 编辑器 -&gt; 活动模板</code></p>
+<ol>
+<li><p>通过右边+号新建一个Template Group，名称自定。</p>
+</li>
+<li><p>选定这个新建模板组，添加Live Template，<strong>名称为 *</strong>。</p>
+</li>
+<li><p>在模板文本添加：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*</span><br><span class="line"> * @Author $user$</span><br><span class="line"> * @Description TODO $end$</span><br><span class="line"> * @Date $date$ $time$</span><br><span class="line">$param$</span><br><span class="line"> * @return $return$</span><br><span class="line"> **&#x2F;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<ol start="4">
+<li><p>设置应用上下文为java，选项展开设置为回车。</p>
+</li>
+<li><p>编辑变量。user、date、time的表达式选为内置。$param$按行显示每个参数，$return$显示方法返回类型（不显示全称）。</p>
+<p><strong>$param$表达式</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">groovyScript(&quot;def result&#x3D;&#39;&#39;; def params&#x3D;\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;,&#39;).toList(); for(i &#x3D; 0; i &lt; params.size(); i++) &#123;result+&#x3D;&#39; * @param &#39; + params[i] + ((i &lt; params.size() - 1) ? &#39;\\n&#39;:&#39;&#39;)&#125;;  return result&quot;, methodParameters())()</span><br></pre></td></tr></table></figure>
+
+<p><strong>$return$表达式:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">groovyScript(&quot;def result&#x3D;&#39;&#39;;  def params&#x3D;\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;&lt;&#39;).toList(); for(i &#x3D; 0; i &lt; params.size(); i++) &#123;if(i!&#x3D;0)&#123;result+&#x3D;&#39;&lt;&#39;;&#125;;  def p1&#x3D;params[i].split(&#39;,&#39;).toList();  for(i2 &#x3D; 0; i2 &lt; p1.size(); i2++)  &#123; def p2&#x3D;p1[i2].split(&#39;\\\\.&#39;).toList();  result+&#x3D;p2[p2.size()-1]; if(i2!&#x3D;p1.size()-1)&#123;result+&#x3D;&#39;,&#39;&#125;  &#125; ; &#125;;  return result&quot;, methodReturnType())</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200901201651376.png" alt="image-20200901201651376"></p>
+]]></content>
+      <categories>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>IDEA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CentOS7安装mysql</title>
     <url>/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/</url>
     <content><![CDATA[<p><strong><u>记录在阿里云ECS实例CentOS7.6 中安装Mysql数据库的步骤。</u></strong></p>
@@ -1114,49 +1157,6 @@
       <tags>
         <tag>Java后端</tag>
         <tag>Spring</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IDEA注释模板</title>
-    <url>/2020/09/01/IDEA%E6%B3%A8%E9%87%8A%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<h2 id="类（接口）注释"><a href="#类（接口）注释" class="headerlink" title="类（接口）注释"></a>类（接口）注释</h2><p><strong>新建类或者接口的时候会初始化注释模板。</strong></p>
-<p>设置路径：<code>IntelliJ IDEA -&gt; Preferences -&gt; 编辑器 -&gt; File and code Templates -&gt; Class/Interface</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">  *@ClassName $&#123;NAME&#125;</span><br><span class="line">  *@Author $&#123;USER&#125;</span><br><span class="line">  *@Description TODO </span><br><span class="line">  *@Date $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">  **&#x2F;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-01%E4%B8%8B%E5%8D%887.44.35.png" alt="截屏2020-09-01下午7.44.35"></p>
-<h2 id="方法注释"><a href="#方法注释" class="headerlink" title="方法注释"></a>方法注释</h2><p><strong>新建一个方法的时候，在方法名上方按 <u>/ * + 回车</u> 生成这个方法的注释。</strong></p>
-<p>设置路径：<code>Preferences -&gt; 编辑器 -&gt; 活动模板</code></p>
-<ol>
-<li><p>通过右边+号新建一个Template Group，名称自定。</p>
-</li>
-<li><p>选定这个新建模板组，添加Live Template，<strong>名称为 *</strong>。</p>
-</li>
-<li><p>在模板文本添加：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*</span><br><span class="line"> * @Author $user$</span><br><span class="line"> * @Description TODO $end$</span><br><span class="line"> * @Date $date$ $time$</span><br><span class="line">$param$</span><br><span class="line"> * @return $return$</span><br><span class="line"> **&#x2F;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<ol start="4">
-<li><p>设置应用上下文为java，选项展开设置为回车。</p>
-</li>
-<li><p>编辑变量。user、date、time的表达式选为内置。$param$按行显示每个参数，$return$显示方法返回类型（不显示全称）。</p>
-<p><strong>$param$表达式</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">groovyScript(&quot;def result&#x3D;&#39;&#39;; def params&#x3D;\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;,&#39;).toList(); for(i &#x3D; 0; i &lt; params.size(); i++) &#123;result+&#x3D;&#39; * @param &#39; + params[i] + ((i &lt; params.size() - 1) ? &#39;\\n&#39;:&#39;&#39;)&#125;;  return result&quot;, methodParameters())()</span><br></pre></td></tr></table></figure>
-
-<p><strong>$return$表达式:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">groovyScript(&quot;def result&#x3D;&#39;&#39;;  def params&#x3D;\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;&lt;&#39;).toList(); for(i &#x3D; 0; i &lt; params.size(); i++) &#123;if(i!&#x3D;0)&#123;result+&#x3D;&#39;&lt;&#39;;&#125;;  def p1&#x3D;params[i].split(&#39;,&#39;).toList();  for(i2 &#x3D; 0; i2 &lt; p1.size(); i2++)  &#123; def p2&#x3D;p1[i2].split(&#39;\\\\.&#39;).toList();  result+&#x3D;p2[p2.size()-1]; if(i2!&#x3D;p1.size()-1)&#123;result+&#x3D;&#39;,&#39;&#125;  &#125; ; &#125;;  return result&quot;, methodReturnType())</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200901201651376.png" alt="image-20200901201651376"></p>
-]]></content>
-      <categories>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>IDEA</tag>
       </tags>
   </entry>
 </search>
