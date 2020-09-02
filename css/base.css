@@ -306,7 +306,7 @@ a:hover {
   font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
 }
 
-.tag-details .time-m-d, .archives .time-m-d, .category-details .time-m-d {
+.tag-details .time-m-d, .archives .time-m-d, .category-details .time-m-d, .archive_mon {
   margin: 0 30px;
 }
 
