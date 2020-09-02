@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   
-  <title>归档: 2020/8 | Haydn&#39;s Blog</title>
+  <title>mac下激活Sublime Text3 | Haydn&#39;s Blog</title>
   
   
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	 
@@ -161,159 +161,162 @@ WIDGET = {
 
 	
       <div class="flex-container">
-        <!-- 归档页，展示本站所有文章，按照年月份降序归类，url形式：https://yoursite/archives/ -->
-<!-- 年份通常显示在这一年遍历到的第一篇文章前 月份通常显示在这个月遍历到的第一篇文章前 -->
-<!-- last lastMon: 按年份和月份把文章分组，之前遍历到的年份和月份 -->
-<!-- now nowMon: 目前遍历到的文章的发布年份和月份 -->
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
-<div class="container archives">
-	
-  <div class="post-list">
-    
-    <!-- <span>10</span> -->
-    <!-- 按照发布日期降序排列 -->
-    
 
-      
-        <div class="content-title">
-          <h2>
-            <span>2020</span>
-          </h2>
-        </div>
-        <div class="content-title">
-          <h3>
-            <span class="archive_mon">Sep</span>
-          </h3>
+
+
+
+
+
+
+
+
+    <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+    <div class="container post-details" id="post-details">
+        <div class="post-content">
+            <div class="post-title">mac下激活Sublime Text3</div>
+            <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="创建日期 | post_time"></i>
+          2020-09-02 17:08
+        </span>
+		<span class="post-pubtime">
+          <i class="iconfont icon-edit" title="文章字数 | word_count"></i>
+             <span class="post-count">147</span>字
+        </span>
+
+                
+                    <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                        
+                            <span class="span--category">
+                  <a href="/categories/Note/" title="查看 Note 分类">
+                    <b>#</b> Note
+                  </a>
+                </span>
+                        
+                    </span>
+                
+                    <span class="post-tags">
+                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                        
+                            <span class="span--tag">
+                  <a href="/tags/activate/" title="查看 软件破解 标签">
+                    <b>#</b> 软件破解
+                  </a>
+                </span>
+                        
+                    </span>
+                
+                
+                    <!-- 不蒜子统计 -->
+                    <span id="busuanzi_container_page_pv" class="post-readNum">
+              <i class="iconfont icon-eye"></i>
+			    阅读量：<span id="busuanzi_value_page_pv">
+			  <i class="fa fa-spinner fa-spin"></i></span>
+        </span>
+                
+            </div>
+	         
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                    </div>
+             
+                    <div class="post-foot-prev">
+                        
+                            <a href="/31b90220ef64/" target="_self">
+                                <span>NEXT: macos下Hexo部署问题</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
+			
+            <div class="markdown-body">
+                <p>​    这里记录MacOS下激活Sublime的方法。教程通过配置hosts来终止sublime官网的序列号校验的方式破解。</p>
+<ol>
+<li><p>终端中键入<code>sudo vim /etc/hosts</code>命令对hosts文件进行编辑。</p>
+</li>
+<li><p>在文件尾部插入以下语句后保存退出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">127.0.0.1		www.sublimetext.com</span><br><span class="line">127.0.0.1		license.sublimehq.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入软件后点击注册输入以下激活码后即可激活成功。</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–</p>
+<p>Member J2TeaM</p>
+<p>Single User License</p>
+<p>EA7E-1011316</p>
+<p>D7DA350E 1B8B0760 972F8B60 F3E64036</p>
+<p>B9B4E234 F356F38F 0AD1E3B7 0E9C5FAD</p>
+<p>FA0A2ABE 25F65BD8 D51458E5 3923CE80</p>
+<p>87428428 79079A01 AA69F319 A1AF29A4</p>
+<p>A684C2DC 0B1583D4 19CBD290 217618CD</p>
+<p>5653E0A0 BACE3948 BB2EE45E 422D2C87</p>
+<p>DD9AF44B 99C49590 D2DBDEE1 75860FD2</p>
+<p>8C8BB2AD B2ECE5A4 EFC08AF2 25A9B864</p>
+<p>—— END LICENSE ——</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-02%E4%B8%8B%E5%8D%885.12.15.png" alt="截屏2020-09-02下午5.12.15"></p>
+
+            </div>
+            
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                    </div>
+                   
+                    <div class="post-foot-prev">
+                        
+                            <a href="/31b90220ef64/" target="_self">
+                                <span>NEXT: macos下Hexo部署问题</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
         </div>
         
-      
-      <div class="post-item" title="mac下激活Sublime Text3">
-        <div class="time-m-d">09-02</div>
-        <div class="title">
-          <a href="/b35989291ea4/">
-            <span>mac下激活Sublime Text3</span>
-          </a>
-        </div>
-      </div>
-    
 
-      
-      <div class="post-item" title="macos下Hexo部署问题">
-        <div class="time-m-d">09-02</div>
-        <div class="title">
-          <a href="/31b90220ef64/">
-            <span>macos下Hexo部署问题</span>
-          </a>
-        </div>
-      </div>
+        <!--
     
+	-->
+        
+            <div class="comments-container">
+                
+  <div id="giteement-ctn"></div>
+  
+    <!-- <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/wd-discuss.css"> -->
+    <!-- <script src="https://giteement.oss-cn-beijing.aliyuncs.com/discuss_hexo.js"></script> -->
+    <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/default.css">
+    <script src="https://giteement.oss-cn-beijing.aliyuncs.com/giteement.browser.js"></script>
+  
+  <script>
+  var giteement = new Giteement({
+    id: '20200902170801',
+    owner: 'haydnch',
+    repo: 'haydnch',
+    backcall_uri: 'https://haydnch.gitee.io/',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: 'd926679348e52f04cd3ed750aeb5c551e2160731e8824fc9575edfe29928f837',
+      client_secret: '67d0c535f28f2fadd81c2cfdde6019c7a0320fac174290b42e9209a94a256860'
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
 
-      
-      <div class="post-item" title="IDEA注释模板">
-        <div class="time-m-d">09-01</div>
-        <div class="title">
-          <a href="/5bfc718ddec5/">
-            <span>IDEA注释模板</span>
-          </a>
-        </div>
-      </div>
-    
+            </div>
+        
+    </div>
 
-      
-        <div class="content-title">
-          <h3>
-            <span class="archive_mon">Aug</span>
-          </h3>
-        </div>
-      
-      <div class="post-item" title="跳表（SkipList）">
-        <div class="time-m-d">08-28</div>
-        <div class="title">
-          <a href="/1680d080339f/">
-            <span>跳表（SkipList）</span>
-          </a>
-        </div>
-      </div>
-    
-
-      
-      <div class="post-item" title="JUnit 5单元测试">
-        <div class="time-m-d">08-26</div>
-        <div class="title">
-          <a href="/243c5f6e7cba/">
-            <span>JUnit 5单元测试</span>
-          </a>
-        </div>
-      </div>
-    
-
-      
-      <div class="post-item" title="面试问题整理">
-        <div class="time-m-d">08-23</div>
-        <div class="title">
-          <a href="/01b03a42f7c4/">
-            <span>面试问题整理</span>
-          </a>
-        </div>
-      </div>
-    
-
-      
-      <div class="post-item" title="cheatsheet（持续更新⏳）">
-        <div class="time-m-d">08-22</div>
-        <div class="title">
-          <a href="/a07cebcd8369/">
-            <span>cheatsheet（持续更新⏳）</span>
-          </a>
-        </div>
-      </div>
-    
-
-      
-      <div class="post-item" title="docker">
-        <div class="time-m-d">08-22</div>
-        <div class="title">
-          <a href="/0ee4329c9535/">
-            <span>docker</span>
-          </a>
-        </div>
-      </div>
-    
-
-      
-      <div class="post-item" title="CentOS7安装mysql">
-        <div class="time-m-d">08-22</div>
-        <div class="title">
-          <a href="/8a773c1c5fba/">
-            <span>CentOS7安装mysql</span>
-          </a>
-        </div>
-      </div>
-    
-
-      
-        <div class="content-title">
-          <h2>
-            <span>2019</span>
-          </h2>
-        </div>
-        <div class="content-title">
-          <h3>
-            <span class="archive_mon">Dec</span>
-          </h3>
-        </div>
-      
-      <div class="post-item" title="Hello World">
-        <div class="time-m-d">12-22</div>
-        <div class="title">
-          <a href="/hello-world.html">
-            <span>Hello World</span>
-          </a>
-        </div>
-      </div>
-    
-  </div>
-</div>
 
         <div class="footer">
   <div class="social">

@@ -164,195 +164,6 @@
       </tags>
   </entry>
   <entry>
-    <title>docker</title>
-    <url>/0ee4329c9535/</url>
-    <content><![CDATA[<h1 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h1><blockquote>
-<p><strong>Docker</strong> 是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%8E%9F%E5%A7%8B%E7%A2%BC">开放源代码</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94">软件</a>，是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%B9%B3%E8%87%BA">开放平台</a>，用于开发应用、交付（shipping）应用、运行应用。 Docker允许用户将基础设施（Infrastructure）中的应用单独分割出来，形成更小的颗粒（容器），从而提高交付软件的速度。</p>
-<p><strong>Docker容器</strong>与虚拟机类似，但二者在原理上不同。容器是将<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">操作系统层虚拟化</a>，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。 容器更多的用于表示 软件的一个标准化单元。由于容器的标准化，因此它可以无视基础设施（Infrastructure）的差异，部署到任何一个地方。另外，Docker也为容器提供更强的业界的隔离兼容。</p>
-<p><strong>Docker</strong> 利用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Linux%E6%A0%B8%E5%BF%83">Linux核心</a>中的资源分离机制，例如<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Cgroups">cgroups</a>，以及Linux核心<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=Linux%E5%91%BD%E5%90%8D%E7%A9%BA%E9%96%93&action=edit&redlink=1">名字空间</a>（namespaces），来创建独立的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">容器</a>（containers）。这可以在单一Linux实体下运作，避免引导一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E6%A9%9F%E5%99%A8">虚拟机</a>造成的额外负担。Linux核心对名字空间的支持完全隔离了工作环境中应用程序的视野，包括行程树、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">网络</a>、用户ID与挂载文件系统，而核心的cgroup提供资源隔离，包括<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CPU">CPU</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E8%85%A6%E8%A8%98%E6%86%B6%E9%AB%94">存储器</a>、block I/O与网络。从0.9版本起，Dockers在使用抽象虚拟是经由<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Libvirt">libvirt</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/LXC">LXC</a>与systemd - nspawn提供界面的基础上，开始包括libcontainer库做为以自己的方式开始直接使用由Linux核心提供的虚拟化的设施，</p>
-</blockquote>
-<h1 id="docker应用场景"><a href="#docker应用场景" class="headerlink" title="docker应用场景"></a>docker应用场景</h1><ol>
-<li>加速本地开发</li>
-<li>自动打包和部署应用</li>
-<li>创建轻量、私有的PaaS环境</li>
-<li>自动化测试和持续集成/部署</li>
-<li>部署并扩展Web应用、数据库和后端服务器</li>
-<li>创建安全沙盒</li>
-<li>轻量级的桌面虚拟化</li>
-</ol>
-<h1 id="docker核心组件"><a href="#docker核心组件" class="headerlink" title="docker核心组件"></a>docker核心组件</h1><p>docker中有三大核心组件：</p>
-<ul>
-<li><p><strong>镜像</strong></p>
-<p> 镜像是一个只读的静态模版，它保存了容器需要的环境和应用的执行代码，可以将镜像看成是容器的代码，当代码运行起来之后，就成了容器。镜像和容器的关系也类似于程序和进程的关系。</p>
-</li>
-<li><p><strong>容器</strong></p>
-<p>容器是一个运行时环境，是镜像的一个运行状态。它是镜像执行的动态表现。</p>
-</li>
-<li><p><strong>库</strong></p>
-<p>库是一个特定的用户存储镜像的目录，一个用户可以建立多个库来保存自己的镜像。</p>
-</li>
-</ul>
-<h1 id="docker命令"><a href="#docker命令" class="headerlink" title="docker命令"></a>docker命令</h1><h2 id="查看容器"><a href="#查看容器" class="headerlink" title="查看容器"></a>查看容器</h2><p>启动docker后，使用<code>docker ps</code>命令可以查看当前正在运行的容器：</p>
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819095745723.png" alt="image-20200819095745723"></p>
-<p>上面这条命令是查看运行着的容器，若想查看所有容器，可使用<code>docker ps -a </code>命令。</p>
-<h2 id="创建并启动容器"><a href="#创建并启动容器" class="headerlink" title="创建并启动容器"></a>创建并启动容器</h2><ul>
-<li><p>nginx容器</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run --name nginx -d -p 8080:80 nginx</span><br></pre></td></tr></table></figure></li>
-<li><p>redis容器</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -itd --name redis -p 6379:6379 redis</span><br></pre></td></tr></table></figure>
-
-<p>-d参数表示容器后台运行；-it参数：i表示开发容器的标准输入（STDIN），t表示告诉dcker为容器创建一个命令行终端。</p>
-</li>
-</ul>
-<h2 id="容器内执行命令"><a href="#容器内执行命令" class="headerlink" title="容器内执行命令"></a>容器内执行命令</h2><p>如果容器在后台启动，可以使用<code>docker exec</code>在容器内执行命令。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it redis /bin/bash</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819101823721.png" alt="image-20200819101823721"></p>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it redis redis-cli -h localhost -p 6379</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819180555138.png" alt="image-20200819180555138"></p>
-<h2 id="查看容器进程"><a href="#查看容器进程" class="headerlink" title="查看容器进程"></a>查看容器进程</h2><p>使用<code>docker top</code>命令可以查看容器中正在运行的进程，首先确保容器已经启动。</p>
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819102409989.png" alt="image-20200819102409989"></p>
-]]></content>
-      <categories>
-        <category>Tutorial</category>
-      </categories>
-      <tags>
-        <tag>运维</tag>
-        <tag>容器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>//hello-world.html</url>
-    <content><![CDATA[<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>跳表（SkipList）</title>
-    <url>/1680d080339f/</url>
-    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><strong>给定一个有序链表，如何根据元素的值进行高效率查找？</strong></p>
-<p>如果是数组的话，可以用二分查找，因为数组可以直接用下标快速定位，而链表只能从头节点一个一个元素向后找。因此链表这种数据结构不适用于二分查找。</p>
-<p>但我们可以在链表的基础上做一个小小的升级。</p>
-<h2 id="带有索引的链表"><a href="#带有索引的链表" class="headerlink" title="带有索引的链表"></a>带有索引的链表</h2><h3 id="一层索引"><a href="#一层索引" class="headerlink" title="一层索引"></a>一层索引</h3><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0784(20200828-163749).PNG" alt="IMG_0784(20200828-163749)" style="zoom: 50%;" />
-
-<p>如图所示，在原始链表的基础上，我们增加了一个索引链表。原始链表的每两个结点，有一个结点也在索引链表当中。当我们想定位到结点20，不需要在长长的原始链表中一个一个的访问，而是首先访问索引链表：</p>
-<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0785(20200828-163752).PNG" alt="IMG_0785(20200828-163752)" style="zoom:50%;" />
-
-<p>在索引链表找到结点20之后，我们顺着索引链表的结点向下，找到原始链表的结点20：</p>
-<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0786(20200828-163755).PNG" alt="IMG_0786(20200828-163755)" style="zoom:50%;" />
-
-<p>由于索引链表的结点个数是原始链表的一半，查到结点所需的访问次数也相应少了一半。</p>
-<h3 id="两层索引"><a href="#两层索引" class="headerlink" title="两层索引"></a>两层索引</h3><p>链表的索引可以分成多个层次， 从而大大提升查找效率。</p>
-<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0787.PNG" alt="IMG_0787" style="zoom:50%;" />
-
-<p>如图所示，基于原始链表的第一层索引，抽出了第二层更为稀疏的索引。结点数量是第一层索引的一半。这样的多层索引可以进一步提升查询效率。假如查找结点20， 我们演示一下查找过程：</p>
-<ul>
-<li><p>首先，从最上层的索引开始查找，找到该层中仅小于结点20的前置索引结点12：</p>
-<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0788.PNG" alt="IMG_0788" style="zoom:50%;"/>
-</li>
-<li><p>接下来，顺着结点12访问下一层索引，在该层中找到索引结点20：</p>
-</li>
-</ul>
-<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0789.PNG" alt="IMG_0789" style="zoom:50%;" />
-
-<ul>
-<li><p>最后，再顺着第一层索引的结点20向下，就找到了原始链表的结点20：</p>
-<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0790.PNG" alt="IMG_0790" style="zoom:50%;" />
-
-</li>
-</ul>
-<p>在这个例子中，由于原始链表的结点数量较少，仅仅需要两层索引。如果链表的结点数量非常多，就可以建立更多的索引层，每一层索引的结点数量都是其下层索引结点数目的一半。</p>
-<blockquote>
-<p>假设原始链表有n个结点，那么索引的层级就是<strong>log<del>2</del>(n)-1</strong>，在每层的访问次数是常量，因此查找结点的平均时间复杂度是**O(logn)**。这比起线性依次访问结点的方式，效率明显提高。但相应地，这种基于链表的优化增加了额外的空间开销。假设原始链表有n个结点，那么各层索引的结点总数是：</p>
-<p><strong><em>n/2 + n/4 + n/8 + n/16 +…+ 2 = n</em></strong></p>
-<p>即，优化之后的数据结构所占空间是原始链表的两倍。这是典型的以空间换时间的做法。</p>
-</blockquote>
-<h2 id="跳表"><a href="#跳表" class="headerlink" title="跳表"></a>跳表</h2><p>像这种基于链表改造的带有多层索引的数据结构，就叫做<code>跳表（SkipList）</code>。</p>
-<h3 id="插入结点"><a href="#插入结点" class="headerlink" title="插入结点"></a>插入结点</h3><p>假设我们要插入的结点是10，首先我们按照跳表查找结点的方法，找到待插入结点的前置结点（<strong>仅小于待插入结点</strong>）：<br>                    <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0791.PNG" alt="IMG_0791" style="zoom:50%;" /></p>
-<p>然后按照一般链表的插入方式，将结点10插入到结点9的下一个位置：</p>
-<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0792.PNG" alt="IMG_0792" style="zoom:50%;" />
-
-<p>随着原始链表的新结点越来越多，索引会渐渐变得不够用，因此索引结点也需要相应作出调整。</p>
-<p>让新插入的结点随机“晋升”成为索引结点。新结点晋升成功的几率是50%。</p>
-<p>假设我们插入的这个结点10晋升成功，那么将其作为索引结点，插入到第一层索引的对应位置，并且向下指向原始链表的结点10：</p>
-<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0793.PNG" alt="IMG_0793" style="zoom:50%;" />
-
-<p>新插入的结点在成功晋升后，仍然有机会继续向上一层晋升。再进行一次随机，若随机的结果是晋升失败，那么插入操作完成。若该节点连续晋升成功，到达最高层的话，如下图所示：</p>
-<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0794.PNG" alt="IMG_0794" style="zoom:50%;" />
-
-<p>这时候，我们直接让索引增加一层：<br>                    <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0795.PNG" alt="IMG_0795" style="zoom:50%;" />  </p>
-<h3 id="删除结点"><a href="#删除结点" class="headerlink" title="删除结点"></a>删除结点</h3><p>跳表删除结点的过程与插入相反。假设我们要从条表中删除结点10。</p>
-<p>首先按照查找结点的方法，找到待删除的结点：<br>                     <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0796.PNG" alt="IMG_0796" style="zoom:50%;" /></p>
-<p>然后按照一般链表的删除方式，把结点10 从原始链表删除：          </p>
-<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0797.PNG" alt="IMG_0797" style="zoom:50%;" />
-
-<p>显然不能仅仅删除这一层的结点，还需要顺藤摸瓜，把索引当中的对应结点也一一删除：</p>
-<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0798.PNG" alt="IMG_0798" style="zoom:50%;" />
-
-<p>从上面可以看出最上一层的结点被删完了，所以就把这一层删去：<br>                    <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0801.PNG" alt="IMG_0801" style="zoom:50%;" /></p>
-<p>最终的删除结果如下：<br>                      <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0799.PNG" alt="IMG_0799" style="zoom:50%;" /></p>
-<h2 id="程序中的跳表"><a href="#程序中的跳表" class="headerlink" title="程序中的跳表"></a>程序中的跳表</h2><p>以上为了方便展示思路，所画的跳表是简化了的跳表，和实际的代码实现有些出入，具体差别如下：</p>
-<ul>
-<li><p>程序中的跳表采用的是双向链表，无论前后结点还是上下结点，都各有两个指针相互指向彼此。</p>
-</li>
-<li><p>程序中跳表的每一层两个端点各有一个空结点，左侧的空结点是负无穷，右侧的空结点是正无穷。之所以这样设计，是为了方便代码实现。代码中的跳表如下图所示：</p>
-</li>
-</ul>
-<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0800.PNG" alt="IMG_0800" style="zoom:50%;" />
-
-<details>
-    <summary><strong>具体的代码实现</strong></summary>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SkipList</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//链表结点类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> data;</span><br><span class="line">        <span class="comment">//跳表结点的前后和上下都有指针</span></span><br><span class="line">        <span class="keyword">public</span> Node up, down, left, right;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.data = data;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//结点“晋升”的概率</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> PROMOTE_RATE = <span class="number">0.5</span>;</span><br><span class="line">    <span class="keyword">private</span> Node head,tail;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> maxLevel;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SkipList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        head = <span class="keyword">new</span> Node(Integer.MIN_VALUE);</span><br><span class="line">        tail = <span class="keyword">new</span> Node(Integer.MAX_VALUE);</span><br><span class="line">        head.right = tail;</span><br><span class="line">        tail.left = head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//查找结点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">search</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        Node p= findNode(data);</span><br><span class="line">        <span class="keyword">if</span>(p.data == data)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;找到结点：&quot;</span> + data);</span><br><span class="line">            <span class="keyword">return</span> p;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;未找到结点：&quot;</span> + data);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//找到值对应的前置结点</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">findNode</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        Node node = head;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="keyword">while</span> (node.right.data!=Integer.MAX_VALUE &amp;&amp; node.right.data&lt;=data) &#123;</span><br><span class="line">                node = node.right;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (node.down == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            node = node.down;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//插入结点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        Node preNode= findNode(data);</span><br><span class="line">        <span class="comment">//如果data相同，直接返回</span></span><br><span class="line">        <span class="keyword">if</span> (preNode.data == data) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Node node=<span class="keyword">new</span> Node(data);</span><br><span class="line">        appendNode(preNode, node);</span><br><span class="line">        <span class="keyword">int</span> currentLevel=<span class="number">0</span>;</span><br><span class="line">        <span class="comment">//随机决定结点是否“晋升”</span></span><br><span class="line">        Random random = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">while</span> (random.nextDouble() &lt; PROMOTE_RATE) &#123;</span><br><span class="line">            <span class="comment">//如果当前层已经是最高层，需要增加一层</span></span><br><span class="line">            <span class="keyword">if</span> (currentLevel == maxLevel) &#123;</span><br><span class="line">                addLevel();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//找到上一层的前置节点</span></span><br><span class="line">            <span class="keyword">while</span> (preNode.up==<span class="keyword">null</span>) &#123;</span><br><span class="line">                preNode=preNode.left;</span><br><span class="line">            &#125;</span><br><span class="line">            preNode=preNode.up;</span><br><span class="line">            <span class="comment">//把“晋升”的新结点插入到上一层</span></span><br><span class="line">            Node upperNode = <span class="keyword">new</span> Node(data);</span><br><span class="line">            appendNode(preNode, upperNode);</span><br><span class="line">            upperNode.down = node;</span><br><span class="line">            node.up = upperNode;</span><br><span class="line">            node = upperNode;</span><br><span class="line">            currentLevel++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//在前置结点后面添加新结点</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">appendNode</span><span class="params">(Node preNode, Node newNode)</span></span>&#123;</span><br><span class="line">        newNode.left=preNode;</span><br><span class="line">        newNode.right=preNode.right;</span><br><span class="line">        preNode.right.left=newNode;</span><br><span class="line">        preNode.right=newNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//增加一层</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addLevel</span><span class="params">()</span></span>&#123;</span><br><span class="line">        maxLevel++;</span><br><span class="line">        Node p1=<span class="keyword">new</span> Node(Integer.MIN_VALUE);</span><br><span class="line">        Node p2=<span class="keyword">new</span> Node(Integer.MAX_VALUE);</span><br><span class="line">        p1.right=p2;</span><br><span class="line">        p2.left=p1;</span><br><span class="line">        p1.down=head;</span><br><span class="line">        head.up=p1;</span><br><span class="line">        p2.down=tail;</span><br><span class="line">        tail.up=p2;</span><br><span class="line">        head=p1;</span><br><span class="line">        tail=p2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除结点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        Node removedNode = search(data);</span><br><span class="line">        <span class="keyword">if</span>(removedNode == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> currentLevel=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (removedNode != <span class="keyword">null</span>)&#123;</span><br><span class="line">            removedNode.right.left = removedNode.left;</span><br><span class="line">            removedNode.left.right = removedNode.right;</span><br><span class="line">            <span class="comment">//如果不是最底层，且只有无穷小和无穷大结点，删除该层</span></span><br><span class="line">            <span class="keyword">if</span>(currentLevel != <span class="number">0</span> &amp;&amp; removedNode.left.data == Integer.MIN_VALUE &amp;&amp; removedNode.right.data == Integer.MAX_VALUE)&#123;</span><br><span class="line">                removeLevel(removedNode.left);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                currentLevel ++;</span><br><span class="line">            &#125;</span><br><span class="line">            removedNode = removedNode.up;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除一层</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">removeLevel</span><span class="params">(Node leftNode)</span></span>&#123;</span><br><span class="line">        Node rightNode = leftNode.right;</span><br><span class="line">        <span class="comment">//如果删除层是最高层</span></span><br><span class="line">        <span class="keyword">if</span>(leftNode.up == <span class="keyword">null</span>)&#123;</span><br><span class="line">            leftNode.down.up = <span class="keyword">null</span>;</span><br><span class="line">            rightNode.down.up = <span class="keyword">null</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            leftNode.up.down = leftNode.down;</span><br><span class="line">            leftNode.down.up = leftNode.up;</span><br><span class="line">            rightNode.up.down = rightNode.down;</span><br><span class="line">            rightNode.down.up = rightNode.up;</span><br><span class="line">        &#125;</span><br><span class="line">        maxLevel --;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//输出底层链表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Node node=head;</span><br><span class="line">        <span class="keyword">while</span> (node.down != <span class="keyword">null</span>) &#123;</span><br><span class="line">            node = node.down;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (node.right.data != Integer.MAX_VALUE) &#123;</span><br><span class="line">            System.out.print(node.right.data + <span class="string">&quot; &quot;</span>);</span><br><span class="line">            node = node.right;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SkipList list = <span class="keyword">new</span> SkipList();</span><br><span class="line">        list.insert(<span class="number">50</span>);</span><br><span class="line">        list.insert(<span class="number">15</span>);</span><br><span class="line">        list.insert(<span class="number">13</span>);</span><br><span class="line">        list.insert(<span class="number">20</span>);</span><br><span class="line">        list.insert(<span class="number">100</span>);</span><br><span class="line">        list.insert(<span class="number">75</span>);</span><br><span class="line">        list.insert(<span class="number">99</span>);</span><br><span class="line">        list.insert(<span class="number">76</span>);</span><br><span class="line">        list.insert(<span class="number">83</span>);</span><br><span class="line">        list.insert(<span class="number">65</span>);</span><br><span class="line">        list.printList();</span><br><span class="line">        list.search(<span class="number">50</span>);</span><br><span class="line">        list.remove(<span class="number">50</span>);</span><br><span class="line">        list.search(<span class="number">50</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</details>
-
-
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>跳表</tag>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>macos下Hexo部署问题</title>
-    <url>/31b90220ef64/</url>
-    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>从windows切换到macos，确定环境以及ssh公钥都已设置正确。之前部署过一次是成功的。后面在部署hexo的时候突然总是报错，提示：<code>git@github.com: Permission denied (publickey). Could not read from remote repository.</code></p>
-<p>期间也重新生成了公钥，在用命令时前面也加了sudo，就是无法生效。</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol>
-<li><p>使用<code>sudo -s</code>命令切换到root用户，但是保持登录用户的环境。<br><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200902093840466.png" alt="image-20200902093840466"></p>
-</li>
-<li><p>因为登陆用户是root，自然文件夹下没有.ssh目录的。所以使用<code>cp -r .ssh /root/</code>把用户目录下生成的.ssh文件复制到root目录下。 <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-02%E4%B8%8A%E5%8D%889.42.17.png" alt="截屏2020-09-02上午9.42.17"  /></p>
-</li>
-<li><p>设置完后以后通过切换到root用户就可以部署成功了。</p>
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200902094608814.png" alt="image-20200902094608814"></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>cheatsheet（持续更新⏳）</title>
     <url>/a07cebcd8369/</url>
     <content><![CDATA[<h2 id="python3-7创建虚拟环境"><a href="#python3-7创建虚拟环境" class="headerlink" title="python3.7创建虚拟环境"></a>python3.7创建虚拟环境</h2><blockquote>
@@ -464,6 +275,233 @@
       </categories>
       <tags>
         <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>//hello-world.html</url>
+    <content><![CDATA[<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>docker</title>
+    <url>/0ee4329c9535/</url>
+    <content><![CDATA[<h1 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h1><blockquote>
+<p><strong>Docker</strong> 是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%8E%9F%E5%A7%8B%E7%A2%BC">开放源代码</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94">软件</a>，是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%B9%B3%E8%87%BA">开放平台</a>，用于开发应用、交付（shipping）应用、运行应用。 Docker允许用户将基础设施（Infrastructure）中的应用单独分割出来，形成更小的颗粒（容器），从而提高交付软件的速度。</p>
+<p><strong>Docker容器</strong>与虚拟机类似，但二者在原理上不同。容器是将<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">操作系统层虚拟化</a>，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。 容器更多的用于表示 软件的一个标准化单元。由于容器的标准化，因此它可以无视基础设施（Infrastructure）的差异，部署到任何一个地方。另外，Docker也为容器提供更强的业界的隔离兼容。</p>
+<p><strong>Docker</strong> 利用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Linux%E6%A0%B8%E5%BF%83">Linux核心</a>中的资源分离机制，例如<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Cgroups">cgroups</a>，以及Linux核心<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=Linux%E5%91%BD%E5%90%8D%E7%A9%BA%E9%96%93&action=edit&redlink=1">名字空间</a>（namespaces），来创建独立的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">容器</a>（containers）。这可以在单一Linux实体下运作，避免引导一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E6%A9%9F%E5%99%A8">虚拟机</a>造成的额外负担。Linux核心对名字空间的支持完全隔离了工作环境中应用程序的视野，包括行程树、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">网络</a>、用户ID与挂载文件系统，而核心的cgroup提供资源隔离，包括<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CPU">CPU</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E8%85%A6%E8%A8%98%E6%86%B6%E9%AB%94">存储器</a>、block I/O与网络。从0.9版本起，Dockers在使用抽象虚拟是经由<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Libvirt">libvirt</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/LXC">LXC</a>与systemd - nspawn提供界面的基础上，开始包括libcontainer库做为以自己的方式开始直接使用由Linux核心提供的虚拟化的设施，</p>
+</blockquote>
+<h1 id="docker应用场景"><a href="#docker应用场景" class="headerlink" title="docker应用场景"></a>docker应用场景</h1><ol>
+<li>加速本地开发</li>
+<li>自动打包和部署应用</li>
+<li>创建轻量、私有的PaaS环境</li>
+<li>自动化测试和持续集成/部署</li>
+<li>部署并扩展Web应用、数据库和后端服务器</li>
+<li>创建安全沙盒</li>
+<li>轻量级的桌面虚拟化</li>
+</ol>
+<h1 id="docker核心组件"><a href="#docker核心组件" class="headerlink" title="docker核心组件"></a>docker核心组件</h1><p>docker中有三大核心组件：</p>
+<ul>
+<li><p><strong>镜像</strong></p>
+<p> 镜像是一个只读的静态模版，它保存了容器需要的环境和应用的执行代码，可以将镜像看成是容器的代码，当代码运行起来之后，就成了容器。镜像和容器的关系也类似于程序和进程的关系。</p>
+</li>
+<li><p><strong>容器</strong></p>
+<p>容器是一个运行时环境，是镜像的一个运行状态。它是镜像执行的动态表现。</p>
+</li>
+<li><p><strong>库</strong></p>
+<p>库是一个特定的用户存储镜像的目录，一个用户可以建立多个库来保存自己的镜像。</p>
+</li>
+</ul>
+<h1 id="docker命令"><a href="#docker命令" class="headerlink" title="docker命令"></a>docker命令</h1><h2 id="查看容器"><a href="#查看容器" class="headerlink" title="查看容器"></a>查看容器</h2><p>启动docker后，使用<code>docker ps</code>命令可以查看当前正在运行的容器：</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819095745723.png" alt="image-20200819095745723"></p>
+<p>上面这条命令是查看运行着的容器，若想查看所有容器，可使用<code>docker ps -a </code>命令。</p>
+<h2 id="创建并启动容器"><a href="#创建并启动容器" class="headerlink" title="创建并启动容器"></a>创建并启动容器</h2><ul>
+<li><p>nginx容器</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run --name nginx -d -p 8080:80 nginx</span><br></pre></td></tr></table></figure></li>
+<li><p>redis容器</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run -itd --name redis -p 6379:6379 redis</span><br></pre></td></tr></table></figure>
+
+<p>-d参数表示容器后台运行；-it参数：i表示开发容器的标准输入（STDIN），t表示告诉dcker为容器创建一个命令行终端。</p>
+</li>
+</ul>
+<h2 id="容器内执行命令"><a href="#容器内执行命令" class="headerlink" title="容器内执行命令"></a>容器内执行命令</h2><p>如果容器在后台启动，可以使用<code>docker exec</code>在容器内执行命令。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it redis /bin/bash</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819101823721.png" alt="image-20200819101823721"></p>
+<p>或者</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it redis redis-cli -h localhost -p 6379</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819180555138.png" alt="image-20200819180555138"></p>
+<h2 id="查看容器进程"><a href="#查看容器进程" class="headerlink" title="查看容器进程"></a>查看容器进程</h2><p>使用<code>docker top</code>命令可以查看容器中正在运行的进程，首先确保容器已经启动。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819102409989.png" alt="image-20200819102409989"></p>
+]]></content>
+      <categories>
+        <category>Tutorial</category>
+      </categories>
+      <tags>
+        <tag>运维</tag>
+        <tag>容器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mac下激活Sublime Text3</title>
+    <url>/b35989291ea4/</url>
+    <content><![CDATA[<p>​    这里记录MacOS下激活Sublime的方法。教程通过配置hosts来终止sublime官网的序列号校验的方式破解。</p>
+<ol>
+<li><p>终端中键入<code>sudo vim /etc/hosts</code>命令对hosts文件进行编辑。</p>
+</li>
+<li><p>在文件尾部插入以下语句后保存退出。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1		www.sublimetext.com</span><br><span class="line">127.0.0.1		license.sublimehq.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入软件后点击注册输入以下激活码后即可激活成功。</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–</p>
+<p>Member J2TeaM</p>
+<p>Single User License</p>
+<p>EA7E-1011316</p>
+<p>D7DA350E 1B8B0760 972F8B60 F3E64036</p>
+<p>B9B4E234 F356F38F 0AD1E3B7 0E9C5FAD</p>
+<p>FA0A2ABE 25F65BD8 D51458E5 3923CE80</p>
+<p>87428428 79079A01 AA69F319 A1AF29A4</p>
+<p>A684C2DC 0B1583D4 19CBD290 217618CD</p>
+<p>5653E0A0 BACE3948 BB2EE45E 422D2C87</p>
+<p>DD9AF44B 99C49590 D2DBDEE1 75860FD2</p>
+<p>8C8BB2AD B2ECE5A4 EFC08AF2 25A9B864</p>
+<p>—— END LICENSE ——</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-02%E4%B8%8B%E5%8D%885.12.15.png" alt="截屏2020-09-02下午5.12.15"></p>
+]]></content>
+      <categories>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>软件破解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macos下Hexo部署问题</title>
+    <url>/31b90220ef64/</url>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>从windows切换到macos，确定环境以及ssh公钥都已设置正确。之前部署过一次是成功的。后面在部署hexo的时候突然总是报错，提示：<code>git@github.com: Permission denied (publickey). Could not read from remote repository.</code></p>
+<p>期间也重新生成了公钥，在用命令时前面也加了sudo，就是无法生效。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol>
+<li><p>使用<code>sudo -s</code>命令切换到root用户，但是保持登录用户的环境。<br><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200902093840466.png" alt="image-20200902093840466"></p>
+</li>
+<li><p>因为登陆用户是root，自然文件夹下没有.ssh目录的。所以使用<code>cp -r .ssh /root/</code>把用户目录下生成的.ssh文件复制到root目录下。 <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-02%E4%B8%8A%E5%8D%889.42.17.png" alt="截屏2020-09-02上午9.42.17"  /></p>
+</li>
+<li><p>设置完后以后通过切换到root用户就可以部署成功了。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200902094608814.png" alt="image-20200902094608814"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>跳表（SkipList）</title>
+    <url>/1680d080339f/</url>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><strong>给定一个有序链表，如何根据元素的值进行高效率查找？</strong></p>
+<p>如果是数组的话，可以用二分查找，因为数组可以直接用下标快速定位，而链表只能从头节点一个一个元素向后找。因此链表这种数据结构不适用于二分查找。</p>
+<p>但我们可以在链表的基础上做一个小小的升级。</p>
+<h2 id="带有索引的链表"><a href="#带有索引的链表" class="headerlink" title="带有索引的链表"></a>带有索引的链表</h2><h3 id="一层索引"><a href="#一层索引" class="headerlink" title="一层索引"></a>一层索引</h3><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0784(20200828-163749).PNG" alt="IMG_0784(20200828-163749)" style="zoom: 50%;" />
+
+<p>如图所示，在原始链表的基础上，我们增加了一个索引链表。原始链表的每两个结点，有一个结点也在索引链表当中。当我们想定位到结点20，不需要在长长的原始链表中一个一个的访问，而是首先访问索引链表：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0785(20200828-163752).PNG" alt="IMG_0785(20200828-163752)" style="zoom:50%;" />
+
+<p>在索引链表找到结点20之后，我们顺着索引链表的结点向下，找到原始链表的结点20：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0786(20200828-163755).PNG" alt="IMG_0786(20200828-163755)" style="zoom:50%;" />
+
+<p>由于索引链表的结点个数是原始链表的一半，查到结点所需的访问次数也相应少了一半。</p>
+<h3 id="两层索引"><a href="#两层索引" class="headerlink" title="两层索引"></a>两层索引</h3><p>链表的索引可以分成多个层次， 从而大大提升查找效率。</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0787.PNG" alt="IMG_0787" style="zoom:50%;" />
+
+<p>如图所示，基于原始链表的第一层索引，抽出了第二层更为稀疏的索引。结点数量是第一层索引的一半。这样的多层索引可以进一步提升查询效率。假如查找结点20， 我们演示一下查找过程：</p>
+<ul>
+<li><p>首先，从最上层的索引开始查找，找到该层中仅小于结点20的前置索引结点12：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0788.PNG" alt="IMG_0788" style="zoom:50%;"/>
+</li>
+<li><p>接下来，顺着结点12访问下一层索引，在该层中找到索引结点20：</p>
+</li>
+</ul>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0789.PNG" alt="IMG_0789" style="zoom:50%;" />
+
+<ul>
+<li><p>最后，再顺着第一层索引的结点20向下，就找到了原始链表的结点20：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0790.PNG" alt="IMG_0790" style="zoom:50%;" />
+
+</li>
+</ul>
+<p>在这个例子中，由于原始链表的结点数量较少，仅仅需要两层索引。如果链表的结点数量非常多，就可以建立更多的索引层，每一层索引的结点数量都是其下层索引结点数目的一半。</p>
+<blockquote>
+<p>假设原始链表有n个结点，那么索引的层级就是<strong>log<del>2</del>(n)-1</strong>，在每层的访问次数是常量，因此查找结点的平均时间复杂度是**O(logn)**。这比起线性依次访问结点的方式，效率明显提高。但相应地，这种基于链表的优化增加了额外的空间开销。假设原始链表有n个结点，那么各层索引的结点总数是：</p>
+<p><strong><em>n/2 + n/4 + n/8 + n/16 +…+ 2 = n</em></strong></p>
+<p>即，优化之后的数据结构所占空间是原始链表的两倍。这是典型的以空间换时间的做法。</p>
+</blockquote>
+<h2 id="跳表"><a href="#跳表" class="headerlink" title="跳表"></a>跳表</h2><p>像这种基于链表改造的带有多层索引的数据结构，就叫做<code>跳表（SkipList）</code>。</p>
+<h3 id="插入结点"><a href="#插入结点" class="headerlink" title="插入结点"></a>插入结点</h3><p>假设我们要插入的结点是10，首先我们按照跳表查找结点的方法，找到待插入结点的前置结点（<strong>仅小于待插入结点</strong>）：<br>                    <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0791.PNG" alt="IMG_0791" style="zoom:50%;" /></p>
+<p>然后按照一般链表的插入方式，将结点10插入到结点9的下一个位置：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0792.PNG" alt="IMG_0792" style="zoom:50%;" />
+
+<p>随着原始链表的新结点越来越多，索引会渐渐变得不够用，因此索引结点也需要相应作出调整。</p>
+<p>让新插入的结点随机“晋升”成为索引结点。新结点晋升成功的几率是50%。</p>
+<p>假设我们插入的这个结点10晋升成功，那么将其作为索引结点，插入到第一层索引的对应位置，并且向下指向原始链表的结点10：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0793.PNG" alt="IMG_0793" style="zoom:50%;" />
+
+<p>新插入的结点在成功晋升后，仍然有机会继续向上一层晋升。再进行一次随机，若随机的结果是晋升失败，那么插入操作完成。若该节点连续晋升成功，到达最高层的话，如下图所示：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0794.PNG" alt="IMG_0794" style="zoom:50%;" />
+
+<p>这时候，我们直接让索引增加一层：<br>                    <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0795.PNG" alt="IMG_0795" style="zoom:50%;" />  </p>
+<h3 id="删除结点"><a href="#删除结点" class="headerlink" title="删除结点"></a>删除结点</h3><p>跳表删除结点的过程与插入相反。假设我们要从条表中删除结点10。</p>
+<p>首先按照查找结点的方法，找到待删除的结点：<br>                     <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0796.PNG" alt="IMG_0796" style="zoom:50%;" /></p>
+<p>然后按照一般链表的删除方式，把结点10 从原始链表删除：          </p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0797.PNG" alt="IMG_0797" style="zoom:50%;" />
+
+<p>显然不能仅仅删除这一层的结点，还需要顺藤摸瓜，把索引当中的对应结点也一一删除：</p>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0798.PNG" alt="IMG_0798" style="zoom:50%;" />
+
+<p>从上面可以看出最上一层的结点被删完了，所以就把这一层删去：<br>                    <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0801.PNG" alt="IMG_0801" style="zoom:50%;" /></p>
+<p>最终的删除结果如下：<br>                      <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0799.PNG" alt="IMG_0799" style="zoom:50%;" /></p>
+<h2 id="程序中的跳表"><a href="#程序中的跳表" class="headerlink" title="程序中的跳表"></a>程序中的跳表</h2><p>以上为了方便展示思路，所画的跳表是简化了的跳表，和实际的代码实现有些出入，具体差别如下：</p>
+<ul>
+<li><p>程序中的跳表采用的是双向链表，无论前后结点还是上下结点，都各有两个指针相互指向彼此。</p>
+</li>
+<li><p>程序中跳表的每一层两个端点各有一个空结点，左侧的空结点是负无穷，右侧的空结点是正无穷。之所以这样设计，是为了方便代码实现。代码中的跳表如下图所示：</p>
+</li>
+</ul>
+<img src="https://gitee.com/haydnch/myImage/raw/master/imgs/IMG_0800.PNG" alt="IMG_0800" style="zoom:50%;" />
+
+<details>
+    <summary><strong>具体的代码实现</strong></summary>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SkipList</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//链表结点类</span></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> data;</span><br><span class="line">        <span class="comment">//跳表结点的前后和上下都有指针</span></span><br><span class="line">        <span class="keyword">public</span> Node up, down, left, right;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> data)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.data = data;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//结点“晋升”的概率</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> PROMOTE_RATE = <span class="number">0.5</span>;</span><br><span class="line">    <span class="keyword">private</span> Node head,tail;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> maxLevel;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">SkipList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        head = <span class="keyword">new</span> Node(Integer.MIN_VALUE);</span><br><span class="line">        tail = <span class="keyword">new</span> Node(Integer.MAX_VALUE);</span><br><span class="line">        head.right = tail;</span><br><span class="line">        tail.left = head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//查找结点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">search</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        Node p= findNode(data);</span><br><span class="line">        <span class="keyword">if</span>(p.data == data)&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;找到结点：&quot;</span> + data);</span><br><span class="line">            <span class="keyword">return</span> p;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;未找到结点：&quot;</span> + data);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//找到值对应的前置结点</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">findNode</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        Node node = head;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="keyword">while</span> (node.right.data!=Integer.MAX_VALUE &amp;&amp; node.right.data&lt;=data) &#123;</span><br><span class="line">                node = node.right;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (node.down == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            node = node.down;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//插入结点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        Node preNode= findNode(data);</span><br><span class="line">        <span class="comment">//如果data相同，直接返回</span></span><br><span class="line">        <span class="keyword">if</span> (preNode.data == data) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Node node=<span class="keyword">new</span> Node(data);</span><br><span class="line">        appendNode(preNode, node);</span><br><span class="line">        <span class="keyword">int</span> currentLevel=<span class="number">0</span>;</span><br><span class="line">        <span class="comment">//随机决定结点是否“晋升”</span></span><br><span class="line">        Random random = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">while</span> (random.nextDouble() &lt; PROMOTE_RATE) &#123;</span><br><span class="line">            <span class="comment">//如果当前层已经是最高层，需要增加一层</span></span><br><span class="line">            <span class="keyword">if</span> (currentLevel == maxLevel) &#123;</span><br><span class="line">                addLevel();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//找到上一层的前置节点</span></span><br><span class="line">            <span class="keyword">while</span> (preNode.up==<span class="keyword">null</span>) &#123;</span><br><span class="line">                preNode=preNode.left;</span><br><span class="line">            &#125;</span><br><span class="line">            preNode=preNode.up;</span><br><span class="line">            <span class="comment">//把“晋升”的新结点插入到上一层</span></span><br><span class="line">            Node upperNode = <span class="keyword">new</span> Node(data);</span><br><span class="line">            appendNode(preNode, upperNode);</span><br><span class="line">            upperNode.down = node;</span><br><span class="line">            node.up = upperNode;</span><br><span class="line">            node = upperNode;</span><br><span class="line">            currentLevel++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//在前置结点后面添加新结点</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">appendNode</span><span class="params">(Node preNode, Node newNode)</span></span>&#123;</span><br><span class="line">        newNode.left=preNode;</span><br><span class="line">        newNode.right=preNode.right;</span><br><span class="line">        preNode.right.left=newNode;</span><br><span class="line">        preNode.right=newNode;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//增加一层</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addLevel</span><span class="params">()</span></span>&#123;</span><br><span class="line">        maxLevel++;</span><br><span class="line">        Node p1=<span class="keyword">new</span> Node(Integer.MIN_VALUE);</span><br><span class="line">        Node p2=<span class="keyword">new</span> Node(Integer.MAX_VALUE);</span><br><span class="line">        p1.right=p2;</span><br><span class="line">        p2.left=p1;</span><br><span class="line">        p1.down=head;</span><br><span class="line">        head.up=p1;</span><br><span class="line">        p2.down=tail;</span><br><span class="line">        tail.up=p2;</span><br><span class="line">        head=p1;</span><br><span class="line">        tail=p2;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除结点</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        Node removedNode = search(data);</span><br><span class="line">        <span class="keyword">if</span>(removedNode == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> currentLevel=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (removedNode != <span class="keyword">null</span>)&#123;</span><br><span class="line">            removedNode.right.left = removedNode.left;</span><br><span class="line">            removedNode.left.right = removedNode.right;</span><br><span class="line">            <span class="comment">//如果不是最底层，且只有无穷小和无穷大结点，删除该层</span></span><br><span class="line">            <span class="keyword">if</span>(currentLevel != <span class="number">0</span> &amp;&amp; removedNode.left.data == Integer.MIN_VALUE &amp;&amp; removedNode.right.data == Integer.MAX_VALUE)&#123;</span><br><span class="line">                removeLevel(removedNode.left);</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                currentLevel ++;</span><br><span class="line">            &#125;</span><br><span class="line">            removedNode = removedNode.up;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//删除一层</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">removeLevel</span><span class="params">(Node leftNode)</span></span>&#123;</span><br><span class="line">        Node rightNode = leftNode.right;</span><br><span class="line">        <span class="comment">//如果删除层是最高层</span></span><br><span class="line">        <span class="keyword">if</span>(leftNode.up == <span class="keyword">null</span>)&#123;</span><br><span class="line">            leftNode.down.up = <span class="keyword">null</span>;</span><br><span class="line">            rightNode.down.up = <span class="keyword">null</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            leftNode.up.down = leftNode.down;</span><br><span class="line">            leftNode.down.up = leftNode.up;</span><br><span class="line">            rightNode.up.down = rightNode.down;</span><br><span class="line">            rightNode.down.up = rightNode.up;</span><br><span class="line">        &#125;</span><br><span class="line">        maxLevel --;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//输出底层链表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printList</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Node node=head;</span><br><span class="line">        <span class="keyword">while</span> (node.down != <span class="keyword">null</span>) &#123;</span><br><span class="line">            node = node.down;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (node.right.data != Integer.MAX_VALUE) &#123;</span><br><span class="line">            System.out.print(node.right.data + <span class="string">&quot; &quot;</span>);</span><br><span class="line">            node = node.right;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SkipList list = <span class="keyword">new</span> SkipList();</span><br><span class="line">        list.insert(<span class="number">50</span>);</span><br><span class="line">        list.insert(<span class="number">15</span>);</span><br><span class="line">        list.insert(<span class="number">13</span>);</span><br><span class="line">        list.insert(<span class="number">20</span>);</span><br><span class="line">        list.insert(<span class="number">100</span>);</span><br><span class="line">        list.insert(<span class="number">75</span>);</span><br><span class="line">        list.insert(<span class="number">99</span>);</span><br><span class="line">        list.insert(<span class="number">76</span>);</span><br><span class="line">        list.insert(<span class="number">83</span>);</span><br><span class="line">        list.insert(<span class="number">65</span>);</span><br><span class="line">        list.printList();</span><br><span class="line">        list.search(<span class="number">50</span>);</span><br><span class="line">        list.remove(<span class="number">50</span>);</span><br><span class="line">        list.search(<span class="number">50</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</details>
+
+
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>跳表</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>

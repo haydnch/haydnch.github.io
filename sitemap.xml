@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://haydnch.gitee.io/a07cebcd8369/</loc>
+    <loc>https://haydnch.gitee.io/0ee4329c9535/</loc>
     
     <lastmod>2020-09-02</lastmod>
     
@@ -10,6 +10,20 @@
   
   <url>
     <loc>https://haydnch.gitee.io/hello-world.html</loc>
+    
+    <lastmod>2020-09-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://haydnch.gitee.io/b35989291ea4/</loc>
+    
+    <lastmod>2020-09-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://haydnch.gitee.io/a07cebcd8369/</loc>
     
     <lastmod>2020-09-02</lastmod>
     
@@ -33,13 +47,6 @@
     <loc>https://haydnch.gitee.io/1680d080339f/</loc>
     
     <lastmod>2020-08-28</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://haydnch.gitee.io/0ee4329c9535/</loc>
-    
-    <lastmod>2020-08-26</lastmod>
     
   </url>
   
@@ -137,6 +144,13 @@
   </url>
   
   <url>
+    <loc>https://haydnch.gitee.io/tags/git/</loc>
+    <lastmod>2020-09-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://haydnch.gitee.io/tags/DevOps/</loc>
     <lastmod>2020-09-02</lastmod>
     <changefreq>daily</changefreq>
@@ -151,14 +165,7 @@
   </url>
   
   <url>
-    <loc>https://haydnch.gitee.io/tags/%E8%B7%B3%E8%A1%A8/</loc>
-    <lastmod>2020-09-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://haydnch.gitee.io/tags/Java/</loc>
+    <loc>https://haydnch.gitee.io/tags/activate/</loc>
     <lastmod>2020-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -172,7 +179,14 @@
   </url>
   
   <url>
-    <loc>https://haydnch.gitee.io/tags/git/</loc>
+    <loc>https://haydnch.gitee.io/tags/%E8%B7%B3%E8%A1%A8/</loc>
+    <lastmod>2020-09-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://haydnch.gitee.io/tags/Java/</loc>
     <lastmod>2020-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
