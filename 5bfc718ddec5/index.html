@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   
-  <title>Hello World | Haydn&#39;s Blog</title>
+  <title>IDEA注释模板 | Haydn&#39;s Blog</title>
   
   
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	 
@@ -175,17 +175,39 @@ WIDGET = {
     <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
     <div class="container post-details" id="post-details">
         <div class="post-content">
-            <div class="post-title">Hello World</div>
+            <div class="post-title">IDEA注释模板</div>
             <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime" title="创建日期 | post_time"></i>
-          2020-08-21 16:14
+          2020-09-01 19:15
         </span>
 		<span class="post-pubtime">
           <i class="iconfont icon-edit" title="文章字数 | word_count"></i>
-             <span class="post-count">75</span>字
+             <span class="post-count">379</span>字
         </span>
 
+                
+                    <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                        
+                            <span class="span--category">
+                  <a href="/categories/Note/" title="查看 Note 分类">
+                    <b>#</b> Note
+                  </a>
+                </span>
+                        
+                    </span>
+                
+                    <span class="post-tags">
+                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                        
+                            <span class="span--tag">
+                  <a href="/tags/IDEA/" title="查看 IDEA 标签">
+                    <b>#</b> IDEA
+                  </a>
+                </span>
+                        
+                    </span>
                 
                 
                     <!-- 不蒜子统计 -->
@@ -200,47 +222,76 @@ WIDGET = {
                 <div class="prev-or-next">
                     <div class="post-foot-prev">
                         
-                            <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/" target="_self">
+                            <a href="/31b90220ef64/" target="_self">
                                 <i class="iconfont icon-chevronleft"></i>
-                                <span>PREV: CentOS7安装mysql</span>
+                                <span>PREV: macos下Hexo部署问题</span>
                             </a>
                         
                     </div>
              
                     <div class="post-foot-prev">
                         
+                            <a href="/1680d080339f/" target="_self">
+                                <span>NEXT: 跳表（SkipList）</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
                     </div>
                 </div>
             
 			
             <div class="markdown-body">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <h2 id="类（接口）注释"><a href="#类（接口）注释" class="headerlink" title="类（接口）注释"></a>类（接口）注释</h2><p><strong>新建类或者接口的时候会初始化注释模板。</strong></p>
+<p>设置路径：<code>IntelliJ IDEA -&gt; Preferences -&gt; 编辑器 -&gt; File and code Templates -&gt; Class/Interface</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">  *@ClassName $&#123;NAME&#125;</span><br><span class="line">  *@Author $&#123;USER&#125;</span><br><span class="line">  *@Description TODO </span><br><span class="line">  *@Date $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">  **&#x2F;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-01%E4%B8%8B%E5%8D%887.44.35.png" alt="截屏2020-09-01下午7.44.35"></p>
+<h2 id="方法注释"><a href="#方法注释" class="headerlink" title="方法注释"></a>方法注释</h2><p><strong>新建一个方法的时候，在方法名上方按 <u>/ * + 回车</u> 生成这个方法的注释。</strong></p>
+<p>设置路径：<code>Preferences -&gt; 编辑器 -&gt; 活动模板</code></p>
+<ol>
+<li><p>通过右边+号新建一个Template Group，名称自定。</p>
+</li>
+<li><p>选定这个新建模板组，添加Live Template，<strong>名称为 *</strong>。</p>
+</li>
+<li><p>在模板文本添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*</span><br><span class="line"> * @Author $user$</span><br><span class="line"> * @Description TODO $end$</span><br><span class="line"> * @Date $date$ $time$</span><br><span class="line">$param$</span><br><span class="line"> * @return $return$</span><br><span class="line"> **&#x2F;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol start="4">
+<li><p>设置应用上下文为java，选项展开设置为回车。</p>
+</li>
+<li><p>编辑变量。user、date、time的表达式选为内置。$param$按行显示每个参数，$return$显示方法返回类型（不显示全称）。</p>
+<p><strong>$param$表达式</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groovyScript(&quot;def result&#x3D;&#39;&#39;; def params&#x3D;\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;,&#39;).toList(); for(i &#x3D; 0; i &lt; params.size(); i++) &#123;result+&#x3D;&#39; * @param &#39; + params[i] + ((i &lt; params.size() - 1) ? &#39;\\n&#39;:&#39;&#39;)&#125;;  return result&quot;, methodParameters())()</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p><strong>$return$表达式:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groovyScript(&quot;def result&#x3D;&#39;&#39;;  def params&#x3D;\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;&lt;&#39;).toList(); for(i &#x3D; 0; i &lt; params.size(); i++) &#123;if(i!&#x3D;0)&#123;result+&#x3D;&#39;&lt;&#39;;&#125;;  def p1&#x3D;params[i].split(&#39;,&#39;).toList();  for(i2 &#x3D; 0; i2 &lt; p1.size(); i2++)  &#123; def p2&#x3D;p1[i2].split(&#39;\\\\.&#39;).toList();  result+&#x3D;p2[p2.size()-1]; if(i2!&#x3D;p1.size()-1)&#123;result+&#x3D;&#39;,&#39;&#125;  &#125; ; &#125;;  return result&quot;, methodReturnType())</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200901201651376.png" alt="image-20200901201651376"></p>
 
             </div>
             
                 <div class="prev-or-next">
                     <div class="post-foot-prev">
                         
-                            <a href="/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/" target="_self">
+                            <a href="/31b90220ef64/" target="_self">
                                 <i class="iconfont icon-chevronleft"></i>
-                                <span>PREV: CentOS7安装mysql</span>
+                                <span>PREV: macos下Hexo部署问题</span>
                             </a>
                         
                     </div>
                    
                     <div class="post-foot-prev">
+                        
+                            <a href="/1680d080339f/" target="_self">
+                                <span>NEXT: 跳表（SkipList）</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
                         
                     </div>
                 </div>
@@ -250,7 +301,7 @@ WIDGET = {
   <div class="post-catalog" id="catalog">
     <div class="title">目录</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%EF%BC%88%E6%8E%A5%E5%8F%A3%EF%BC%89%E6%B3%A8%E9%87%8A"><span class="toc-text">类（接口）注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E6%B3%A8%E9%87%8A"><span class="toc-text">方法注释</span></a></li></ol>
     </div>
   </div>
 
@@ -275,7 +326,7 @@ WIDGET = {
   
   <script>
   var giteement = new Giteement({
-    id: '20200821161417',
+    id: '20200901191540',
     owner: 'haydnch',
     repo: 'haydnch',
     backcall_uri: 'https://haydnch.gitee.io/',
@@ -298,7 +349,7 @@ WIDGET = {
     <ul>
       
         <li>
-          <a title="github" target="_blank" rel="noopener" href="https://github.com/haydnch/haydnch.github.io">
+          <a title="github" href="https://github.com/haydnch/haydnch.github.io">
             <i class="iconfont icon-github"></i>
           </a>
         </li>
@@ -316,7 +367,7 @@ WIDGET = {
         </li>
       
         <li>
-          <a title="微博" target="_blank" rel="noopener" href="https://weibo.com/574422066/">
+          <a title="微博" href="https://weibo.com/574422066/">
             <i class="iconfont icon-weibo"></i>
           </a>
         </li>
@@ -326,7 +377,7 @@ WIDGET = {
   
   
     <div class="footer-more">
-      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020 | Powered by Hexo</a>
+      <a href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020 | Powered by Hexo</a>
     </div>
   
  

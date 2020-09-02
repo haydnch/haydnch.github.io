@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>CentOS7安装mysql</title>
-    <url>/2020/08/22/CentOS7%E5%AE%89%E8%A3%85mysql/</url>
+    <url>/8a773c1c5fba/</url>
     <content><![CDATA[<p><strong><u>记录在阿里云ECS实例CentOS7.6 中安装Mysql数据库的步骤。</u></strong></p>
 <h1 id="1-删除MariaDB"><a href="#1-删除MariaDB" class="headerlink" title="1 删除MariaDB"></a>1 删除MariaDB</h1><p>Cent OS 7 的 yum 源中已经不再包含在 MySQL，而改用了 MariaDB。</p>
 <h2 id="1-1-查询Maria-DB是否已经安装"><a href="#1-1-查询Maria-DB是否已经安装" class="headerlink" title="1 .1 查询Maria DB是否已经安装"></a>1 .1 查询Maria DB是否已经安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep maria*</span><br></pre></td></tr></table></figure>
@@ -79,7 +79,7 @@
   </entry>
   <entry>
     <title>IDEA注释模板</title>
-    <url>/2020/09/01/IDEA%E6%B3%A8%E9%87%8A%E6%A8%A1%E6%9D%BF/</url>
+    <url>/5bfc718ddec5/</url>
     <content><![CDATA[<h2 id="类（接口）注释"><a href="#类（接口）注释" class="headerlink" title="类（接口）注释"></a>类（接口）注释</h2><p><strong>新建类或者接口的时候会初始化注释模板。</strong></p>
 <p>设置路径：<code>IntelliJ IDEA -&gt; Preferences -&gt; 编辑器 -&gt; File and code Templates -&gt; Class/Interface</code></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">  *@ClassName $&#123;NAME&#125;</span><br><span class="line">  *@Author $&#123;USER&#125;</span><br><span class="line">  *@Description TODO </span><br><span class="line">  *@Date $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">  **&#x2F;</span><br></pre></td></tr></table></figure>
@@ -122,7 +122,7 @@
   </entry>
   <entry>
     <title>JUnit 5单元测试</title>
-    <url>/2020/08/26/JUnit-5%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95/</url>
+    <url>/243c5f6e7cba/</url>
     <content><![CDATA[<h1 id="认识Junit-5"><a href="#认识Junit-5" class="headerlink" title="认识Junit 5"></a>认识Junit 5</h1><p>JUnit 5 与以前版本的 JUnit 不同，拆分成由三个不同子项目的几个不同模块组成。<br><strong>JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage</strong></p>
 <ul>
 <li><strong><em>Junit Platform</em></strong>: 用于JVM上启动测试框架的基础服务，提供命令行，IDE和构建工具等方式执行测试的支持。</li>
@@ -165,7 +165,7 @@
   </entry>
   <entry>
     <title>cheatsheet（持续更新⏳）</title>
-    <url>/2020/08/22/cheatsheet/</url>
+    <url>/a07cebcd8369/</url>
     <content><![CDATA[<h2 id="python3-7创建虚拟环境"><a href="#python3-7创建虚拟环境" class="headerlink" title="python3.7创建虚拟环境"></a>python3.7创建虚拟环境</h2><blockquote>
 <p> 用于创建和管理虚拟环境的模块称为 <a href="https://docs.python.org/zh-cn/3.7/library/venv.html#module-venv"><code>venv</code></a>。<a href="https://docs.python.org/zh-cn/3.7/library/venv.html#module-venv"><code>venv</code></a> 通常会安装你可用的最新版本的 Python。如果您的系统上有多个版本的Python，您可以通过运行 <code>python3</code> (python)或您想要的任何版本来选择特定的Python版本。</p>
 <p>要创建虚拟环境，请确定要放置它的目录，并将 <a href="https://docs.python.org/zh-cn/3.7/library/venv.html#module-venv"><code>venv</code></a> 模块作为脚本运行目录路径: </p>
@@ -279,7 +279,7 @@
   </entry>
   <entry>
     <title>docker</title>
-    <url>/2020/08/22/docker/</url>
+    <url>/0ee4329c9535/</url>
     <content><![CDATA[<h1 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h1><blockquote>
 <p><strong>Docker</strong> 是一个<a href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%8E%9F%E5%A7%8B%E7%A2%BC">开放源代码</a><a href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94">软件</a>，是一个<a href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%B9%B3%E8%87%BA">开放平台</a>，用于开发应用、交付（shipping）应用、运行应用。 Docker允许用户将基础设施（Infrastructure）中的应用单独分割出来，形成更小的颗粒（容器），从而提高交付软件的速度。</p>
 <p><strong>Docker容器</strong>与虚拟机类似，但二者在原理上不同。容器是将<a href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">操作系统层虚拟化</a>，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。 容器更多的用于表示 软件的一个标准化单元。由于容器的标准化，因此它可以无视基础设施（Infrastructure）的差异，部署到任何一个地方。另外，Docker也为容器提供更强的业界的隔离兼容。</p>
@@ -339,7 +339,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2020/08/21/hello-world/</url>
+    <url>/e71689168b68/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -357,7 +357,7 @@
   </entry>
   <entry>
     <title>跳表（SkipList）</title>
-    <url>/2020/08/28/%E8%B7%B3%E8%A1%A8%EF%BC%88SkipList%EF%BC%89/</url>
+    <url>/1680d080339f/</url>
     <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><strong>给定一个有序链表，如何根据元素的值进行高效率查找？</strong></p>
 <p>如果是数组的话，可以用二分查找，因为数组可以直接用下标快速定位，而链表只能从头节点一个一个元素向后找。因此链表这种数据结构不适用于二分查找。</p>
 <p>但我们可以在链表的基础上做一个小小的升级。</p>
@@ -446,7 +446,7 @@
   </entry>
   <entry>
     <title>面试问题整理</title>
-    <url>/2020/08/23/Rocket/</url>
+    <url>/01b03a42f7c4/</url>
     <content><![CDATA[<h2 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h2><h3 id="CAP定理："><a href="#CAP定理：" class="headerlink" title="CAP定理："></a>CAP定理：</h3><p>一个分布式系统不可能在满足分区容错性（P）的情况下同时满足一致性（C）和可用性（A）。在此ZooKeeper保证的是CP，ZooKeeper不能保证每次服务请求的可用性，在极端环境下，ZooKeeper可能会丢弃一些请求，消费者程序需要重新请求才能获得结果。另外在进行leader选举时集群都是不可用，所以说，ZooKeeper不能保证服务可用性。</p>
 <h3 id="BASE理论"><a href="#BASE理论" class="headerlink" title="BASE理论"></a>BASE理论</h3><p>BASE理论是基本可用，软状态，最终一致性三个短语的缩写。BASE理论是对CAP中一致性和可用性（CA）权衡的结果，其来源于对大规模互联网系统分布式实践的总结，是基于CAP定理逐步演化而来的，它大大降低了我们对系统的要求。</p>
 <ol>
@@ -1157,6 +1157,28 @@
       <tags>
         <tag>Java后端</tag>
         <tag>Spring</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>macos下Hexo部署问题</title>
+    <url>/31b90220ef64/</url>
+    <content><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>从windows切换到macos，确定环境以及ssh公钥都已设置正确。之前部署过一次是成功的。后面在部署hexo的时候突然总是报错，提示：<code>git@github.com: Permission denied (publickey). Could not read from remote repository.</code></p>
+<p>期间也重新生成了公钥，在用命令时前面也加了sudo，就是无法生效。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol>
+<li><p>使用<code>sudo -s</code>命令切换到root用户，但是保持登录用户的环境。<br><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200902093840466.png" alt="image-20200902093840466"></p>
+</li>
+<li><p>因为登陆用户是root，自然文件夹下没有.ssh目录的。所以使用<code>cp -r .ssh /root/</code>把用户目录下生成的.ssh文件复制到root目录下。 <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-02%E4%B8%8A%E5%8D%889.42.17.png" alt="截屏2020-09-02上午9.42.17"  /></p>
+</li>
+<li><p>设置完后以后通过切换到root用户就可以部署成功了。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200902094608814.png" alt="image-20200902094608814"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>

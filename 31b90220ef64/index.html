@@ -11,7 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   
-  <title>IDEA注释模板 | Haydn&#39;s Blog</title>
+  <title>macos下Hexo部署问题 | Haydn&#39;s Blog</title>
   
   
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	 
@@ -175,15 +175,15 @@ WIDGET = {
     <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
     <div class="container post-details" id="post-details">
         <div class="post-content">
-            <div class="post-title">IDEA注释模板</div>
+            <div class="post-title">macos下Hexo部署问题</div>
             <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime" title="创建日期 | post_time"></i>
-          2020-09-01 19:15
+          2020-09-02 09:19
         </span>
 		<span class="post-pubtime">
           <i class="iconfont icon-edit" title="文章字数 | word_count"></i>
-             <span class="post-count">379</span>字
+             <span class="post-count">181</span>字
         </span>
 
                 
@@ -202,8 +202,8 @@ WIDGET = {
                 <i class="iconfont icon-tags" title="标签 | tags"></i>
                         
                             <span class="span--tag">
-                  <a href="/tags/IDEA/" title="查看 IDEA 标签">
-                    <b>#</b> IDEA
+                  <a href="/tags/Hexo/" title="查看 Hexo 标签">
+                    <b>#</b> Hexo
                   </a>
                 </span>
                         
@@ -226,8 +226,8 @@ WIDGET = {
              
                     <div class="post-foot-prev">
                         
-                            <a href="/2020/08/28/%E8%B7%B3%E8%A1%A8%EF%BC%88SkipList%EF%BC%89/" target="_self">
-                                <span>NEXT: 跳表（SkipList）</span>
+                            <a href="/5bfc718ddec5/" target="_self">
+                                <span>NEXT: IDEA注释模板</span>
                                 <i class="iconfont icon-chevronright"></i>
                             </a>
                         
@@ -236,38 +236,17 @@ WIDGET = {
             
 			
             <div class="markdown-body">
-                <h2 id="类（接口）注释"><a href="#类（接口）注释" class="headerlink" title="类（接口）注释"></a>类（接口）注释</h2><p><strong>新建类或者接口的时候会初始化注释模板。</strong></p>
-<p>设置路径：<code>IntelliJ IDEA -&gt; Preferences -&gt; 编辑器 -&gt; File and code Templates -&gt; Class/Interface</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">  *@ClassName $&#123;NAME&#125;</span><br><span class="line">  *@Author $&#123;USER&#125;</span><br><span class="line">  *@Description TODO </span><br><span class="line">  *@Date $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">  **&#x2F;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-01%E4%B8%8B%E5%8D%887.44.35.png" alt="截屏2020-09-01下午7.44.35"></p>
-<h2 id="方法注释"><a href="#方法注释" class="headerlink" title="方法注释"></a>方法注释</h2><p><strong>新建一个方法的时候，在方法名上方按 <u>/ * + 回车</u> 生成这个方法的注释。</strong></p>
-<p>设置路径：<code>Preferences -&gt; 编辑器 -&gt; 活动模板</code></p>
-<ol>
-<li><p>通过右边+号新建一个Template Group，名称自定。</p>
+                <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>从windows切换到macos，确定环境以及ssh公钥都已设置正确。之前部署过一次是成功的。后面在部署hexo的时候突然总是报错，提示：<code>git@github.com: Permission denied (publickey). Could not read from remote repository.</code></p>
+<p>期间也重新生成了公钥，在用命令时前面也加了sudo，就是无法生效。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol>
+<li><p>使用<code>sudo -s</code>命令切换到root用户，但是保持登录用户的环境。<br><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200902093840466.png" alt="image-20200902093840466"></p>
 </li>
-<li><p>选定这个新建模板组，添加Live Template，<strong>名称为 *</strong>。</p>
+<li><p>因为登陆用户是root，自然文件夹下没有.ssh目录的。所以使用<code>cp -r .ssh /root/</code>把用户目录下生成的.ssh文件复制到root目录下。 <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-02%E4%B8%8A%E5%8D%889.42.17.png" alt="截屏2020-09-02上午9.42.17"  /></p>
 </li>
-<li><p>在模板文本添加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">*</span><br><span class="line"> * @Author $user$</span><br><span class="line"> * @Description TODO $end$</span><br><span class="line"> * @Date $date$ $time$</span><br><span class="line">$param$</span><br><span class="line"> * @return $return$</span><br><span class="line"> **&#x2F;</span><br></pre></td></tr></table></figure>
-
-
+<li><p>设置完后以后通过切换到root用户就可以部署成功了。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200902094608814.png" alt="image-20200902094608814"></p>
 </li>
 </ol>
-<ol start="4">
-<li><p>设置应用上下文为java，选项展开设置为回车。</p>
-</li>
-<li><p>编辑变量。user、date、time的表达式选为内置。$param$按行显示每个参数，$return$显示方法返回类型（不显示全称）。</p>
-<p><strong>$param$表达式</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groovyScript(&quot;def result&#x3D;&#39;&#39;; def params&#x3D;\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;,&#39;).toList(); for(i &#x3D; 0; i &lt; params.size(); i++) &#123;result+&#x3D;&#39; * @param &#39; + params[i] + ((i &lt; params.size() - 1) ? &#39;\\n&#39;:&#39;&#39;)&#125;;  return result&quot;, methodParameters())()</span><br></pre></td></tr></table></figure>
-
-<p><strong>$return$表达式:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groovyScript(&quot;def result&#x3D;&#39;&#39;;  def params&#x3D;\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;&lt;&#39;).toList(); for(i &#x3D; 0; i &lt; params.size(); i++) &#123;if(i!&#x3D;0)&#123;result+&#x3D;&#39;&lt;&#39;;&#125;;  def p1&#x3D;params[i].split(&#39;,&#39;).toList();  for(i2 &#x3D; 0; i2 &lt; p1.size(); i2++)  &#123; def p2&#x3D;p1[i2].split(&#39;\\\\.&#39;).toList();  result+&#x3D;p2[p2.size()-1]; if(i2!&#x3D;p1.size()-1)&#123;result+&#x3D;&#39;,&#39;&#125;  &#125; ; &#125;;  return result&quot;, methodReturnType())</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200901201651376.png" alt="image-20200901201651376"></p>
 
             </div>
             
@@ -278,8 +257,8 @@ WIDGET = {
                    
                     <div class="post-foot-prev">
                         
-                            <a href="/2020/08/28/%E8%B7%B3%E8%A1%A8%EF%BC%88SkipList%EF%BC%89/" target="_self">
-                                <span>NEXT: 跳表（SkipList）</span>
+                            <a href="/5bfc718ddec5/" target="_self">
+                                <span>NEXT: IDEA注释模板</span>
                                 <i class="iconfont icon-chevronright"></i>
                             </a>
                         
@@ -291,7 +270,7 @@ WIDGET = {
   <div class="post-catalog" id="catalog">
     <div class="title">目录</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%EF%BC%88%E6%8E%A5%E5%8F%A3%EF%BC%89%E6%B3%A8%E9%87%8A"><span class="toc-text">类（接口）注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E6%B3%A8%E9%87%8A"><span class="toc-text">方法注释</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3"><span class="toc-text">解决</span></a></li></ol>
     </div>
   </div>
 
@@ -316,7 +295,7 @@ WIDGET = {
   
   <script>
   var giteement = new Giteement({
-    id: '20200901191540',
+    id: '20200902091918',
     owner: 'haydnch',
     repo: 'haydnch',
     backcall_uri: 'https://haydnch.gitee.io/',
@@ -339,7 +318,7 @@ WIDGET = {
     <ul>
       
         <li>
-          <a title="github" target="_blank" rel="noopener" href="https://github.com/haydnch/haydnch.github.io">
+          <a title="github" href="https://github.com/haydnch/haydnch.github.io">
             <i class="iconfont icon-github"></i>
           </a>
         </li>
@@ -357,7 +336,7 @@ WIDGET = {
         </li>
       
         <li>
-          <a title="微博" target="_blank" rel="noopener" href="https://weibo.com/574422066/">
+          <a title="微博" href="https://weibo.com/574422066/">
             <i class="iconfont icon-weibo"></i>
           </a>
         </li>
@@ -367,7 +346,7 @@ WIDGET = {
   
   
     <div class="footer-more">
-      <a target="_blank" rel="noopener" href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020 | Powered by Hexo</a>
+      <a href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020 | Powered by Hexo</a>
     </div>
   
  
