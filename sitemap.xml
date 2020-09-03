@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://haydnch.gitee.io/01b03a42f7c4/</loc>
+    
+    <lastmod>2020-09-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://haydnch.gitee.io/8a773c1c5fba/</loc>
+    
+    <lastmod>2020-09-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://haydnch.gitee.io/0ee4329c9535/</loc>
     
     <lastmod>2020-09-02</lastmod>
@@ -52,20 +66,6 @@
   
   <url>
     <loc>https://haydnch.gitee.io/243c5f6e7cba/</loc>
-    
-    <lastmod>2020-08-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://haydnch.gitee.io/01b03a42f7c4/</loc>
-    
-    <lastmod>2020-08-26</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://haydnch.gitee.io/8a773c1c5fba/</loc>
     
     <lastmod>2020-08-26</lastmod>
     
@@ -165,14 +165,14 @@
   </url>
   
   <url>
-    <loc>https://haydnch.gitee.io/tags/activate/</loc>
+    <loc>https://haydnch.gitee.io/tags/Hexo/</loc>
     <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://haydnch.gitee.io/tags/Hexo/</loc>
+    <loc>https://haydnch.gitee.io/tags/activate/</loc>
     <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -193,14 +193,7 @@
   </url>
   
   <url>
-    <loc>https://haydnch.gitee.io/tags/javaBackEnd/</loc>
-    <lastmod>2020-09-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://haydnch.gitee.io/tags/Spring/</loc>
+    <loc>https://haydnch.gitee.io/tags/distributed-framework/</loc>
     <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
