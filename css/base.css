@@ -310,6 +310,10 @@ a:hover {
   margin: 0 30px;
 }
 
+.archive_mon{
+  font-style: italic;
+  color: black;
+}
 .avatar {
   text-align: center;
   padding-bottom: 30px;
