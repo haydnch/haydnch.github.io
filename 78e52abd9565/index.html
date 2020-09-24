@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   
-  <title>Hello World | Haydn&#39;s Blog</title>
+  <title>MATLAB中intlinprog函数 | Haydn&#39;s Blog</title>
   
   
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	 
@@ -177,17 +177,28 @@ WIDGET = {
     <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
     <div class="container post-details" id="post-details">
         <div class="post-content">
-            <div class="post-title">Hello World</div>
+            <div class="post-title">MATLAB中intlinprog函数</div>
             <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime" title="创建日期 | post_time"></i>
-          2019-12-22 11:51
+          2020-09-22 15:10
         </span>
 		<span class="post-pubtime">
           <i class="iconfont icon-edit" title="文章字数 | word_count"></i>
-             <span class="post-count">75</span>字
+             <span class="post-count">177</span>字
         </span>
 
+                
+                    <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                        
+                            <span class="span--category">
+                  <a href="/categories/MATLAB/" title="查看 MATLAB 分类">
+                    <b>#</b> MATLAB
+                  </a>
+                </span>
+                        
+                    </span>
                 
                 
                     <!-- 不蒜子统计 -->
@@ -202,47 +213,55 @@ WIDGET = {
                 <div class="prev-or-next">
                     <div class="post-foot-prev">
                         
-                            <a href="/8a773c1c5fba/" target="_self">
+                            <a href="/84967a5c7c8f/" target="_self">
                                 <i class="iconfont icon-chevronleft"></i>
-                                <span>PREV: CentOS7安装mysql</span>
+                                <span>PREV: LeetCode4: 寻找两个正序数组的中位数</span>
                             </a>
                         
                     </div>
              
                     <div class="post-foot-prev">
                         
+                            <a href="/e3aa0bcef9fc/" target="_self">
+                                <span>NEXT: Java工程师能力要求</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
                     </div>
                 </div>
             
 			
             <div class="markdown-body">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>intlinprog</strong>是MATLAB中用于求解混合整数线性规划（Mixed-Integer linear programming）的一个函数，该模型的标准写法如下：</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-22%E4%B8%8B%E5%8D%883.14.54.png" alt="截屏2020-09-22下午3.14.54"></p>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">intlinprog(f,intcon,A,b,Aeq,beq,lb,ub)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>参数intcon表示整数决策变量所在的位置。例如，x(1)和x(3)是整数变量，那么intcon = [1, 3]。A, b代表不等式约束，Aeq, beq代表等式约束。lb和ub表示决策变量的上确界和下确界。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>求解0-1规划：<br><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200922152327257.png" alt="image-20200922152327257"></p>
+<p>代码：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = [<span class="number">-6</span> <span class="number">-2</span> <span class="number">-3</span> <span class="number">-5</span>];</span><br><span class="line">A = [<span class="number">-3</span> <span class="number">5</span> <span class="number">-1</span> <span class="number">-6</span>;<span class="number">2</span> <span class="number">1</span> <span class="number">1</span> <span class="number">-1</span>;<span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">5</span>];</span><br><span class="line">b = [<span class="number">-4</span> <span class="number">3</span> <span class="number">10</span>];</span><br><span class="line">intcon = [<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span>]</span><br><span class="line">lb = <span class="built_in">zeros</span>(<span class="number">4</span>,<span class="number">1</span>);</span><br><span class="line">ub = <span class="built_in">ones</span>(<span class="number">4</span>,<span class="number">1</span>);</span><br><span class="line">[x, fval] = intlinprog(f,intcon,A,b,[],[],lb,ub);</span><br><span class="line">x, fval = -fval;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<p>所得结果为：</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200922152953882.png" alt="image-20200922152953882"></p>
 
             </div>
             
                 <div class="prev-or-next">
                     <div class="post-foot-prev">
                         
-                            <a href="/8a773c1c5fba/" target="_self">
+                            <a href="/84967a5c7c8f/" target="_self">
                                 <i class="iconfont icon-chevronleft"></i>
-                                <span>PREV: CentOS7安装mysql</span>
+                                <span>PREV: LeetCode4: 寻找两个正序数组的中位数</span>
                             </a>
                         
                     </div>
                    
                     <div class="post-foot-prev">
+                        
+                            <a href="/e3aa0bcef9fc/" target="_self">
+                                <span>NEXT: Java工程师能力要求</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
                         
                     </div>
                 </div>
@@ -252,7 +271,7 @@ WIDGET = {
   <div class="post-catalog" id="catalog">
     <div class="title">目录</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-text">基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-text">实例</span></a></li></ol>
     </div>
   </div>
 
@@ -277,7 +296,7 @@ WIDGET = {
   
   <script>
   var giteement = new Giteement({
-    id: '20191222115112',
+    id: '20200922151017',
     owner: 'haydnch',
     repo: 'haydnch',
     backcall_uri: 'https://haydnch.gitee.io/',

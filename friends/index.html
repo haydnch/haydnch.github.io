@@ -83,9 +83,13 @@
   </iframe>
   </div>
   <div class="avatar">
-    <a href=""><img src="/images/bear.jpg" alt=""></a>
-    <div class="nickname">️🐬Haydn CH</div>
-	
+    <a href="">
+       <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/bear.jpg" alt="">
+      
+    </a>
+    <div class="nickname">️🐬Haydn CH</div>	
   </div>
   <div class="poem">
    <span id="jinrishici-sentence">正在加载今日诗词...</span> 
@@ -282,7 +286,7 @@ WIDGET = {
             <i class="iconfont icon-search"></i>
           </a>
         </span>
-        <input type="text" class="search-input" id="search-input" placeholder="搜索你想查找的文章...">
+        <input type="text" class="search-input" id="search-input" placeholder="搜索文章关键字...">
         <span class="search-close-icon" id="search-close-icon">
           <a href="javascript: void(0)">
             <i class="iconfont icon-close"></i>

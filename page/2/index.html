@@ -85,9 +85,13 @@
   </iframe>
   </div>
   <div class="avatar">
-    <a href=""><img src="/images/bear.jpg" alt=""></a>
-    <div class="nickname">️🐬Haydn CH</div>
-	
+    <a href="">
+       <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/bear.jpg" alt="">
+      
+    </a>
+    <div class="nickname">️🐬Haydn CH</div>	
   </div>
   <div class="poem">
    <span id="jinrishici-sentence">正在加载今日诗词...</span> 
@@ -166,6 +170,45 @@ WIDGET = {
   </script>
 <div class="container index">
   <div class="post-list">
+    
+      <div class="post-item" title="跳表（SkipList）">
+        <div class="time-m-d">2020-08-28</div>
+        <div class="title">
+          <a href="/1680d080339f/">
+            
+            <span>跳表（SkipList）</span>
+            
+			
+          </a>
+		  
+        </div>
+      </div>
+    
+      <div class="post-item" title="JUnit 5单元测试">
+        <div class="time-m-d">2020-08-26</div>
+        <div class="title">
+          <a href="/243c5f6e7cba/">
+            
+            <span>JUnit 5单元测试</span>
+            
+			
+          </a>
+		  
+        </div>
+      </div>
+    
+      <div class="post-item" title="cheatsheet（持续更新⏳）">
+        <div class="time-m-d">2020-08-22</div>
+        <div class="title">
+          <a href="/a07cebcd8369/">
+            
+            <span>cheatsheet（持续更新⏳）</span>
+            
+			
+          </a>
+		  
+        </div>
+      </div>
     
       <div class="post-item" title="docker">
         <div class="time-m-d">2020-08-22</div>
@@ -297,7 +340,7 @@ WIDGET = {
             <i class="iconfont icon-search"></i>
           </a>
         </span>
-        <input type="text" class="search-input" id="search-input" placeholder="搜索你想查找的文章...">
+        <input type="text" class="search-input" id="search-input" placeholder="搜索文章关键字...">
         <span class="search-close-icon" id="search-close-icon">
           <a href="javascript: void(0)">
             <i class="iconfont icon-close"></i>

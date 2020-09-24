@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   
-  <title>docker | Haydn&#39;s Blog</title>
+  <title>LeetCode4: 寻找两个正序数组的中位数 | Haydn&#39;s Blog</title>
   
   
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	 
@@ -177,15 +177,15 @@ WIDGET = {
     <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
     <div class="container post-details" id="post-details">
         <div class="post-content">
-            <div class="post-title">docker</div>
+            <div class="post-title">LeetCode4: 寻找两个正序数组的中位数</div>
             <div class="post-attach">
         <span class="post-pubtime">
           <i class="iconfont icon-updatetime" title="创建日期 | post_time"></i>
-          2020-08-22 11:51
+          2020-09-23 15:19
         </span>
 		<span class="post-pubtime">
           <i class="iconfont icon-edit" title="文章字数 | word_count"></i>
-             <span class="post-count">853</span>字
+             <span class="post-count">1.1k</span>字
         </span>
 
                 
@@ -193,25 +193,8 @@ WIDGET = {
                 <i class="iconfont icon-bookmark" title="类别 | categories"></i>
                         
                             <span class="span--category">
-                  <a href="/categories/Tutorial/" title="查看 Tutorial 分类">
-                    <b>#</b> Tutorial
-                  </a>
-                </span>
-                        
-                    </span>
-                
-                    <span class="post-tags">
-                <i class="iconfont icon-tags" title="标签 | tags"></i>
-                        
-                            <span class="span--tag">
-                  <a href="/tags/DevOps/" title="查看 运维 标签">
-                    <b>#</b> 运维
-                  </a>
-                </span>
-                        
-                            <span class="span--tag">
-                  <a href="/tags/container/" title="查看 容器 标签">
-                    <b>#</b> 容器
+                  <a href="/categories/LeetCode/" title="查看 LeetCode 分类">
+                    <b>#</b> LeetCode
                   </a>
                 </span>
                         
@@ -230,17 +213,17 @@ WIDGET = {
                 <div class="prev-or-next">
                     <div class="post-foot-prev">
                         
-                            <a href="/a07cebcd8369/" target="_self">
+                            <a href="/ac20b05e8909/" target="_self">
                                 <i class="iconfont icon-chevronleft"></i>
-                                <span>PREV: cheatsheet（持续更新⏳）</span>
+                                <span>PREV: LeetCode5: 最长回文子串</span>
                             </a>
                         
                     </div>
              
                     <div class="post-foot-prev">
                         
-                            <a href="/8a773c1c5fba/" target="_self">
-                                <span>NEXT: CentOS7安装mysql</span>
+                            <a href="/78e52abd9565/" target="_self">
+                                <span>NEXT: MATLAB中intlinprog函数</span>
                                 <i class="iconfont icon-chevronright"></i>
                             </a>
                         
@@ -249,71 +232,56 @@ WIDGET = {
             
 			
             <div class="markdown-body">
-                <h1 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h1><blockquote>
-<p><strong>Docker</strong> 是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%8E%9F%E5%A7%8B%E7%A2%BC">开放源代码</a><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BB%9F%E9%AB%94">软件</a>，是一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%96%8B%E6%94%BE%E5%B9%B3%E8%87%BA">开放平台</a>，用于开发应用、交付（shipping）应用、运行应用。 Docker允许用户将基础设施（Infrastructure）中的应用单独分割出来，形成更小的颗粒（容器），从而提高交付软件的速度。</p>
-<p><strong>Docker容器</strong>与虚拟机类似，但二者在原理上不同。容器是将<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">操作系统层虚拟化</a>，虚拟机则是虚拟化硬件，因此容器更具有便携性、高效地利用服务器。 容器更多的用于表示 软件的一个标准化单元。由于容器的标准化，因此它可以无视基础设施（Infrastructure）的差异，部署到任何一个地方。另外，Docker也为容器提供更强的业界的隔离兼容。</p>
-<p><strong>Docker</strong> 利用<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Linux%E6%A0%B8%E5%BF%83">Linux核心</a>中的资源分离机制，例如<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Cgroups">cgroups</a>，以及Linux核心<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/w/index.php?title=Linux%E5%91%BD%E5%90%8D%E7%A9%BA%E9%96%93&action=edit&redlink=1">名字空间</a>（namespaces），来创建独立的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BD%9C%E6%A5%AD%E7%B3%BB%E7%B5%B1%E5%B1%A4%E8%99%9B%E6%93%AC%E5%8C%96">容器</a>（containers）。这可以在单一Linux实体下运作，避免引导一个<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%99%9B%E6%93%AC%E6%A9%9F%E5%99%A8">虚拟机</a>造成的额外负担。Linux核心对名字空间的支持完全隔离了工作环境中应用程序的视野，包括行程树、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C">网络</a>、用户ID与挂载文件系统，而核心的cgroup提供资源隔离，包括<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/CPU">CPU</a>、<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9B%BB%E8%85%A6%E8%A8%98%E6%86%B6%E9%AB%94">存储器</a>、block I/O与网络。从0.9版本起，Dockers在使用抽象虚拟是经由<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Libvirt">libvirt</a>的<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/LXC">LXC</a>与systemd - nspawn提供界面的基础上，开始包括libcontainer库做为以自己的方式开始直接使用由Linux核心提供的虚拟化的设施，</p>
-</blockquote>
-<h1 id="docker应用场景"><a href="#docker应用场景" class="headerlink" title="docker应用场景"></a>docker应用场景</h1><ol>
-<li>加速本地开发</li>
-<li>自动打包和部署应用</li>
-<li>创建轻量、私有的PaaS环境</li>
-<li>自动化测试和持续集成/部署</li>
-<li>部署并扩展Web应用、数据库和后端服务器</li>
-<li>创建安全沙盒</li>
-<li>轻量级的桌面虚拟化</li>
-</ol>
-<h1 id="docker核心组件"><a href="#docker核心组件" class="headerlink" title="docker核心组件"></a>docker核心组件</h1><p>docker中有三大核心组件：</p>
+                <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定两个大小为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出这两个正序数组的中位数，并且要求算法的时间复杂度为 <code>O(log(m + n))</code>。假设 nums1 和 nums2 不会同时为空。</p>
 <ul>
-<li><p><strong>镜像</strong></p>
-<p> 镜像是一个只读的静态模版，它保存了容器需要的环境和应用的执行代码，可以将镜像看成是容器的代码，当代码运行起来之后，就成了容器。镜像和容器的关系也类似于程序和进程的关系。</p>
+<li><p><strong>示例1</strong></p>
+<p>nums1 = [1, 3]</p>
+<p>nums2 = [2]</p>
+<p>则中位数是 2.0</p>
 </li>
-<li><p><strong>容器</strong></p>
-<p>容器是一个运行时环境，是镜像的一个运行状态。它是镜像执行的动态表现。</p>
-</li>
-<li><p><strong>库</strong></p>
-<p>库是一个特定的用户存储镜像的目录，一个用户可以建立多个库来保存自己的镜像。</p>
-</li>
-</ul>
-<h1 id="docker命令"><a href="#docker命令" class="headerlink" title="docker命令"></a>docker命令</h1><h2 id="查看容器"><a href="#查看容器" class="headerlink" title="查看容器"></a>查看容器</h2><p>启动docker后，使用<code>docker ps</code>命令可以查看当前正在运行的容器：</p>
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819095745723.png" alt="image-20200819095745723"></p>
-<p>上面这条命令是查看运行着的容器，若想查看所有容器，可使用<code>docker ps -a </code>命令。</p>
-<h2 id="创建并启动容器"><a href="#创建并启动容器" class="headerlink" title="创建并启动容器"></a>创建并启动容器</h2><ul>
-<li><p>nginx容器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name nginx -d -p 8080:80 nginx</span><br></pre></td></tr></table></figure></li>
-<li><p>redis容器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -itd --name redis -p 6379:6379 redis</span><br></pre></td></tr></table></figure>
-
-<p>-d参数表示容器后台运行；-it参数：i表示开发容器的标准输入（STDIN），t表示告诉dcker为容器创建一个命令行终端。</p>
+<li><p><strong>示例2</strong></p>
+<p>nums1 = [1, 3 ,5]</p>
+<p>nums2 = [2, 4，5]</p>
+<p>则中位数是 (3 + 4)/2 = 3.5</p>
 </li>
 </ul>
-<h2 id="容器内执行命令"><a href="#容器内执行命令" class="headerlink" title="容器内执行命令"></a>容器内执行命令</h2><p>如果容器在后台启动，可以使用<code>docker exec</code>在容器内执行命令。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it redis /bin/bash</span><br></pre></td></tr></table></figure>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>题目要求复杂度为<code>O(log(m + n))</code>，因此不能用归并的方法。求中位数，其实就是求第 <code>k</code> 小的数的一种特殊情况，而求第k小的数有一种算法。假设我们要找第k小的数，可以每次循环排除掉<code>k/2</code>个数，看以下例子。</p>
+<p>假设要找第7小的数。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200923153332209.png" alt="image-20200923153332209"></p>
+<p>先比较两个数组的第<code>k/2</code>个数，如果k是奇数就向下取整。如上图所示，比较两个数组中第3个数。如果哪个小，就表明该数组的前<code>k/2</code>个数都不是第<code>k</code>小的数，所以将这些数排除。在本例中，由于3 &lt; 4，所以排除第二个数组的1，2，3。然后将[1, 3, 4, 9]和[4, 5, 6, 7, 8, 9, 10]两个数组作为新的数组进行比较。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200923154327697.png" alt="image-20200923154327697"></p>
+<p>橙色的部分代表被排除的数字。由于已经排除了3个数字。所以在新数组中，只需要找第7 - 3 = 4小的数字，即k变为4。</p>
+<p>此时比较第<code>k/2</code>个数，即第2个数。由于3 &lt; 5，所以排除第一个数组中的1和3。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200923154701967.png" alt="image-20200923154701967"></p>
+<p>因为排除了两个数字，所以k = 4 - 2 = 2，就是找两个数组中第2小的数字。再比较第<code>k/2</code>小的数，即第1个数。可以看到4==4，由于两个数相等，所以无论排除哪个数组中的4都可以。此时排除掉第二个数组的4。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200923155020962.png" alt="image-20200923155020962"></p>
+<p>因为排除了4这一个数，所以k最终减为了1，问题变成了找第1小的数。这时只需比较两个数组中第一个数字哪个小就可以了。因此原问题中第7小的数就是4。</p>
+<p>还有一种情况，当某一个数组的长度小于<code>k/2</code>的时候：</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200923155434615.png" alt="image-20200923155434615"></p>
+<p>此时直接将箭头指向最后一个元素进行比较，由于2 &lt; 3，所以直接将上面的数组直接排除，k = 7 - 2 = 5。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200923155552837.png" alt="image-20200923155552837"></p>
+<p>由于长度小于<code>k/2</code>的数组已经清空，因此直接返回下面数组中第5小的数字就可以了。</p>
+<p>从上面的例子可以看到，随着算法的进行，k 的值最终都会变成1或者另一个数组变空直接返回结果。</p>
+<p>采用递归的思路，为了防止数组长度小于<code>k/2</code>，每次需要比较<code>k/2</code>和len(数组)，选取较小的值对两个数组进行比较。然后排除数较小对应的数组的数，将两个新数组进入递归调用，并且k的值要减去排除的数字个数。递归的出口是当<code>k=1</code>或者其中一个数组的长度为0。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = nums1.length;</span><br><span class="line">    <span class="keyword">int</span> m = nums2.length;</span><br><span class="line">    <span class="keyword">int</span> left = (n + m + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> right = (n + m + <span class="number">2</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="comment">//将偶数和奇数的情况合并。如果是奇数,left会等于right；如果是偶数，left和right刚好是中间的两个数。</span></span><br><span class="line">    <span class="keyword">return</span> (getKth(nums1, <span class="number">0</span>, n - <span class="number">1</span>, nums2, <span class="number">0</span>, m - <span class="number">1</span>, left) + getKth(nums1, <span class="number">0</span>, n - <span class="number">1</span>, nums2, <span class="number">0</span>, m - <span class="number">1</span>, right)) * <span class="number">0.5</span>;  </span><br><span class="line">&#125;</span><br><span class="line">   <span class="comment">//求两个正序数组中第k小的数 </span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getKth</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> start1, <span class="keyword">int</span> end1, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> start2, <span class="keyword">int</span> end2, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len1 = end1 - start1 + <span class="number">1</span>; <span class="comment">//数组1的长度</span></span><br><span class="line">        <span class="keyword">int</span> len2 = end2 - start2 + <span class="number">1</span>; <span class="comment">//数组2的长度</span></span><br><span class="line">      </span><br><span class="line">        <span class="comment">//如果某个数组的长度为空，则直接返回另一个数组第k小的数</span></span><br><span class="line">        <span class="keyword">if</span> (len1 == <span class="number">0</span>) <span class="keyword">return</span> nums2[start2 + k - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (len2 == <span class="number">0</span>) <span class="keyword">return</span> nums1[start1 + k - <span class="number">1</span>];</span><br><span class="line">        <span class="comment">//如果k变为1，返回两个数组中第一个数较小的</span></span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">1</span>) <span class="keyword">return</span> Math.min(nums1[start1], nums2[start2]);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//两个数组中第k/2个数对应的下标</span></span><br><span class="line">        <span class="keyword">int</span> i = start1 + Math.min(len1, k / <span class="number">2</span>) - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> j = start2 + Math.min(len2, k / <span class="number">2</span>) - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (nums1[i] &gt; nums2[j]) &#123;<span class="comment">//第二个数组的数较小，排除前(j+1-start2)个数，新的数组下标从j+1开始</span></span><br><span class="line">            <span class="keyword">return</span> getKth(nums1, start1, end1, nums2, j + <span class="number">1</span>, end2, k - (j - start2 + <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> getKth(nums1, i + <span class="number">1</span>, end1, nums2, start2, end2, k - (i - start1 + <span class="number">1</span>));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819101823721.png" alt="image-20200819101823721"></p>
-<p>或者</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it redis redis-cli -h localhost -p 6379</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819180555138.png" alt="image-20200819180555138"></p>
-<h2 id="查看容器进程"><a href="#查看容器进程" class="headerlink" title="查看容器进程"></a>查看容器进程</h2><p>使用<code>docker top</code>命令可以查看容器中正在运行的进程，首先确保容器已经启动。</p>
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200819102409989.png" alt="image-20200819102409989"></p>
 
             </div>
             
                 <div class="prev-or-next">
                     <div class="post-foot-prev">
                         
-                            <a href="/a07cebcd8369/" target="_self">
+                            <a href="/ac20b05e8909/" target="_self">
                                 <i class="iconfont icon-chevronleft"></i>
-                                <span>PREV: cheatsheet（持续更新⏳）</span>
+                                <span>PREV: LeetCode5: 最长回文子串</span>
                             </a>
                         
                     </div>
                    
                     <div class="post-foot-prev">
                         
-                            <a href="/8a773c1c5fba/" target="_self">
-                                <span>NEXT: CentOS7安装mysql</span>
+                            <a href="/78e52abd9565/" target="_self">
+                                <span>NEXT: MATLAB中intlinprog函数</span>
                                 <i class="iconfont icon-chevronright"></i>
                             </a>
                         
@@ -325,7 +293,7 @@ WIDGET = {
   <div class="post-catalog" id="catalog">
     <div class="title">目录</div>
     <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFdocker"><span class="toc-text">什么是docker</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">docker应用场景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6"><span class="toc-text">docker核心组件</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#docker%E5%91%BD%E4%BB%A4"><span class="toc-text">docker命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8"><span class="toc-text">查看容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B9%B6%E5%90%AF%E5%8A%A8%E5%AE%B9%E5%99%A8"><span class="toc-text">创建并启动容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%B9%E5%99%A8%E5%86%85%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-text">容器内执行命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%AE%B9%E5%99%A8%E8%BF%9B%E7%A8%8B"><span class="toc-text">查看容器进程</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -350,7 +318,7 @@ WIDGET = {
   
   <script>
   var giteement = new Giteement({
-    id: '20200822115112',
+    id: '20200923151944',
     owner: 'haydnch',
     repo: 'haydnch',
     backcall_uri: 'https://haydnch.gitee.io/',

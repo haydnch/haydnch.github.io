@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  
+<script src="/js/clicklove.js"></script>
+
+  
+  <meta charset="utf-8">
+  <meta http-equiv="Page-Enter" content="RevealTrans(duration=5,Transitionv=4)">
+  <meta name="baidu-site-verification" content="ejqj9vGHRM" />
+  <meta name="haydn" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  <title>LeetCode5: 最长回文子串 | Haydn&#39;s Blog</title>
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	 
+  
+  
+   <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  
+  
+<script src="/js/yinghua.js"></script>
+
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.jpg">
+  
+  
+  
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  
+  <!-- 引入font-awesome字体 -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+ 
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176391873-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-176391873-1');
+    </script>
+  
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+
+  <div class = "music" >
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=350 height=86 
+	src="//music.163.com/outchain/player?type=2&id=316938&auto=0&height=66">
+  </iframe>
+  </div>
+  <div class="avatar">
+    <a href="">
+       <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/bear.jpg" alt="">
+      
+    </a>
+    <div class="nickname">️🐬Haydn CH</div>	
+  </div>
+  <div class="poem">
+   <span id="jinrishici-sentence">正在加载今日诗词...</span> 
+    <!--
+	<div id="poem_sentence"></div>
+	<div id="poem_info"></div>
+	-->
+  </div>
+  <div id="he-plugin-simple"></div>
+<script>
+WIDGET = {
+  CONFIG: {
+    "modules": "01234",
+    "background": 5,
+    "tmpColor": "4A4A4A",
+    "tmpSize": 16,
+    "cityColor": "4A4A4A",
+    "citySize": 16,
+    "aqiSize": 16,
+    "weatherIconSize": 24,
+    "alertIconSize": 18,
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "fixed": "true",
+    "vertical": "middle",
+    "horizontal": "center",
+    "right": 10,
+    "top": "5",
+    "key": "1fd384bb1a5d4bb7922b269608451085"
+  }
+}
+</script>
+<script src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
+
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">友链</a>
+        </li>
+      
+    </ul>
+	
+  </div>
+ 
+
+
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+	
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+
+
+
+
+
+
+
+
+    <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+    <div class="container post-details" id="post-details">
+        <div class="post-content">
+            <div class="post-title">LeetCode5: 最长回文子串</div>
+            <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="创建日期 | post_time"></i>
+          2020-09-23 19:25
+        </span>
+		<span class="post-pubtime">
+          <i class="iconfont icon-edit" title="文章字数 | word_count"></i>
+             <span class="post-count">1.6k</span>字
+        </span>
+
+                
+                    <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                        
+                            <span class="span--category">
+                  <a href="/categories/LeetCode/" title="查看 LeetCode 分类">
+                    <b>#</b> LeetCode
+                  </a>
+                </span>
+                        
+                    </span>
+                
+                    <span class="post-tags">
+                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                        
+                            <span class="span--tag">
+                  <a href="/tags/DP/" title="查看 动态规划 标签">
+                    <b>#</b> 动态规划
+                  </a>
+                </span>
+                        
+                    </span>
+                
+                
+                    <!-- 不蒜子统计 -->
+                    <span id="busuanzi_container_page_pv" class="post-readNum">
+              <i class="iconfont icon-eye"></i>
+			    阅读量：<span id="busuanzi_value_page_pv">
+			  <i class="fa fa-spinner fa-spin"></i></span>
+        </span>
+                
+            </div>
+	         
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                            <a href="/3b605e64017e/" target="_self">
+                                <i class="iconfont icon-chevronleft"></i>
+                                <span>PREV: HashMap常用方法</span>
+                            </a>
+                        
+                    </div>
+             
+                    <div class="post-foot-prev">
+                        
+                            <a href="/84967a5c7c8f/" target="_self">
+                                <span>NEXT: LeetCode4: 寻找两个正序数组的中位数</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
+			
+            <div class="markdown-body">
+                <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-palindromic-substring/">题目链接</a></p>
+<p>给定一个字符串s，找到s中最长的回文子串，s的最大长度为1000。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：&quot;ebacabdef&quot;</span><br><span class="line">输出：&quot;bacab&quot;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="暴力匹配（Brute-Force）"><a href="#暴力匹配（Brute-Force）" class="headerlink" title="暴力匹配（Brute Force）"></a>暴力匹配（Brute Force）</h3><p>思路：若字符串长度小于2，直接返回原字符串。否则，枚举所有长度大于等于2的子串来判断是否为回文串，并记录子串起始位置以及子串长度。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 验证子串 s[left..right] 是否为回文串</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">validPalindromic</span><span class="params">(<span class="keyword">char</span>[] charArray, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">if</span> (charArray[left] != charArray[right]) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            left++;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">        <span class="keyword">if</span> (len &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> maxLen = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// s.charAt(i) 每次都会检查数组下标是否越界，因此先转换成字符数组</span></span><br><span class="line">        <span class="keyword">char</span>[] charArray = s.toCharArray();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 枚举所有长度大于 1 的子串 charArray[i..j]</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; len; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j - i + <span class="number">1</span> &gt; maxLen &amp;&amp; validPalindromic(charArray, i, j)) &#123;</span><br><span class="line">                    maxLen = j - i + <span class="number">1</span>;</span><br><span class="line">                    begin = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substring(begin, begin + maxLen);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h3><p>从回文串的定义展开讨论：</p>
+<ul>
+<li>如果一个字符串的头尾两个字符都不相等，那么这个字符串一定不是回文串。</li>
+<li>如果一个字符串的头尾两个字符相等，继续向里判断：<ul>
+<li>如果里面的子串是回文串，整个字符串就是回文串；</li>
+<li>如果里面的子串不是回文串，整个字符串就不是回文串。</li>
+</ul>
+</li>
+</ul>
+<p>因此，在头尾字符相等的情况下，里面子串的回文性质决定了整个串的回文性质，这就叫<code>状态转移</code>。对于本题，将<code>状态</code>定义为原字符串的一个子串是否为回文子串。</p>
+<ol>
+<li><p><strong>定义状态</strong></p>
+<p><code>dp[i][j]</code>表示子串<code>s[i...j]</code>是否为回文子串，i和j分别表示子串的起始位置和结束位置。</p>
+</li>
+<li><p><strong>写出状态转移方程</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j] = (s[i] == s[j]) &amp;&amp; dp[i+<span class="number">1</span>][j-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<p>动态规划就是在填一张二维表格，在本题中<code>i &lt;= j</code>，当<code>i == j</code>时一个字符构成的字符串是回文串。</p>
+<p>注意<code>i+1</code>和<code>j-1</code>的边界情况。边界条件是区间<code>[i+1, j-1]</code>长度小于2，即 <code>j-1-i-1+1 &lt; 2</code>，<code>j - i &lt; 3</code>。</p>
+<p>当子串<code>s[i...j]</code>的长度等于2或者等于3的时候，只需要判断头尾两个字符是否相等。</p>
+<p>因此，当<code>s[i] == s[j]</code>并且<code>j - i &lt; 3</code>都成立时，可以直接得出<code>dp[i][j] = true</code>，否则就通过状态转移方程确定。</p>
+</li>
+<li><p><strong>考虑初始化</strong></p>
+<p>将二维表的对角线初始化为true，即<code>dp[i][i] = true</code>。</p>
+</li>
+<li><p><strong>考虑输出</strong></p>
+<p>当得出<code>dp[i][j] = true</code>时，记录此时回文子串的起始位置和回文长度。</p>
+</li>
+</ol>
+<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 特判</span></span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">        <span class="keyword">if</span> (len &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> maxLen = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> begin = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// dp[i][j] 表示 s[i, j] 是否是回文串</span></span><br><span class="line">        <span class="keyword">boolean</span>[][] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[len][len];</span><br><span class="line">        <span class="keyword">char</span>[] charArray = s.toCharArray();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            dp[i][i] = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; len; j++) &#123;<span class="comment">// 从上往下，从左往右填表</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; j; i++) &#123;</span><br><span class="line">              <span class="comment">//for(int i = j - 1;i &gt;= 0;i--) //从下往上填表也可以</span></span><br><span class="line">                <span class="keyword">if</span> (charArray[i] != charArray[j]) &#123;</span><br><span class="line">                    dp[i][j] = <span class="keyword">false</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123; <span class="comment">//首尾字符相等</span></span><br><span class="line">                    <span class="keyword">if</span> (j - i &lt; <span class="number">3</span>) &#123; <span class="comment">//子串s[i..j]长度小于4(1或者2或者3)</span></span><br><span class="line">                        dp[i][j] = <span class="keyword">true</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        dp[i][j] = dp[i + <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 只要 dp[i][j] == true 成立，就表示子串 s[i..j] 是回文，此时记录回文长度和起始位置</span></span><br><span class="line">                <span class="keyword">if</span> (dp[i][j] &amp;&amp; j - i + <span class="number">1</span> &gt; maxLen) &#123;</span><br><span class="line">                    maxLen = j - i + <span class="number">1</span>;</span><br><span class="line">                    begin = i;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> s.substring(begin, begin + maxLen);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="⚠️-填表顺序"><a href="#⚠️-填表顺序" class="headerlink" title="⚠️  填表顺序"></a>⚠️  填表顺序</h4><p>每当计算新 <code>dp</code> 值的时候，都一定会参考「左下角」的 <code>dp</code> 值，因为 <code>dp[i + 1][j - 1]</code>（<code>i + 1</code> 表示在下边，<code>j - 1</code> 表示在左边）。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200923215935412.png" alt="image-20200923215935412"></p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200923220020340.png" alt="image-20200923220020340"></p>
+<h3 id="中心扩散法"><a href="#中心扩散法" class="headerlink" title="中心扩散法"></a>中心扩散法</h3><p>除了枚举字符串的左右边界以外，比较容易想到的是枚举可能出现的回文子串的“中心位置”，从“中心位置”尝试尽可能扩散出去，得到一个回文串。</p>
+<p>因此中心扩散法的思路是：<strong>遍历每一个索引，以这个索引为中心，利用“回文串”中心对称的特点，往两边扩散，看最多能扩散多远。</strong></p>
+<p>在这里要注意一个细节：回文串在长度为奇数和偶数的时候，“回文中心”的形式是不一样的。</p>
+<ul>
+<li>奇数回文串的“中心”是一个具体的字符，例如：回文串 “aba” 的中心是字符 “b”；</li>
+<li>偶数回文串的“中心”是位于中间的两个字符的“空隙”，例如：回文串串 “abba” 的中心是两个 “b” 中间的那个“空隙”。</li>
+</ul>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200924094104343.png" alt="image-20200924094104343"></p>
+<p>1、如果传入重合的索引编码，进行中心扩散，此时得到的回文子串的长度是奇数；</p>
+<p>2、如果传入相邻的索引编码，进行中心扩散，此时得到的回文子串的长度是偶数。</p>
+<p>比如传入索引[1, 1]就是以a为中心进行扩散；传入索引[0, 1]就是以b和a之间的间隙进行扩散。</p>
+<p>长度为 <code>n</code> 的字符串，有<code>n - 1</code>个间隙和<code>n - 2</code>个中间字符。</p>
+<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">        <span class="keyword">if</span> (len &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> s;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> maxLen = <span class="number">1</span>;</span><br><span class="line">        String res = s.substring(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">        <span class="comment">// 中心位置枚举到 len - 2 即可</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            String oddStr = centerSpread(s, i, i); <span class="comment">//中心是字符</span></span><br><span class="line">            String evenStr = centerSpread(s, i, i + <span class="number">1</span>); <span class="comment">//中心是两个字符的间隙</span></span><br><span class="line">            String maxLenStr = oddStr.length() &gt; evenStr.length() ? oddStr : evenStr;</span><br><span class="line">            <span class="keyword">if</span> (maxLenStr.length() &gt; maxLen) &#123;</span><br><span class="line">                maxLen = maxLenStr.length();</span><br><span class="line">                res = maxLenStr;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">		<span class="comment">//</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">centerSpread</span><span class="params">(String s, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// left = right 的时候，此时回文中心是一个字符，回文串的长度是奇数</span></span><br><span class="line">        <span class="comment">// right = left + 1 的时候，此时回文中心是一个空隙，回文串的长度是偶数</span></span><br><span class="line">        <span class="keyword">int</span> len = s.length();</span><br><span class="line">        <span class="keyword">int</span> i = left;</span><br><span class="line">        <span class="keyword">int</span> j = right;</span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; j &lt;=len - <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(i) == s.charAt(j)) &#123;</span><br><span class="line">                i--;</span><br><span class="line">                j++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// break跳出 while 循环时，恰好满足 s.charAt(i) != s.charAt(j)，因此不能取 i，不能取 j</span></span><br><span class="line">        <span class="comment">// 边界条件不满足跳出while循环的时候i一定被减1，所以这里要加1，j代表子串末位后的一位无影响</span></span><br><span class="line">        <span class="keyword">return</span> s.substring(i + <span class="number">1</span>, j);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+            </div>
+            
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                            <a href="/3b605e64017e/" target="_self">
+                                <i class="iconfont icon-chevronleft"></i>
+                                <span>PREV: HashMap常用方法</span>
+                            </a>
+                        
+                    </div>
+                   
+                    <div class="post-foot-prev">
+                        
+                            <a href="/84967a5c7c8f/" target="_self">
+                                <span>NEXT: LeetCode4: 寻找两个正序数组的中位数</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
+        </div>
+        
+  <div class="post-catalog" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%B4%E5%8A%9B%E5%8C%B9%E9%85%8D%EF%BC%88Brute-Force%EF%BC%89"><span class="toc-text">暴力匹配（Brute Force）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-text">代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-1"><span class="toc-text">代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%9A%A0%EF%B8%8F-%E5%A1%AB%E8%A1%A8%E9%A1%BA%E5%BA%8F"><span class="toc-text">⚠️  填表顺序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%BF%83%E6%89%A9%E6%95%A3%E6%B3%95"><span class="toc-text">中心扩散法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81-2"><span class="toc-text">代码</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+        <!--
+    
+	-->
+        
+            <div class="comments-container">
+                
+  <div id="giteement-ctn"></div>
+  
+    <!-- <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/wd-discuss.css"> -->
+    <!-- <script src="https://giteement.oss-cn-beijing.aliyuncs.com/discuss_hexo.js"></script> -->
+    <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/default.css">
+    <script src="https://giteement.oss-cn-beijing.aliyuncs.com/giteement.browser.js"></script>
+  
+  <script>
+  var giteement = new Giteement({
+    id: '20200923192522',
+    owner: 'haydnch',
+    repo: 'haydnch',
+    backcall_uri: 'https://haydnch.gitee.io/',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: 'd926679348e52f04cd3ed750aeb5c551e2160731e8824fc9575edfe29928f837',
+      client_secret: '67d0c535f28f2fadd81c2cfdde6019c7a0320fac174290b42e9209a94a256860'
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
+
+            </div>
+        
+    </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" href="https://github.com/haydnch/haydnch.github.io">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="twitter" href="">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微信" href="/about/">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微博" href="https://weibo.com/574422066/">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+  
+    <div class="footer-more">
+      <a href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020 | Powered by Hexo</a>
+    </div>
+  
+ 
+ 
+	 <div class="visit">
+        <!-- 不蒜子统计 -->
+		<span id="busuanzi_container_site_uv">
+                💚共有<span id="busuanzi_value_site_uv"></span>位访客
+        </span>
+        <span id="busuanzi_container_site_pv">
+                访问了<span id="busuanzi_value_site_pv"></span>次💙
+        
+        
+	</div>
+     
+	 
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        <input type="text" class="search-input" id="search-input" placeholder="搜索文章关键字...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+	var searchOverlayArea = document.querySelector(".search-overlay")
+	
+    inputArea.onclick = function(){ 
+	  getSearchFile(); 
+	  this.onclick = null 
+	}		    
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+  
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+  
+    function blurSearchContent(e) {
+	  if (e.target === searchOverlayArea) {
+    	      
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+  </script>
+  
+  
+<script src="/js/search.js"></script>
+
+
+
+
+    </div>
+	
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":200,"height":350,"hOffset":40,"vOffset":-65},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"dialog":{"enable":true,"hitokoto":true},"log":false});</script></body>
+</html>

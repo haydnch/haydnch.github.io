@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   
-  <title>macos下Hexo部署问题 | Haydn&#39;s Blog</title>
+  <title>分类: MATLAB | Haydn&#39;s Blog</title>
   
   
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	 
@@ -83,9 +83,13 @@
   </iframe>
   </div>
   <div class="avatar">
-    <a href=""><img src="/images/bear.jpg" alt=""></a>
-    <div class="nickname">️🐬Haydn CH</div>
-	
+    <a href="">
+       <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/bear.jpg" alt="">
+      
+    </a>
+    <div class="nickname">️🐬Haydn CH</div>	
   </div>
   <div class="poem">
    <span id="jinrishici-sentence">正在加载今日诗词...</span> 
@@ -158,168 +162,30 @@ WIDGET = {
 
 	
       <div class="flex-container">
-        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
-<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+        <!-- 标签详情页，展示某个标签下的文章列表，url形式：https://yoursite/tags/某个标签/ -->
 
-
-
-
-
-
-
-
-
-
-    <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
-    <div class="container post-details" id="post-details">
-        <div class="post-content">
-            <div class="post-title">macos下Hexo部署问题</div>
-            <div class="post-attach">
-        <span class="post-pubtime">
-          <i class="iconfont icon-updatetime" title="创建日期 | post_time"></i>
-          2020-09-02 09:19
-        </span>
-		<span class="post-pubtime">
-          <i class="iconfont icon-edit" title="文章字数 | word_count"></i>
-             <span class="post-count">181</span>字
-        </span>
-
-                
-                    <span class="post-categories">
-                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
-                        
-                            <span class="span--category">
-                  <a href="/categories/Note/" title="查看 Note 分类">
-                    <b>#</b> Note
-                  </a>
-                </span>
-                        
-                    </span>
-                
-                    <span class="post-tags">
-                <i class="iconfont icon-tags" title="标签 | tags"></i>
-                        
-                            <span class="span--tag">
-                  <a href="/tags/Hexo/" title="查看 Hexo 标签">
-                    <b>#</b> Hexo
-                  </a>
-                </span>
-                        
-                    </span>
-                
-                
-                    <!-- 不蒜子统计 -->
-                    <span id="busuanzi_container_page_pv" class="post-readNum">
-              <i class="iconfont icon-eye"></i>
-			    阅读量：<span id="busuanzi_value_page_pv">
-			  <i class="fa fa-spinner fa-spin"></i></span>
-        </span>
-                
-            </div>
-	         
-                <div class="prev-or-next">
-                    <div class="post-foot-prev">
-                        
-                            <a href="/b35989291ea4/" target="_self">
-                                <i class="iconfont icon-chevronleft"></i>
-                                <span>PREV: mac下激活Sublime Text3</span>
-                            </a>
-                        
-                    </div>
-             
-                    <div class="post-foot-prev">
-                        
-                            <a href="/5bfc718ddec5/" target="_self">
-                                <span>NEXT: IDEA注释模板</span>
-                                <i class="iconfont icon-chevronright"></i>
-                            </a>
-                        
-                    </div>
-                </div>
-            
-			
-            <div class="markdown-body">
-                <h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>从windows切换到macos，确定环境以及ssh公钥都已设置正确。之前部署过一次是成功的。后面在部署hexo的时候突然总是报错，提示：<code>git@github.com: Permission denied (publickey). Could not read from remote repository.</code></p>
-<p>期间也重新生成了公钥，在用命令时前面也加了sudo，就是无法生效。</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><ol>
-<li><p>使用<code>sudo -s</code>命令切换到root用户，但是保持登录用户的环境。<br><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200902093840466.png" alt="image-20200902093840466"></p>
-</li>
-<li><p>因为登陆用户是root，自然文件夹下没有.ssh目录的。所以使用<code>cp -r .ssh /root/</code>把用户目录下生成的.ssh文件复制到root目录下。 <img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-02%E4%B8%8A%E5%8D%889.42.17.png" alt="截屏2020-09-02上午9.42.17"  /></p>
-</li>
-<li><p>设置完后以后通过切换到root用户就可以部署成功了。</p>
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200902094608814.png" alt="image-20200902094608814"></p>
-</li>
-</ol>
-
-            </div>
-            
-                <div class="prev-or-next">
-                    <div class="post-foot-prev">
-                        
-                            <a href="/b35989291ea4/" target="_self">
-                                <i class="iconfont icon-chevronleft"></i>
-                                <span>PREV: mac下激活Sublime Text3</span>
-                            </a>
-                        
-                    </div>
-                   
-                    <div class="post-foot-prev">
-                        
-                            <a href="/5bfc718ddec5/" target="_self">
-                                <span>NEXT: IDEA注释模板</span>
-                                <i class="iconfont icon-chevronright"></i>
-                            </a>
-                        
-                    </div>
-                </div>
-            
-        </div>
-        
-  <div class="post-catalog" id="catalog">
-    <div class="title">目录</div>
-    <div class="catalog-content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98"><span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3"><span class="toc-text">解决</span></a></li></ol>
-    </div>
+<div class="container category-details">
+  <div class="content-title">
+    <h2>
+      <span>MATLAB</span>
+    </h2>
   </div>
-
   
-<script src="/js/catalog.js"></script>
-
-
-
-
-        <!--
-    
-	-->
-        
-            <div class="comments-container">
-                
-  <div id="giteement-ctn"></div>
-  
-    <!-- <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/wd-discuss.css"> -->
-    <!-- <script src="https://giteement.oss-cn-beijing.aliyuncs.com/discuss_hexo.js"></script> -->
-    <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/default.css">
-    <script src="https://giteement.oss-cn-beijing.aliyuncs.com/giteement.browser.js"></script>
-  
-  <script>
-  var giteement = new Giteement({
-    id: '20200902091918',
-    owner: 'haydnch',
-    repo: 'haydnch',
-    backcall_uri: 'https://haydnch.gitee.io/',
-    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
-    oauth: {
-      client_id: 'd926679348e52f04cd3ed750aeb5c551e2160731e8824fc9575edfe29928f837',
-      client_secret: '67d0c535f28f2fadd81c2cfdde6019c7a0320fac174290b42e9209a94a256860'
-    },
-  })
-  giteement.render('giteement-ctn')
-  </script>
-
-            </div>
-        
+    <div class="post-list">
+      <div class="post-item" title="MATLAB中intlinprog函数">
+        <span class="time-m-d">2020-09-22</span>
+        <a href="/78e52abd9565/">
+          <span>MATLAB中intlinprog函数</span>
+        </a>
+      </div>
     </div>
-
+  
+  <nav class="post-navigation">
+    
+    <span class="page-num">1 / 1</span>
+    
+  </nav>
+</div>
 
         <div class="footer">
   <div class="social">
@@ -402,7 +268,7 @@ WIDGET = {
             <i class="iconfont icon-search"></i>
           </a>
         </span>
-        <input type="text" class="search-input" id="search-input" placeholder="搜索你想查找的文章...">
+        <input type="text" class="search-input" id="search-input" placeholder="搜索文章关键字...">
         <span class="search-close-icon" id="search-close-icon">
           <a href="javascript: void(0)">
             <i class="iconfont icon-close"></i>
