@@ -486,6 +486,8 @@
 </ul>
 <h2 id="List-转数组"><a href="#List-转数组" class="headerlink" title="List 转数组"></a>List 转数组</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt; intList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"><span class="keyword">int</span>[] res = intList.stream().mapToInt(Integer::intValue).toArray();</span><br><span class="line"></span><br><span class="line">List&lt;String&gt; s = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">String[] array = (String[])s.toArray(<span class="keyword">new</span> String[s.size()]);</span><br></pre></td></tr></table></figure>
 
+<h2 id="int-和Integer-互转"><a href="#int-和Integer-互转" class="headerlink" title="int[]和Integer[] 互转"></a>int[]和Integer[] 互转</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">Integer[] arrs = Arrays.stream(arr).boxed().toArray(Integer[]::<span class="keyword">new</span>);</span><br><span class="line"><span class="keyword">int</span>[] res = Arrays.stream(arrs).mapToInt(Integer::intValue).toArray();</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>Note</category>
