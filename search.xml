@@ -488,11 +488,18 @@
 
 <h2 id="int-和Integer-互转"><a href="#int-和Integer-互转" class="headerlink" title="int[]和Integer[] 互转"></a>int[]和Integer[] 互转</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line">Integer[] arrs = Arrays.stream(arr).boxed().toArray(Integer[]::<span class="keyword">new</span>);</span><br><span class="line"><span class="keyword">int</span>[] res = Arrays.stream(arrs).mapToInt(Integer::intValue).toArray();</span><br></pre></td></tr></table></figure>
 
+<h2 id="int-转换成-List"><a href="#int-转换成-List" class="headerlink" title="int[] 转换成 List"></a>int[] 转换成 List<Integer></h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] nums = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line">List&lt;Integer&gt; list = Arrays.stream(nums).boxed().collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+
+<p>对于<code> Integer 数组</code>，可以使用 <u>Arrays.asList</u>、<u>Arrays.stream</u>、<u>Collections.addAll</u> 或者 <u>Stream.of</u> 进行转换：</p>
+<p>但是 Arrays.asList 返回的是只读的 List 不支持 add 和 remove 的操作，如果往里 add 会报 UnsupportedOperationException</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer[] arr2 = &#123;<span class="number">234</span>, <span class="number">2</span>, <span class="number">23</span>, <span class="number">777</span>, <span class="number">2</span>&#125;;</span><br><span class="line"></span><br><span class="line">List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;(arr2.length);</span><br><span class="line">Collections.addAll(list, arr2);</span><br><span class="line"></span><br><span class="line">List&lt;Integer&gt; list1 = Stream.of(arr2).collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">List&lt;Integer&gt; list2 = Arrays.stream(arr2).collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line">List&lt;Integer&gt; list3 = Arrays.asList(arr2);</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>Note</category>
       </categories>
       <tags>
+        <tag>Java</tag>
         <tag>git</tag>
       </tags>
   </entry>
