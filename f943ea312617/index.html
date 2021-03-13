@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   
   
-  <title>标签 | Haydn&#39;s Blog</title>
+  <title>Maven打包的参数学习 | Haydn&#39;s Blog</title>
   
   
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	 
@@ -166,20 +166,228 @@ WIDGET = {
 <!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
 
 
-    <!-- 标签页 url形式：https://yoursite/tags/ -->
-    <div class="container tag-index">
-        <div>
-            <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/" rel="tag">DFS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECS/" rel="tag">ECS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HashMap/" rel="tag">HashMap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IDEA/" rel="tag">IDEA</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/" rel="tag">Java</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaBackEnd/" rel="tag">Java后端</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaBasis/" rel="tag">Java基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Junit5/" rel="tag">Junit5</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LinkedHashMap/" rel="tag">LinkedHashMap</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/" rel="tag">Maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring-Boot/" rel="tag">Spring Boot</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/" rel="tag">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mysql/" rel="tag">mysql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BinaryTree/" rel="tag">二叉树</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/distributed-framework/" rel="tag">分布式框架</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/" rel="tag">动态规划</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/container/" rel="tag">容器</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%B7%B3%E8%A1%A8/" rel="tag">跳表</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/activate/" rel="tag">软件破解</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DevOps/" rel="tag">运维</a><span class="tag-list-count">1</span></li></ul>
+
+
+
+
+
+
+
+
+    <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+    <div class="container post-details" id="post-details">
+        <div class="post-content">
+            <div class="post-title">Maven打包的参数学习</div>
+            <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="创建日期 | post_time"></i>
+          2021-03-13 13:15
+        </span>
+		<span class="post-pubtime">
+          <i class="iconfont icon-edit" title="文章字数 | word_count"></i>
+             <span class="post-count">594</span>字
+        </span>
+
+                
+                    <span class="post-tags">
+                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                        
+                            <span class="span--tag">
+                  <a href="/tags/Maven/" title="查看 Maven 标签">
+                    <b>#</b> Maven
+                  </a>
+                </span>
+                        
+                            <span class="span--tag">
+                  <a href="/tags/javaBackEnd/" title="查看 Java后端 标签">
+                    <b>#</b> Java后端
+                  </a>
+                </span>
+                        
+                    </span>
+                
+                
+                    <!-- 不蒜子统计 -->
+                    <span id="busuanzi_container_page_pv" class="post-readNum">
+              <i class="iconfont icon-eye"></i>
+			    阅读量：<span id="busuanzi_value_page_pv">
+			  <i class="fa fa-spinner fa-spin"></i></span>
+        </span>
+                
+            </div>
+	         
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                    </div>
+             
+                    <div class="post-foot-prev">
+                        
+                            <a href="/605ff3dd8098/" target="_self">
+                                <span>NEXT: Java判断List中是否有重复元素</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
+			
+            <div class="markdown-body">
+                <p><strong>转载自<a target="_blank" rel="noopener" href="https://www.cnblogs.com/hiver/p/7850954.html">https://www.cnblogs.com/hiver/p/7850954.html</a></strong></p>
+<p>昨天maven的deploy任务需要只选择单个模块并且把它依赖的模块一起打包，第一时间便想到了-pl参数，然后就开始处理，但是因为之前只看了一下命令的介绍，竟然花了近半小时才完全跑通，故记录此文。</p>
+<p>假设现有项目结构如下：</p>
+<p>dailylog-parent<br>|-dailylog-common<br>|-dailylog-web</p>
+<ul>
+<li>三个文件夹处在同级目录中</li>
+<li>dailylog-web依赖dailylog-common</li>
+<li>dailylog-parent管理dailylog-common和dailylog-web。</li>
+</ul>
+<p>根据资料已知：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>全称</th>
+<th>释义</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-pl</td>
+<td>–projects</td>
+<td>Build specified reactor projects instead of all projects</td>
+<td>选项后可跟随{groupId}:{artifactId}或者所选模块的相对路径(多个模块以逗号分隔)</td>
+</tr>
+<tr>
+<td>-am</td>
+<td>–also-make</td>
+<td>If project list is specified, also build projects required by the list</td>
+<td>表示同时处理选定模块所依赖的模块</td>
+</tr>
+<tr>
+<td>-amd</td>
+<td>–also-make-dependents</td>
+<td>If project list is specified, also build projects that depend on projects on the list</td>
+<td>表示同时处理依赖选定模块的模块</td>
+</tr>
+<tr>
+<td>-N</td>
+<td>–Non-recursive</td>
+<td>Build projects without recursive</td>
+<td>表示不递归子模块</td>
+</tr>
+<tr>
+<td>-rf</td>
+<td>–resume-from</td>
+<td>Resume reactor from specified project</td>
+<td>表示从指定模块开始继续处理</td>
+</tr>
+</tbody></table>
+<p>以下是在maven-3.3.9中的试验</p>
+<ol>
+<li>在dailylog-parent目录运行<code>mvn clean install -pl org.lxp:dailylog-web -am</code>，结果</li>
+</ol>
+<ul>
+<li>dailylog-common成功安装到本地库</li>
+<li>dailylog-parent成功安装到本地库</li>
+<li>dailylog-web成功安装到本地库</li>
+</ul>
+<p>该命令等价于<code>mvn clean install -pl ../dailylog-web -am</code></p>
+<ol start="2">
+<li>在dailylog-parent目录运行<code>mvn clean install -pl ../dailylog-common -am</code>，结果</li>
+</ol>
+<ul>
+<li>dailylog-common成功安装到本地库</li>
+<li>dailylog-parent成功安装到本地库</li>
+</ul>
+<ol start="3">
+<li>在dailylog-parent目录运行<code>mvn clean install -pl ../dailylog-common -amd</code>，结果</li>
+</ol>
+<ul>
+<li>dailylog-common成功安装到本地库</li>
+<li>dailylog-web成功安装到本地库</li>
+</ul>
+<p>由于dailylog-parent并不依赖dailylog-common模块，故没有被安装</p>
+<ol start="4">
+<li>在dailylog-parent目录运行<code>mvn clean install -pl ../dailylog-common,../dailylog-parent -amd</code>，结果</li>
+</ol>
+<ul>
+<li>dailylog-common成功安装到本地库</li>
+<li>dailylog-parent成功安装到本地库</li>
+<li>dailylog-web成功安装到本地库</li>
+</ul>
+<ol start="5">
+<li>在dailylog-parent目录运行<code>mvn clean install -N</code>，结果</li>
+</ol>
+<ul>
+<li>dailylog-parent成功安装到本地库</li>
+</ul>
+<p>-N表示不递归，那么dailylog-parent管理的子模块不会被同时安装</p>
+<ol start="6">
+<li>在dailylog-parent目录运行<code>mvn clean install -pl ../dailylog-parent -N</code>，结果</li>
+</ol>
+<ul>
+<li>dailylog-parent成功安装到本地库</li>
+</ul>
+<ol start="7">
+<li>在dailylog-parent目录运行<code>mvn clean install -rf ../dailylog-common</code>，结果</li>
+</ol>
+<ul>
+<li>dailylog-common成功安装到本地库</li>
+<li>dailylog-web成功安装到本地库</li>
+</ul>
+
+            </div>
+            
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                    </div>
+                   
+                    <div class="post-foot-prev">
+                        
+                            <a href="/605ff3dd8098/" target="_self">
+                                <span>NEXT: Java判断List中是否有重复元素</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
         </div>
+        
+
+        <!--
+    
+	-->
+        
+            <div class="comments-container">
+                
+  <div id="giteement-ctn"></div>
+  
+    <!-- <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/wd-discuss.css"> -->
+    <!-- <script src="https://giteement.oss-cn-beijing.aliyuncs.com/discuss_hexo.js"></script> -->
+    <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/default.css">
+    <script src="https://giteement.oss-cn-beijing.aliyuncs.com/giteement.browser.js"></script>
+  
+  <script>
+  var giteement = new Giteement({
+    id: '20210313131559',
+    owner: 'haydnch',
+    repo: 'haydnch',
+    backcall_uri: 'https://haydnch.gitee.io/',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: 'd926679348e52f04cd3ed750aeb5c551e2160731e8824fc9575edfe29928f837',
+      client_secret: '67d0c535f28f2fadd81c2cfdde6019c7a0320fac174290b42e9209a94a256860'
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
+
+            </div>
+        
     </div>
-
-
-
-
-
-
-
-
 
 
         <div class="footer">
