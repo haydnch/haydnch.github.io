@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <head>
+  
+<script src="/js/clicklove.js"></script>
+
+  
+  <meta charset="utf-8">
+  <meta http-equiv="Page-Enter" content="RevealTrans(duration=5,Transitionv=4)">
+  <meta name="baidu-site-verification" content="ejqj9vGHRM" />
+  <meta name="haydn" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  
+  <title>Spring中经典的9种设计模式 | Haydn&#39;s Blog</title>
+  
+  
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>	 
+  
+  
+   <!-- jquery3.3.1 -->
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+  
+  
+<script src="/js/yinghua.js"></script>
+
+
+  
+    <link rel="apple-touch-icon" href="/images/favicon.jpg">
+    <link rel="icon" href="/images/favicon.jpg">
+  
+  
+  
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+  
+
+  <!-- Raleway-Font -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  
+  <!-- 引入font-awesome字体 -->
+  <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- hexo site css -->
+  
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/github-markdown.css">
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+ 
+  <!-- fancybox -->
+  <link href="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.css" rel="stylesheet">
+  <script async src="https://cdn.bootcss.com/fancybox/3.5.2/jquery.fancybox.min.js"></script>
+  
+<script src="/js/fancybox.js"></script>
+
+
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176391873-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-176391873-1');
+    </script>
+  
+
+<meta name="generator" content="Hexo 5.1.1"></head>
+
+
+  <body>
+    <div id="app">
+      <div class="header">
+
+  <div class = "music" >
+  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=350 height=86 
+	src="//music.163.com/outchain/player?type=2&id=316938&auto=0&height=66">
+  </iframe>
+  </div>
+  <div class="avatar">
+    <a href="">
+       <!-- 头像取消懒加载，添加no-lazy -->
+      
+        <img src="/images/bear.jpg" alt="">
+      
+    </a>
+    <div class="nickname">️🐬Haydn CH</div>	
+  </div>
+  <div class="poem">
+   <span id="jinrishici-sentence">正在加载今日诗词...</span> 
+    <!--
+	<div id="poem_sentence"></div>
+	<div id="poem_info"></div>
+	-->
+  </div>
+  <div id="he-plugin-simple"></div>
+<script>
+WIDGET = {
+  CONFIG: {
+    "modules": "01234",
+    "background": 5,
+    "tmpColor": "4A4A4A",
+    "tmpSize": 16,
+    "cityColor": "4A4A4A",
+    "citySize": 16,
+    "aqiSize": 16,
+    "weatherIconSize": 24,
+    "alertIconSize": 18,
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "fixed": "true",
+    "vertical": "middle",
+    "horizontal": "center",
+    "right": 10,
+    "top": "5",
+    "key": "1fd384bb1a5d4bb7922b269608451085"
+  }
+}
+</script>
+<script src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
+
+  <div class="navbar">
+    <ul>
+      
+        <li class="nav-item" data-path="/">
+          <a href="/">主页</a>
+        </li>
+      
+        <li class="nav-item" data-path="/archives/">
+          <a href="/archives/">归档</a>
+        </li>
+      
+        <li class="nav-item" data-path="/categories/">
+          <a href="/categories/">分类</a>
+        </li>
+      
+        <li class="nav-item" data-path="/tags/">
+          <a href="/tags/">标签</a>
+        </li>
+      
+        <li class="nav-item" data-path="/friends/">
+          <a href="/friends/">友链</a>
+        </li>
+      
+    </ul>
+	
+  </div>
+ 
+
+
+</div>
+
+
+<script src="/js/activeNav.js"></script>
+
+
+	
+      <div class="flex-container">
+        <!-- 文章详情页，展示文章具体内容，url形式：https://yoursite/文章标题/ -->
+<!-- 同时为「标签tag」，「朋友friend」，「分类categories」，「关于about」页面的承载页面，具体展示取决于page.type -->
+
+
+
+
+
+
+
+
+
+
+    <!-- 文章内容页 url形式：https://yoursite/文章标题/ -->
+    <div class="container post-details" id="post-details">
+        <div class="post-content">
+            <div class="post-title">Spring中经典的9种设计模式</div>
+            <div class="post-attach">
+        <span class="post-pubtime">
+          <i class="iconfont icon-updatetime" title="创建日期 | post_time"></i>
+          2021-03-15 14:02
+        </span>
+		<span class="post-pubtime">
+          <i class="iconfont icon-edit" title="文章字数 | word_count"></i>
+             <span class="post-count">3.4k</span>字
+        </span>
+
+                
+                    <span class="post-categories">
+                <i class="iconfont icon-bookmark" title="类别 | categories"></i>
+                        
+                            <span class="span--category">
+                  <a href="/categories/design-patterns/" title="查看 设计模式 分类">
+                    <b>#</b> 设计模式
+                  </a>
+                </span>
+                        
+                    </span>
+                
+                    <span class="post-tags">
+                <i class="iconfont icon-tags" title="标签 | tags"></i>
+                        
+                            <span class="span--tag">
+                  <a href="/tags/Spring/" title="查看 Spring 标签">
+                    <b>#</b> Spring
+                  </a>
+                </span>
+                        
+                    </span>
+                
+                
+                    <!-- 不蒜子统计 -->
+                    <span id="busuanzi_container_page_pv" class="post-readNum">
+              <i class="iconfont icon-eye"></i>
+			    阅读量：<span id="busuanzi_value_page_pv">
+			  <i class="fa fa-spinner fa-spin"></i></span>
+        </span>
+                
+            </div>
+	         
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                    </div>
+             
+                    <div class="post-foot-prev">
+                        
+                            <a href="/f943ea312617/" target="_self">
+                                <span>NEXT: Maven打包的参数学习</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
+			
+            <div class="markdown-body">
+                <p><strong>1.简单工厂(非23种设计模式中的一种)</strong></p>
+<p><strong>2.工厂方法</strong></p>
+<p><strong>3.单例模式</strong></p>
+<p><strong>4.适配器模式</strong></p>
+<p><strong>5.装饰器模式</strong></p>
+<p><strong>6.代理模式</strong></p>
+<p><strong>7.观察者模式</strong></p>
+<p><strong>8.策略模式</strong></p>
+<p><strong>9.模版方法模式</strong></p>
+<h2 id="1-简单工厂-非23种设计模式中的一种"><a href="#1-简单工厂-非23种设计模式中的一种" class="headerlink" title="1. 简单工厂(非23种设计模式中的一种)"></a>1. 简单工厂(非23种设计模式中的一种)</h2><p><strong>实现方式</strong>：</p>
+<p>BeanFactory。Spring中的BeanFactory就是简单工厂模式的体现，根据传入一个唯一的标识来获得Bean对象，但是否是在传入参数后创建还是传入参数前创建这个要根据具体情况来定。</p>
+<p><strong>实质：</strong></p>
+<p>由一个工厂类根据传入的参数，动态决定应该创建哪一个产品类。</p>
+<p><strong>实现原理：</strong></p>
+<p><strong>bean容器的启动阶段：</strong></p>
+<ul>
+<li><p>读取bean的xml配置文件,将bean元素分别转换成一个BeanDefinition对象。</p>
+</li>
+<li><p>然后通过BeanDefinitionRegistry将这些bean注册到beanFactory中，保存在它的一个ConcurrentHashMap中。</p>
+</li>
+<li><p>将BeanDefinition注册到了beanFactory之后，在这里Spring为我们提供了一个扩展的切口，允许我们通过实现接口BeanFactoryPostProcessor 在此处来插入我们定义的代码。</p>
+<p>典型的例子就是：PropertyPlaceholderConfigurer，我们一般在配置数据库的dataSource时使用到的占位符的值，就是它注入进去的。</p>
+</li>
+</ul>
+<p><strong>容器中bean的实例化阶段：</strong></p>
+<p>实例化阶段主要是通过反射或者CGLIB对bean进行实例化，在这个阶段Spring又给我们暴露了很多的扩展点：</p>
+<ul>
+<li><strong>各种的Aware接口</strong> ，比如 BeanFactoryAware，对于实现了这些Aware接口的bean，在实例化bean时Spring会帮我们注入对应的BeanFactory的实例。</li>
+<li><strong>BeanPostProcessor接口</strong> ，实现了BeanPostProcessor接口的bean，在实例化bean时Spring会帮我们调用接口中的方法。</li>
+<li><strong>InitializingBean接口</strong> ，实现了InitializingBean接口的bean，在实例化bean时Spring会帮我们调用接口中的方法。</li>
+<li><strong>DisposableBean接口</strong> ，实现了BeanPostProcessor接口的bean，在该bean死亡时Spring会帮我们调用接口中的方法。</li>
+</ul>
+<h3 id="设计意义："><a href="#设计意义：" class="headerlink" title="设计意义："></a>设计意义：</h3><p><strong>松耦合。</strong> 可以将原来硬编码的依赖，通过Spring这个beanFactory这个工厂来注入依赖，也就是说原来只有依赖方和被依赖方，现在我们引入了第三方——spring这个beanFactory，由它来解决bean之间的依赖问题，达到了松耦合的效果.</p>
+<p><strong>bean的额外处理。</strong> 通过Spring接口的暴露，在实例化bean的阶段我们可以进行一些额外的处理，这些额外的处理只需要让bean实现对应的接口即可，那么spring就会在bean的生命周期调用我们实现的接口来处理该bean。<code>[非常重要]</code></p>
+<h2 id="2-工厂方法"><a href="#2-工厂方法" class="headerlink" title="2.工厂方法"></a>2.工厂方法</h2><p><strong>实现方式：</strong>FactoryBean接口。</p>
+<p><strong>实现原理：</strong>实现了FactoryBean接口的bean是一类叫做factory的bean。其特点是，spring会在使用getBean()调用获得该bean时，会自动调用该bean的getObject()方法，所以返回的不是factory这个bean，而是这个bean.getOjbect()方法的返回值。</p>
+<p><strong>例子：</strong>典型的例子有spring与mybatis的结合。</p>
+<p><strong>代码示例：</strong></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_png/6mychickmupUtF7H8k5iadhWHuBhBfDu5nsNJ2yN4qDgcbaVXIhQnaSOHGePa30P6NibkLIvOHN9nic6iawZDuWTvjA/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><strong>说明：</strong></p>
+<p>我们看上面该bean，因为实现了FactoryBean接口，所以返回的不是 SqlSessionFactoryBean 的实例，而是它的 SqlSessionFactoryBean.getObject() 的返回值。</p>
+<h2 id="3-单例模式"><a href="#3-单例模式" class="headerlink" title="3.单例模式"></a>3.单例模式</h2><p>Spring依赖注入Bean实例默认是单例的。</p>
+<p>Spring的依赖注入（包括lazy-init方式）都是发生在AbstractBeanFactory的getBean里。getBean的doGetBean方法调用getSingleton进行bean的创建。</p>
+<p>分析 getSingleton() 方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">getSingleton</span><span class="params">(String beanName)</span></span>&#123;</span><br><span class="line">    <span class="comment">//参数true设置标识允许早期依赖</span></span><br><span class="line">    <span class="keyword">return</span> getSingleton(beanName,<span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">protected</span> Object <span class="title">getSingleton</span><span class="params">(String beanName, <span class="keyword">boolean</span> allowEarlyReference)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//检查缓存中是否存在实例</span></span><br><span class="line">    Object singletonObject = <span class="keyword">this</span>.singletonObjects.get(beanName);</span><br><span class="line">    <span class="keyword">if</span> (singletonObject == <span class="keyword">null</span> &amp;&amp; isSingletonCurrentlyInCreation(beanName)) &#123;</span><br><span class="line">        <span class="comment">//如果为空，则锁定全局变量并进行处理。</span></span><br><span class="line">        <span class="keyword">synchronized</span> (<span class="keyword">this</span>.singletonObjects) &#123;</span><br><span class="line">            <span class="comment">//如果此bean正在加载，则不处理</span></span><br><span class="line">            singletonObject = <span class="keyword">this</span>.earlySingletonObjects.get(beanName);</span><br><span class="line">            <span class="keyword">if</span> (singletonObject == <span class="keyword">null</span> &amp;&amp; allowEarlyReference) &#123;</span><br><span class="line">                <span class="comment">//当某些方法需要提前初始化的时候则会调用addSingleFactory 方法将对应的ObjectFactory初始化策略存储在singletonFactories</span></span><br><span class="line">                ObjectFactory&lt;?&gt; singletonFactory = <span class="keyword">this</span>.singletonFactories.get(beanName);</span><br><span class="line">                <span class="keyword">if</span> (singletonFactory != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    <span class="comment">//调用预先设定的getObject方法</span></span><br><span class="line">                    singletonObject = singletonFactory.getObject();</span><br><span class="line">                    <span class="comment">//记录在缓存中，earlysingletonObjects和singletonFactories互斥</span></span><br><span class="line">                    <span class="keyword">this</span>.earlySingletonObjects.put(beanName, singletonObject);</span><br><span class="line">                    <span class="keyword">this</span>.singletonFactories.remove(beanName);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (singletonObject != NULL_OBJECT ? singletonObject : <span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>getSingleton()过程图</strong></p>
+<p>ps：spring依赖注入时，使用了 双重判断加锁 的单例模式</p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/oTKHc6F8tsjOmmcyPkVvrRjTulVnHSsGIu0l7hMqT4ZVsp5dpeuQwibRDNviaKduG78Tpz16pRUIhdtrx8jPvzWQ/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" alt="图片"></p>
+<p><strong>单例模式定义：</strong> 保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
+<p><strong>spring对单例的实现：</strong> spring中的单例模式完成了后半句话，即提供了全局的访问点BeanFactory。但没有从构造器级别去控制单例，这是因为spring管理的是任意的java对象。</p>
+<h2 id="4-适配器模式"><a href="#4-适配器模式" class="headerlink" title="4. 适配器模式"></a>4. 适配器模式</h2><p><strong>实现方式：</strong>SpringMVC中的适配器HandlerAdatper。</p>
+<p><strong>实现原理：</strong>HandlerAdatper根据Handler规则执行不同的Handler。</p>
+<p><strong>实现过程：</strong>DispatcherServlet根据HandlerMapping返回的handler，向HandlerAdatper发起请求，处理Handler。</p>
+<p>HandlerAdapter根据规则找到对应的Handler并让其执行，执行完毕后Handler会向HandlerAdapter返回一个ModelAndView，最后由HandlerAdapter向DispatchServelet返回一个ModelAndView。</p>
+<p><strong>实现意义：</strong></p>
+<p>HandlerAdatper使得Handler的扩展变得容易，只需要增加一个新的Handler和一个对应的HandlerAdapter即可。</p>
+<p>因此Spring定义了一个适配接口，使得每一种Controller有一种对应的适配器实现类，让适配器代替controller执行相应的方法。这样在扩展Controller时，只需要增加一个适配器类就完成了SpringMVC的扩展了。</p>
+<h2 id="5-装饰器模式"><a href="#5-装饰器模式" class="headerlink" title="5.装饰器模式"></a>5.装饰器模式</h2><p><strong>实现方式：</strong>Spring中用到的包装器模式在类名上有两种表现：一种是类名中含有Wrapper，另一种是类名中含有Decorator。</p>
+<p><strong>实质</strong>：动态地给一个对象添加一些额外的职责。就增加功能来说，Decorator模式相比生成子类更为灵活。</p>
+<h2 id="6-代理模式"><a href="#6-代理模式" class="headerlink" title="6. 代理模式"></a>6. 代理模式</h2><p> <strong>实现方式：</strong>AOP底层，就是动态代理模式的实现。</p>
+<p><strong>动态代理：</strong>在内存中构建的，不需要手动编写代理类</p>
+<p> <strong>静态代理：</strong>需要手工编写代理类，代理类引用被代理对象。</p>
+<p> <strong>实现原理：</strong>切面在应用运行的时刻被织入。一般情况下，在织入切面时，AOP容器会为目标对象创建动态的创建一个代理对象。SpringAOP就是以这种方式织入切面的。</p>
+<p>** 织入：**把切面应用到目标对象并创建新的代理对象的过程。</p>
+<h2 id="7-观察者模式"><a href="#7-观察者模式" class="headerlink" title="7. 观察者模式"></a>7. 观察者模式</h2><p><strong>实现方式</strong>：spring的事件驱动模型使用的是 观察者模式 ，Spring中Observer模式常用的地方是listener的实现。</p>
+<p> <strong>具体实现：</strong></p>
+<p> <u>事件机制的实现需要三个部分,事件源,事件,事件监听器</u></p>
+<p>ApplicationEvent抽象类[事件]</p>
+<p>继承自jdk的EventObject,所有的事件都需要继承ApplicationEvent,并且通过构造器参数source得到事件源.</p>
+<p>该类的实现类ApplicationContextEvent表示ApplicaitonContext的容器事件.</p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">ApplicationEvent</span> <span class="keyword">extends</span> <span class="title">EventObject</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">7099057708183571937L</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">long</span> timestamp;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ApplicationEvent</span><span class="params">(Object source)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(source);</span><br><span class="line">    <span class="keyword">this</span>.timestamp = System.currentTimeMillis();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">long</span> <span class="title">getTimestamp</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.timestamp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>ApplicationListener接口<code>[事件监听器]</code></p>
+<p>继承自jdk的EventListener,所有的监听器都要实现这个接口。</p>
+<p>这个接口只有一个onApplicationEvent()方法,该方法接受一个ApplicationEvent或其子类对象作为参数,在方法体中,可以通过不同对Event类的判断来进行相应的处理。</p>
+<p>当事件触发时所有的监听器都会收到消息。</p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ApplicationListener</span>&lt;<span class="title">E</span> <span class="keyword">extends</span> <span class="title">ApplicationEvent</span>&gt; <span class="keyword">extends</span> <span class="title">EventListener</span> </span>&#123;</span><br><span class="line">     <span class="function"><span class="keyword">void</span> <span class="title">onApplicationEvent</span><span class="params">(E event)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>ApplicationContext接口<code>[事件源]</code></p>
+<p>ApplicationContext是spring中的全局容器，翻译过来是”应用上下文”。</p>
+<p>实现了ApplicationEventPublisher接口。</p>
+<p> <strong>职责</strong>：</p>
+<p>负责读取bean的配置文档,管理bean的加载,维护bean之间的依赖关系,可以说是负责bean的整个生命周期,再通俗一点就是我们平时所说的IOC容器。</p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ApplicationEventPublisher</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">publishEvent</span><span class="params">(ApplicationEvent event)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">publishEvent</span><span class="params">(ApplicationEvent event)</span> </span>&#123;</span><br><span class="line">    Assert.notNull(event, <span class="string">&quot;Event must not be null&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (logger.isTraceEnabled()) &#123;</span><br><span class="line">         logger.trace(<span class="string">&quot;Publishing event in &quot;</span> + getDisplayName() + <span class="string">&quot;: &quot;</span> + event);</span><br><span class="line">    &#125;</span><br><span class="line">    getApplicationEventMulticaster().multicastEvent(event);</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.parent != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.parent.publishEvent(event);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>ApplicationEventMulticaster抽象类<code>[事件源中publishEvent方法需要调用其方法getApplicationEventMulticaster]</code></p>
+<p>属于事件广播器,它的作用是把Applicationcontext发布的Event广播给所有的监听器.</p>
+<p>代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractApplicationContext</span> <span class="keyword">extends</span> <span class="title">DefaultResourceLoader</span></span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">ConfigurableApplicationContext</span>, <span class="title">DisposableBean</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> ApplicationEventMulticaster applicationEventMulticaster;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">registerListeners</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Register statically specified listeners first.</span></span><br><span class="line">    <span class="keyword">for</span> (ApplicationListener&lt;?&gt; listener : getApplicationListeners()) &#123;</span><br><span class="line">    getApplicationEventMulticaster().addApplicationListener(listener);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Do not initialize FactoryBeans here: We need to leave all regular beans</span></span><br><span class="line">    <span class="comment">// uninitialized to let post-processors apply to them!</span></span><br><span class="line">    String[] listenerBeanNames = getBeanNamesForType(ApplicationListener.class, <span class="keyword">true</span>, <span class="keyword">false</span>);</span><br><span class="line">    <span class="keyword">for</span> (String lisName : listenerBeanNames) &#123;</span><br><span class="line">    getApplicationEventMulticaster().addApplicationListenerBean(lisName);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="8-策略模式"><a href="#8-策略模式" class="headerlink" title="8.策略模式"></a>8.策略模式</h2><p> <strong>实现方式：</strong></p>
+<p>Spring框架的资源访问Resource接口。该接口提供了更强的资源访问能力，Spring 框架本身大量使用了 Resource 接口来访问底层资源。</p>
+<p> <strong>Resource 接口介绍</strong></p>
+<p>source 接口是具体资源访问策略的抽象，也是所有资源访问类所实现的接口。</p>
+<p>Resource 接口主要提供了如下几个方法:</p>
+<ul>
+<li><strong>getInputStream()：</strong> 定位并打开资源，返回资源对应的输入流。每次调用都返回新的输入流。调用者必须负责关闭输入流。</li>
+<li><strong>exists()：</strong> 返回 Resource 所指向的资源是否存在。</li>
+<li><strong>isOpen()：</strong> 返回资源文件是否打开，如果资源文件不能多次读取，每次读取结束应该显式关闭，以防止资源泄漏。</li>
+<li><strong>getDescription()：</strong> 返回资源的描述信息，通常用于资源处理出错时输出该信息，通常是全限定文件名或实际 URL。</li>
+<li><strong>getFile：</strong> 返回资源对应的 File 对象。</li>
+<li><strong>getURL：</strong> 返回资源对应的 URL 对象。</li>
+</ul>
+<p>最后两个方法通常无须使用，仅在通过简单方式访问无法实现时，Resource 提供传统的资源访问的功能。</p>
+<p>Resource 接口本身没有提供访问任何底层资源的实现逻辑，<strong>针对不同的底层资源，Spring 将会提供不同的 Resource 实现类，不同的实现类负责不同的资源访问逻辑。</strong></p>
+<p>Spring 为 Resource 接口提供了如下实现类：</p>
+<ul>
+<li><strong>UrlResource：</strong> 访问网络资源的实现类。</li>
+<li><strong>ClassPathResource：</strong> 访问类加载路径里资源的实现类。</li>
+<li><strong>FileSystemResource：</strong> 访问文件系统里资源的实现类。</li>
+<li><strong>ServletContextResource：</strong> 访问相对于 ServletContext 路径里的资源的实现类.</li>
+<li><strong>InputStreamResource：</strong> 访问输入流资源的实现类。</li>
+<li><strong>ByteArrayResource：</strong> 访问字节数组资源的实现类。</li>
+</ul>
+<p>这些 Resource 实现类，针对不同的的底层资源，提供了相应的资源访问逻辑，并提供便捷的包装，以利于客户端程序的资源访问。</p>
+<h2 id="9-模版方法模式"><a href="#9-模版方法模式" class="headerlink" title="9.模版方法模式"></a>9.模版方法模式</h2><p> <strong>经典模板方法定义</strong>：</p>
+<p>父类定义了骨架（调用哪些方法及顺序），某些特定方法由子类实现。</p>
+<p>最大的好处：代码复用，减少重复代码。除了子类要实现的特定方法，其他方法及方法调用顺序都在父类中预先写好了。</p>
+<p><strong>所以父类模板方法中有两类方法：</strong></p>
+<p><strong>共同的方法：</strong> 所有子类都会用到的代码</p>
+<p><strong>不同的方法：</strong> 子类要覆盖的方法，分为两种：</p>
+<ul>
+<li>抽象方法：父类中的是抽象方法，子类必须覆盖</li>
+<li>钩子方法：父类中是一个空方法，子类继承了默认也是空的</li>
+</ul>
+<p>注：为什么叫钩子，子类可以通过这个钩子（方法），控制父类，因为这个钩子实际是父类的方法（空方法）！</p>
+<p><strong>Spring 模板方法模式实质</strong>：</p>
+<p>是模板方法模式和回调模式的结合，是Template Method不需要继承的另一种实现方式。Spring几乎所有的外接扩展都采用这种模式。</p>
+<p> <strong>具体实现</strong>：</p>
+<p>JDBC的抽象和对Hibernate的集成，都采用了一种理念或者处理方式，那就是模板方法模式与相应的Callback接口相结合。</p>
+<p>采用模板方法模式是为了以一种统一而集中的方式来处理资源的获取和释放，以JdbcTempalte为例:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">JdbcTemplate</span> </span>&#123;</span><br><span class="line">     <span class="keyword">public</span> <span class="keyword">final</span> Object execute（String sql）&#123;</span><br><span class="line">        Connection con=<span class="keyword">null</span>;</span><br><span class="line">        Statement stmt=<span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            con=getConnection（）;</span><br><span class="line">            stmt=con.createStatement（）;</span><br><span class="line">            Object retValue=executeWithStatement（stmt,sql）;</span><br><span class="line">            <span class="keyword">return</span> retValue;</span><br><span class="line">        &#125;<span class="keyword">catch</span>（SQLException e）&#123;</span><br><span class="line">             ...</span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">            closeStatement（stmt）;</span><br><span class="line">            releaseConnection（con）;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">abstract</span> Object executeWithStatement（Statement stmt, String sql）;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>引入回调原因：</strong></p>
+<p>JdbcTemplate是抽象类，不能够独立使用，我们每次进行数据访问的时候都要给出一个相应的子类实现,这样肯定不方便，所以就引入了回调。</p>
+<p>回调代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">StatementCallback</span></span>&#123;</span><br><span class="line">    Object doWithStatement（Statement stmt）;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>利用回调方法重写JdbcTemplate方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JdbcTemplate</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">final</span> Object execute（StatementCallback callback）&#123;</span><br><span class="line">        Connection con=<span class="keyword">null</span>;</span><br><span class="line">        Statement stmt=<span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span>&#123;</span><br><span class="line">            con=getConnection（）;</span><br><span class="line">            stmt=con.createStatement（）;</span><br><span class="line">            Object retValue=callback.doWithStatement（stmt）;</span><br><span class="line">            <span class="keyword">return</span> retValue;</span><br><span class="line">        &#125;<span class="keyword">catch</span>（SQLException e）&#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">            closeStatement（stmt）;</span><br><span class="line">            releaseConnection（con）;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ...<span class="comment">//其它方法定义</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Jdbc使用方法如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">JdbcTemplate jdbcTemplate=...;</span><br><span class="line">    <span class="keyword">final</span> String sql=...;</span><br><span class="line">    StatementCallback callback=<span class="keyword">new</span> StatementCallback()&#123;</span><br><span class="line">    <span class="keyword">public</span> Object=doWithStatement(Statement stmt)&#123;</span><br><span class="line">        <span class="keyword">return</span> ...;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">jdbcTemplate.execute(callback);</span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么JdbcTemplate没有使用继承？</strong></p>
+<p>因为这个类的方法太多，但是我们还是想用到JdbcTemplate已有的稳定的、公用的数据库连接，那么我们怎么办呢？</p>
+<p>我们可以把变化的东西抽出来作为一个参数传入JdbcTemplate的方法中。但是变化的东西是一段代码，而且这段代码会用到JdbcTemplate中的变量。怎么办？</p>
+<p>那我们就用回调对象吧。在这个回调对象中定义一个操纵JdbcTemplate中变量的方法，我们去实现这个方法，就把变化的东西集中到这里了。然后我们再传入这个回调对象到JdbcTemplate，从而完成了调用。</p>
+<p>作者：icoding91</p>
+<p>链接：blog.csdn.net/caoxiaohong1005</p>
+
+            </div>
+            
+                <div class="prev-or-next">
+                    <div class="post-foot-prev">
+                        
+                    </div>
+                   
+                    <div class="post-foot-prev">
+                        
+                            <a href="/f943ea312617/" target="_self">
+                                <span>NEXT: Maven打包的参数学习</span>
+                                <i class="iconfont icon-chevronright"></i>
+                            </a>
+                        
+                    </div>
+                </div>
+            
+        </div>
+        
+  <div class="post-catalog" id="catalog">
+    <div class="title">目录</div>
+    <div class="catalog-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82-%E9%9D%9E23%E7%A7%8D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%AD%E7%9A%84%E4%B8%80%E7%A7%8D"><span class="toc-text">1. 简单工厂(非23种设计模式中的一种)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%84%8F%E4%B9%89%EF%BC%9A"><span class="toc-text">设计意义：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95"><span class="toc-text">2.工厂方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F"><span class="toc-text">3.单例模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="toc-text">4. 适配器模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%A3%85%E9%A5%B0%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="toc-text">5.装饰器模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="toc-text">6. 代理模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F"><span class="toc-text">7. 观察者模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F"><span class="toc-text">8.策略模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E6%A8%A1%E7%89%88%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F"><span class="toc-text">9.模版方法模式</span></a></li></ol>
+    </div>
+  </div>
+
+  
+<script src="/js/catalog.js"></script>
+
+
+
+
+        <!--
+    
+	-->
+        
+            <div class="comments-container">
+                
+  <div id="giteement-ctn"></div>
+  
+    <!-- <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/wd-discuss.css"> -->
+    <!-- <script src="https://giteement.oss-cn-beijing.aliyuncs.com/discuss_hexo.js"></script> -->
+    <link rel="stylesheet" href="https://giteement.oss-cn-beijing.aliyuncs.com/default.css">
+    <script src="https://giteement.oss-cn-beijing.aliyuncs.com/giteement.browser.js"></script>
+  
+  <script>
+  var giteement = new Giteement({
+    id: '20210315140226',
+    owner: 'haydnch',
+    repo: 'haydnch',
+    backcall_uri: 'https://haydnch.gitee.io/',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: 'd926679348e52f04cd3ed750aeb5c551e2160731e8824fc9575edfe29928f837',
+      client_secret: '67d0c535f28f2fadd81c2cfdde6019c7a0320fac174290b42e9209a94a256860'
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
+
+            </div>
+        
+    </div>
+
+
+        <div class="footer">
+  <div class="social">
+    <ul>
+      
+        <li>
+          <a title="github" href="https://github.com/haydnch/haydnch.github.io">
+            <i class="iconfont icon-github"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="twitter" href="">
+            <i class="iconfont icon-twitter"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微信" href="/about/">
+            <i class="iconfont icon-wechat"></i>
+          </a>
+        </li>
+      
+        <li>
+          <a title="微博" href="https://weibo.com/574422066/">
+            <i class="iconfont icon-weibo"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+  
+  
+    <div class="footer-more">
+      <a href="https://github.com/zchengsite/hexo-theme-oranges">Copyright © Oranges 2020 | Powered by Hexo</a>
+    </div>
+  
+ 
+ 
+	 <div class="visit">
+        <!-- 不蒜子统计 -->
+		<span id="busuanzi_container_site_uv">
+                💚共有<span id="busuanzi_value_site_uv"></span>位访客
+        </span>
+        <span id="busuanzi_container_site_pv">
+                访问了<span id="busuanzi_value_site_pv"></span>次💙
+        
+        
+	</div>
+     
+	 
+  
+</div>
+
+      </div>
+
+      <div class="back-to-top hidden">
+  <a href="javascript: void(0)">
+    <i class="iconfont icon-chevronup"></i>
+  </a>
+</div>
+
+
+<script src="/js/backtotop.js"></script>
+
+
+
+      
+  <div class="search-icon" id="search-icon">
+    <a href="javascript: void(0)">
+      <i class="iconfont icon-search"></i>
+    </a>
+  </div>
+
+  <div class="search-overlay hidden">
+    <div class="search-content" tabindex="0">
+      <div class="search-title">
+        <span class="search-icon-input">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-search"></i>
+          </a>
+        </span>
+        <input type="text" class="search-input" id="search-input" placeholder="搜索文章关键字...">
+        <span class="search-close-icon" id="search-close-icon">
+          <a href="javascript: void(0)">
+            <i class="iconfont icon-close"></i>
+          </a>
+        </span>
+      </div>
+      <div class="search-result" id="search-result"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    var inputArea = document.querySelector("#search-input")
+	var searchOverlayArea = document.querySelector(".search-overlay")
+	
+    inputArea.onclick = function(){ 
+	  getSearchFile(); 
+	  this.onclick = null 
+	}		    
+
+    inputArea.onkeydown = function() {
+      if(event.keyCode == 13)
+        return false
+    }
+  
+    function openOrHideSearchContent() {
+      let isHidden = searchOverlayArea.classList.contains('hidden')
+      if (isHidden) {
+        searchOverlayArea.classList.remove('hidden')
+        document.body.classList.add('hidden')
+        inputArea.focus()
+      } else {
+        searchOverlayArea.classList.add('hidden')
+        document.body.classList.remove('hidden')
+      }
+    }
+  
+    function blurSearchContent(e) {
+	  if (e.target === searchOverlayArea) {
+    	      
+        openOrHideSearchContent()
+      }
+    }
+
+    document.querySelector("#search-icon").addEventListener("click", openOrHideSearchContent, false)
+    document.querySelector("#search-close-icon").addEventListener("click", openOrHideSearchContent, false)
+    searchOverlayArea.addEventListener("click", blurSearchContent, false)
+  </script>
+  
+  
+<script src="/js/search.js"></script>
+
+
+
+
+    </div>
+	
+  <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"left","width":200,"height":350,"hOffset":40,"vOffset":-65},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"dialog":{"enable":true,"hitokoto":true},"log":false});</script></body>
+</html>
