@@ -193,20 +193,6 @@
 
   
   <url>
-    <loc>https://haydnch.github.io/tags/HashMap/</loc>
-    <lastmod>2022-08-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://haydnch.github.io/tags/IDEA/</loc>
-    <lastmod>2022-08-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://haydnch.github.io/tags/mysql/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
@@ -221,14 +207,21 @@
   </url>
   
   <url>
-    <loc>https://haydnch.github.io/tags/Junit5/</loc>
+    <loc>https://haydnch.github.io/tags/HashMap/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://haydnch.github.io/tags/Spring-Boot/</loc>
+    <loc>https://haydnch.github.io/tags/IDEA/</loc>
+    <lastmod>2022-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://haydnch.github.io/tags/Java/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -242,7 +235,14 @@
   </url>
   
   <url>
-    <loc>https://haydnch.github.io/tags/Java/</loc>
+    <loc>https://haydnch.github.io/tags/Junit5/</loc>
+    <lastmod>2022-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://haydnch.github.io/tags/Spring-Boot/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -298,6 +298,13 @@
   </url>
   
   <url>
+    <loc>https://haydnch.github.io/tags/BinaryTree/</loc>
+    <lastmod>2022-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://haydnch.github.io/tags/activate/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
@@ -306,13 +313,6 @@
   
   <url>
     <loc>https://haydnch.github.io/tags/%E8%B7%B3%E8%A1%A8/</loc>
-    <lastmod>2022-08-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://haydnch.github.io/tags/BinaryTree/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -349,14 +349,14 @@
   </url>
   
   <url>
-    <loc>https://haydnch.github.io/categories/Data-Structure/</loc>
+    <loc>https://haydnch.github.io/categories/Tutorial/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://haydnch.github.io/categories/Tutorial/</loc>
+    <loc>https://haydnch.github.io/categories/Data-Structure/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
