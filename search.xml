@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>HashMap常用方法</title>
+    <url>/3b605e64017e/</url>
+    <content><![CDATA[<p>Map集合基于<code>键(key)值(value)</code>对的映射，每个键最多只能映射一个值。键是任何<code>引用类型</code>的值，<code>不可重复</code>；值是任何<code>引用类型</code>的值，<code>可以重复</code>。键值对的存放无序。</p>
+<h3 id="put"><a href="#put" class="headerlink" title="put"></a>put</h3><p><code>put(K key, V value)</code>将键值对存放到集合中，若key已经存在，则覆盖value的值。</p>
+<h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><p><code>get(Object key)</code>返回指定键所映射的值，key不存在返回null（也可能是这个key存放的value就是null）。</p>
+<h3 id="size"><a href="#size" class="headerlink" title="size"></a>size</h3><p><code>size()</code>返回集合中存放的键值对个数。</p>
+<h3 id="isEmpty"><a href="#isEmpty" class="headerlink" title="isEmpty"></a>isEmpty</h3><p><code>isEmpty()</code>判断集合是否为空，若集合中无数据则返回true。</p>
+<h3 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h3><p><code>clear()</code>清空集合，size变成0。</p>
+<h3 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h3><p><code>remove(Object key)</code>删除集合中键为key的数据，并返回key所对应的value值。</p>
+<h3 id="keySet"><a href="#keySet" class="headerlink" title="keySet"></a>keySet</h3><p><code>keySet()</code>返回集合中所有key组成的Set集合。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Map</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		HashMap&lt;String,Integer&gt; map=<span class="keyword">new</span> HashMap&lt;String,Integer&gt;();</span><br><span class="line">		map.put(<span class="string">&quot;taotao&quot;</span>,<span class="number">98</span>);</span><br><span class="line">		map.put(<span class="string">&quot;zhouzhou&quot;</span>, <span class="number">92</span>);</span><br><span class="line">		map.put(<span class="string">&quot;love&quot;</span>, <span class="number">520</span>);</span><br><span class="line">		System.out.println(map.keySet());</span><br><span class="line">    System.out.println(map.values());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出：[taotao, zhouzhou, love]</span><br><span class="line">     [<span class="number">98</span>, <span class="number">92</span>, <span class="number">520</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="values"><a href="#values" class="headerlink" title="values"></a>values</h3><p><code>values()</code>返回集合中所有value组成的Collection集合。</p>
+<h3 id="containsKey"><a href="#containsKey" class="headerlink" title="containsKey"></a>containsKey</h3><p><code>containsKey(Object key)</code>判断集合中是否包含键key，若包含则返回true。</p>
+<h3 id="containsValue"><a href="#containsValue" class="headerlink" title="containsValue"></a>containsValue</h3><p><code>containsValue(Object value)</code>判断集合中是否包含值vale，若包含则返回true。</p>
+<h3 id="HashMap的遍历"><a href="#HashMap的遍历" class="headerlink" title="HashMap的遍历"></a>HashMap的遍历</h3><h4 id="entrySet"><a href="#entrySet" class="headerlink" title="entrySet"></a>entrySet</h4><p><code>entrySet()</code>将Map集合每个key - value键值对转换成一个Entry对象并返回所有Entry对象组成的Set集合。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Map.Entry;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Map&lt;String, String&gt; studentMap = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">		studentMap.put(<span class="string">&quot;002&quot;</span>, <span class="string">&quot;小王&quot;</span>);</span><br><span class="line">		studentMap.put(<span class="string">&quot;001&quot;</span>, <span class="string">&quot;小李&quot;</span>);</span><br><span class="line">		</span><br><span class="line">		Set&lt;Entry&lt;String, String&gt;&gt; studentSet = studentMap.entrySet();</span><br><span class="line">		<span class="keyword">for</span> (Map.Entry&lt;String, String&gt; entry : studentSet) &#123;</span><br><span class="line">			String key = entry.getKey();</span><br><span class="line">			String value = entry.getValue();</span><br><span class="line">			System.out.println(key+<span class="string">&quot;:&quot;</span>+value);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">Iterator&lt;Map.Entry&lt;Integer, Integer&gt;&gt; entries = map.entrySet().iterator();</span><br><span class="line"><span class="keyword">while</span> (entries.hasNext()) &#123;</span><br><span class="line">	Map.Entry&lt;Integer, Integer&gt; entry = entries.next();</span><br><span class="line">	System.out.println(<span class="string">&quot;Key = &quot;</span> + entry.getKey() + <span class="string">&quot;, Value = &quot;</span> + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>HashMap</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CentOS7安装mysql</title>
     <url>/8a773c1c5fba/</url>
     <content><![CDATA[<p><strong><u>记录在阿里云ECS实例CentOS7.6 中安装Mysql数据库的步骤。</u></strong></p>
@@ -78,78 +107,6 @@
       </tags>
   </entry>
   <entry>
-    <title>IDEA注释模板</title>
-    <url>/5bfc718ddec5/</url>
-    <content><![CDATA[<h2 id="类（接口）注释"><a href="#类（接口）注释" class="headerlink" title="类（接口）注释"></a>类（接口）注释</h2><p><strong>新建类或者接口的时候会初始化注释模板。</strong></p>
-<p>设置路径：<code>IntelliJ IDEA -&gt; Preferences -&gt; 编辑器 -&gt; File and code Templates -&gt; Class/Interface</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">  *@ClassName $&#123;NAME&#125;</span><br><span class="line">  *@Author $&#123;USER&#125;</span><br><span class="line">  *@Description TODO </span><br><span class="line">  *@Date $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">  **&#x2F;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-01%E4%B8%8B%E5%8D%887.44.35.png" alt="截屏2020-09-01下午7.44.35"></p>
-<h2 id="方法注释"><a href="#方法注释" class="headerlink" title="方法注释"></a>方法注释</h2><p><strong>新建一个方法的时候，在方法名上方按 <u>/ * + 回车</u> 生成这个方法的注释。</strong></p>
-<p>设置路径：<code>Preferences -&gt; 编辑器 -&gt; 活动模板</code></p>
-<ol>
-<li><p>通过右边+号新建一个Template Group，名称自定。</p>
-</li>
-<li><p>选定这个新建模板组，添加Live Template，<strong>名称为 *</strong>。</p>
-</li>
-<li><p>在模板文本添加：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*</span><br><span class="line"> * @Author $user$</span><br><span class="line"> * @Description TODO $end$</span><br><span class="line"> * @Date $date$ $time$</span><br><span class="line">$param$</span><br><span class="line"> * @return $return$</span><br><span class="line"> **&#x2F;</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<ol start="4">
-<li><p>设置应用上下文为java，选项展开设置为回车。</p>
-</li>
-<li><p>编辑变量。user、date、time的表达式选为内置。$param$按行显示每个参数，$return$显示方法返回类型（不显示全称）。</p>
-<p><strong>$param$表达式</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">groovyScript(&quot;def result&#x3D;&#39;&#39;; def params&#x3D;\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;,&#39;).toList(); for(i &#x3D; 0; i &lt; params.size(); i++) &#123;result+&#x3D;&#39; * @param &#39; + params[i] + ((i &lt; params.size() - 1) ? &#39;\\n&#39;:&#39;&#39;)&#125;;  return result&quot;, methodParameters())()</span><br></pre></td></tr></table></figure>
-
-<p><strong>$return$表达式:</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">groovyScript(&quot;def result&#x3D;&#39;&#39;;  def params&#x3D;\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;&lt;&#39;).toList(); for(i &#x3D; 0; i &lt; params.size(); i++) &#123;if(i!&#x3D;0)&#123;result+&#x3D;&#39;&lt;&#39;;&#125;;  def p1&#x3D;params[i].split(&#39;,&#39;).toList();  for(i2 &#x3D; 0; i2 &lt; p1.size(); i2++)  &#123; def p2&#x3D;p1[i2].split(&#39;\\\\.&#39;).toList();  result+&#x3D;p2[p2.size()-1]; if(i2!&#x3D;p1.size()-1)&#123;result+&#x3D;&#39;,&#39;&#125;  &#125; ; &#125;;  return result&quot;, methodReturnType())</span><br></pre></td></tr></table></figure>
-
-
-</li>
-</ol>
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200901201651376.png" alt="image-20200901201651376"></p>
-]]></content>
-      <categories>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>IDEA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HashMap常用方法</title>
-    <url>/3b605e64017e/</url>
-    <content><![CDATA[<p>Map集合基于<code>键(key)值(value)</code>对的映射，每个键最多只能映射一个值。键是任何<code>引用类型</code>的值，<code>不可重复</code>；值是任何<code>引用类型</code>的值，<code>可以重复</code>。键值对的存放无序。</p>
-<h3 id="put"><a href="#put" class="headerlink" title="put"></a>put</h3><p><code>put(K key, V value)</code>将键值对存放到集合中，若key已经存在，则覆盖value的值。</p>
-<h3 id="get"><a href="#get" class="headerlink" title="get"></a>get</h3><p><code>get(Object key)</code>返回指定键所映射的值，key不存在返回null（也可能是这个key存放的value就是null）。</p>
-<h3 id="size"><a href="#size" class="headerlink" title="size"></a>size</h3><p><code>size()</code>返回集合中存放的键值对个数。</p>
-<h3 id="isEmpty"><a href="#isEmpty" class="headerlink" title="isEmpty"></a>isEmpty</h3><p><code>isEmpty()</code>判断集合是否为空，若集合中无数据则返回true。</p>
-<h3 id="clear"><a href="#clear" class="headerlink" title="clear"></a>clear</h3><p><code>clear()</code>清空集合，size变成0。</p>
-<h3 id="remove"><a href="#remove" class="headerlink" title="remove"></a>remove</h3><p><code>remove(Object key)</code>删除集合中键为key的数据，并返回key所对应的value值。</p>
-<h3 id="keySet"><a href="#keySet" class="headerlink" title="keySet"></a>keySet</h3><p><code>keySet()</code>返回集合中所有key组成的Set集合。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Map</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		HashMap&lt;String,Integer&gt; map=<span class="keyword">new</span> HashMap&lt;String,Integer&gt;();</span><br><span class="line">		map.put(<span class="string">&quot;taotao&quot;</span>,<span class="number">98</span>);</span><br><span class="line">		map.put(<span class="string">&quot;zhouzhou&quot;</span>, <span class="number">92</span>);</span><br><span class="line">		map.put(<span class="string">&quot;love&quot;</span>, <span class="number">520</span>);</span><br><span class="line">		System.out.println(map.keySet());</span><br><span class="line">    System.out.println(map.values());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出：[taotao, zhouzhou, love]</span><br><span class="line">     [<span class="number">98</span>, <span class="number">92</span>, <span class="number">520</span>]</span><br></pre></td></tr></table></figure>
-
-<h3 id="values"><a href="#values" class="headerlink" title="values"></a>values</h3><p><code>values()</code>返回集合中所有value组成的Collection集合。</p>
-<h3 id="containsKey"><a href="#containsKey" class="headerlink" title="containsKey"></a>containsKey</h3><p><code>containsKey(Object key)</code>判断集合中是否包含键key，若包含则返回true。</p>
-<h3 id="containsValue"><a href="#containsValue" class="headerlink" title="containsValue"></a>containsValue</h3><p><code>containsValue(Object value)</code>判断集合中是否包含值vale，若包含则返回true。</p>
-<h3 id="HashMap的遍历"><a href="#HashMap的遍历" class="headerlink" title="HashMap的遍历"></a>HashMap的遍历</h3><h4 id="entrySet"><a href="#entrySet" class="headerlink" title="entrySet"></a>entrySet</h4><p><code>entrySet()</code>将Map集合每个key - value键值对转换成一个Entry对象并返回所有Entry对象组成的Set集合。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Map.Entry;</span><br><span class="line"><span class="keyword">import</span> java.util.Set;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Map&lt;String, String&gt; studentMap = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</span><br><span class="line">		studentMap.put(<span class="string">&quot;002&quot;</span>, <span class="string">&quot;小王&quot;</span>);</span><br><span class="line">		studentMap.put(<span class="string">&quot;001&quot;</span>, <span class="string">&quot;小李&quot;</span>);</span><br><span class="line">		</span><br><span class="line">		Set&lt;Entry&lt;String, String&gt;&gt; studentSet = studentMap.entrySet();</span><br><span class="line">		<span class="keyword">for</span> (Map.Entry&lt;String, String&gt; entry : studentSet) &#123;</span><br><span class="line">			String key = entry.getKey();</span><br><span class="line">			String value = entry.getValue();</span><br><span class="line">			System.out.println(key+<span class="string">&quot;:&quot;</span>+value);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, Integer&gt;();</span><br><span class="line">Iterator&lt;Map.Entry&lt;Integer, Integer&gt;&gt; entries = map.entrySet().iterator();</span><br><span class="line"><span class="keyword">while</span> (entries.hasNext()) &#123;</span><br><span class="line">	Map.Entry&lt;Integer, Integer&gt; entry = entries.next();</span><br><span class="line">	System.out.println(<span class="string">&quot;Key = &quot;</span> + entry.getKey() + <span class="string">&quot;, Value = &quot;</span> + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>HashMap</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JUnit 5单元测试</title>
     <url>/243c5f6e7cba/</url>
     <content><![CDATA[<h1 id="认识Junit-5"><a href="#认识Junit-5" class="headerlink" title="认识Junit 5"></a>认识Junit 5</h1><p>JUnit 5 与以前版本的 JUnit 不同，拆分成由三个不同子项目的几个不同模块组成。<br><strong>JUnit 5 = JUnit Platform + JUnit Jupiter + JUnit Vintage</strong></p>
@@ -193,26 +150,46 @@
       </tags>
   </entry>
   <entry>
-    <title>Java判断List中是否有重复元素</title>
-    <url>/605ff3dd8098/</url>
-    <content><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="1-将List转为Set，通过2个集合的size大小是否相等来判断有无重复元素"><a href="#1-将List转为Set，通过2个集合的size大小是否相等来判断有无重复元素" class="headerlink" title="1 将List转为Set，通过2个集合的size大小是否相等来判断有无重复元素"></a>1 将List转为Set，通过2个集合的size大小是否相等来判断有无重复元素</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;String&gt; stringList=<span class="keyword">new</span> ArrayList&lt;&gt;(Arrays.asList(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>));</span><br><span class="line">    Set&lt;String&gt; stringSet=<span class="keyword">new</span> HashSet&lt;&gt;(stringList);</span><br><span class="line">    <span class="keyword">if</span> (stringList.size() == stringSet.size()) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;没有重复元素&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;有重复元素&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <title>IDEA注释模板</title>
+    <url>/5bfc718ddec5/</url>
+    <content><![CDATA[<h2 id="类（接口）注释"><a href="#类（接口）注释" class="headerlink" title="类（接口）注释"></a>类（接口）注释</h2><p><strong>新建类或者接口的时候会初始化注释模板。</strong></p>
+<p>设置路径：<code>IntelliJ IDEA -&gt; Preferences -&gt; 编辑器 -&gt; File and code Templates -&gt; Class/Interface</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">  *@ClassName $&#123;NAME&#125;</span><br><span class="line">  *@Author $&#123;USER&#125;</span><br><span class="line">  *@Description TODO </span><br><span class="line">  *@Date $&#123;DATE&#125; $&#123;TIME&#125;</span><br><span class="line">  **&#x2F;</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-使用jdk8的Stream来判断"><a href="#2-使用jdk8的Stream来判断" class="headerlink" title="2 使用jdk8的Stream来判断"></a>2 使用jdk8的Stream来判断</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;String&gt; stringList=<span class="keyword">new</span> ArrayList&lt;&gt;(Arrays.asList(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>));</span><br><span class="line">    <span class="keyword">long</span> count = stringList.stream().distinct().count();</span><br><span class="line">    <span class="keyword">if</span> (stringList.size() == count) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;没有重复元素&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;有重复元素&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-实际开发场景中"><a href="#3-实际开发场景中" class="headerlink" title="3 实际开发场景中"></a>3 实际开发场景中</h3><p>实际使用中，需要判断重复的元素可能在对象集合中每个对象的某个成员变量中，可以用jdk8的Stream很方便的获得想要的成员变量的集合，再判断是否有重复元素。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-01%E4%B8%8B%E5%8D%887.44.35.png" alt="截屏2020-09-01下午7.44.35"></p>
+<h2 id="方法注释"><a href="#方法注释" class="headerlink" title="方法注释"></a>方法注释</h2><p><strong>新建一个方法的时候，在方法名上方按 <u>/ * + 回车</u> 生成这个方法的注释。</strong></p>
+<p>设置路径：<code>Preferences -&gt; 编辑器 -&gt; 活动模板</code></p>
 <ol>
-<li>新建一个<code>Person</code>类</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>通过右边+号新建一个Template Group，名称自定。</p>
+</li>
+<li><p>选定这个新建模板组，添加Live Template，<strong>名称为 *</strong>。</p>
+</li>
+<li><p>在模板文本添加：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*</span><br><span class="line"> * @Author $user$</span><br><span class="line"> * @Description TODO $end$</span><br><span class="line"> * @Date $date$ $time$</span><br><span class="line">$param$</span><br><span class="line"> * @return $return$</span><br><span class="line"> **&#x2F;</span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li>判断Person集合中的<code>name</code>属性有没有重复</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Person&gt; personList = <span class="keyword">new</span> ArrayList&lt;Person&gt;()&#123;&#123;</span><br><span class="line">        add(<span class="keyword">new</span> Person(<span class="string">&quot;张三&quot;</span>));</span><br><span class="line">        add(<span class="keyword">new</span> Person(<span class="string">&quot;李四&quot;</span>));</span><br><span class="line">        add(<span class="keyword">new</span> Person(<span class="string">&quot;张三&quot;</span>));</span><br><span class="line">    &#125;&#125;;</span><br><span class="line">    List&lt;String&gt; stringList = personList.stream().map(Person::getName)</span><br><span class="line">        .collect(Collectors.toList());</span><br><span class="line">    <span class="keyword">long</span> count = stringList.stream().distinct().count();</span><br><span class="line">    <span class="keyword">if</span> (stringList.size() == count) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;没有重复元素&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;有重复元素&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+</li>
+</ol>
+<ol start="4">
+<li><p>设置应用上下文为java，选项展开设置为回车。</p>
+</li>
+<li><p>编辑变量。user、date、time的表达式选为内置。$param$按行显示每个参数，$return$显示方法返回类型（不显示全称）。</p>
+<p><strong>$param$表达式</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">groovyScript(&quot;def result&#x3D;&#39;&#39;; def params&#x3D;\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;,&#39;).toList(); for(i &#x3D; 0; i &lt; params.size(); i++) &#123;result+&#x3D;&#39; * @param &#39; + params[i] + ((i &lt; params.size() - 1) ? &#39;\\n&#39;:&#39;&#39;)&#125;;  return result&quot;, methodParameters())()</span><br></pre></td></tr></table></figure>
+
+<p><strong>$return$表达式:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">groovyScript(&quot;def result&#x3D;&#39;&#39;;  def params&#x3D;\&quot;$&#123;_1&#125;\&quot;.replaceAll(&#39;[\\\\[|\\\\]|\\\\s]&#39;, &#39;&#39;).split(&#39;&lt;&#39;).toList(); for(i &#x3D; 0; i &lt; params.size(); i++) &#123;if(i!&#x3D;0)&#123;result+&#x3D;&#39;&lt;&#39;;&#125;;  def p1&#x3D;params[i].split(&#39;,&#39;).toList();  for(i2 &#x3D; 0; i2 &lt; p1.size(); i2++)  &#123; def p2&#x3D;p1[i2].split(&#39;\\\\.&#39;).toList();  result+&#x3D;p2[p2.size()-1]; if(i2!&#x3D;p1.size()-1)&#123;result+&#x3D;&#39;,&#39;&#125;  &#125; ; &#125;;  return result&quot;, methodReturnType())</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200901201651376.png" alt="image-20200901201651376"></p>
 ]]></content>
+      <categories>
+        <category>Note</category>
+      </categories>
       <tags>
-        <tag>Java基础</tag>
+        <tag>IDEA</tag>
       </tags>
   </entry>
   <entry>
@@ -287,60 +264,26 @@
       </categories>
   </entry>
   <entry>
-    <title>LeetCode10: 正则表达式匹配</title>
-    <url>/680781fa707e/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个字符串<code>s</code>和一个模式<code>p</code>，判断<code>s</code>能否被<code>p</code>所匹配。</p>
-<blockquote>
-<p>‘.’ 匹配任意单个字符</p>
-<p>‘*’ 匹配零个或多个前面的一个字符</p>
-</blockquote>
-<ul>
-<li><p>示例 1</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">输入：s = <span class="string">&#x27;aa&#x27;</span>	p = <span class="string">&#x27;a&#x27;</span></span><br><span class="line">输出：<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>示例 2</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">输入：s = <span class="string">&#x27;ab&#x27;</span>	p = <span class="string">&#x27;.*&#x27;</span></span><br><span class="line">输出：<span class="keyword">true</span></span><br><span class="line"><span class="comment">// .* 表示匹配零个或多个任意字符</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>示例 3</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">输入：s = <span class="string">&#x27;mississippi&#x27;</span>	p = <span class="string">&#x27;mis*is*p*.&#x27;</span></span><br><span class="line">输出：<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+    <title>Java判断List中是否有重复元素</title>
+    <url>/605ff3dd8098/</url>
+    <content><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="1-将List转为Set，通过2个集合的size大小是否相等来判断有无重复元素"><a href="#1-将List转为Set，通过2个集合的size大小是否相等来判断有无重复元素" class="headerlink" title="1 将List转为Set，通过2个集合的size大小是否相等来判断有无重复元素"></a>1 将List转为Set，通过2个集合的size大小是否相等来判断有无重复元素</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;String&gt; stringList=<span class="keyword">new</span> ArrayList&lt;&gt;(Arrays.asList(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>));</span><br><span class="line">    Set&lt;String&gt; stringSet=<span class="keyword">new</span> HashSet&lt;&gt;(stringList);</span><br><span class="line">    <span class="keyword">if</span> (stringList.size() == stringSet.size()) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;没有重复元素&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;有重复元素&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="定义状态"><a href="#定义状态" class="headerlink" title="定义状态"></a>定义状态</h3><ol>
-<li>定义二维数组<code>dp[sLen+1][pLen+1]</code>存储计算过程。<code>dp[i][j]</code>表示<strong>s中前i个字符是否能与p中前j个字符</strong>匹配。其中，s的前i个字符指<code>s[0]到s[i-1]</code>。显然 i 的范围从1到sLen，j 的范围从1到pLen。</li>
-<li>初始化数组 dp（默认全为false）：<ul>
-<li>p和s都为空，即<code>dp[0][0] = true</code></li>
-<li>p为空，s不为空，已经默认为<code>false</code></li>
-<li>p不为空，s为空，要对<code>dp[0][j]</code>进行初始化（p满足一定条件时，<code>dp[0][j]=true</code>）</li>
-<li>p和s都不为空，就进入动态规划过程</li>
-</ul>
-</li>
-<li>对 s 和 p 都从1开始遍历。p 中第 j 个字符只能是<code>p[j-1] = &#123;a-z, &#39;.&#39;, &#39;*&#39;&#125;</code> 三种情况。</li>
+<h3 id="2-使用jdk8的Stream来判断"><a href="#2-使用jdk8的Stream来判断" class="headerlink" title="2 使用jdk8的Stream来判断"></a>2 使用jdk8的Stream来判断</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;String&gt; stringList=<span class="keyword">new</span> ArrayList&lt;&gt;(Arrays.asList(<span class="string">&quot;a&quot;</span>,<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>));</span><br><span class="line">    <span class="keyword">long</span> count = stringList.stream().distinct().count();</span><br><span class="line">    <span class="keyword">if</span> (stringList.size() == count) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;没有重复元素&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;有重复元素&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-实际开发场景中"><a href="#3-实际开发场景中" class="headerlink" title="3 实际开发场景中"></a>3 实际开发场景中</h3><p>实际使用中，需要判断重复的元素可能在对象集合中每个对象的某个成员变量中，可以用jdk8的Stream很方便的获得想要的成员变量的集合，再判断是否有重复元素。</p>
+<ol>
+<li>新建一个<code>Person</code>类</li>
 </ol>
-<h3 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h3><ul>
-<li><p>如果<code>p[j-1]</code>是正常字符(a-z)并且与<code>s[i-1]</code>相等，或者<code>p[j-1]=&#39;.&#39;</code>，那么两者是匹配的，因此只需要看两者前面的字符是否能匹配。所以，<code>dp[i][j] = dp[i-1][j-1]</code>。</p>
-</li>
-<li><p>如果<code>p[j-1]=&#39;*&#39;</code>，就要根据前一位字符<code>p[j-2]</code>来判断，因为<code>*</code>号使前面一位字符可以出现任意次。</p>
-<ul>
-<li><p><code>p[j-2]!=&#39;.&#39; 并且 s[i-1]!=p[j-2]</code>，这时<code>*</code>让前面的字符出现 <code>0</code> 次，即抵消<code>p[j-2]</code>。因为跳过了<code>p[j-1]和p[j-2]</code>两位，所以，<code>dp[i][j] = dp[i][j-2]</code>。</p>
-</li>
-<li><p>否则，如果<code>p[j-2] == s[i-1]或者p[j-2]==&#39;.&#39;</code>，就要分三种情况讨论，即<code>*</code>让<code>p[j-2]</code>出现了0次、1次或者多次。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">dp[i][j] = dp[i][j-<span class="number">2</span>] <span class="comment">//零次匹配的情况，比如a和aa*，a*没有匹配a，而是被p之前的匹配</span></span><br><span class="line">dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">2</span>]	<span class="comment">//刚好匹配一次，比如##b*刚好匹配了##b，只需要往前看是否匹配</span></span><br><span class="line">dp[i][j] = dp[i-<span class="number">1</span>][j]	<span class="comment">//看s去掉当前这位是否能匹配，比如：##b*能匹配## ，那么##b*一定能匹配##b</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMatch</span><span class="params">(String s, String p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] str = s.toCharArray();</span><br><span class="line">        <span class="keyword">char</span>[] ptr = p.toCharArray();</span><br><span class="line">        <span class="comment">//dp[i][j]表示s中前i个字符是否与p中前j个字符匹配</span></span><br><span class="line">        <span class="comment">//首先全部初始化为false</span></span><br><span class="line">        <span class="keyword">boolean</span>[][] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()+<span class="number">1</span>][p.length()+<span class="number">1</span>]; </span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">true</span>; <span class="comment">//表示s和p都为空</span></span><br><span class="line">        <span class="comment">//当s为空，p不为空时判断是否为true</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=p.length();i++)&#123;</span><br><span class="line">            <span class="comment">//当前字符为* 并且前i-2个字符能够匹配</span></span><br><span class="line">            <span class="keyword">if</span>(ptr[i-<span class="number">1</span>]==<span class="string">&#x27;*&#x27;</span>&amp;&amp;dp[<span class="number">0</span>][i-<span class="number">2</span>])    dp[<span class="number">0</span>][i] = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//s p都不为空 就动态规划</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=str.length;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;=ptr.length;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(str[i-<span class="number">1</span>]==ptr[j-<span class="number">1</span>]||ptr[j-<span class="number">1</span>]==<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">                    dp[i][j] =  dp[i-<span class="number">1</span>][j-<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(ptr[j-<span class="number">1</span>]==<span class="string">&#x27;*&#x27;</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(str[i-<span class="number">1</span>]!=ptr[j-<span class="number">2</span>]&amp;&amp;ptr[j-<span class="number">2</span>]!=<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">                        dp[i][j] = dp[i][j-<span class="number">2</span>];</span><br><span class="line">                    <span class="keyword">else</span>&#123;<span class="comment">// str[i-1]==ptr[j-2] || ptr[j-2] == &quot;.&quot;</span></span><br><span class="line">                    <span class="comment">//零匹配 一个匹配 多个匹配</span></span><br><span class="line">                        dp[i][j] = dp[i][j-<span class="number">2</span>]||dp[i-<span class="number">1</span>][j-<span class="number">2</span>]||dp[i-<span class="number">1</span>][j];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> dp[s.length()][p.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>判断Person集合中的<code>name</code>属性有没有重复</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    List&lt;Person&gt; personList = <span class="keyword">new</span> ArrayList&lt;Person&gt;()&#123;&#123;</span><br><span class="line">        add(<span class="keyword">new</span> Person(<span class="string">&quot;张三&quot;</span>));</span><br><span class="line">        add(<span class="keyword">new</span> Person(<span class="string">&quot;李四&quot;</span>));</span><br><span class="line">        add(<span class="keyword">new</span> Person(<span class="string">&quot;张三&quot;</span>));</span><br><span class="line">    &#125;&#125;;</span><br><span class="line">    List&lt;String&gt; stringList = personList.stream().map(Person::getName)</span><br><span class="line">        .collect(Collectors.toList());</span><br><span class="line">    <span class="keyword">long</span> count = stringList.stream().distinct().count();</span><br><span class="line">    <span class="keyword">if</span> (stringList.size() == count) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;没有重复元素&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;有重复元素&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 ]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
       <tags>
-        <tag>动态规划</tag>
+        <tag>Java基础</tag>
       </tags>
   </entry>
   <entry>
@@ -429,6 +372,89 @@
       </tags>
   </entry>
   <entry>
+    <title>LeetCode10: 正则表达式匹配</title>
+    <url>/680781fa707e/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个字符串<code>s</code>和一个模式<code>p</code>，判断<code>s</code>能否被<code>p</code>所匹配。</p>
+<blockquote>
+<p>‘.’ 匹配任意单个字符</p>
+<p>‘*’ 匹配零个或多个前面的一个字符</p>
+</blockquote>
+<ul>
+<li><p>示例 1</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">输入：s = <span class="string">&#x27;aa&#x27;</span>	p = <span class="string">&#x27;a&#x27;</span></span><br><span class="line">输出：<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例 2</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">输入：s = <span class="string">&#x27;ab&#x27;</span>	p = <span class="string">&#x27;.*&#x27;</span></span><br><span class="line">输出：<span class="keyword">true</span></span><br><span class="line"><span class="comment">// .* 表示匹配零个或多个任意字符</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例 3</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">输入：s = <span class="string">&#x27;mississippi&#x27;</span>	p = <span class="string">&#x27;mis*is*p*.&#x27;</span></span><br><span class="line">输出：<span class="keyword">false</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><h3 id="定义状态"><a href="#定义状态" class="headerlink" title="定义状态"></a>定义状态</h3><ol>
+<li>定义二维数组<code>dp[sLen+1][pLen+1]</code>存储计算过程。<code>dp[i][j]</code>表示<strong>s中前i个字符是否能与p中前j个字符</strong>匹配。其中，s的前i个字符指<code>s[0]到s[i-1]</code>。显然 i 的范围从1到sLen，j 的范围从1到pLen。</li>
+<li>初始化数组 dp（默认全为false）：<ul>
+<li>p和s都为空，即<code>dp[0][0] = true</code></li>
+<li>p为空，s不为空，已经默认为<code>false</code></li>
+<li>p不为空，s为空，要对<code>dp[0][j]</code>进行初始化（p满足一定条件时，<code>dp[0][j]=true</code>）</li>
+<li>p和s都不为空，就进入动态规划过程</li>
+</ul>
+</li>
+<li>对 s 和 p 都从1开始遍历。p 中第 j 个字符只能是<code>p[j-1] = &#123;a-z, &#39;.&#39;, &#39;*&#39;&#125;</code> 三种情况。</li>
+</ol>
+<h3 id="状态转移方程"><a href="#状态转移方程" class="headerlink" title="状态转移方程"></a>状态转移方程</h3><ul>
+<li><p>如果<code>p[j-1]</code>是正常字符(a-z)并且与<code>s[i-1]</code>相等，或者<code>p[j-1]=&#39;.&#39;</code>，那么两者是匹配的，因此只需要看两者前面的字符是否能匹配。所以，<code>dp[i][j] = dp[i-1][j-1]</code>。</p>
+</li>
+<li><p>如果<code>p[j-1]=&#39;*&#39;</code>，就要根据前一位字符<code>p[j-2]</code>来判断，因为<code>*</code>号使前面一位字符可以出现任意次。</p>
+<ul>
+<li><p><code>p[j-2]!=&#39;.&#39; 并且 s[i-1]!=p[j-2]</code>，这时<code>*</code>让前面的字符出现 <code>0</code> 次，即抵消<code>p[j-2]</code>。因为跳过了<code>p[j-1]和p[j-2]</code>两位，所以，<code>dp[i][j] = dp[i][j-2]</code>。</p>
+</li>
+<li><p>否则，如果<code>p[j-2] == s[i-1]或者p[j-2]==&#39;.&#39;</code>，就要分三种情况讨论，即<code>*</code>让<code>p[j-2]</code>出现了0次、1次或者多次。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">dp[i][j] = dp[i][j-<span class="number">2</span>] <span class="comment">//零次匹配的情况，比如a和aa*，a*没有匹配a，而是被p之前的匹配</span></span><br><span class="line">dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">2</span>]	<span class="comment">//刚好匹配一次，比如##b*刚好匹配了##b，只需要往前看是否匹配</span></span><br><span class="line">dp[i][j] = dp[i-<span class="number">1</span>][j]	<span class="comment">//看s去掉当前这位是否能匹配，比如：##b*能匹配## ，那么##b*一定能匹配##b</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMatch</span><span class="params">(String s, String p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span>[] str = s.toCharArray();</span><br><span class="line">        <span class="keyword">char</span>[] ptr = p.toCharArray();</span><br><span class="line">        <span class="comment">//dp[i][j]表示s中前i个字符是否与p中前j个字符匹配</span></span><br><span class="line">        <span class="comment">//首先全部初始化为false</span></span><br><span class="line">        <span class="keyword">boolean</span>[][] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[s.length()+<span class="number">1</span>][p.length()+<span class="number">1</span>]; </span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="keyword">true</span>; <span class="comment">//表示s和p都为空</span></span><br><span class="line">        <span class="comment">//当s为空，p不为空时判断是否为true</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=p.length();i++)&#123;</span><br><span class="line">            <span class="comment">//当前字符为* 并且前i-2个字符能够匹配</span></span><br><span class="line">            <span class="keyword">if</span>(ptr[i-<span class="number">1</span>]==<span class="string">&#x27;*&#x27;</span>&amp;&amp;dp[<span class="number">0</span>][i-<span class="number">2</span>])    dp[<span class="number">0</span>][i] = <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//s p都不为空 就动态规划</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=str.length;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;=ptr.length;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(str[i-<span class="number">1</span>]==ptr[j-<span class="number">1</span>]||ptr[j-<span class="number">1</span>]==<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">                    dp[i][j] =  dp[i-<span class="number">1</span>][j-<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(ptr[j-<span class="number">1</span>]==<span class="string">&#x27;*&#x27;</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(str[i-<span class="number">1</span>]!=ptr[j-<span class="number">2</span>]&amp;&amp;ptr[j-<span class="number">2</span>]!=<span class="string">&#x27;.&#x27;</span>)</span><br><span class="line">                        dp[i][j] = dp[i][j-<span class="number">2</span>];</span><br><span class="line">                    <span class="keyword">else</span>&#123;<span class="comment">// str[i-1]==ptr[j-2] || ptr[j-2] == &quot;.&quot;</span></span><br><span class="line">                    <span class="comment">//零匹配 一个匹配 多个匹配</span></span><br><span class="line">                        dp[i][j] = dp[i][j-<span class="number">2</span>]||dp[i-<span class="number">1</span>][j-<span class="number">2</span>]||dp[i-<span class="number">1</span>][j];</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> dp[s.length()][p.length()];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode146: LRU缓存机制</title>
+    <url>/5726e94941d0/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lru-cache">https://leetcode-cn.com/problems/lru-cache</a></p>
+<p>运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。</p>
+<p>获取数据 get(key) - 如果关键字 (key) 存在于缓存中，则获取关键字的值（总是正数），否则返回 -1。<br>写入数据 put(key, value) - 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字/值」。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。</p>
+<p>你是否可以在 O(1) 时间复杂度内完成这两种操作？</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LRUCache cache = <span class="keyword">new</span> LRUCache( <span class="number">2</span> <span class="comment">/* 缓存容量 */</span> );</span><br><span class="line"></span><br><span class="line">cache.put(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">cache.put(<span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">cache.get(<span class="number">1</span>);       <span class="comment">// 返回  1</span></span><br><span class="line">cache.put(<span class="number">3</span>, <span class="number">3</span>);    <span class="comment">// 该操作会使得关键字 2 作废</span></span><br><span class="line">cache.get(<span class="number">2</span>);       <span class="comment">// 返回 -1 (未找到)</span></span><br><span class="line">cache.put(<span class="number">4</span>, <span class="number">4</span>);    <span class="comment">// 该操作会使得关键字 1 作废</span></span><br><span class="line">cache.get(<span class="number">1</span>);       <span class="comment">// 返回 -1 (未找到)</span></span><br><span class="line">cache.get(<span class="number">3</span>);       <span class="comment">// 返回  3</span></span><br><span class="line">cache.get(<span class="number">4</span>);       <span class="comment">// 返回  4</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自己手写双链表"><a href="#自己手写双链表" class="headerlink" title="自己手写双链表"></a>自己手写双链表</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//头部结点最近访问</span></span><br><span class="line"><span class="comment">//尾部节点最近最少访问</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span> </span>&#123;</span><br><span class="line">    <span class="comment">//双向链表结点定义</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> key;</span><br><span class="line">        <span class="keyword">int</span> value;</span><br><span class="line">        Node prev;</span><br><span class="line">        Node next;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> k, <span class="keyword">int</span> v)</span> </span>&#123;<span class="keyword">this</span>.key = k; <span class="keyword">this</span>.value = v;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// key -&gt; Node(key, value)</span></span><br><span class="line">    <span class="comment">// 对于key的添加和删除，cache 和 node 是同步的</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;Integer, Node&gt; cache = <span class="keyword">new</span> HashMap&lt;Integer, Node&gt;();</span><br><span class="line">    <span class="keyword">private</span> Node head, tail; <span class="comment">//双链表的头结点和尾结点，不存储值</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size; <span class="comment">//双链表的大小</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> capacity; <span class="comment">//cache的大小</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LRUCache</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.size = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.capacity = capacity;</span><br><span class="line">        <span class="comment">// 使用伪头部和伪尾部节点</span></span><br><span class="line">        head = <span class="keyword">new</span> Node();</span><br><span class="line">        tail = <span class="keyword">new</span> Node();</span><br><span class="line">        head.next = tail;</span><br><span class="line">        tail.prev = head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        Node node = cache.get(key);</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果 key 存在，先通过哈希表定位，再移到头部</span></span><br><span class="line">        moveToHead(node);</span><br><span class="line">        <span class="keyword">return</span> node.value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        Node node = cache.get(key);</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(size &gt;= capacity)&#123;<span class="comment">// 如果超出容量，删除双向链表的尾部节点</span></span><br><span class="line">                Node tail = removeTail();</span><br><span class="line">                cache.remove(tail.key); <span class="comment">// 同时删除哈希表中对应的项</span></span><br><span class="line">                size--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 添加新的结点</span></span><br><span class="line">            Node newNode = <span class="keyword">new</span> Node(key, value);</span><br><span class="line">            <span class="comment">// 添加进哈希表</span></span><br><span class="line">            cache.put(key, newNode);</span><br><span class="line">            <span class="comment">// 同时添加至双向链表的头部</span></span><br><span class="line">            addToHead(newNode);</span><br><span class="line">            size++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部</span></span><br><span class="line">            node.value = value;</span><br><span class="line">            moveToHead(node);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addToHead</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">        node.prev = head;</span><br><span class="line">        node.next = head.next;</span><br><span class="line">        head.next.prev = node;</span><br><span class="line">        head.next = node;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">removeNode</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">        node.prev.next = node.next;</span><br><span class="line">        node.next.prev = node.prev;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">moveToHead</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">        removeNode(node);</span><br><span class="line">        addToHead(node);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">removeTail</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Node tailNode = tail.prev;</span><br><span class="line">        removeNode(tailNode);</span><br><span class="line">        <span class="keyword">return</span> tailNode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用LinkedHashMap"><a href="#使用LinkedHashMap" class="headerlink" title="使用LinkedHashMap"></a>使用LinkedHashMap</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span> <span class="keyword">extends</span> <span class="title">LinkedHashMap</span>&lt;<span class="title">Integer</span>, <span class="title">Integer</span>&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> capacity;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LRUCache</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(capacity, <span class="number">0.75F</span>, <span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">this</span>.capacity = capacity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.getOrDefault(key, -<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.put(key, value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">removeEldestEntry</span><span class="params">(Map.Entry&lt;Integer, Integer&gt; eldest)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size() &gt; capacity; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span> </span>&#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; cache;</span><br><span class="line">    <span class="keyword">int</span> cap;</span><br><span class="line">    <span class="comment">//队尾表示最近使用的，最近最少使用的在队头</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LRUCache</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cap = capacity;</span><br><span class="line">        <span class="keyword">this</span>.cache = <span class="keyword">new</span> LinkedHashMap&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cache.containsKey(key))&#123;</span><br><span class="line">            makeRecently(key);</span><br><span class="line">            <span class="keyword">return</span> cache.get(key);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cache.containsKey(key))&#123;</span><br><span class="line">            makeRecently(key);</span><br><span class="line">            cache.put(key, value);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(cache.size()&gt;=cap)&#123;</span><br><span class="line">                <span class="keyword">int</span> k = cache.keySet().iterator().next();</span><br><span class="line">                cache.remove(k);</span><br><span class="line">            &#125;</span><br><span class="line">            cache.put(key, value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">makeRecently</span><span class="params">(<span class="keyword">int</span> key)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> val = cache.get(key);</span><br><span class="line">        <span class="comment">// 删除key,重新加到队尾</span></span><br><span class="line">        cache.remove(key);</span><br><span class="line">        cache.put(key, val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LinkedHashMap</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LeetCode4: 寻找两个正序数组的中位数</title>
     <url>/84967a5c7c8f/</url>
     <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定两个大小为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出这两个正序数组的中位数，并且要求算法的时间复杂度为 <code>O(log(m + n))</code>。假设 nums1 和 nums2 不会同时为空。</p>
@@ -468,32 +494,6 @@
       <categories>
         <category>LeetCode</category>
       </categories>
-  </entry>
-  <entry>
-    <title>LeetCode146: LRU缓存机制</title>
-    <url>/5726e94941d0/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/lru-cache">https://leetcode-cn.com/problems/lru-cache</a></p>
-<p>运用你所掌握的数据结构，设计和实现一个  LRU (最近最少使用) 缓存机制。它应该支持以下操作： 获取数据 get 和 写入数据 put 。</p>
-<p>获取数据 get(key) - 如果关键字 (key) 存在于缓存中，则获取关键字的值（总是正数），否则返回 -1。<br>写入数据 put(key, value) - 如果关键字已经存在，则变更其数据值；如果关键字不存在，则插入该组「关键字/值」。当缓存容量达到上限时，它应该在写入新数据之前删除最久未使用的数据值，从而为新的数据值留出空间。</p>
-<p>你是否可以在 O(1) 时间复杂度内完成这两种操作？</p>
-<p><strong>示例：</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">LRUCache cache = <span class="keyword">new</span> LRUCache( <span class="number">2</span> <span class="comment">/* 缓存容量 */</span> );</span><br><span class="line"></span><br><span class="line">cache.put(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">cache.put(<span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">cache.get(<span class="number">1</span>);       <span class="comment">// 返回  1</span></span><br><span class="line">cache.put(<span class="number">3</span>, <span class="number">3</span>);    <span class="comment">// 该操作会使得关键字 2 作废</span></span><br><span class="line">cache.get(<span class="number">2</span>);       <span class="comment">// 返回 -1 (未找到)</span></span><br><span class="line">cache.put(<span class="number">4</span>, <span class="number">4</span>);    <span class="comment">// 该操作会使得关键字 1 作废</span></span><br><span class="line">cache.get(<span class="number">1</span>);       <span class="comment">// 返回 -1 (未找到)</span></span><br><span class="line">cache.get(<span class="number">3</span>);       <span class="comment">// 返回  3</span></span><br><span class="line">cache.get(<span class="number">4</span>);       <span class="comment">// 返回  4</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="自己手写双链表"><a href="#自己手写双链表" class="headerlink" title="自己手写双链表"></a>自己手写双链表</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//头部结点最近访问</span></span><br><span class="line"><span class="comment">//尾部节点最近最少访问</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span> </span>&#123;</span><br><span class="line">    <span class="comment">//双向链表结点定义</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> key;</span><br><span class="line">        <span class="keyword">int</span> value;</span><br><span class="line">        Node prev;</span><br><span class="line">        Node next;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> k, <span class="keyword">int</span> v)</span> </span>&#123;<span class="keyword">this</span>.key = k; <span class="keyword">this</span>.value = v;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// key -&gt; Node(key, value)</span></span><br><span class="line">    <span class="comment">// 对于key的添加和删除，cache 和 node 是同步的</span></span><br><span class="line">    <span class="keyword">private</span> Map&lt;Integer, Node&gt; cache = <span class="keyword">new</span> HashMap&lt;Integer, Node&gt;();</span><br><span class="line">    <span class="keyword">private</span> Node head, tail; <span class="comment">//双链表的头结点和尾结点，不存储值</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> size; <span class="comment">//双链表的大小</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> capacity; <span class="comment">//cache的大小</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LRUCache</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.size = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.capacity = capacity;</span><br><span class="line">        <span class="comment">// 使用伪头部和伪尾部节点</span></span><br><span class="line">        head = <span class="keyword">new</span> Node();</span><br><span class="line">        tail = <span class="keyword">new</span> Node();</span><br><span class="line">        head.next = tail;</span><br><span class="line">        tail.prev = head;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        Node node = cache.get(key);</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果 key 存在，先通过哈希表定位，再移到头部</span></span><br><span class="line">        moveToHead(node);</span><br><span class="line">        <span class="keyword">return</span> node.value;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        Node node = cache.get(key);</span><br><span class="line">        <span class="keyword">if</span> (node == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(size &gt;= capacity)&#123;<span class="comment">// 如果超出容量，删除双向链表的尾部节点</span></span><br><span class="line">                Node tail = removeTail();</span><br><span class="line">                cache.remove(tail.key); <span class="comment">// 同时删除哈希表中对应的项</span></span><br><span class="line">                size--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 添加新的结点</span></span><br><span class="line">            Node newNode = <span class="keyword">new</span> Node(key, value);</span><br><span class="line">            <span class="comment">// 添加进哈希表</span></span><br><span class="line">            cache.put(key, newNode);</span><br><span class="line">            <span class="comment">// 同时添加至双向链表的头部</span></span><br><span class="line">            addToHead(newNode);</span><br><span class="line">            size++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部</span></span><br><span class="line">            node.value = value;</span><br><span class="line">            moveToHead(node);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">addToHead</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">        node.prev = head;</span><br><span class="line">        node.next = head.next;</span><br><span class="line">        head.next.prev = node;</span><br><span class="line">        head.next = node;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">removeNode</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">        node.prev.next = node.next;</span><br><span class="line">        node.next.prev = node.prev;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">moveToHead</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">        removeNode(node);</span><br><span class="line">        addToHead(node);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> Node <span class="title">removeTail</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Node tailNode = tail.prev;</span><br><span class="line">        removeNode(tailNode);</span><br><span class="line">        <span class="keyword">return</span> tailNode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="使用LinkedHashMap"><a href="#使用LinkedHashMap" class="headerlink" title="使用LinkedHashMap"></a>使用LinkedHashMap</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span> <span class="keyword">extends</span> <span class="title">LinkedHashMap</span>&lt;<span class="title">Integer</span>, <span class="title">Integer</span>&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> capacity;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LRUCache</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(capacity, <span class="number">0.75F</span>, <span class="keyword">true</span>);</span><br><span class="line">        <span class="keyword">this</span>.capacity = capacity;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.getOrDefault(key, -<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>.put(key, value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">removeEldestEntry</span><span class="params">(Map.Entry&lt;Integer, Integer&gt; eldest)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> size() &gt; capacity; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span> </span>&#123;</span><br><span class="line">    Map&lt;Integer, Integer&gt; cache;</span><br><span class="line">    <span class="keyword">int</span> cap;</span><br><span class="line">    <span class="comment">//队尾表示最近使用的，最近最少使用的在队头</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LRUCache</span><span class="params">(<span class="keyword">int</span> capacity)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.cap = capacity;</span><br><span class="line">        <span class="keyword">this</span>.cache = <span class="keyword">new</span> LinkedHashMap&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cache.containsKey(key))&#123;</span><br><span class="line">            makeRecently(key);</span><br><span class="line">            <span class="keyword">return</span> cache.get(key);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(<span class="keyword">int</span> key, <span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(cache.containsKey(key))&#123;</span><br><span class="line">            makeRecently(key);</span><br><span class="line">            cache.put(key, value);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(cache.size()&gt;=cap)&#123;</span><br><span class="line">                <span class="keyword">int</span> k = cache.keySet().iterator().next();</span><br><span class="line">                cache.remove(k);</span><br><span class="line">            &#125;</span><br><span class="line">            cache.put(key, value);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">makeRecently</span><span class="params">(<span class="keyword">int</span> key)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> val = cache.get(key);</span><br><span class="line">        <span class="comment">// 删除key,重新加到队尾</span></span><br><span class="line">        cache.remove(key);</span><br><span class="line">        cache.put(key, val);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>LeetCode</category>
-      </categories>
-      <tags>
-        <tag>LinkedHashMap</tag>
-      </tags>
   </entry>
   <entry>
     <title>LeetCode5: 最长回文子串</title>
@@ -697,6 +697,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>//hello-world.html</url>
+    <content><![CDATA[<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>cheatsheet（持续更新⏳）</title>
     <url>/a07cebcd8369/</url>
     <content><![CDATA[<h2 id="python3-7创建虚拟环境"><a href="#python3-7创建虚拟环境" class="headerlink" title="python3.7创建虚拟环境"></a>python3.7创建虚拟环境</h2><blockquote>
@@ -824,6 +842,44 @@
       </tags>
   </entry>
   <entry>
+    <title>mac下激活Sublime Text3</title>
+    <url>/b35989291ea4/</url>
+    <content><![CDATA[<p>​    这里记录MacOS下激活Sublime的方法。教程通过配置hosts来终止sublime官网的序列号校验的方式破解。</p>
+<ol>
+<li><p>终端中键入<code>sudo vim /etc/hosts</code>命令对hosts文件进行编辑。</p>
+</li>
+<li><p>在文件尾部插入以下语句后保存退出。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1		www.sublimetext.com</span><br><span class="line">127.0.0.1		license.sublimehq.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入软件后点击注册输入以下激活码后即可激活成功。</p>
+<blockquote>
+<p>—– BEGIN LICENSE —–</p>
+<p>Member J2TeaM</p>
+<p>Single User License</p>
+<p>EA7E-1011316</p>
+<p>D7DA350E 1B8B0760 972F8B60 F3E64036</p>
+<p>B9B4E234 F356F38F 0AD1E3B7 0E9C5FAD</p>
+<p>FA0A2ABE 25F65BD8 D51458E5 3923CE80</p>
+<p>87428428 79079A01 AA69F319 A1AF29A4</p>
+<p>A684C2DC 0B1583D4 19CBD290 217618CD</p>
+<p>5653E0A0 BACE3948 BB2EE45E 422D2C87</p>
+<p>DD9AF44B 99C49590 D2DBDEE1 75860FD2</p>
+<p>8C8BB2AD B2ECE5A4 EFC08AF2 25A9B864</p>
+<p>—— END LICENSE ——</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-02%E4%B8%8B%E5%8D%885.12.15.png" alt="截屏2020-09-02下午5.12.15"></p>
+]]></content>
+      <categories>
+        <category>Note</category>
+      </categories>
+      <tags>
+        <tag>软件破解</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>docker</title>
     <url>/0ee4329c9535/</url>
     <content><![CDATA[<h1 id="什么是docker"><a href="#什么是docker" class="headerlink" title="什么是docker"></a>什么是docker</h1><blockquote>
@@ -884,62 +940,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>//hello-world.html</url>
-    <content><![CDATA[<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>mac下激活Sublime Text3</title>
-    <url>/b35989291ea4/</url>
-    <content><![CDATA[<p>​    这里记录MacOS下激活Sublime的方法。教程通过配置hosts来终止sublime官网的序列号校验的方式破解。</p>
-<ol>
-<li><p>终端中键入<code>sudo vim /etc/hosts</code>命令对hosts文件进行编辑。</p>
-</li>
-<li><p>在文件尾部插入以下语句后保存退出。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">127.0.0.1		www.sublimetext.com</span><br><span class="line">127.0.0.1		license.sublimehq.com</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>进入软件后点击注册输入以下激活码后即可激活成功。</p>
-<blockquote>
-<p>—– BEGIN LICENSE —–</p>
-<p>Member J2TeaM</p>
-<p>Single User License</p>
-<p>EA7E-1011316</p>
-<p>D7DA350E 1B8B0760 972F8B60 F3E64036</p>
-<p>B9B4E234 F356F38F 0AD1E3B7 0E9C5FAD</p>
-<p>FA0A2ABE 25F65BD8 D51458E5 3923CE80</p>
-<p>87428428 79079A01 AA69F319 A1AF29A4</p>
-<p>A684C2DC 0B1583D4 19CBD290 217618CD</p>
-<p>5653E0A0 BACE3948 BB2EE45E 422D2C87</p>
-<p>DD9AF44B 99C49590 D2DBDEE1 75860FD2</p>
-<p>8C8BB2AD B2ECE5A4 EFC08AF2 25A9B864</p>
-<p>—— END LICENSE ——</p>
-</blockquote>
-</li>
-</ol>
-<hr>
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/%E6%88%AA%E5%B1%8F2020-09-02%E4%B8%8B%E5%8D%885.12.15.png" alt="截屏2020-09-02下午5.12.15"></p>
-]]></content>
-      <categories>
-        <category>Note</category>
-      </categories>
-      <tags>
-        <tag>软件破解</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>二叉树中根结点到指定结点的路径</title>
     <url>/9447c0caa016/</url>
     <content><![CDATA[<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
@@ -968,6 +968,27 @@
       </categories>
       <tags>
         <tag>二叉树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>非递归遍历二叉树</title>
+    <url>/490f4050e838/</url>
+    <content><![CDATA[<h2 id="前序遍历（中-左-右）"><a href="#前序遍历（中-左-右）" class="headerlink" title="前序遍历（中 左 右）"></a>前序遍历（中 左 右）</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>)  <span class="keyword">return</span> res;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">        stack.push(root);</span><br><span class="line">        <span class="keyword">while</span>(!stack.isEmpty())&#123;</span><br><span class="line">            TreeNode node = stack.pop();</span><br><span class="line">            res.add(node.val);</span><br><span class="line">            <span class="keyword">if</span>(node.right!=<span class="keyword">null</span>)    stack.push(node.right);</span><br><span class="line">            <span class="keyword">if</span>(node.left!=<span class="keyword">null</span>)     stack.push(node.left);     </span><br><span class="line">        &#125;      </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="中序遍历（左-中-右）"><a href="#中序遍历（左-中-右）" class="headerlink" title="中序遍历（左 中 右）"></a>中序遍历（左 中 右）</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>)  <span class="keyword">return</span> res;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">        TreeNode cur = root;</span><br><span class="line">        <span class="keyword">while</span>(cur!=<span class="keyword">null</span>||!stack.isEmpty())&#123;</span><br><span class="line">            <span class="keyword">while</span>(cur!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                stack.push(cur);</span><br><span class="line">                cur=cur.left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cur==<span class="keyword">null</span>)&#123;</span><br><span class="line">                TreeNode node = stack.pop();</span><br><span class="line">                res.add(node.val);</span><br><span class="line">                cur = node.right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="后序遍历（左-右-中）"><a href="#后序遍历（左-右-中）" class="headerlink" title="后序遍历（左 右 中）"></a>后序遍历（左 右 中）</h2><h3 id="法一"><a href="#法一" class="headerlink" title="法一"></a>法一</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>)  <span class="keyword">return</span> res;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">        TreeNode cur = root; <span class="comment">//当前结点</span></span><br><span class="line">        TreeNode last = <span class="keyword">null</span>; <span class="comment">//上一个访问的结点</span></span><br><span class="line">        <span class="keyword">while</span>(cur!=<span class="keyword">null</span>||!stack.isEmpty())&#123;</span><br><span class="line">            <span class="keyword">while</span>(cur!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                stack.push(cur);</span><br><span class="line">                cur = cur.left;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = stack.peek();</span><br><span class="line">            <span class="comment">//当前结点没有右子树或者右子树刚被访问，就可以加入这个结点</span></span><br><span class="line">            <span class="keyword">if</span>(cur.right == <span class="keyword">null</span> || cur.right == last)&#123;</span><br><span class="line">                res.add(cur.val);</span><br><span class="line">                stack.pop();</span><br><span class="line">                last = cur;</span><br><span class="line">                cur = <span class="keyword">null</span>;               </span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                cur = cur.right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="法二"><a href="#法二" class="headerlink" title="法二"></a>法二</h3><p>再来看后序遍历，先序遍历是中左右，后续遍历是左右中，那么我们只需要调整一下先序遍历的代码顺序，就变成中右左的遍历顺序，然后在反转result数组，输出的结果顺序就是左右中了。</p>
+<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200929103604272.png" alt="image-20200929103604272"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>)  <span class="keyword">return</span> res;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">        stack.push(root);</span><br><span class="line">        <span class="keyword">while</span>(!stack.isEmpty())&#123;</span><br><span class="line">            TreeNode node = stack.pop();</span><br><span class="line">            res.add(node.val);</span><br><span class="line">            <span class="keyword">if</span>(node.left!=<span class="keyword">null</span>) stack.push(node.left);</span><br><span class="line">            <span class="keyword">if</span>(node.right!=<span class="keyword">null</span>)    stack.push(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">        Collections.reverse(res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>二叉树</tag>
+        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
@@ -1057,27 +1078,6 @@
       <tags>
         <tag>Java</tag>
         <tag>跳表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>非递归遍历二叉树</title>
-    <url>/490f4050e838/</url>
-    <content><![CDATA[<h2 id="前序遍历（中-左-右）"><a href="#前序遍历（中-左-右）" class="headerlink" title="前序遍历（中 左 右）"></a>前序遍历（中 左 右）</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>)  <span class="keyword">return</span> res;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">        stack.push(root);</span><br><span class="line">        <span class="keyword">while</span>(!stack.isEmpty())&#123;</span><br><span class="line">            TreeNode node = stack.pop();</span><br><span class="line">            res.add(node.val);</span><br><span class="line">            <span class="keyword">if</span>(node.right!=<span class="keyword">null</span>)    stack.push(node.right);</span><br><span class="line">            <span class="keyword">if</span>(node.left!=<span class="keyword">null</span>)     stack.push(node.left);     </span><br><span class="line">        &#125;      </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="中序遍历（左-中-右）"><a href="#中序遍历（左-中-右）" class="headerlink" title="中序遍历（左 中 右）"></a>中序遍历（左 中 右）</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>)  <span class="keyword">return</span> res;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">        TreeNode cur = root;</span><br><span class="line">        <span class="keyword">while</span>(cur!=<span class="keyword">null</span>||!stack.isEmpty())&#123;</span><br><span class="line">            <span class="keyword">while</span>(cur!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                stack.push(cur);</span><br><span class="line">                cur=cur.left;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cur==<span class="keyword">null</span>)&#123;</span><br><span class="line">                TreeNode node = stack.pop();</span><br><span class="line">                res.add(node.val);</span><br><span class="line">                cur = node.right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="后序遍历（左-右-中）"><a href="#后序遍历（左-右-中）" class="headerlink" title="后序遍历（左 右 中）"></a>后序遍历（左 右 中）</h2><h3 id="法一"><a href="#法一" class="headerlink" title="法一"></a>法一</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>)  <span class="keyword">return</span> res;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">        TreeNode cur = root; <span class="comment">//当前结点</span></span><br><span class="line">        TreeNode last = <span class="keyword">null</span>; <span class="comment">//上一个访问的结点</span></span><br><span class="line">        <span class="keyword">while</span>(cur!=<span class="keyword">null</span>||!stack.isEmpty())&#123;</span><br><span class="line">            <span class="keyword">while</span>(cur!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                stack.push(cur);</span><br><span class="line">                cur = cur.left;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = stack.peek();</span><br><span class="line">            <span class="comment">//当前结点没有右子树或者右子树刚被访问，就可以加入这个结点</span></span><br><span class="line">            <span class="keyword">if</span>(cur.right == <span class="keyword">null</span> || cur.right == last)&#123;</span><br><span class="line">                res.add(cur.val);</span><br><span class="line">                stack.pop();</span><br><span class="line">                last = cur;</span><br><span class="line">                cur = <span class="keyword">null</span>;               </span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                cur = cur.right;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="法二"><a href="#法二" class="headerlink" title="法二"></a>法二</h3><p>再来看后序遍历，先序遍历是中左右，后续遍历是左右中，那么我们只需要调整一下先序遍历的代码顺序，就变成中右左的遍历顺序，然后在反转result数组，输出的结果顺序就是左右中了。</p>
-<p><img src="https://gitee.com/haydnch/myImage/raw/master/imgs/image-20200929103604272.png" alt="image-20200929103604272"></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>)  <span class="keyword">return</span> res;</span><br><span class="line">        Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">        stack.push(root);</span><br><span class="line">        <span class="keyword">while</span>(!stack.isEmpty())&#123;</span><br><span class="line">            TreeNode node = stack.pop();</span><br><span class="line">            res.add(node.val);</span><br><span class="line">            <span class="keyword">if</span>(node.left!=<span class="keyword">null</span>) stack.push(node.left);</span><br><span class="line">            <span class="keyword">if</span>(node.right!=<span class="keyword">null</span>)    stack.push(node.right);</span><br><span class="line">        &#125;</span><br><span class="line">        Collections.reverse(res);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <tags>
-        <tag>二叉树</tag>
-        <tag>DFS</tag>
       </tags>
   </entry>
   <entry>
