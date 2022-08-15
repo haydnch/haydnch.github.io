@@ -207,13 +207,6 @@
   </url>
   
   <url>
-    <loc>https://haydnch.github.io/tags/HashMap/</loc>
-    <lastmod>2022-08-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://haydnch.github.io/tags/IDEA/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
@@ -221,14 +214,7 @@
   </url>
   
   <url>
-    <loc>https://haydnch.github.io/tags/Java/</loc>
-    <lastmod>2022-08-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://haydnch.github.io/tags/JavaBasis/</loc>
+    <loc>https://haydnch.github.io/tags/HashMap/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -249,7 +235,21 @@
   </url>
   
   <url>
+    <loc>https://haydnch.github.io/tags/JavaBasis/</loc>
+    <lastmod>2022-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://haydnch.github.io/tags/DP/</loc>
+    <lastmod>2022-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://haydnch.github.io/tags/Java/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -298,14 +298,14 @@
   </url>
   
   <url>
-    <loc>https://haydnch.github.io/tags/BinaryTree/</loc>
+    <loc>https://haydnch.github.io/tags/activate/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://haydnch.github.io/tags/activate/</loc>
+    <loc>https://haydnch.github.io/tags/BinaryTree/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -363,13 +363,6 @@
   </url>
   
   <url>
-    <loc>https://haydnch.github.io/categories/interview/</loc>
-    <lastmod>2022-08-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://haydnch.github.io/categories/design-patterns/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
@@ -378,6 +371,13 @@
   
   <url>
     <loc>https://haydnch.github.io/categories/LeetCode/</loc>
+    <lastmod>2022-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://haydnch.github.io/categories/interview/</loc>
     <lastmod>2022-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
